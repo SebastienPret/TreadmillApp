@@ -1,0 +1,56 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
+             x:Class="TreadmillApp.Views.SavedWorkoutsPage"
+             Title="Mes Entraînements"
+             BackgroundColor="#121212">
+    <ScrollView x:Name="ScrollViewSavedWorkouts">
+        <VerticalStackLayout Spacing="15" Padding="20">
+            <!-- Choisissez un programme enregistré : -->
+            <Label Text="{x:Static resources:AppResources.Txt_Choose_Workout}" FontSize="18" TextColor="White"/>
+
+            <CollectionView x:Name="CvSavedWorkouts" HeightRequest="450">
+                <!-- SelectionMode="Single" SelectionChanged="OnWorkoutSelected" -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="12" Spacing="4" BackgroundColor="#1E1E1E">
+                            <Label Text="{Binding Title}" FontSize="20" TextColor="Yellow" FontAttributes="Bold"/>
+                            <HorizontalStackLayout >
+                                <!-- Nombre dintervalles : -->
+                                <Label Text="{x:Static resources:AppResources.Txt_Intervals_Count}" FontSize="14" TextColor="Gray"/>
+                                <!-- StringFormat='{Nombre dintervalles : {0}' -->
+                                <Label Text="{Binding Intervals.Count}" FontSize="14" TextColor="Gray"/>
+                            </HorizontalStackLayout>
+                            
+                            <!-- Boutons d'actions pour chaque entraînement -->
+                            <HorizontalStackLayout Spacing="10">
+                                <!-- ▶️ Lancer -->
+                                <Button Text="{x:Static resources:AppResources.Txt_Run_Workout}" 
+                                    Clicked="OnRunWorkoutClicked" 
+                                    CommandParameter="{Binding .}" 
+                                    BackgroundColor="#4CAF50" TextColor="White" HeightRequest="35" FontSize="12"/>
+
+                                <!-- ✏️ Modifier -->
+                                <Button Text="{x:Static resources:AppResources.Txt_Edit_Workout}" 
+                                    Clicked="OnEditWorkoutClicked" 
+                                    CommandParameter="{Binding .}" 
+                                    BackgroundColor="#FF9800" TextColor="White" HeightRequest="35" FontSize="12"/>
+
+                                <!-- 🗑️ Supprimer -->
+                                <Button Text="{x:Static resources:AppResources.Txt_Delete_Workout}" 
+                                    Clicked="OnDeleteWorkoutClicked" 
+                                    CommandParameter="{Binding .}" 
+                                    BackgroundColor="#F44336" TextColor="White" HeightRequest="35" FontSize="12"/>
+                            </HorizontalStackLayout>
+                            <BoxView HeightRequest="1" Color="#333" Margin="0,5,0,0"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- <Button Text="Créer / Modifier un entraînement" Clicked="OnGoToCreatorClicked" BackgroundColor="#333" TextColor="White"/> -->
+            <!-- ➕ Créer un nouvel entraînement -->
+            <Button Text="{x:Static resources:AppResources.Txt_Create_New_Workout}" Clicked="OnCreateNewClicked" BackgroundColor="#2196F3" TextColor="White"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

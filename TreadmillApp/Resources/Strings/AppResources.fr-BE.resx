@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Btn_Start" xml:space="preserve">
+    <value>Démarrer</value>
+  </data>
+  <data name="Btn_Stop" xml:space="preserve">
+    <value>Stopper</value>
+  </data>
+  <data name="Lbl_Speed" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="Lbl_Treadmill" xml:space="preserve">
+    <value>Tapis</value>
+  </data>
+  <data name="Btn_Search_Treadmill" xml:space="preserve">
+    <value>🔗 Rechercher un Tapis</value>
+  </data>
+  <data name="Lbl_Device_Status" xml:space="preserve">
+    <value>Non connecté</value>
+  </data>
+  <data name="Lbl_Km_H" xml:space="preserve">
+    <value>km/h</value>
+  </data>
+  <data name="Lbl_Incline" xml:space="preserve">
+    <value>Inclinaison</value>
+  </data>
+  <data name="Lbl_Status_Run" xml:space="preserve">
+    <value>Prêt</value>
+  </data>
+  <data name="Txt_Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Txt_ResetDataConfirmation" xml:space="preserve">
+    <value>Voulez-vous vraiment effacer tous les programmes d'entraînement sauvegardés ?</value>
+  </data>
+  <data name="Txt_Yes_rst" xml:space="preserve">
+    <value>Oui, Réinitialiser</value>
+  </data>
+  <data name="Txt_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Txt_Success" xml:space="preserve">
+    <value>Succès</value>
+  </data>
+  <data name="Txt_DataReset" xml:space="preserve">
+    <value>Toutes les données ont été réinitialisées.</value>
+  </data>
+  <data name="Txt_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Lbl_Language" xml:space="preserve">
+    <value>🌐 Langue</value>
+  </data>
+  <data name="Lbl_Language_App" xml:space="preserve">
+    <value>Langue de l'application :</value>
+  </data>
+  <data name="Lbl_Choose_Language" xml:space="preserve">
+    <value>Choisir la langue</value>
+  </data>
+  <data name="Lbl_French_Belgium" xml:space="preserve">
+    <value>Français (Belgique)</value>
+  </data>
+  <data name="Lbl_Dutch_Belgium" xml:space="preserve">
+    <value>Néerlandais (Belgique)</value>
+  </data>
+  <data name="Lbl_English" xml:space="preserve">
+    <value>Anglais</value>
+  </data>
+  <data name="Lbl_Workout_Options" xml:space="preserve">
+    <value>⚙️ Options d'entraînement</value>
+  </data>
+  <data name="Lbl_Countdown_5s" xml:space="preserve">
+    <value>Compte à rebours de 5s avant chaque intervalle</value>
+  </data>
+  <data name="Lbl_Audio_Alerts" xml:space="preserve">
+    <value>Bips sonores lors des changements de phase</value>
+  </data>
+  <data name="Lbl_About" xml:space="preserve">
+    <value>ℹ️ À propos</value>
+  </data>
+  <data name="Lbl_Version" xml:space="preserve">
+    <value>Version de l'application :</value>
+  </data>
+  <data name="Btn_Reset_Data" xml:space="preserve">
+    <value>⚠️ Réinitialiser les programmes enregistrés</value>
+  </data>
+  <data name="Lbl_Speed_Down" xml:space="preserve">
+    <value>- Vitesse</value>
+  </data>
+  <data name="Lbl_Speed_Up" xml:space="preserve">
+    <value>+ Vitesse</value>
+  </data>
+  <data name="Lbl_Incline_Down" xml:space="preserve">
+    <value>- Inclinaison</value>
+  </data>
+  <data name="Lbl_Incline_Up" xml:space="preserve">
+    <value>+ Inclinaison</value>
+  </data>
+  <data name="Btn_Run_Plan" xml:space="preserve">
+    <value>Lancer le Plan d'Intervalles</value>
+  </data>
+  <data name="Shell_Control" xml:space="preserve">
+    <value>Contrôle</value>
+  </data>
+  <data name="Tab_Dashboard" xml:space="preserve">
+    <value>Tableau de bord</value>
+  </data>
+  <data name="Tab_Saved_Workouts" xml:space="preserve">
+    <value>Mes Entraînements sauvegardés</value>
+  </data>
+  <data name="Ttl_Saved_Workouts" xml:space="preserve">
+    <value>Mes Entraînements</value>
+  </data>
+  <data name="Tab_Intervals" xml:space="preserve">
+    <value>Créateur d'Intervalles</value>
+  </data>
+  <data name="Ttl_Intervals" xml:space="preserve">
+    <value>Intervalles</value>
+  </data>
+  <data name="Ttl_Dashboard" xml:space="preserve">
+    <value>Tableau de bord</value>
+  </data>
+  <data name="Tab_Settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="Ttl_Settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="Btn_Connect" xml:space="preserve">
+    <value>Tapis Connecté ✅</value>
+  </data>
+  <data name="Alert_NoIntervalsTitle" xml:space="preserve">
+    <value>Vide</value>
+  </data>
+  <data name="Alert_NoIntervalsMessage" xml:space="preserve">
+    <value>Aucun intervalle configuré. Allez dans l'onglet Intervalles.</value>
+  </data>
+  <data name="Lbl_Restantes" xml:space="preserve">
+    <value>restantes</value>
+  </data>
+  <data name="DeviceStatus_Connecting" xml:space="preserve">
+    <value>Connexion à</value>
+  </data>
+  <data name="DeviceStatus_Connected" xml:space="preserve">
+    <value>Connecté au Tapis !</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="IntervalStatus_Starting" xml:space="preserve">
+    <value>Phase</value>
+  </data>
+  <data name="IntervalStatus_Completed" xml:space="preserve">
+    <value>Entraînement terminé !</value>
+  </data>
+  <data name="DefaultWorkoutTitle" xml:space="preserve">
+    <value>Fractionné Basique</value>
+  </data>
+  <data name="Interval_EasyRun" xml:space="preserve">
+    <value>Échauffement</value>
+  </data>
+  <data name="Interval_Sprint" xml:space="preserve">
+    <value>Sprint</value>
+  </data>
+  <data name="Interval_CoolDown" xml:space="preserve">
+    <value>Récupération</value>
+  </data>
+  <data name="Lbl_Interval_Name" xml:space="preserve">
+    <value>Nommer votre série d'intervalle</value>
+  </data>
+  <data name="Placeholder_Workout_Title" xml:space="preserve">
+    <value>Nom de l'entraînement (ex: HIT Matinal)</value>
+  </data>
+  <data name="Lbl_Configure_Interval" xml:space="preserve">
+    <value>Configurer un nouvel intervalle</value>
+  </data>
+  <data name="Placeholder_Interval_Name" xml:space="preserve">
+    <value>Nom (ex: Sprint, Récup)</value>
+  </data>
+  <data name="Lbl_Speed_Km_H" xml:space="preserve">
+    <value>Vitesse (km/h):</value>
+  </data>
+  <data name="Lbl_Incline_per" xml:space="preserve">
+    <value>Inclinaison (%):</value>
+  </data>
+  <data name="Lbl_Duration" xml:space="preserve">
+    <value>Durée (sec):</value>
+  </data>
+  <data name="Btn_Add_Interval" xml:space="preserve">
+    <value>Ajouter à l'entraînement</value>
+  </data>
+  <data name="Lbl_Interval_List" xml:space="preserve">
+    <value>Liste des intervalles :</value>
+  </data>
+  <data name="Btn_Start_Workout" xml:space="preserve">
+    <value>Lancer cet entraînement</value>
+  </data>
+  <data name="Btn_Save_Workout" xml:space="preserve">
+    <value>💾 Sauvegarder cet entraînement</value>
+  </data>
+  <data name="DefaultIntervalName" xml:space="preserve">
+    <value>Effort</value>
+  </data>
+  <data name="Error_Add_Interval" xml:space="preserve">
+    <value>Ajoutez au moins un intervalle avant de sauvegarder.</value>
+  </data>
+  <data name="Success_Save_Workout" xml:space="preserve">
+    <value>L'entraînement a été sauvegardé avec succès !</value>
+  </data>
+  <data name="Txt_Choose_Workout" xml:space="preserve">
+    <value>Choisissez un programme enregistré :</value>
+  </data>
+  <data name="Txt_Intervals_Count" xml:space="preserve">
+    <value>Nombre d'intervalles :</value>
+  </data>
+  <data name="Txt_Run_Workout" xml:space="preserve">
+    <value>▶️ Lancer</value>
+  </data>
+  <data name="Txt_Edit_Workout" xml:space="preserve">
+    <value>✏️ Modifier</value>
+  </data>
+  <data name="Txt_Delete_Workout" xml:space="preserve">
+    <value>🗑️ Supprimer</value>
+  </data>
+  <data name="Txt_Create_New_Workout" xml:space="preserve">
+    <value>➕ Créer un nouvel entraînement</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Txt_Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="Txt_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="Txt_Want_Delete" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer</value>
+  </data>
+  <data name="Txt_Start_Scan" xml:space="preserve">
+    <value>🔍 Lancer le Scan FTMS</value>
+  </data>
+  <data name="Txt_Detected_Treadmills" xml:space="preserve">
+    <value>Tapis détectés :</value>
+  </data>
+  <data name="Txt_Connection_Success" xml:space="preserve">
+    <value>Connecté au tapis avec succès !</value>
+  </data>
+  <data name="Txt_Failure" xml:space="preserve">
+    <value>Échec</value>
+  </data>
+  <data name="Txt_Connection_Failed" xml:space="preserve">
+    <value>Impossible de se connecter à cet appareil.</value>
+  </data>
+  <data name="Txt_Ready_For" xml:space="preserve">
+    <value>Prêt pour</value>
+  </data>
+  <data name="Txt_In" xml:space="preserve">
+    <value>dans</value>
+  </data>
+  <data name="Txt_Rest_Pause" xml:space="preserve">
+    <value>Pause automatique</value>
+  </data>
+</root>

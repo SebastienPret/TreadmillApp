@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TreadmillApp</name>
+    </assembly>
+    <members>
+        <member name="T:TreadmillApp.Resources.Strings.AppResources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Alert_NoIntervalsMessage">
+            <summary>
+              Recherche une chaîne localisée semblable à No intervals configured. Go to the Intervals tab..
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Alert_NoIntervalsTitle">
+            <summary>
+              Recherche une chaîne localisée semblable à Empty.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Add_Interval">
+            <summary>
+              Recherche une chaîne localisée semblable à Add to training.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Connect">
+            <summary>
+              Recherche une chaîne localisée semblable à Connected Mat ✅.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Reset_Data">
+            <summary>
+              Recherche une chaîne localisée semblable à ⚠️ Reset saved programs.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Run_Plan">
+            <summary>
+              Recherche une chaîne localisée semblable à Start the Interval Plan.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Save_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à 💾 Save this workout.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Search_Treadmill">
+            <summary>
+              Recherche une chaîne localisée semblable à 🔗 Searching for a treadmill.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Start">
+            <summary>
+              Recherche une chaîne localisée semblable à Start.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Start_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à Start this workout.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Stop">
+            <summary>
+              Recherche une chaîne localisée semblable à Stop.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Confirmation">
+            <summary>
+              Recherche une chaîne localisée semblable à Confirmation.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.DefaultIntervalName">
+            <summary>
+              Recherche une chaîne localisée semblable à Effort.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.DefaultWorkoutTitle">
+            <summary>
+              Recherche une chaîne localisée semblable à Basic Interval Training.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.DeviceStatus_Connected">
+            <summary>
+              Recherche une chaîne localisée semblable à Connected to the treadmill!.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.DeviceStatus_Connecting">
+            <summary>
+              Recherche une chaîne localisée semblable à Connect to.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Error">
+            <summary>
+              Recherche une chaîne localisée semblable à Error.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Error_Add_Interval">
+            <summary>
+              Recherche une chaîne localisée semblable à Add at least one interval before saving..
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Interval_CoolDown">
+            <summary>
+              Recherche une chaîne localisée semblable à Cool Down.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Interval_EasyRun">
+            <summary>
+              Recherche une chaîne localisée semblable à Warm-up.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Interval_Sprint">
+            <summary>
+              Recherche une chaîne localisée semblable à Sprint.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.IntervalStatus_Completed">
+            <summary>
+              Recherche une chaîne localisée semblable à Training complete!.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.IntervalStatus_Starting">
+            <summary>
+              Recherche une chaîne localisée semblable à Phase.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_About">
+            <summary>
+              Recherche une chaîne localisée semblable à ℹ️ About.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Audio_Alerts">
+            <summary>
+              Recherche une chaîne localisée semblable à Audible beeps during phase changes.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Choose_Language">
+            <summary>
+              Recherche une chaîne localisée semblable à Choose language.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Configure_Interval">
+            <summary>
+              Recherche une chaîne localisée semblable à Configure a new interval.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Countdown_5s">
+            <summary>
+              Recherche une chaîne localisée semblable à 5-second countdown before each interval.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Device_Status">
+            <summary>
+              Recherche une chaîne localisée semblable à Not Connected.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Duration">
+            <summary>
+              Recherche une chaîne localisée semblable à Duration (sec):.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Dutch_Belgium">
+            <summary>
+              Recherche une chaîne localisée semblable à Dutch (Belgium).
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_English">
+            <summary>
+              Recherche une chaîne localisée semblable à English.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_French_Belgium">
+            <summary>
+              Recherche une chaîne localisée semblable à French (Belgium).
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Incline">
+            <summary>
+              Recherche une chaîne localisée semblable à Incline.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Incline_Down">
+            <summary>
+              Recherche une chaîne localisée semblable à - Incline.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Incline_per">
+            <summary>
+              Recherche une chaîne localisée semblable à Incline (%):.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Incline_Up">
+            <summary>
+              Recherche une chaîne localisée semblable à + Incline.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Interval_List">
+            <summary>
+              Recherche une chaîne localisée semblable à List of intervals:.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Interval_Name">
+            <summary>
+              Recherche une chaîne localisée semblable à Name your interval series.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Km_H">
+            <summary>
+              Recherche une chaîne localisée semblable à km/h.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Language">
+            <summary>
+              Recherche une chaîne localisée semblable à 🌐 Language.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Language_App">
+            <summary>
+              Recherche une chaîne localisée semblable à Application language:.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Restantes">
+            <summary>
+              Recherche une chaîne localisée semblable à remaining.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Speed">
+            <summary>
+              Recherche une chaîne localisée semblable à Speed.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Speed_Down">
+            <summary>
+              Recherche une chaîne localisée semblable à - Speed.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Speed_Km_H">
+            <summary>
+              Recherche une chaîne localisée semblable à Speed ​​(km/h):.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Speed_Up">
+            <summary>
+              Recherche une chaîne localisée semblable à + Speed.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Status_Run">
+            <summary>
+              Recherche une chaîne localisée semblable à Ready.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Treadmill">
+            <summary>
+              Recherche une chaîne localisée semblable à Treadmill.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Version">
+            <summary>
+              Recherche une chaîne localisée semblable à Application version:.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Workout_Options">
+            <summary>
+              Recherche une chaîne localisée semblable à ⚙️ Training options.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Placeholder_Interval_Name">
+            <summary>
+              Recherche une chaîne localisée semblable à Name (e.g., Sprint, Recovery).
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Placeholder_Workout_Title">
+            <summary>
+              Recherche une chaîne localisée semblable à Workout name (e.g., Morning HIT).
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Shell_Control">
+            <summary>
+              Recherche une chaîne localisée semblable à Control.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Success_Save_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à The training session has been successfully saved!.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Tab_Dashboard">
+            <summary>
+              Recherche une chaîne localisée semblable à Dashboard.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Tab_Intervals">
+            <summary>
+              Recherche une chaîne localisée semblable à Creator of Intervals.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Tab_Saved_Workouts">
+            <summary>
+              Recherche une chaîne localisée semblable à Saved Workouts.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Tab_Settings">
+            <summary>
+              Recherche une chaîne localisée semblable à Settings.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Ttl_Dashboard">
+            <summary>
+              Recherche une chaîne localisée semblable à Dashboard.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Ttl_Intervals">
+            <summary>
+              Recherche une chaîne localisée semblable à Intervals.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Ttl_Saved_Workouts">
+            <summary>
+              Recherche une chaîne localisée semblable à Workouts.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Ttl_Settings">
+            <summary>
+              Recherche une chaîne localisée semblable à Settings.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Cancel">
+            <summary>
+              Recherche une chaîne localisée semblable à Cancel.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Choose_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à Select a saved program:.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Confirmation">
+            <summary>
+              Recherche une chaîne localisée semblable à Confirmation.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Connection_Failed">
+            <summary>
+              Recherche une chaîne localisée semblable à Unable to connect to this device..
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Connection_Success">
+            <summary>
+              Recherche une chaîne localisée semblable à Successfully connected to the Treadmill!.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Create_New_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à ➕ Create a new workout.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_DataReset">
+            <summary>
+              Recherche une chaîne localisée semblable à All data has been reset..
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Delete_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à 🗑️ Delete.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Detected_Treadmills">
+            <summary>
+              Recherche une chaîne localisée semblable à Treadmill detected:.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Edit_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à ✏️ Edit.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Failure">
+            <summary>
+              Recherche une chaîne localisée semblable à Failure.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_In">
+            <summary>
+              Recherche une chaîne localisée semblable à in.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Intervals_Count">
+            <summary>
+              Recherche une chaîne localisée semblable à Number of intervals:.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_No">
+            <summary>
+              Recherche une chaîne localisée semblable à No.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_OK">
+            <summary>
+              Recherche une chaîne localisée semblable à OK.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Ready_For">
+            <summary>
+              Recherche une chaîne localisée semblable à Ready for.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_ResetDataConfirmation">
+            <summary>
+              Recherche une chaîne localisée semblable à Do you really want to delete all saved training programs?.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Rest_Pause">
+            <summary>
+              Recherche une chaîne localisée semblable à Automatic pause.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Run_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à ▶️ Launch.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Start_Scan">
+            <summary>
+              Recherche une chaîne localisée semblable à 🔍 Launch FTMS Scan.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Success">
+            <summary>
+              Recherche une chaîne localisée semblable à Success.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Want_Delete">
+            <summary>
+              Recherche une chaîne localisée semblable à Do you really want to delete.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Yes">
+            <summary>
+              Recherche une chaîne localisée semblable à Yes.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Yes_rst">
+            <summary>
+              Recherche une chaîne localisée semblable à Yes, Reset.
+            </summary>
+        </member>
+        <member name="T:TreadmillApp.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+    </members>
+</doc>

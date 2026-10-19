@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
+             x:Class="TreadmillApp.Views.SettingsPage"
+             Title="Paramètres"
+             BackgroundColor="#121212">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="20">
+
+            <!-- Section Langue -->
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="{x:Static resources:AppResources.Lbl_Language}" FontSize="18" TextColor="Yellow" FontAttributes="Bold"/>
+                    <!-- 🌐 Langue / Language -->
+                    <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                        <Label Text="{x:Static resources:AppResources.Lbl_Language_App}" TextColor="White" VerticalTextAlignment="Center"/>
+                        <!-- Langue de l'application :-->
+                        <Picker x:Name="PickerLanguage" 
+                                Title="{x:Static resources:AppResources.Lbl_Choose_Language}"
+                                TextColor="Cyan"
+                                WidthRequest="120"
+                                SelectedIndexChanged="OnLanguageChanged">
+                            <!-- Choisir la langue -->
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <!-- Français (Belgique) -->
+                                    <x:String>English</x:String>
+                                    <x:String>Français</x:String>
+                                    <x:String>Nederlands</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Section Options de Séances -->
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" Padding="15">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="{x:Static resources:AppResources.Lbl_Workout_Options}" FontSize="18" TextColor="Yellow" FontAttributes="Bold"/>
+                    <!-- ⚙️ Options d'entraînement -->
+                    <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" RowSpacing="15">
+                        <!-- Compte à rebours 5s -->
+                        <!-- Compte à rebours de 5s avant chaque intervalle -->
+                        <Label Grid.Row="0" Grid.Column="0" 
+                               Text="{x:Static resources:AppResources.Lbl_Countdown_5s}" 
+                               TextColor="White" VerticalTextAlignment="Center"/>
+                        <Switch Grid.Row="0" Grid.Column="1" 
+                                x:Name="SwCountdown" 
+                                Toggled="OnCountdownToggled"/>
+
+                        <!-- Signaux Audio -->
+                            <!-- Bips sonores lors des changements de phase -->
+                        <Label Grid.Row="1" Grid.Column="0" 
+                               Text="{x:Static resources:AppResources.Lbl_Audio_Alerts}"  
+                               TextColor="White" VerticalTextAlignment="Center"/>
+                        <Switch Grid.Row="1" Grid.Column="1" 
+                                x:Name="SwAudio" 
+                                Toggled="OnAudioToggled"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Section Données & Application -->
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" Padding="15">
+                <VerticalStackLayout Spacing="15">
+                    <!-- ℹ️ À propos -->
+                    <Label Text="{x:Static resources:AppResources.Lbl_About}" FontSize="18" TextColor="Yellow" FontAttributes="Bold"/>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <!-- Version de l'application : -->
+                        <Label Text="{x:Static resources:AppResources.Lbl_Version}" TextColor="Gray"/>
+                        
+                        <!-- need to be dynamic -->
+                        <Label Text="1.0.0 (FTMS BLE)" TextColor="White" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+
+                    <!-- ⚠️ Réinitialiser les programmes enregistrés -->
+                    <Button Text="{x:Static resources:AppResources.Btn_Reset_Data}" 
+                            Clicked="OnResetDataClicked" 
+                            BackgroundColor="#D32F2F" 
+                            TextColor="White" 
+                            Margin="0,10,0,0"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
