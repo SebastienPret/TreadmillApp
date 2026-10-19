@@ -22,7 +22,8 @@
                 <!-- Vitesse (km/h): -->
                 <Label Text="{x:Static resources:AppResources.Lbl_Speed_Km_H}" TextColor="White" VerticalTextAlignment="Center"/>
                 <Stepper x:Name="StpSpeed" Minimum="1" Maximum="20" Increment="0.5" ValueChanged="StpSpeed_ValueChanged"/>
-                <Label x:Name="LblSpeed" Text="1.0" TextColor="Cyan" VerticalTextAlignment="Center" FontSize="18"/>
+                <!-- <Label x:Name="LblSpeed" Text="1.0" TextColor="Cyan" VerticalTextAlignment="Center" FontSize="18"/> -->
+                <Entry x:Name="LblSpeed" Text="1.0" Keyboard="Numeric" TextColor="Cyan"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10">
@@ -35,7 +36,13 @@
             <HorizontalStackLayout Spacing="10">
                 <!-- Durée (sec): -->
                 <Label Text="{x:Static resources:AppResources.Lbl_Duration}" TextColor="White" VerticalTextAlignment="Center"/>
-                <Entry x:Name="TxtDuration" Text="60" Keyboard="Numeric" WidthRequest="100" TextColor="White"/>
+                <Entry x:Name="TxtDuration" Text="{Binding DurationSeconds, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" TextChanged="OnSecondsTextChanged" IsEnabled="False"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="{x:Static resources:AppResources.Lbl_Duration_Min}" VerticalOptions="Center" />
+
+                <!-- Saisie de la durée en minutes -->
+                <Entry x:Name="TxtDurationMinutes"  Text="{Binding DurationMinutes, Mode=TwoWay}" Keyboard="Numeric" HorizontalTextAlignment="Center" TextChanged="OnMinutesTextChanged"/>
             </HorizontalStackLayout>
 
             <!-- Ajouter à l'entraînement -->
@@ -46,7 +53,7 @@
             <!-- Liste des intervalles : -->
             <Label Text="{x:Static resources:AppResources.Lbl_Interval_List}" FontSize="16" TextColor="White"/>
 
-            <CollectionView x:Name="CvIntervals" HeightRequest="200">
+            <CollectionView x:Name="CvIntervals" MinimumHeightRequest="10" MaximumHeightRequest="500">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <HorizontalStackLayout Spacing="15" Padding="5" VerticalOptions="Center">
@@ -66,5 +73,7 @@
             <!-- 💾 Sauvegarder cet entraînement -->
             <Button Text="{x:Static resources:AppResources.Btn_Save_Workout}" Clicked="OnSaveWorkoutClicked" BackgroundColor="#00838F" TextColor="White"/>
         </VerticalStackLayout>
+        
+        
     </ScrollView>
 </ContentPage>

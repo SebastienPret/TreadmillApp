@@ -79,6 +79,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bluetooth is disabled.
+        /// </summary>
+        public static string Bluetooth_Off {
+            get {
+                return ResourceManager.GetString("Bluetooth_Off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Add to training.
         /// </summary>
         public static string Btn_Add_Interval {
@@ -327,6 +336,15 @@ namespace TreadmillApp.Resources.Strings {
         public static string Lbl_Duration {
             get {
                 return ResourceManager.GetString("Lbl_Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Duration (Min):.
+        /// </summary>
+        public static string Lbl_Duration_Min {
+            get {
+                return ResourceManager.GetString("Lbl_Duration_Min", resourceCulture);
             }
         }
         

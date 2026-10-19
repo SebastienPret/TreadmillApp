@@ -1,0 +1,45 @@
+## --- DOSSIERS ET FICHIERS DE BUILD (.NET / C#) ---
+[Bb]in/
+[Ob]j/
+[Lg]og/
+[Ll]ogs/
+*.user
+*.userosscache
+*.sln.docstates
+
+## --- ENVIRONNEMENT ET CACHE VISUAL STUDIO ---
+.vs/
+.idea/
+*.suo
+*.userprefs
+*.usertasks
+*.cache
+*.exe
+*.dll
+*.pdb
+
+## --- OUTILS MAUI & FICHIERS TEMPORAIRES ZIP/ANDROID ---
+*.apk
+*.aab
+*.ipa
+*.app
+*.dSYM/
+*.zip
+*.tar.gz
+
+## --- DOSSIERS TEMPORAIRES DU SYSTÈME ET D'EDITEURS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+[Tt]emp/
+[Tt]mp/
+
+## --- PACKAGES NUGET (S'ils sont téléchargés en local) ---
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+## --- SECRETS & CONFIGURATIONS PERSONNELLES (Optionnel) ---
+*.env
+appsettings.Development.json
+appsettings.Local.json

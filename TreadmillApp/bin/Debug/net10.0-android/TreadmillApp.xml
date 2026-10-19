@@ -30,6 +30,11 @@
               Recherche une chaîne localisée semblable à Empty.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Bluetooth_Off">
+            <summary>
+              Recherche une chaîne localisée semblable à Bluetooth is disabled.
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Add_Interval">
             <summary>
               Recherche une chaîne localisée semblable à Add to training.
@@ -168,6 +173,11 @@
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Duration">
             <summary>
               Recherche une chaîne localisée semblable à Duration (sec):.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Duration_Min">
+            <summary>
+              Recherche une chaîne localisée semblable à Duration (Min):.
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Dutch_Belgium">

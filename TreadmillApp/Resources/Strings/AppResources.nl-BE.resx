@@ -358,4 +358,10 @@
   <data name="Txt_Rest_Pause" xml:space="preserve">
     <value>Automatische pauze</value>
   </data>
+  <data name="Bluetooth_Off" xml:space="preserve">
+    <value>Bluetooth is uitgeschakeld</value>
+  </data>
+  <data name="Lbl_Duration_Min" xml:space="preserve">
+    <value>Duur (Min):</value>
+  </data>
 </root>

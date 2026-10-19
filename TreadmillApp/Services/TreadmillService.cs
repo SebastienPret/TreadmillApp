@@ -1,11 +1,12 @@
 using Plugin.BLE;
+using Plugin.BLE.Abstractions;
 using Plugin.BLE.Abstractions.Contracts;
+using Plugin.Maui.Audio;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using TreadmillApp.Resources.Strings;
-using Plugin.Maui.Audio;
 
 namespace TreadmillApp.Services
 {
@@ -16,6 +17,9 @@ namespace TreadmillApp.Services
         private IDevice? _treadmillDevice;
         private ICharacteristic? _controlPointCharacteristic;
         private ICharacteristic? _treadmillDataCharacteristic;
+
+        // L'UUID officiel du service FTMS (Fitness Machine Service)
+        private static readonly Guid FtmsServiceUuid = Guid.Parse("00001826-0000-1000-8000-00805f9b34fb");
 
         private double _currentSpeed;
         private double _currentIncline;
@@ -60,13 +64,32 @@ namespace TreadmillApp.Services
 
         public async Task StartScanningAsync()
         {
+            // S'assure que le Bluetooth est allumé
+            if (_ble.State != BluetoothState.On)
+            {
+                Debug.WriteLine("Le Bluetooth est désactivé.");
+                await Application.Current!.Windows[0].Page.DisplayAlertAsync(AppResources.Error, AppResources.Bluetooth_Off, AppResources.Txt_OK);
+                return;
+            }
             DiscoveredDevices.Clear();
             _adapter.ScanTimeout = 10000; // 10 secondes
 
             _adapter.DeviceDiscovered -= OnDeviceDiscovered;
             _adapter.DeviceDiscovered += OnDeviceDiscovered;
 
-            await _adapter.StartScanningForDevicesAsync();
+            // Définition des options de scan avec le filtre FTMS
+            var scanOptions = new ScanFilterOptions
+            {
+                ServiceUuids = new[] { FtmsServiceUuid }
+            };
+
+            // Durée maximale du scan (ex: 10 secondes)
+            _adapter.ScanTimeout = 10000;
+
+            Debug.WriteLine("Début du scan des tapis FTMS...");
+
+            // Lancement du scan avec le filtre d'UUID
+            await _adapter.StartScanningForDevicesAsync(scanOptions);
         }
 
         private void OnDeviceDiscovered(object? sender, Plugin.BLE.Abstractions.EventArgs.DeviceEventArgs e)
@@ -74,16 +97,17 @@ namespace TreadmillApp.Services
             if (e.Device == null || string.IsNullOrEmpty(e.Device.Name)) return;
 
             string name = e.Device.Name;
+            //Collection<AdvertisementRecord> HUID = e.Device.AdvertisementRecords;
             Debug.WriteLine($"Appareil découvert : {name} ({e.Device.Id})");
             // Filtre par mots-clés typiques des tapis de course et équipements de fitness
-            bool isTreadmill = name.Contains("Treadmill", StringComparison.OrdinalIgnoreCase) ||
+            /*bool isTreadmill = name.Contains("Treadmill", StringComparison.OrdinalIgnoreCase) ||
                                name.Contains("Fitness", StringComparison.OrdinalIgnoreCase) ||
                                name.Contains("Run", StringComparison.OrdinalIgnoreCase) ||
                                name.Contains("Domyos", StringComparison.OrdinalIgnoreCase) ||
                                name.Contains("Nordictrack", StringComparison.OrdinalIgnoreCase) ||
                                name.Contains("SW7745EAI", StringComparison.OrdinalIgnoreCase);
-
-            if (isTreadmill && !DiscoveredDevices.Any(d => d.Id == e.Device.Id))
+            */
+            if ( !DiscoveredDevices.Any(d => d.Id == e.Device.Id)) //isTreadmill &&
             {
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
@@ -95,6 +119,7 @@ namespace TreadmillApp.Services
         public async Task StopScanningAsync()
         {
             await _adapter.StopScanningForDevicesAsync();
+            Debug.WriteLine("Scan arrêté.");
         }
 
         public async Task<bool> ConnectToDeviceAsync(IDevice device)
@@ -242,14 +267,14 @@ namespace TreadmillApp.Services
                     //await PlayBeepSoundAsync(); // Ou lors du passage à la phase d'effort / de pause :
                     IntervalStatusChanged?.Invoke(this, $"{AppResources.IntervalStatus_Starting} : {interval.Name}"); //Phase
 
-                    for (int remaining = interval.DurationSeconds; remaining > 0; remaining--)
+                    for (double remaining = interval.DurationSeconds; remaining > 0; remaining--)
                     {
                         while (IsPaused)
                         {
                             if (_workoutCancellationToken.Token.IsCancellationRequested) break;
                             await Task.Delay(500, _workoutCancellationToken.Token);
                         }
-                        onProgress(interval.Name, remaining);
+                        onProgress(interval.Name, Convert.ToInt32(remaining));
                         await Task.Delay(1000, _workoutCancellationToken.Token);
                     }
 

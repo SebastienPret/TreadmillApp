@@ -544,3 +544,15 @@ E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\
 E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\qualifiers.txt.intermediate
 E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
 E:\Code\TreadmillApp\TreadmillApp\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Plugin.BLE.dll
+E:\Code\TreadmillApp\TreadmillApp\bin\Debug\net10.0-windows10.0.19041.0\win-x64\censor-beep-01.mp3
+E:\Code\TreadmillApp\TreadmillApp\bin\Debug\net10.0-windows10.0.19041.0\win-x64\mariostart.mp3
+E:\Code\TreadmillApp\TreadmillApp\bin\Debug\net10.0-windows10.0.19041.0\win-x64\fr-BE\TreadmillApp.resources.dll
+E:\Code\TreadmillApp\TreadmillApp\bin\Debug\net10.0-windows10.0.19041.0\win-x64\nl-BE\TreadmillApp.resources.dll
+E:\Code\TreadmillApp\TreadmillApp\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Plugin.Maui.Audio.dll
+E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\TreadmillApp.Resources.Strings.AppResources.resources
+E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\TreadmillApp.Resources.Strings.AppResources.fr-BE.resources
+E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\TreadmillApp.Resources.Strings.AppResources.nl-BE.resources
+E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\TreadmillApp.csproj.GenerateResource.cache
+E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\TreadmillApp.sourcelink.json
+E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\fr-BE\TreadmillApp.resources.dll
+E:\Code\TreadmillApp\TreadmillApp\obj\Debug\net10.0-windows10.0.19041.0\win-x64\nl-BE\TreadmillApp.resources.dll

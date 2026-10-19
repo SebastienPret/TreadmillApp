@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              x:Class="TreadmillApp.Views.SettingsPage"
-             Title="Paramètres"
              BackgroundColor="#121212">
-
+    <!-- Title="Paramètres" -->
+    
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
 

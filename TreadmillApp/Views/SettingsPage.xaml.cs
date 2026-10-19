@@ -44,7 +44,7 @@ namespace TreadmillApp.Views
                 AppSettingsService.Instance.SelectedLanguage = selectedLangCode;
 
                 // Recharger l'interface pour appliquer la nouvelle langue
-                Application.Current!.MainPage = new AppShell();
+                Application.Current!.Windows[0].Page = new AppShell();
             }
         }
 

@@ -2,8 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              x:Class="TreadmillApp.Views.SavedWorkoutsPage"
-             Title="Mes Entraînements"
              BackgroundColor="#121212">
+    <!-- Title="Mes Entraînements" -->
+    
     <ScrollView x:Name="ScrollViewSavedWorkouts">
         <VerticalStackLayout Spacing="15" Padding="20">
             <!-- Choisissez un programme enregistré : -->
