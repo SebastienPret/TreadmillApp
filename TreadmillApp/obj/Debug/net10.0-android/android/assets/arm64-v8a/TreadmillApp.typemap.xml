@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="TreadmillApp" mvid="cf5060db33ec436fa4a48da2832ba904">
+<api type="debug" assembly-name="TreadmillApp" mvid="d7e49028b03d46fab52c3db066dd1c25">
   <java-to-managed>
     <entry java-name="crc649ef5ca3ed60188a2/MainActivity" managed-name="TreadmillApp.MainActivity, TreadmillApp" managed-type-token-id="33554442" />
     <entry java-name="crc649ef5ca3ed60188a2/MainApplication" managed-name="TreadmillApp.MainApplication, TreadmillApp" managed-type-token-id="33554443" />

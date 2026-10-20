@@ -277,6 +277,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Starting training....
+        /// </summary>
+        public static string IntervalStatus_Starting_Workout {
+            get {
+                return ResourceManager.GetString("IntervalStatus_Starting_Workout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à ℹ️ About.
         /// </summary>
         public static string Lbl_About {

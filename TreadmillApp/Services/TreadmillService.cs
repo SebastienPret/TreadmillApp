@@ -1,11 +1,13 @@
 using Plugin.BLE;
 using Plugin.BLE.Abstractions;
 using Plugin.BLE.Abstractions.Contracts;
+using Plugin.BLE.Abstractions.EventArgs;
 using Plugin.Maui.Audio;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using TreadmillApp.Models;
 using TreadmillApp.Resources.Strings;
 
 namespace TreadmillApp.Services
@@ -20,6 +22,7 @@ namespace TreadmillApp.Services
 
         // L'UUID officiel du service FTMS (Fitness Machine Service)
         private static readonly Guid FtmsServiceUuid = Guid.Parse("00001826-0000-1000-8000-00805f9b34fb");
+        private static readonly Guid TreadmillDataCharacteristicUuid = Guid.Parse("00002ACD-0000-1000-8000-00805f9b34fb");
 
         private double _currentSpeed;
         private double _currentIncline;
@@ -55,6 +58,13 @@ namespace TreadmillApp.Services
 
         public event EventHandler<string>? IntervalStatusChanged;
         public event EventHandler<string>? DeviceStatusChanged;
+
+        // Events to notify your ViewModel/UI
+        public event EventHandler<double> SpeedUpdated;
+        public event EventHandler TreadmillStarted;
+        public event EventHandler TreadmillStopped;
+
+        private bool _hasStartedReported = false;
 
         public TreadmillService()
         {
@@ -207,35 +217,77 @@ namespace TreadmillApp.Services
         private void ParseTreadmillData(byte[] data)
         {
             if (data == null || data.Length < 4) return;
+
+            // Parse Instantaneous Speed (Standard FTMS specification)
+            // Bytes 0-1: Flags, Bytes 2-3: Instantaneous Speed (in 0.01 km/h)
             ushort speedRaw = (ushort)(data[2] | (data[3] << 8));
             CurrentSpeed = speedRaw / 100.0;
-            /*if (data.Length >= 6)
+
+            // Notify listeners of the current speed
+            SpeedUpdated?.Invoke(this, CurrentSpeed);
+
+            // Detect if the treadmill has started (Speed > 0.5 km/h)
+            if (CurrentSpeed > 0.5 && !_hasStartedReported)
             {
-                short inclineRaw = (short)(data[4] | (data[5] << 8));
-                CurrentIncline = inclineRaw / 10.0;
-            }*/
+                _hasStartedReported = true;
+                TreadmillStarted?.Invoke(this, EventArgs.Empty);
+                System.Diagnostics.Debug.WriteLine("Treadmill movement detected: STARTED");
+            }
+            // Detect if the treadmill has stopped (Speed drops back to 0)
+            else if (CurrentSpeed <= 0.1 && _hasStartedReported)
+            {
+                _hasStartedReported = false;
+                TreadmillStopped?.Invoke(this, EventArgs.Empty);
+                System.Diagnostics.Debug.WriteLine("Treadmill movement detected: STOPPED");
+            }
         }
 
         public async Task RunWorkoutPlanAsync(Models.WorkoutPlan plan, Action<string, int> onProgress)
         {
+            
             _workoutCancellationToken = new CancellationTokenSource();
             bool IsPaused = false; // pause pas implementée dans cette version, mais peut être ajoutée avec un bouton de pause dans l'UI
             await StartAsync();
-
+            IntervalStatusChanged?.Invoke(this, AppResources.IntervalStatus_Starting_Workout); // Démarrage de l'entraînement...
+            // waiting for the treadmill to be ready (optional, depending on treadmill behavior)
+            // retrieve the current state of the treadmill and wait until it is ready to accept commands
+            while (_hasStartedReported == true || !Debugger.IsAttached)
+            {
+                await Task.Delay(500, _workoutCancellationToken.Token);
+            }
+#if DEBUG
+            Debug.WriteLine("Treadmill is not ready yet. Waiting for it to be ready...");
+            await Task.Delay(5000, _workoutCancellationToken.Token); // simulate a delay for treadmill readiness in debug mode
+            Debug.WriteLine("Treadmill is ready for workout plan execution.");
+            
+#endif
             // set a 1km/h speed limit for safety and wait 5 seconds before starting the interval
             //await SetSpeedAsync(1);
-            await Task.Delay(5000, _workoutCancellationToken.Token);
+            //await Task.Delay(5000, _workoutCancellationToken.Token);
 
             try
             {
+                // activer les alertes sonores si activées dans les paramètres
+                if (AppSettingsService.Instance.EnableAudioAlerts == true)
+                {
+                   await PlayBeepSoundAsync();
+                }
+
                 foreach (var interval in plan.Intervals)
                 {
+                    
+
                     if (_workoutCancellationToken.Token.IsCancellationRequested) break;
 
+                    // 5. Exécuter l'intervalle avec un compte à rebours de 5 secondes avant le début
+                    RunIntervalAsync(interval, _workoutCancellationToken.Token);
+
+                    
+                    
                     // 1. COMPTE À REBOURS DE 5s (Si activé dans les Paramètres)
                     if (AppSettingsService.Instance.EnableCountdown)
                     {
-                        PlayBeepSoundAsync();
+                        
                         // Optionnel : Mettre une vitesse de préparation douce ou garder le tapis stable
                         for (int countdown = 4; countdown > 0; countdown--)
                         {
@@ -245,7 +297,7 @@ namespace TreadmillApp.Services
                             while (IsPaused)
                             {
                                 if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-                                await Task.Delay(500, _workoutCancellationToken.Token);
+                                await Task.Delay(1000, _workoutCancellationToken.Token);
                             }
 
                             // Joue un bip à chaque seconde du décompte (ou un bip plus grave/aigu sur la dernière seconde)
@@ -309,11 +361,35 @@ namespace TreadmillApp.Services
             }
         }
 
+
+        public async static void RunIntervalAsync(WorkoutInterval interval, CancellationToken cancellationToken)
+        {
+            int totalSeconds = (int)interval.DurationSeconds;
+            bool fiveSecondAlertPlayed = false;
+
+            for (int elapsed = 0; elapsed < totalSeconds; elapsed++)
+            {
+                if (cancellationToken.IsCancellationRequested) break;
+
+                int remainingSeconds = totalSeconds - elapsed;
+
+                // Check if we are exactly 5 seconds before the end
+                if (remainingSeconds == 5 && !fiveSecondAlertPlayed)
+                {
+                    PlayBeepSoundAsync();
+                    fiveSecondAlertPlayed = true; // Ensures it only plays once for this interval
+                }
+
+                // Wait 1 second for the interval progress
+                await Task.Delay(1000, cancellationToken);
+            }
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        private async Task PlayBeepSoundAsync()
+        private async static Task PlayBeepSoundAsync()
         {
             // Vérifie si les alertes sonores sont activées dans les paramètres
             if (!AppSettingsService.Instance.EnableAudioAlerts) return;

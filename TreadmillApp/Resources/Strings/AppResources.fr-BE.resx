@@ -364,4 +364,7 @@
   <data name="Lbl_Duration_Min" xml:space="preserve">
     <value>Durée (Min):</value>
   </data>
+  <data name="IntervalStatus_Starting_Workout" xml:space="preserve">
+    <value>Démarrage de l'entraînement...</value>
+  </data>
 </root>

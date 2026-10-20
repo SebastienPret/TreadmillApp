@@ -140,6 +140,11 @@
               Recherche une chaîne localisée semblable à Phase.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.IntervalStatus_Starting_Workout">
+            <summary>
+              Recherche une chaîne localisée semblable à Starting training....
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_About">
             <summary>
               Recherche une chaîne localisée semblable à ℹ️ About.

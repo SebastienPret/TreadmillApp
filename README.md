@@ -43,59 +43,115 @@ Application mobile et desktop développée en **.NET MAUI** permettant de pilote
 * **Visual Studio 2022** (avec la charge de travail *Développement d'interface utilisateur d'application multiplateforme .NET*) ou **VS Code** avec l'extension .NET MAUI.
 
 ### 2. Packages NuGet requis
-Installez le package suivant dans votre projet :
-```bash
-dotnet add package Plugin.BLE
 
----
+Installez le package suivant dans votre projet :
+
+
+    dotnet  add  package  Plugin.BLE
+
+  
+
+
+
+  
 
 ## 📁 Structure du Projet
 
-TreadmillApp/
-│
-├── Models/
-│   ├── WorkoutInterval.cs     # Modèle d'un intervalle et d'un plan d'entraînement
-│
-├── Resources/
-│   ├── Strings/
-│   │   ├── AppResources.resx    # Fichiers de ressources pour la localisation
-│   │   ├── AppResources.fr-BE.resx # Traduction belge française
-│   │   └── AppResources.nl-BE.resx # Traduction belge néerlandaise
-│
-├── Services/
-│   ├── TreadmillService.cs    # Gestion du Bluetooth BLE (FTMS) et de la logique d'entraînement
-│   └── WorkoutStorageService.cs # Persistance et sauvegarde des programmes
-│
-├── Views/
-│   ├── DashboardPage.xaml     # Tableau de bord principal & contrôle direct
-│   ├── ScanDevicesPage.xaml   # Page de recherche et sélection Bluetooth des tapis
-│   ├── IntervalsPage.xaml     # Créateur / Éditeur d'intervalles
-│   └── SavedWorkoutsPage.xaml # Liste des programmes enregistrés
-│
-├── AppShell.xaml              # Configuration de la navigation par onglets (TabBar)
-└── App.xaml.cs                # Point d'entrée de l'application
+  
 
----
+    TreadmillApp/
+    
+    │
+    
+    ├──  Models/
+    
+    │  ├──  WorkoutInterval.cs  # Modèle d'un intervalle et d'un plan d'entraînement
+    
+    │
+    
+    ├──  Resources/
+    
+    │  ├──  Strings/
+    
+    │  │  ├──  AppResources.resx  # Fichiers de ressources pour la localisation
+    
+    │  │  ├──  AppResources.fr-BE.resx  # Traduction belge française
+    
+    │  │  └──  AppResources.nl-BE.resx  # Traduction belge néerlandaise
+    
+    │
+    
+    ├──  Services/
+    
+    │  ├──  TreadmillService.cs  # Gestion du Bluetooth BLE (FTMS) et de la logique d'entraînement
+    
+    │  └──  WorkoutStorageService.cs  # Persistance et sauvegarde des programmes
+    
+    │
+    
+    ├──  Views/
+    
+    │  ├──  DashboardPage.xaml  # Tableau de bord principal & contrôle direct
+    
+    │  ├──  ScanDevicesPage.xaml  # Page de recherche et sélection Bluetooth des tapis
+    
+    │  ├──  IntervalsPage.xaml  # Créateur / Éditeur d'intervalles
+    
+    │  └──  SavedWorkoutsPage.xaml  # Liste des programmes enregistrés
+    
+    │
+    
+    ├──  AppShell.xaml  # Configuration de la navigation par onglets (TabBar)
+    
+    └──  App.xaml.cs  # Point d'entrée de l'application
+
 
 ## 📱 Utilisation
 
+  
+
 1. Lancez l'application sur votre appareil (Android, iOS ou Windows).
+
 2. Rendez-vous sur l'onglet Tapis et cliquez sur "Rechercher un Tapis".
+
 3. Sélectionnez votre tapis dans la liste des appareils FTMS détectés.
+
 4. Dans l'onglet Programmes ou Créateur, configurez ou choisissez un entraînement en y ajoutant vos intervalles (avec ou sans pause automatique).
+
 5. Lancez le plan depuis le tableau de bord et profitez de votre séance !
 
-
----
+  
 
 ## Todo
 
+  
+
 + Icon
+
 + Language
+
 + couleur
-+ Recherhe tapis autre
+
++ ~~Recherhe tapis autre~~
+
 + ~~bouton inclinaison dynamique~~
+
 + selections d'intervale pour modification (rafrichissement)
-+ connection avec MyWoosh
+
++ Connection avec MyWoosh
+
 + Settings page reload page
-+ issue with rounding in sec on interval page
+
++ Issue with rounding in sec on interval page
+
++ Show that the treadmill disconnected from the app/device
+
++ Not having the sound taking 5s between each interval
+
++ Add sound at the end of the training
+
++ Upload own sound ? 
+
++ having the launch button in the interval creator tab launch the mission and not just select it
+
++ Having the possibility to edit the individual interval
