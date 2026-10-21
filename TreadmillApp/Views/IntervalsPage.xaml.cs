@@ -18,7 +18,12 @@ namespace TreadmillApp.Views
             BindingContext = new Models.WorkoutInterval();
         }
 
-        private void StpSpeed_ValueChanged(object sender, ValueChangedEventArgs e) => LblSpeed.Text = e.NewValue.ToString("0.0");
+        private void StpSpeed_ValueChanged(object sender, ValueChangedEventArgs e) 
+        {
+            // change to have the stepper increase the current value of the entry instead of replacing it
+            // string currentEntryValue = LblSpeed.Text;
+            LblSpeed.Text = e.NewValue.ToString("0.0");
+        }
         private void StpIncline_ValueChanged(object sender, ValueChangedEventArgs e) => LblIncline.Text = e.NewValue.ToString("0");
 
         private void OnAddIntervalClicked(object sender, EventArgs e)
@@ -144,6 +149,28 @@ namespace TreadmillApp.Views
                 {
                     interval.DurationMinutes = min; // La propriété calculera automatiquement sec = min * 60.0
                 }
+            }
+        }
+
+        private void LblSpeed_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            LblPace.Text = PaceFormatted; // Update the pace label whenever speed changes
+
+
+        }
+
+        public string PaceFormatted
+        {
+            get
+            {
+                if (LblSpeed.Text == null || !double.TryParse(LblSpeed.Text, out double speed) || speed <= 0) return "0:00 min/km";
+
+                // Calcul du temps en minutes pour 1 km
+                double totalMinutes = 60.0 / speed;
+                int minutes = (int)totalMinutes;
+                int seconds = (int)((totalMinutes - minutes) * 60);
+
+                return $"{minutes}:{seconds:D2} min/km";
             }
         }
     }

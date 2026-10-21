@@ -466,6 +466,24 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à min/km.
+        /// </summary>
+        public static string Lbl_Min_Km {
+            get {
+                return ResourceManager.GetString("Lbl_Min_Km", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Pace.
+        /// </summary>
+        public static string Lbl_Pace {
+            get {
+                return ResourceManager.GetString("Lbl_Pace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à remaining.
         /// </summary>
         public static string Lbl_Restantes {

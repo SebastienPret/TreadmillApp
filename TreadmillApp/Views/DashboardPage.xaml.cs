@@ -1,5 +1,6 @@
 using TreadmillApp.Services;
 using TreadmillApp.Resources.Strings;
+using TreadmillApp.Models;
 
 namespace TreadmillApp.Views
 {
@@ -70,5 +71,14 @@ namespace TreadmillApp.Views
                 });
             });
         }
+
+        // Propriété textuelle pour l'affichage de l'allure (ex: "4:30 min/km")
+        private async void PaceFormatted(object sender, EventArgs e)
+        {
+            string pace = LblCurrentSpeed.Text;
+            LblCurrentPace.Text = Treadmill.PaceFormattedString(pace);
+        }
+
+        
     }
 }

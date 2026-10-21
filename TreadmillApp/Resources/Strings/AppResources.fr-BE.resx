@@ -367,4 +367,10 @@
   <data name="IntervalStatus_Starting_Workout" xml:space="preserve">
     <value>Démarrage de l'entraînement...</value>
   </data>
+  <data name="Lbl_Min_Km" xml:space="preserve">
+    <value>min/km</value>
+  </data>
+  <data name="Lbl_Pace" xml:space="preserve">
+    <value>Rythme</value>
+  </data>
 </root>

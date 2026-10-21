@@ -23,7 +23,8 @@
                 <Label Text="{x:Static resources:AppResources.Lbl_Speed_Km_H}" TextColor="White" VerticalTextAlignment="Center"/>
                 <Stepper x:Name="StpSpeed" Minimum="1" Maximum="20" Increment="0.5" ValueChanged="StpSpeed_ValueChanged"/>
                 <!-- <Label x:Name="LblSpeed" Text="1.0" TextColor="Cyan" VerticalTextAlignment="Center" FontSize="18"/> -->
-                <Entry x:Name="LblSpeed" Text="1.0" Keyboard="Numeric" TextColor="Cyan"/>
+                <Entry x:Name="LblSpeed" Text="1.0" Keyboard="Numeric" TextColor="Cyan" PropertyChanged="LblSpeed_PropertyChanged" />
+                <Label x:Name="LblPace" Text="0:00" TextColor="Cyan" VerticalTextAlignment="Center" FontSize="18"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10">
@@ -34,17 +35,17 @@
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10">
-                <!-- Durée (sec): -->
-                <Label Text="{x:Static resources:AppResources.Lbl_Duration}" TextColor="White" VerticalTextAlignment="Center"/>
-                <Entry x:Name="TxtDuration" Text="{Binding DurationSeconds, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" TextChanged="OnSecondsTextChanged" IsEnabled="False"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="10">
+                <!-- Durée (Min) -->
                 <Label Text="{x:Static resources:AppResources.Lbl_Duration_Min}" VerticalOptions="Center" />
 
                 <!-- Saisie de la durée en minutes -->
                 <Entry x:Name="TxtDurationMinutes"  Text="{Binding DurationMinutes, Mode=TwoWay}" Keyboard="Numeric" HorizontalTextAlignment="Center" TextChanged="OnMinutesTextChanged"/>
+                
+                <!-- Durée (sec): -->
+                <Label Text="{x:Static resources:AppResources.Lbl_Duration}" TextColor="White" VerticalTextAlignment="Center"/>
+                <Entry x:Name="TxtDuration" Text="{Binding DurationSeconds, Mode=TwoWay}" Keyboard="Numeric" TextColor="White" TextChanged="OnSecondsTextChanged" IsEnabled="False"/>
             </HorizontalStackLayout>
-
+            
             <!-- Ajouter à l'entraînement -->
             <Button Text="{x:Static resources:AppResources.Btn_Add_Interval}" Clicked="OnAddIntervalClicked" BackgroundColor="#FF5722" TextColor="White"/>
 

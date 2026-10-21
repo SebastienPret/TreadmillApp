@@ -68,6 +68,22 @@ namespace TreadmillApp.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        // Propriété textuelle pour l'affichage de l'allure (ex: "4:30 min/km")
+        public string PaceFormatted
+        {
+            get
+            {
+                if (TargetSpeed <= 0) return "0:00 min/km";
+
+                // Calcul du temps en minutes pour 1 km
+                double totalMinutes = 60.0 / TargetSpeed;
+                int minutes = (int)totalMinutes;
+                int seconds = (int)((totalMinutes - minutes) * 60);
+
+                return $"{minutes}:{seconds:D2} min/km";
+            }
+        }
     }
 
     public class WorkoutPlan

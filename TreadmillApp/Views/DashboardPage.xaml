@@ -14,8 +14,13 @@
         <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
             <VerticalStackLayout>
                 <Label Text="{x:Static resources:AppResources.Lbl_Speed}" TextColor="Gray" FontSize="12" HorizontalOptions="Center" TextTransform="Uppercase"/>
-                <Label x:Name="LblCurrentSpeed" Text="0.0" FontSize="48" TextColor="Cyan" HorizontalOptions="Center"/>
+                <Label x:Name="LblCurrentSpeed" Text="0,0" FontSize="48" TextColor="Cyan" HorizontalOptions="Center" PropertyChanged ="PaceFormatted"/>
                 <Label Text="{x:Static resources:AppResources.Lbl_Km_H}" TextColor="Gray" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="{x:Static resources:AppResources.Lbl_Pace}" TextColor="Gray" FontSize="12" HorizontalOptions="Center" TextTransform="Uppercase"/>
+                <Label x:Name="LblCurrentPace" Text="0:00" FontSize="48" TextColor="Cyan" HorizontalOptions="Center" />
+                <Label Text="{x:Static resources:AppResources.Lbl_Min_Km}" TextColor="Gray" HorizontalOptions="Center"/>
             </VerticalStackLayout>
             <VerticalStackLayout>
                 <Label Text="{x:Static resources:AppResources.Lbl_Incline}" TextColor="Gray" FontSize="12" HorizontalOptions="Center" TextTransform="Uppercase"/>

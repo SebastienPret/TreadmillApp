@@ -406,5 +406,18 @@ namespace TreadmillApp.Services
                 Debug.WriteLine($"Erreur lecture audio : {ex.Message}");
             }
         }
+
+        public  string PaceFormattedString(string speedString)
+        {
+            if (double.TryParse(speedString, out double speed) && speed > 0)
+            {
+                // Calcul du temps en minutes pour 1 km
+                double totalMinutes = 60.0 / speed;
+                int minutes = (int)totalMinutes;
+                int seconds = (int)((totalMinutes - minutes) * 60);
+                return $"{minutes}:{seconds:D2}";
+            }
+            return "0:00";
+        }
     }
 }

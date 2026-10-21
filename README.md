@@ -146,12 +146,14 @@ Installez le package suivant dans votre projet :
 
 + Show that the treadmill disconnected from the app/device
 
-+ Not having the sound taking 5s between each interval
++ ~~Not having the sound taking 5s between each interval~~
 
-+ Add sound at the end of the training
++ ~~Add sound at the end of the training~~
 
 + Upload own sound ? 
 
 + having the launch button in the interval creator tab launch the mission and not just select it
 
 + Having the possibility to edit the individual interval
+
++ convert km/h to min/km
