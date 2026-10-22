@@ -9,6 +9,7 @@ namespace TreadmillApp.Models
     {
         public string Name { get; set; } = AppResources.DefaultIntervalName; // ex: "Sprint", "Récupération", "Effort"
         public double TargetSpeed { get; set; } = 10.0; // km/h
+        public string PaceFormattedString { get; set; } = "0:00 min/km";
         public double TargetIncline { get; set; } = 1.0; // %
         //public int DurationSeconds { get; set; } = 60; // Durée en secondes
         private double _durationSeconds = 60.0;
