@@ -245,6 +245,16 @@
               Recherche une chaîne localisée semblable à Application language:.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Min_Km">
+            <summary>
+              Recherche une chaîne localisée semblable à min/km.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Pace">
+            <summary>
+              Recherche une chaîne localisée semblable à Pace.
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Restantes">
             <summary>
               Recherche une chaîne localisée semblable à remaining.

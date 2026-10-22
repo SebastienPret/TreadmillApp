@@ -249,115 +249,126 @@ namespace TreadmillApp.Services
             bool IsPaused = false; // pause pas implementée dans cette version, mais peut être ajoutée avec un bouton de pause dans l'UI
             await StartAsync();
             IntervalStatusChanged?.Invoke(this, AppResources.IntervalStatus_Starting_Workout); // Démarrage de l'entraînement...
-            // waiting for the treadmill to be ready (optional, depending on treadmill behavior)
-            // retrieve the current state of the treadmill and wait until it is ready to accept commands
-            while (_hasStartedReported == true || !Debugger.IsAttached)
+                                                                                               // waiting for the treadmill to be ready (optional, depending on treadmill behavior)
+                                                                                               // retrieve the current state of the treadmill and wait until it is ready to accept commands
+
+            // 1. Check if the treadmill is already moving
+            while (!_hasStartedReported && !_workoutCancellationToken.Token.IsCancellationRequested)
             {
+                Debug.WriteLine("Waiting for the user to start the treadmill...");
                 await Task.Delay(500, _workoutCancellationToken.Token);
             }
+
+            Debug.WriteLine("Treadmill is running! Starting workout plan...");
+
+            while (_hasStartedReported == true || !Debugger.IsAttached)
+            {
+                // await Task.Delay(500, _workoutCancellationToken.Token);
+            
 #if DEBUG
-            Debug.WriteLine("Treadmill is not ready yet. Waiting for it to be ready...");
-            await Task.Delay(5000, _workoutCancellationToken.Token); // simulate a delay for treadmill readiness in debug mode
-            Debug.WriteLine("Treadmill is ready for workout plan execution.");
+                Debug.WriteLine("Treadmill is not ready yet. Waiting for it to be ready...");
+                await Task.Delay(5000, _workoutCancellationToken.Token); // simulate a delay for treadmill readiness in debug mode
+                Debug.WriteLine("Treadmill is ready for workout plan execution.");
             
 #endif
-            // set a 1km/h speed limit for safety and wait 5 seconds before starting the interval
-            //await SetSpeedAsync(1);
-            //await Task.Delay(5000, _workoutCancellationToken.Token);
+                // set a 1km/h speed limit for safety and wait 5 seconds before starting the interval
+                //await SetSpeedAsync(1);
+                //await Task.Delay(5000, _workoutCancellationToken.Token);
 
-            try
-            {
-                // activer les alertes sonores si activées dans les paramètres
-                if (AppSettingsService.Instance.EnableAudioAlerts == true)
+                try
                 {
-                   await PlayBeepSoundAsync();
-                }
-
-                foreach (var interval in plan.Intervals)
-                {
-                    
-
-                    if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-
-                    // 5. Exécuter l'intervalle avec un compte à rebours de 5 secondes avant le début
-                    RunIntervalAsync(interval, _workoutCancellationToken.Token);
-
-                    
-                    
-                    // 1. COMPTE À REBOURS DE 5s (Si activé dans les Paramètres)
-                    if (AppSettingsService.Instance.EnableCountdown)
+                    // activer les alertes sonores si activées dans les paramètres
+                    if (AppSettingsService.Instance.EnableAudioAlerts == true)
                     {
-                        
-                        // Optionnel : Mettre une vitesse de préparation douce ou garder le tapis stable
-                        for (int countdown = 4; countdown > 0; countdown--)
-                        {
-                            if (_workoutCancellationToken.Token.IsCancellationRequested) break;
+                       await PlayBeepSoundAsync();
+                    }
 
-                            // Gérer la pause manuelle pendant le compte à rebours
-                            while (IsPaused)
+                    foreach (var interval in plan.Intervals)
+                    {
+                    
+
+                        if (_workoutCancellationToken.Token.IsCancellationRequested) break;
+
+                        // 5. Exécuter l'intervalle avec un compte à rebours de 5 secondes avant le début
+                        RunIntervalAsync(interval, _workoutCancellationToken.Token);
+
+                    
+                    
+                        // 1. COMPTE À REBOURS DE 5s (Si activé dans les Paramètres)
+                        if (AppSettingsService.Instance.EnableCountdown)
+                        {
+                        
+                            // Optionnel : Mettre une vitesse de préparation douce ou garder le tapis stable
+                            for (int countdown = 4; countdown > 0; countdown--)
                             {
                                 if (_workoutCancellationToken.Token.IsCancellationRequested) break;
+
+                                // Gérer la pause manuelle pendant le compte à rebours
+                                while (IsPaused)
+                                {
+                                    if (_workoutCancellationToken.Token.IsCancellationRequested) break;
+                                    await Task.Delay(1000, _workoutCancellationToken.Token);
+                                }
+
+                                // Joue un bip à chaque seconde du décompte (ou un bip plus grave/aigu sur la dernière seconde)
+                                // await PlayBeepSoundAsync();
+
+                                // Notifie l'UI du compte à rebours (ex: "Prêt pour [Nom] dans 5s...")
+                                IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Ready_For} [{interval.Name}] {AppResources.Txt_In} {countdown}s..."); // Prêt pour [{interval.Name}] dans {countdown}s...
                                 await Task.Delay(1000, _workoutCancellationToken.Token);
                             }
-
-                            // Joue un bip à chaque seconde du décompte (ou un bip plus grave/aigu sur la dernière seconde)
-                            // await PlayBeepSoundAsync();
-
-                            // Notifie l'UI du compte à rebours (ex: "Prêt pour [Nom] dans 5s...")
-                            IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Ready_For} [{interval.Name}] {AppResources.Txt_In} {countdown}s..."); // Prêt pour [{interval.Name}] dans {countdown}s...
-                            await Task.Delay(1000, _workoutCancellationToken.Token);
                         }
-                    }
 
-                    if (_workoutCancellationToken.Token.IsCancellationRequested) break;
+                        if (_workoutCancellationToken.Token.IsCancellationRequested) break;
 
-                    // 2. Envoyer les consignes de l'intervalle (Vitesse & Inclinaison)
-                    await SetSpeedAsync(interval.TargetSpeed);
-                    await SetInclineAsync(interval.TargetIncline);
+                        // 2. Envoyer les consignes de l'intervalle (Vitesse & Inclinaison)
+                        await SetSpeedAsync(interval.TargetSpeed);
+                        await SetInclineAsync(interval.TargetIncline);
 
-                    // 3. Exécution de l'intervalle (Effort)
-                    //await PlayBeepSoundAsync(); // Ou lors du passage à la phase d'effort / de pause :
-                    IntervalStatusChanged?.Invoke(this, $"{AppResources.IntervalStatus_Starting} : {interval.Name}"); //Phase
+                        // 3. Exécution de l'intervalle (Effort)
+                        //await PlayBeepSoundAsync(); // Ou lors du passage à la phase d'effort / de pause :
+                        IntervalStatusChanged?.Invoke(this, $"{AppResources.IntervalStatus_Starting} : {interval.Name}"); //Phase
 
-                    for (double remaining = interval.DurationSeconds; remaining > 0; remaining--)
-                    {
-                        while (IsPaused)
+                        for (double remaining = interval.DurationSeconds; remaining > 0; remaining--)
                         {
-                            if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-                            await Task.Delay(500, _workoutCancellationToken.Token);
-                        }
-                        onProgress(interval.Name, Convert.ToInt32(remaining));
-                        await Task.Delay(1000, _workoutCancellationToken.Token);
-                    }
-
-                    // 4. PAUSE AUTOMATIQUE (Si activée pour cet intervalle)
-                    if (interval.EnableRest && interval.RestSecondsAfter > 0)
-                    {
-                        await SetSpeedAsync(4.0); // Vitesse lente de récupération
-                        await SetInclineAsync(0);
-
-                        for (int restRemaining = interval.RestSecondsAfter; restRemaining > 0; restRemaining--)
-                        {
-                            if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-
                             while (IsPaused)
                             {
                                 if (_workoutCancellationToken.Token.IsCancellationRequested) break;
                                 await Task.Delay(500, _workoutCancellationToken.Token);
                             }
-
-                            IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Rest_Pause} : {restRemaining}s"); // Pause automatique
+                            onProgress(interval.Name, Convert.ToInt32(remaining));
                             await Task.Delay(1000, _workoutCancellationToken.Token);
+                        }
+
+                        // 4. PAUSE AUTOMATIQUE (Si activée pour cet intervalle)
+                        if (interval.EnableRest && interval.RestSecondsAfter > 0)
+                        {
+                            await SetSpeedAsync(4.0); // Vitesse lente de récupération
+                            await SetInclineAsync(0);
+
+                            for (int restRemaining = interval.RestSecondsAfter; restRemaining > 0; restRemaining--)
+                            {
+                                if (_workoutCancellationToken.Token.IsCancellationRequested) break;
+
+                                while (IsPaused)
+                                {
+                                    if (_workoutCancellationToken.Token.IsCancellationRequested) break;
+                                    await Task.Delay(500, _workoutCancellationToken.Token);
+                                }
+
+                                IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Rest_Pause} : {restRemaining}s"); // Pause automatique
+                                await Task.Delay(1000, _workoutCancellationToken.Token);
+                            }
                         }
                     }
                 }
-            }
-            catch (TaskCanceledException) { }
-            finally
-            {
-                IsPaused = false;
-                await StopAsync();
-                IntervalStatusChanged?.Invoke(this, AppResources.IntervalStatus_Completed); // Entraînement terminé !
+                catch (TaskCanceledException) { }
+                finally
+                {
+                    IsPaused = false;
+                    await StopAsync();
+                    IntervalStatusChanged?.Invoke(this, AppResources.IntervalStatus_Completed); // Entraînement terminé !
+                }
             }
         }
 
@@ -419,5 +430,7 @@ namespace TreadmillApp.Services
             }
             return "0:00";
         }
+
+        
     }
 }
