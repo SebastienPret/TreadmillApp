@@ -4,40 +4,40 @@
        xmlns:views="clr-namespace:TreadmillApp.Views"
        xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
        x:Class="TreadmillApp.AppShell"
-       Shell.FlyoutBehavior="Disabled">
+       Shell.FlyoutBehavior="Flyout">
 
     <!-- Barre d'onglets principale en bas (ou en haut selon la plateforme) -->
-    <TabBar>
+    <!-- <TabBar> -->
         <!-- Onglet 1 : Le Tableau de bord / Contrôle -->
         <!-- Tapis -->
-        <Tab Title="{x:Static resources:AppResources.Tab_Dashboard}">
+        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Dashboard}">
             <!-- Contrôle -->
             <ShellContent x:Name="DashboardPageContent"
                           Title="{x:Static resources:AppResources.Ttl_Dashboard}"
                           ContentTemplate="{DataTemplate views:DashboardPage}"
                           Route="DashboardPage" />
-        </Tab>
+        </FlyoutItem>
 
         <!-- Onglet 2 : Mes Entraînements (Sauvegardés) -->
-        <Tab Title="{x:Static resources:AppResources.Tab_Saved_Workouts}">
+        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Saved_Workouts}">
             <ShellContent Title="{x:Static resources:AppResources.Ttl_Saved_Workouts}"
                           ContentTemplate="{DataTemplate views:SavedWorkoutsPage}"
                           Route="SavedWorkoutsPage" />
-        </Tab>
+        </FlyoutItem>
         
         <!-- Onglet 3 : Le Créateur d'intervalles -->
-        <Tab Title="{x:Static resources:AppResources.Tab_Intervals}">
+        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Intervals}">
             <ShellContent Title="{x:Static resources:AppResources.Ttl_Intervals}"
                           ContentTemplate="{DataTemplate views:IntervalsPage}"
                           Route="IntervalsPage" />
-        </Tab>
+        </FlyoutItem>
         
         <!-- Onglet 4 : Paramètres -->
-        <Tab Title="{x:Static resources:AppResources.Tab_Settings}">
+        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Settings}">
             <ShellContent Title="{x:Static resources:AppResources.Ttl_Settings}"
                           ContentTemplate="{DataTemplate views:SettingsPage}"
                           Route="SettingsPage" />
-        </Tab>
-    </TabBar>
+        </FlyoutItem>
+    <!-- </TabBar> -->
 
 </Shell>

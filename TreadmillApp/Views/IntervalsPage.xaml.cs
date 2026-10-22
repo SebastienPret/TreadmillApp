@@ -9,7 +9,7 @@ namespace TreadmillApp.Views
     public partial class IntervalsPage : ContentPage
     {
         public static WorkoutPlan CurrentPlan { get; set; } = new();
-
+        
         public IntervalsPage()
         {
             InitializeComponent();
@@ -34,6 +34,7 @@ namespace TreadmillApp.Views
                 {
                     Name = string.IsNullOrWhiteSpace(TxtName.Text) ? AppResources.DefaultIntervalName : TxtName.Text, //Effort
                     TargetSpeed = speed,
+                    PaceFormattedString = PaceFormatted,
                     TargetIncline = double.Parse(LblIncline.Text),
                     DurationSeconds = duration
                 };
@@ -154,8 +155,11 @@ namespace TreadmillApp.Views
 
         private void LblSpeed_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            LblPace.Text = PaceFormatted; // Update the pace label whenever speed changes
-
+            if (sender is Entry entry && entry.BindingContext is Models.WorkoutInterval interval)
+            {
+                interval.PaceFormattedString = PaceFormatted; // Update the static property whenever speed changes
+                LblPace.Text = interval.PaceFormattedString; // Update the pace label whenever speed changes
+            }
 
         }
 

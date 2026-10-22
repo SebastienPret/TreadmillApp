@@ -230,7 +230,7 @@
     <value>Vide</value>
   </data>
   <data name="Alert_NoIntervalsMessage" xml:space="preserve">
-    <value>Aucun intervalle configuré. Allez dans l'onglet Intervalles.</value>
+    <value>Aucun intervalle configuré. Sélectionner ou créer un nouveau plan.</value>
   </data>
   <data name="Lbl_Restantes" xml:space="preserve">
     <value>restantes</value>
@@ -372,5 +372,14 @@
   </data>
   <data name="Lbl_Pace" xml:space="preserve">
     <value>Rythme</value>
+  </data>
+  <data name="Txt_Connection_Title_Pogress" xml:space="preserve">
+    <value>Connexion .....</value>
+  </data>
+  <data name="Txt_Connection_Pogress" xml:space="preserve">
+    <value>Connexion au tapis en cours...</value>
+  </data>
+  <data name="Btn_Disconnect" xml:space="preserve">
+    <value>⚠️ Tapis de course déconnecté</value>
   </data>
 </root>

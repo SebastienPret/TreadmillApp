@@ -22,7 +22,7 @@
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Alert_NoIntervalsMessage">
             <summary>
-              Recherche une chaîne localisée semblable à No intervals configured. Go to the Intervals tab..
+              Recherche une chaîne localisée semblable à No intervals configured. Select or create a new plan..
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Alert_NoIntervalsTitle">
@@ -43,6 +43,11 @@
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Connect">
             <summary>
               Recherche une chaîne localisée semblable à Connected Mat ✅.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Disconnect">
+            <summary>
+              Recherche une chaîne localisée semblable à ⚠️ Treadmill disconnected.
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Reset_Data">
@@ -380,9 +385,19 @@
               Recherche une chaîne localisée semblable à Unable to connect to this device..
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Connection_Pogress">
+            <summary>
+              Recherche une chaîne localisée semblable à Connecting to the mat....
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Connection_Success">
             <summary>
               Recherche une chaîne localisée semblable à Successfully connected to the Treadmill!.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Connection_Title_Pogress">
+            <summary>
+              Recherche une chaîne localisée semblable à Connecting ......
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Create_New_Workout">

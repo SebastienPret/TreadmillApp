@@ -11,6 +11,9 @@ namespace TreadmillApp.Views
         public DashboardPage()
         {
             InitializeComponent();
+            HorizontalStackLayoutManualControlsSpeed.IsEnabled = false;
+            HorizontalStackLayoutManualControlsIncline.IsEnabled = false;
+            GridStartStop.IsEnabled = false;
 
             Treadmill.PropertyChanged += (s, e) =>
             {
@@ -33,8 +36,19 @@ namespace TreadmillApp.Views
                     LblDeviceStatus.Text = status;
                     if (Treadmill.IsConnected)
                     {
+                        HorizontalStackLayoutManualControlsSpeed.IsEnabled = true;
+                        HorizontalStackLayoutManualControlsIncline.IsEnabled = true;
+                        GridStartStop.IsEnabled = true;
                         BtnConnect.Text = AppResources.Btn_Connect; // Tapis Connecté ✅
                         BtnConnect.BackgroundColor = Colors.Green;
+                    }
+                    else
+                    {
+                        HorizontalStackLayoutManualControlsSpeed.IsEnabled = false;
+                        HorizontalStackLayoutManualControlsIncline.IsEnabled = false;
+                        GridStartStop.IsEnabled = false;
+                        BtnConnect.Text = AppResources.Btn_Disconnect; // ⚠️ Tapis de course déconnecté
+                        BtnConnect.BackgroundColor = Colors.Red;
                     }
                 });
             };
@@ -56,8 +70,10 @@ namespace TreadmillApp.Views
             var plan = IntervalsPage.CurrentPlan;
             if (plan.Intervals.Count == 0)
             {
-                await DisplayAlertAsync(AppResources.Alert_NoIntervalsTitle, AppResources.Alert_NoIntervalsMessage, AppResources.Txt_OK); //"Vide", "Aucun intervalle configuré. Allez dans l'onglet Intervalles.", "OK"
-                return;
+                await DisplayAlertAsync(AppResources.Alert_NoIntervalsTitle, AppResources.Alert_NoIntervalsMessage, AppResources.Txt_OK); //"Vide", "Aucun intervalle configuré. Sélectionner ou créer un nouveau plan.", "OK"
+                // got to IntervalsPage
+                await Navigation.PushAsync(new SavedWorkoutsPage());
+                //return;
             }
 
             _ = Task.Run(async () =>

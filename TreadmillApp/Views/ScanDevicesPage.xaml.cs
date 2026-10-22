@@ -23,6 +23,8 @@ namespace TreadmillApp.Views
             if (e.CurrentSelection.FirstOrDefault() is IDevice selectedDevice)
             {
                 Loader.IsRunning = true;
+                // Show a message to the user indicating that the connection is in progress
+                _ = DisplayAlertAsync(AppResources.Txt_Connection_Title_Pogress, AppResources.Txt_Connection_Pogress, AppResources.Txt_Cancel); //"Connexion...", "Connexion au tapis en cours.....", "Cancel"
                 bool success = await DashboardPage.Treadmill.ConnectToDeviceAsync(selectedDevice);
                 Loader.IsRunning = false;
 

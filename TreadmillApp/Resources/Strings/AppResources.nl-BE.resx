@@ -230,7 +230,7 @@
     <value>Leeg</value>
   </data>
   <data name="Alert_NoIntervalsMessage" xml:space="preserve">
-    <value>Er is geen interval geconfigureerd. Ga naar het tabblad Intervallen.</value>
+    <value>Er is geen interval geconfigureerd. Selecteer of maak een nieuw plan aan.</value>
   </data>
   <data name="Lbl_Restantes" xml:space="preserve">
     <value>overig</value>
@@ -372,5 +372,14 @@
   </data>
   <data name="Lbl_Pace" xml:space="preserve">
     <value>Tempo</value>
+  </data>
+  <data name="Txt_Connection_Title_Pogress" xml:space="preserve">
+    <value>Verbinding .....</value>
+  </data>
+  <data name="Txt_Connection_Pogress" xml:space="preserve">
+    <value>Verbinding met de mat...</value>
+  </data>
+  <data name="Btn_Disconnect" xml:space="preserve">
+    <value>⚠️ Loopband losgekoppeld</value>
   </data>
 </root>

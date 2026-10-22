@@ -61,7 +61,7 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à No intervals configured. Go to the Intervals tab..
+        ///   Recherche une chaîne localisée semblable à No intervals configured. Select or create a new plan..
         /// </summary>
         public static string Alert_NoIntervalsMessage {
             get {
@@ -102,6 +102,15 @@ namespace TreadmillApp.Resources.Strings {
         public static string Btn_Connect {
             get {
                 return ResourceManager.GetString("Btn_Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ⚠️ Treadmill disconnected.
+        /// </summary>
+        public static string Btn_Disconnect {
+            get {
+                return ResourceManager.GetString("Btn_Disconnect", resourceCulture);
             }
         }
         
@@ -709,11 +718,29 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Connecting to the mat....
+        /// </summary>
+        public static string Txt_Connection_Pogress {
+            get {
+                return ResourceManager.GetString("Txt_Connection_Pogress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Successfully connected to the Treadmill!.
         /// </summary>
         public static string Txt_Connection_Success {
             get {
                 return ResourceManager.GetString("Txt_Connection_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Connecting ......
+        /// </summary>
+        public static string Txt_Connection_Title_Pogress {
+            get {
+                return ResourceManager.GetString("Txt_Connection_Title_Pogress", resourceCulture);
             }
         }
         
