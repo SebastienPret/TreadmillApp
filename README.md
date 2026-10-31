@@ -126,34 +126,21 @@ Installez le package suivant dans votre projet :
 
   
 
-+ Icon
-
-+ Language
-
-+ couleur
-
-+ ~~Recherhe tapis autre~~
-
-+ ~~bouton inclinaison dynamique~~
-
-+ selections d'intervale pour modification (rafrichissement)
-
-+ Connection avec MyWoosh
-
-+ Settings page reload page
-
-+ Issue with rounding in sec on interval page
-
-+ Show that the treadmill disconnected from the app/device
-
-+ ~~Not having the sound taking 5s between each interval~~
-
-+ ~~Add sound at the end of the training~~
-
-+ Upload own sound ? 
-
-+ having the launch button in the interval creator tab launch the mission and not just select it
-
-+ Having the possibility to edit the individual interval
-
-+ convert km/h to min/km
+ - [ ] Icon
+ - [ ] Language
+ - [ ] Color
+ - [x] ~~Recherhe tapis autre~~
+ - [x] ~~bouton inclinaison dynamique~~
+ - [ ] Selections d'intervale pour modification (rafrichissement)
+ - [ ] Connection avec MyWoosh
+ - [ ] Settings page reload page
+ - [ ] Issue  with  rounding  in  sec  on  interval  page
+ - [ ] Show that the treadmill disconnected from the app/device
+ - [x] ~~Not having the sound taking 5s between each interval~~
+ - [x] ~~Add sound at the end of the training~~
+ - [ ] Uploading own sound
+ - [ ] having the launch button in the interval creator tab launch the mission and not just select it
+ - [ ] Be able to modify an interval without deleting everithing that is after it
+ - [ ] Convert km/h to min/km
+ - [ ] Check permisssion android/IOS, befor scan
+ - [ ] Manage disconnecting status of the treadmill on the app when it goes off 

@@ -4,6 +4,36 @@
         <name>TreadmillApp</name>
     </assembly>
     <members>
+        <member name="T:TreadmillApp.Models.WorkoutInterval">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutInterval.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutInterval.TargetSpeed">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutInterval.TargetIncline">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutInterval.DurationSeconds">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutInterval.EnableRest">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutInterval.RestSecondsAfter">
+            <inheritdoc/>
+        </member>
+        <member name="T:TreadmillApp.Models.WorkoutPlan">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutPlan.Title">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutPlan.Intervals">
+            <inheritdoc/>
+        </member>
         <member name="T:TreadmillApp.Resources.Strings.AppResources">
             <summary>
               Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
@@ -495,11 +525,340 @@
               Recherche une chaîne localisée semblable à Yes, Reset.
             </summary>
         </member>
+        <member name="T:TreadmillApp.ViewModels.DashboardViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.DeviceStatus">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.CurrentSpeed">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.CurrentPace">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.CurrentIncline">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.StatusRun">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.IsConnected">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.ConnectButtonText">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.ConnectButtonBackgroundColor">
+            <inheritdoc/>
+        </member>
+        <member name="M:TreadmillApp.ViewModels.DashboardViewModel.OnCurrentSpeedChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.CurrentSpeed"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.CurrentSpeed"/> is changed.</remarks>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.openScanCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.OpenScanCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.OpenScanCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.OpenScan"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.decreaseSpeedCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.DecreaseSpeedCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.DecreaseSpeedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.DecreaseSpeed"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.increaseSpeedCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.IncreaseSpeedCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.IncreaseSpeedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.IncreaseSpeed"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.decreaseInclineCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.DecreaseInclineCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.DecreaseInclineCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.DecreaseIncline"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.increaseInclineCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.IncreaseInclineCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.IncreaseInclineCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.IncreaseIncline"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.startCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.StartCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.StartCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.Start"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.stopCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.StopCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.StopCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.Stop"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.DashboardViewModel.runPlanCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.RunPlanCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.RunPlanCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.DashboardViewModel.RunPlan"/>.</summary>
+        </member>
+        <member name="T:TreadmillApp.ViewModels.IntervalsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.PlanTitle">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.IntervalName">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.Speed">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.PaceFormatted">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.Incline">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.DurationMinutes">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.DurationSeconds">
+            <inheritdoc/>
+        </member>
+        <member name="M:TreadmillApp.ViewModels.IntervalsViewModel.OnSpeedChanged(System.Double)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.Speed"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.Speed"/> is changed.</remarks>
+        </member>
+        <member name="M:TreadmillApp.ViewModels.IntervalsViewModel.OnDurationMinutesChanged(System.Double)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.DurationMinutes"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.DurationMinutes"/> is changed.</remarks>
+        </member>
+        <member name="M:TreadmillApp.ViewModels.IntervalsViewModel.OnDurationSecondsChanged(System.Double)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.DurationSeconds"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.DurationSeconds"/> is changed.</remarks>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.addIntervalCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.AddIntervalCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.AddIntervalCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.AddInterval"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.deleteIntervalCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.DeleteIntervalCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.DeleteIntervalCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.DeleteInterval(TreadmillApp.Models.WorkoutInterval)"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.saveWorkoutCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.SaveWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.SaveWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.SaveWorkout"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.startWorkoutCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.StartWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.StartWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.StartWorkout"/>.</summary>
+        </member>
+        <member name="T:TreadmillApp.ViewModels.IntervalViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalViewModel.DurationSeconds">
+            <inheritdoc cref="F:TreadmillApp.ViewModels.IntervalViewModel._durationSeconds"/>
+        </member>
+        <member name="M:TreadmillApp.ViewModels.IntervalViewModel.OnDurationSecondsChanged(System.Double)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.IntervalViewModel.DurationSeconds"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.IntervalViewModel.DurationSeconds"/> is changed.</remarks>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.IntervalViewModel.startWorkoutCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalViewModel.StartWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalViewModel.StartWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalViewModel.StartWorkoutAsync"/>.</summary>
+        </member>
         <member name="T:TreadmillApp.Resource">
             <summary>
             Android Resource Designer class.
             Exposes the Android Resource designer assembly into the project Namespace.
             </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TargetSpeed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TargetSpeed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PaceFormatted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PaceFormatted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PaceFormattedString">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PaceFormattedString" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TargetIncline">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TargetIncline" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DurationSeconds">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DurationSeconds" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DurationMinutes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DurationMinutes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EnableRest">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EnableRest" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RestSecondsAfter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RestSecondsAfter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Intervals">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Intervals" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DeviceStatus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DeviceStatus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentSpeed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentSpeed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentPace">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentPace" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentIncline">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentIncline" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StatusRun">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StatusRun" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsConnected">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsConnected" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsNotConnected">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsNotConnected" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConnectButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConnectButtonText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConnectButtonBackgroundColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConnectButtonBackgroundColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PlanTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PlanTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IntervalName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IntervalName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Speed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Speed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Incline">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Incline" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TargetSpeed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TargetSpeed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PaceFormatted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PaceFormatted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PaceFormattedString">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PaceFormattedString" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TargetIncline">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TargetIncline" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DurationSeconds">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DurationSeconds" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DurationMinutes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DurationMinutes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EnableRest">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EnableRest" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RestSecondsAfter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RestSecondsAfter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Intervals">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Intervals" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DeviceStatus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DeviceStatus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentSpeed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentSpeed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentPace">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentPace" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentIncline">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentIncline" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StatusRun">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StatusRun" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsConnected">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsConnected" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotConnected">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotConnected" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConnectButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConnectButtonText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConnectButtonBackgroundColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConnectButtonBackgroundColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PlanTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PlanTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IntervalName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IntervalName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Speed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Speed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Incline">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Incline" generated properties.</summary>
         </member>
     </members>
 </doc>

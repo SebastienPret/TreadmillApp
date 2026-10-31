@@ -382,4 +382,7 @@
   <data name="Btn_Disconnect" xml:space="preserve">
     <value>⚠️ Loopband losgekoppeld</value>
   </data>
+  <data name="Error_Invalid_Interval" xml:space="preserve">
+    <value>Ongeldige duur</value>
+  </data>
 </root>

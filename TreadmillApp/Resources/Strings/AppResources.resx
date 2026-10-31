@@ -382,4 +382,7 @@
   <data name="Btn_Disconnect" xml:space="preserve">
     <value>⚠️ Treadmill disconnected</value>
   </data>
+  <data name="Error_Invalid_Interval" xml:space="preserve">
+    <value>Invalid duration</value>
+  </data>
 </root>

@@ -1,98 +1,64 @@
-using System.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 using TreadmillApp.Resources.Strings;
-using System.Runtime.CompilerServices;
-// Models/WorkoutInterval.cs
 
-namespace TreadmillApp.Models
+namespace TreadmillApp.Models;
+
+public partial class WorkoutInterval : ObservableObject
 {
-    public class WorkoutInterval : INotifyPropertyChanged
+    [ObservableProperty]
+    public partial string Name { get; set; } = AppResources.DefaultIntervalName;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(PaceFormatted))]
+    [NotifyPropertyChangedFor(nameof(PaceFormattedString))]
+    public partial double TargetSpeed { get; set; } = 10.0;
+
+    //public string PaceFormattedString => PaceFormatted;
+    [ObservableProperty]
+    public partial string PaceFormattedString { get; set; } = "0:00 min/km";
+
+    [ObservableProperty]
+    public partial double TargetIncline { get; set; } = 1.0;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(DurationMinutes))]
+    public partial double DurationSeconds { get; set; } = 60.0;
+
+    public double DurationMinutes
     {
-        public string Name { get; set; } = AppResources.DefaultIntervalName; // ex: "Sprint", "Récupération", "Effort"
-        public double TargetSpeed { get; set; } = 10.0; // km/h
-        public string PaceFormattedString { get; set; } = "0:00 min/km";
-        public double TargetIncline { get; set; } = 1.0; // %
-        //public int DurationSeconds { get; set; } = 60; // Durée en secondes
-        private double _durationSeconds = 60.0;
-        private double _durationMinutes = 1.0;
-        // 1er champ : La valeur en Secondes
-        public double DurationSeconds
+        get => Math.Round(DurationSeconds / 60.0, 2);
+        set
         {
-            get => _durationSeconds;
-            set
-            {
-                // Empêche les valeurs nulles, négatives ou égales à 0 (minimum 1 seconde)
-                double safeValue = (value <= 0) ? 1.0 : value;
-
-                if (Math.Abs(_durationSeconds - safeValue) > 0.001)
-                {
-                    _durationSeconds = safeValue;
-                    OnPropertyChanged(); // Notifie le 1er Entry
-                    OnPropertyChanged(nameof(DurationMinutes)); // Notifie le 2ème Entry (valeur / 60.0)
-                }
-            }
-        }
-
-        // 2ème champ : La valeur en Minutes (valeur du premier / 60.0)
-        public double DurationMinutes
-        {
-            get => Math.Round(_durationSeconds / 60.0, 2);
-            set
-            {
-                // Si l'utilisateur modifie directement les minutes, on recalcule les secondes
-                double newSeconds = value * 60.0;
-                double safeSeconds = Math.Max(1.0, newSeconds);
-                if (Math.Abs(_durationSeconds - safeSeconds) > 0.001)
-                {
-                    //_durationSeconds = safeSeconds;
-                    _durationSeconds = safeSeconds;
-                    OnPropertyChanged(nameof(DurationSeconds)); // Notifie le 1er Entry
-                    OnPropertyChanged(); // Notifie le 2ème Entry
-                }
-            }
-        }
-        //public double DurationMinutes { get; set; } = 1;
-
-        // Propriété intermédiaire pour l'affichage et la saisie en Minutes
-        /*public double DurationMinutes
-        {
-            get => Math.Round(DurationSeconds / 60.0, 2); // Convertit les secondes en minutes
-            set => DurationSeconds = (int)(value * 60); // Convertit les minutes saisies en secondes
-        }*/
-
-        // Propriétés pour la pause automatique
-        public bool EnableRest { get; set; } = false;
-        public int RestSecondsAfter { get; set; } = 10; // Durée de la pause si activée
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        // Propriété textuelle pour l'affichage de l'allure (ex: "4:30 min/km")
-        public string PaceFormatted
-        {
-            get
-            {
-                if (TargetSpeed <= 0) return "0:00 min/km";
-
-                // Calcul du temps en minutes pour 1 km
-                double totalMinutes = 60.0 / TargetSpeed;
-                int minutes = (int)totalMinutes;
-                int seconds = (int)((totalMinutes - minutes) * 60);
-
-                return $"{minutes}:{seconds:D2} min/km";
-            }
+            DurationSeconds = Math.Max(1.0, value * 60.0);
         }
     }
 
-    public class WorkoutPlan
-    {
-        public string Title { get; set; } = AppResources.DefaultWorkoutTitle; //"Mon Entraînement"
-        public List<WorkoutInterval> Intervals { get; set; } = new();
-            
-        }
-    
+    [ObservableProperty]
+    public partial bool EnableRest { get; set; }
 
+    [ObservableProperty]
+    public partial int RestSecondsAfter { get; set; } = 10;
+
+    public string PaceFormatted => TargetSpeed <= 0
+        ? "0:00 min/km"
+        : FormatPace(TargetSpeed);
+
+    private static string FormatPace(double speed)
+    {
+        double totalMinutes = 60.0 / speed;
+        int minutes = (int)totalMinutes;
+        int seconds = (int)((totalMinutes - minutes) * 60);
+
+        return $"{minutes}:{seconds:D2} min/km";
     }
+}
+
+public partial class WorkoutPlan : ObservableObject
+{
+    [ObservableProperty]
+    public partial string Title { get; set; } = AppResources.DefaultWorkoutTitle;
+
+    [ObservableProperty]
+    public partial ObservableCollection<WorkoutInterval> Intervals { get; set; } = [];
+}

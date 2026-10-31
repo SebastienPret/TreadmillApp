@@ -7,37 +7,43 @@
        Shell.FlyoutBehavior="Flyout">
 
     <!-- Barre d'onglets principale en bas (ou en haut selon la plateforme) -->
-    <!-- <TabBar> -->
-        <!-- Onglet 1 : Le Tableau de bord / Contrôle -->
-        <!-- Tapis -->
-        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Dashboard}">
-            <!-- Contrôle -->
-            <ShellContent x:Name="DashboardPageContent"
-                          Title="{x:Static resources:AppResources.Ttl_Dashboard}"
-                          ContentTemplate="{DataTemplate views:DashboardPage}"
-                          Route="DashboardPage" />
-        </FlyoutItem>
 
-        <!-- Onglet 2 : Mes Entraînements (Sauvegardés) -->
-        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Saved_Workouts}">
-            <ShellContent Title="{x:Static resources:AppResources.Ttl_Saved_Workouts}"
+    <!-- Optionnel : Vous pouvez personnaliser l'en-tête du menu burger ici si vous le souhaitez -->
+    <!-- <Shell.FlyoutHeader> ... </Shell.FlyoutHeader> -->
+    
+    <!-- Onglet 1 : Le Tableau de bord / Contrôle -->
+    <!-- Tapis -->
+    <FlyoutItem Title="{x:Static resources:AppResources.Tab_Dashboard}"
+            Icon="dashboard_icon.svg">
+    <!-- Contrôle -->
+        <ShellContent Title="{x:Static resources:AppResources.Ttl_Dashboard}"
+                    ContentTemplate="{DataTemplate views:DashboardPage}"
+                    Route="DashboardPage" />
+    </FlyoutItem>
+
+    <!-- Onglet 2 : Mes Entraînements (Sauvegardés) -->
+    <FlyoutItem Title="{x:Static resources:AppResources.Tab_Saved_Workouts}" 
+                Icon="workouts_icon.svg">
+        <ShellContent Title="{x:Static resources:AppResources.Ttl_Saved_Workouts}"
                           ContentTemplate="{DataTemplate views:SavedWorkoutsPage}"
                           Route="SavedWorkoutsPage" />
-        </FlyoutItem>
+    </FlyoutItem>
         
         <!-- Onglet 3 : Le Créateur d'intervalles -->
-        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Intervals}">
-            <ShellContent Title="{x:Static resources:AppResources.Ttl_Intervals}"
-                          ContentTemplate="{DataTemplate views:IntervalsPage}"
-                          Route="IntervalsPage" />
-        </FlyoutItem>
+    <FlyoutItem Title="{x:Static resources:AppResources.Tab_Intervals}"
+                Icon="intervals_icon.png">
+        <ShellContent Title="{x:Static resources:AppResources.Ttl_Intervals}"
+                        ContentTemplate="{DataTemplate views:IntervalsPage}"
+                        Route="IntervalsPage" />
+    </FlyoutItem>
         
-        <!-- Onglet 4 : Paramètres -->
-        <FlyoutItem Title="{x:Static resources:AppResources.Tab_Settings}">
-            <ShellContent Title="{x:Static resources:AppResources.Ttl_Settings}"
-                          ContentTemplate="{DataTemplate views:SettingsPage}"
-                          Route="SettingsPage" />
-        </FlyoutItem>
-    <!-- </TabBar> -->
+    <!-- Onglet 4 : Paramètres -->
+    <FlyoutItem Title="{x:Static resources:AppResources.Tab_Settings}"
+                Icon="settings_icon.png">
+        <ShellContent Title="{x:Static resources:AppResources.Ttl_Settings}"
+                        ContentTemplate="{DataTemplate views:SettingsPage}"
+                        Route="SettingsPage" />
+    </FlyoutItem>
+    
 
 </Shell>

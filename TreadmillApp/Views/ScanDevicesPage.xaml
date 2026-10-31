@@ -1,21 +1,34 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
+             xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
+             xmlns:ble="clr-namespace:Plugin.BLE.Abstractions.Contracts;assembly=Plugin.BLE.Abstractions"
              x:Class="TreadmillApp.Views.ScanDevicesPage"
              Title="Recherche de Tapis"
              BackgroundColor="#121212">
 
+    <ContentPage.BindingContext>
+        <viewmodels:ScanDevicesViewModel />
+    </ContentPage.BindingContext>
+
     <VerticalStackLayout Spacing="15" Padding="20">
         <!-- 🔍 Lancer le Scan FTMS -->
-        <Button Text="{x:Static resources:AppResources.Txt_Start_Scan}" Clicked="OnScanClicked" BackgroundColor="#2196F3" TextColor="White"/>
-        <ActivityIndicator x:Name="Loader" IsRunning="False" Color="Cyan"/>
+        <Button Text="{x:Static resources:AppResources.Txt_Start_Scan}" 
+                Command="{Binding StartScanCommand}" 
+                BackgroundColor="#2196F3" TextColor="White"/>
+
+        <ActivityIndicator IsRunning="{Binding IsScanning}" Color="Cyan"/>
 
         <!-- Tapis détectés : -->
         <Label Text="{x:Static resources:AppResources.Txt_Detected_Treadmills}" TextColor="White" FontSize="16"/>
 
-        <CollectionView x:Name="CvDevices" SelectionMode="Single" SelectionChanged="OnDeviceSelected" HeightRequest="400">
+        <CollectionView x:Name="CvDevices" 
+                        ItemsSource="{Binding DiscoveredDevices}" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OnDeviceSelected" 
+                        HeightRequest="400">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="ble:IDevice">
                     <VerticalStackLayout Padding="10" Spacing="2">
                         <Label Text="{Binding Name}" FontSize="18" TextColor="Yellow" FontAttributes="Bold"/>
                         <Label Text="{Binding Id, StringFormat='ID: {0}'}" FontSize="12" TextColor="Gray"/>

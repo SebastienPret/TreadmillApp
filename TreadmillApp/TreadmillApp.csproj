@@ -66,14 +66,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.110" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.13" />
+	  <MauiImage Remove="Resources\Images\dashboard_icon.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.120" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.14" />
 		<PackageReference Include="Plugin.BLE" Version="3.2.1" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Models\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Include="Resources\Images\dashboard_icon.svg" />
 	</ItemGroup>
 
 	<ItemGroup>

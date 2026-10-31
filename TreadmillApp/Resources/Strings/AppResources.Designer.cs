@@ -241,6 +241,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Invalid duration.
+        /// </summary>
+        public static string Error_Invalid_Interval {
+            get {
+                return ResourceManager.GetString("Error_Invalid_Interval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cool Down.
         /// </summary>
         public static string Interval_CoolDown {

@@ -712,16 +712,20 @@ namespace TreadmillApp.TreadmillApp_XamlTypeInfo
             var that = (global::Microsoft.Maui.MauiWinUIApplication)instance;
             return that.LaunchActivatedEventArgs;
         }
+#pragma warning disable 0618  //   Warning on Deprecated usage
         private object get_1_MauiWinUIApplication_Services(object instance)
         {
             var that = (global::Microsoft.Maui.MauiWinUIApplication)instance;
             return that.Services;
         }
+#pragma warning restore 0618
+#pragma warning disable 0618  //   Warning on Deprecated usage
         private object get_2_MauiWinUIApplication_Application(object instance)
         {
             var that = (global::Microsoft.Maui.MauiWinUIApplication)instance;
             return that.Application;
         }
+#pragma warning restore 0618
         private object get_3_MauiNavigationView_NavigationViewBackButtonMargin(object instance)
         {
             var that = (global::Microsoft.Maui.Platform.MauiNavigationView)instance;
