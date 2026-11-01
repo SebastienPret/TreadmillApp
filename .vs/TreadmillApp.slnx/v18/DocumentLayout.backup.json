@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\Code\\TreadmillApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\viewmodels\\scandevicesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\viewmodels\\scandevicesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\services\\treadmillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\services\\treadmillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,25 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ScanDevicesViewModel.cs",
-              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\ScanDevicesViewModel.cs",
-              "RelativeDocumentMoniker": "TreadmillApp\\ViewModels\\ScanDevicesViewModel.cs",
-              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\ScanDevicesViewModel.cs",
-              "RelativeToolTip": "TreadmillApp\\ViewModels\\ScanDevicesViewModel.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowBoAAAA7AAAAAAAAAA==",
+              "Title": "TreadmillService.cs",
+              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Services\\TreadmillService.cs",
+              "RelativeDocumentMoniker": "TreadmillApp\\Services\\TreadmillService.cs",
+              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Services\\TreadmillService.cs",
+              "RelativeToolTip": "TreadmillApp\\Services\\TreadmillService.cs",
+              "ViewState": "AgIAABcBAAAAAAAAAAD4v34BAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T15:36:30.152Z",
+              "WhenOpened": "2026-11-01T15:50:28.53Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 219,
-          "SelectedChildIndex": -1,
-          "Children": [
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{79664857-03bf-4bca-aa54-ec998b3328f8}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "TreadmillApp\\ViewModels\\DashboardViewModel.cs",
+              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\DashboardViewModel.cs",
+              "RelativeToolTip": "TreadmillApp\\ViewModels\\DashboardViewModel.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwCUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T15:49:00.123Z",
+              "EditorCaption": ""
             }
           ]
         }

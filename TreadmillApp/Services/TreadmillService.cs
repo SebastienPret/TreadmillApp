@@ -169,6 +169,7 @@ namespace TreadmillApp.Services
         public async Task StartAsync()
         {
             IsRunning = true;
+            SetKeepScreenOn(true);
             if (_controlPointCharacteristic != null)
             {
                 await _controlPointCharacteristic.WriteAsync(new byte[] { 0x00 });
@@ -180,6 +181,7 @@ namespace TreadmillApp.Services
         public async Task StopAsync()
         {
             IsRunning = false;
+            SetKeepScreenOn(false);
             _workoutCancellationToken?.Cancel();
             CurrentSpeed = 0;
 
@@ -188,6 +190,19 @@ namespace TreadmillApp.Services
                 await _controlPointCharacteristic.WriteAsync(new byte[] { 0x08, 0x01 });
             }
             await Task.CompletedTask;
+        }
+
+        private static void SetKeepScreenOn(bool keepOn)
+        {
+            try
+            {
+                if (DeviceDisplay.Current.KeepScreenOn != keepOn)
+                    DeviceDisplay.Current.KeepScreenOn = keepOn;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"KeepScreenOn failed: {ex.Message}");
+            }
         }
 
         public async Task SetSpeedAsync(double speedKmH)
@@ -248,6 +263,7 @@ namespace TreadmillApp.Services
             _workoutCancellationToken = new CancellationTokenSource();
             bool IsPaused = false; // pause pas implementée dans cette version, mais peut être ajoutée avec un bouton de pause dans l'UI
             await StartAsync();
+
             IntervalStatusChanged?.Invoke(this, AppResources.IntervalStatus_Starting_Workout + " [" + plan.Title + "]"); // Démarrage de l'entraînement...
                                                                                                // waiting for the treadmill to be ready (optional, depending on treadmill behavior)
                                                                                                // retrieve the current state of the treadmill and wait until it is ready to accept commands

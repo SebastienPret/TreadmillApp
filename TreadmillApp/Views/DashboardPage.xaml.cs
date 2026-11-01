@@ -10,5 +10,12 @@ namespace TreadmillApp.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            // Only if you don't want the screen to stay on when navigating away
+            //DeviceDisplay.Current.KeepScreenOn = false;
+        }
     }
 }

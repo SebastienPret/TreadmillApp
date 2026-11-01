@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Plugin.BLE.Abstractions;
+using System.Diagnostics;
 using TreadmillApp.Models;
 using TreadmillApp.Resources.Strings;
 using TreadmillApp.Services;
@@ -34,6 +35,7 @@ namespace TreadmillApp.ViewModels
         [ObservableProperty]
         public partial Color ConnectButtonBackgroundColor { get; set; } = Color.FromArgb("#2196F3");
 
+        
 
         // Les commandes s'écrivent aussi plus proprement avec l'attribut [RelayCommand]
         public DashboardViewModel()
