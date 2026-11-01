@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using TreadmillApp.Services;
 
 namespace TreadmillApp
 {
@@ -7,6 +8,8 @@ namespace TreadmillApp
         public App()
         {
             InitializeComponent();
+            ThemeService.Initialize();   // recharge le dernier style choisi
+
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "E:\\Code\\TreadmillApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\services\\treadmillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\services\\treadmillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\views\\savedworkoutspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\savedworkoutspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\views\\scandevicespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\scandevicespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,33 +25,80 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 181,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 223,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TreadmillService.cs",
-              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Services\\TreadmillService.cs",
-              "RelativeDocumentMoniker": "TreadmillApp\\Services\\TreadmillService.cs",
-              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Services\\TreadmillService.cs",
-              "RelativeToolTip": "TreadmillApp\\Services\\TreadmillService.cs",
-              "ViewState": "AgIAABcBAAAAAAAAAAD4v34BAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T15:50:28.53Z",
+              "Title": "SettingsPage.xaml",
+              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\SettingsPage.xaml",
+              "RelativeDocumentMoniker": "TreadmillApp\\Views\\SettingsPage.xaml",
+              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\SettingsPage.xaml*",
+              "RelativeToolTip": "TreadmillApp\\Views\\SettingsPage.xaml*",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-01T16:38:41.948Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ScanDevicesPage.xaml",
+              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\ScanDevicesPage.xaml",
+              "RelativeDocumentMoniker": "TreadmillApp\\Views\\ScanDevicesPage.xaml",
+              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\ScanDevicesPage.xaml",
+              "RelativeToolTip": "TreadmillApp\\Views\\ScanDevicesPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-01T16:37:23.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SavedWorkoutsPage.xaml",
+              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\SavedWorkoutsPage.xaml",
+              "RelativeDocumentMoniker": "TreadmillApp\\Views\\SavedWorkoutsPage.xaml",
+              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\SavedWorkoutsPage.xaml",
+              "RelativeToolTip": "TreadmillApp\\Views\\SavedWorkoutsPage.xaml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-01T16:35:01.572Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "a6acfd5c-db0f-42e6-bb93-c6a8bdbc4504",
+        "Display": 1,
+        "X": 283,
+        "Y": 89,
+        "Width": 1623,
+        "Height": 690,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DashboardViewModel.cs",
-              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\DashboardViewModel.cs",
-              "RelativeDocumentMoniker": "TreadmillApp\\ViewModels\\DashboardViewModel.cs",
-              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\DashboardViewModel.cs",
-              "RelativeToolTip": "TreadmillApp\\ViewModels\\DashboardViewModel.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAuwCUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T15:49:00.123Z",
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Resources\\Styles\\Styles.xaml",
+              "RelativeDocumentMoniker": "TreadmillApp\\Resources\\Styles\\Styles.xaml",
+              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Resources\\Styles\\Styles.xaml*",
+              "RelativeToolTip": "TreadmillApp\\Resources\\Styles\\Styles.xaml*",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAnwFoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-01T16:25:22.551Z",
               "EditorCaption": ""
             }
           ]

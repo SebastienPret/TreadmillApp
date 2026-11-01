@@ -373,7 +373,7 @@
   <data name="Lbl_Pace" xml:space="preserve">
     <value>Rythme</value>
   </data>
-  <data name="Txt_Connection_Title_Pogress" xml:space="preserve">
+  <data name="Connection" xml:space="preserve">
     <value>Connexion .....</value>
   </data>
   <data name="Txt_Connection_Pogress" xml:space="preserve">
@@ -402,5 +402,11 @@
   </data>
   <data name="Txt_Permission_Ble_Message" xml:space="preserve">
     <value>L'application ne peut pas accéder au Bluetooth, veuillez l'activer dans les paramètres pour utiliser cette application.</value>
+  </data>
+  <data name="Lbl_Theme" xml:space="preserve">
+    <value>Sélectionner votre thème</value>
+  </data>
+  <data name="Lbl_Theme_Dark" xml:space="preserve">
+    <value>Dark thème</value>
   </data>
 </root>

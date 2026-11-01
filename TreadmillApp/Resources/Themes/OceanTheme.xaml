@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="TreadmillApp.Resources.Themes.OceanTheme">
+
+    <!-- Thème OCÉAN : bleu nuit avec accent ambre -->
+
+    <Color x:Key="PageBackground">#0B1B2B</Color>
+    <Color x:Key="SurfaceColor">#12304A</Color>
+    <Color x:Key="SurfaceAlt">#1B4263</Color>
+    <Color x:Key="DividerColor">#2C5F86</Color>
+
+    <Color x:Key="TextPrimary">#EAF6FF</Color>
+    <Color x:Key="TextSecondary">#8FB3CC</Color>
+
+    <Color x:Key="AccentColor">#FFB300</Color>
+    <Color x:Key="AccentTextColor">#0B1B2B</Color>
+    <Color x:Key="HighlightColor">#4DD0E1</Color>
+    <Color x:Key="WarningColor">#FFD54F</Color>
+    <Color x:Key="SuccessColor">#26A69A</Color>
+    <Color x:Key="InfoColor">#3F8EFC</Color>
+    <Color x:Key="DangerColor">#FF6B6B</Color>
+    <Color x:Key="NeutralButton">#3B5F7D</Color>
+</ResourceDictionary>

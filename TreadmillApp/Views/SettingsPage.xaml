@@ -3,8 +3,7 @@
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
              x:Class="TreadmillApp.Views.SettingsPage"
-             Title="Paramètres"
-             BackgroundColor="#121212">
+             Title="Paramètres">
 
     <ContentPage.BindingContext>
         <viewmodels:SettingsViewModel />
@@ -14,15 +13,15 @@
         <VerticalStackLayout Spacing="25" Padding="20">
 
             <!-- Section Langue -->
-            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" Padding="15">
+            <Border Style="{StaticResource CardBorder}" Padding="15">
                 <VerticalStackLayout Spacing="10">
-                    <Label Text="{x:Static resources:AppResources.Lbl_Language}" FontSize="18" TextColor="Yellow" FontAttributes="Bold"/>
+                    <Label Text="{x:Static resources:AppResources.Lbl_Language}" Style="{StaticResource SectionLabel}"/>
 
                     <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
-                        <Label Text="{x:Static resources:AppResources.Lbl_Language_App}" TextColor="White" VerticalTextAlignment="Center"/>
+                        <Label Text="{x:Static resources:AppResources.Lbl_Language_App}" Style="{StaticResource SubtleLabel}"/>
 
                         <Picker Title="{x:Static resources:AppResources.Lbl_Choose_Language}"
-                                TextColor="Cyan"
+                                Style="{StaticResource Picker}"
                                 WidthRequest="120"
                                 SelectedIndex="{Binding SelectedLanguageIndex}">
                             <Picker.ItemsSource>
@@ -36,24 +35,33 @@
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </Border>
+            
+            <!-- selections de Themes -->
+            <Border Style="{StaticResource CardBorder}" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="{x:Static resources:AppResources.Lbl_Theme}" Style="{StaticResource SectionLabel}"/>
+                    <Picker x:Name="StylePicker" Title="Style" />
+                    
+                </VerticalStackLayout>
+            </Border>
 
             <!-- Section Options de Séances -->
-            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" Padding="15">
+            <Border Style="{StaticResource CardBorder}" Padding="15">
                 <VerticalStackLayout Spacing="15">
-                    <Label Text="{x:Static resources:AppResources.Lbl_Workout_Options}" FontSize="18" TextColor="Yellow" FontAttributes="Bold"/>
+                    <Label Text="{x:Static resources:AppResources.Lbl_Workout_Options}" Style="{StaticResource SectionLabel}"/>
 
                     <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" RowSpacing="15">
                         <!-- Compte à rebours 5s -->
                         <Label Grid.Row="0" Grid.Column="0" 
                                Text="{x:Static resources:AppResources.Lbl_Countdown_5s}" 
-                               TextColor="White" VerticalTextAlignment="Center"/>
+                               Style="{StaticResource SubtleLabel}" VerticalTextAlignment="Center"/>
                         <Switch Grid.Row="0" Grid.Column="1" 
                                 IsToggled="{Binding EnableCountdown}"/>
 
                         <!-- Signaux Audio -->
                         <Label Grid.Row="1" Grid.Column="0" 
                                Text="{x:Static resources:AppResources.Lbl_Audio_Alerts}"  
-                               TextColor="White" VerticalTextAlignment="Center"/>
+                               Style="{StaticResource SubtleLabel}" VerticalTextAlignment="Center"/>
                         <Switch Grid.Row="1" Grid.Column="1" 
                                 IsToggled="{Binding EnableAudioAlerts}"/>
                     </Grid>
@@ -61,20 +69,19 @@
             </Border>
 
             <!-- Section Données & Application -->
-            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" Padding="15">
+            <Border Style="{StaticResource CardBorder}" Padding="15">
                 <VerticalStackLayout Spacing="15">
-                    <Label Text="{x:Static resources:AppResources.Lbl_About}" FontSize="18" TextColor="Yellow" FontAttributes="Bold"/>
+                    <Label Text="{x:Static resources:AppResources.Lbl_About}" Style="{StaticResource SectionLabel}"/>
 
                     <HorizontalStackLayout Spacing="10">
-                        <Label Text="{x:Static resources:AppResources.Lbl_Version}" TextColor="Gray"/>
-                        <Label Text="1.0.0 (FTMS BLE)" TextColor="White" FontAttributes="Bold"/>
+                        <Label Text="{x:Static resources:AppResources.Lbl_Version}" Style="{StaticResource SubtleLabel}"/>
+                        <Label Text="1.0.0 (FTMS BLE)" Style="{StaticResource SubtleLabel}"/>
                     </HorizontalStackLayout>
 
                     <!-- Réinitialiser les programmes enregistrés -->
                     <Button Text="{x:Static resources:AppResources.Btn_Reset_Data}" 
                             Command="{Binding ResetDataCommand}" 
-                            BackgroundColor="#D32F2F" 
-                            TextColor="White" 
+                            Style="{StaticResource DangerButton}"
                             Margin="0,10,0,0"/>
                 </VerticalStackLayout>
             </Border>

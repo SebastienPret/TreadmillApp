@@ -196,6 +196,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Connecting ......
+        /// </summary>
+        public static string Connection {
+            get {
+                return ResourceManager.GetString("Connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Effort.
         /// </summary>
         public static string DefaultIntervalName {
@@ -565,6 +574,24 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Select your theme.
+        /// </summary>
+        public static string Lbl_Theme {
+            get {
+                return ResourceManager.GetString("Lbl_Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dark theme.
+        /// </summary>
+        public static string Lbl_Theme_Dark {
+            get {
+                return ResourceManager.GetString("Lbl_Theme_Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Treadmill.
         /// </summary>
         public static string Lbl_Treadmill {
@@ -768,15 +795,6 @@ namespace TreadmillApp.Resources.Strings {
         public static string Txt_Connection_Success {
             get {
                 return ResourceManager.GetString("Txt_Connection_Success", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Connecting ......
-        /// </summary>
-        public static string Txt_Connection_Title_Pogress {
-            get {
-                return ResourceManager.GetString("Txt_Connection_Title_Pogress", resourceCulture);
             }
         }
         

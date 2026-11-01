@@ -74,6 +74,36 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[E:/Code/TreadmillApp/TreadmillApp/Resources/Themes/DarkTheme.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TreadmillApp.Resources.Themes.DarkTheme.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Themes\DarkTheme.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Themes\DarkTheme.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[E:/Code/TreadmillApp/TreadmillApp/Resources/Themes/LightTheme.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TreadmillApp.Resources.Themes.LightTheme.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Themes\LightTheme.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Themes\LightTheme.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[E:/Code/TreadmillApp/TreadmillApp/Resources/Themes/OceanTheme.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TreadmillApp.Resources.Themes.OceanTheme.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Themes\OceanTheme.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Themes\OceanTheme.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [E:/Code/TreadmillApp/TreadmillApp/Views/DashboardPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TreadmillApp.Views.DashboardPage.xaml
