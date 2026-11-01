@@ -26,7 +26,7 @@
                    Text="{Binding IntervalName}" 
                    TextColor="White" PlaceholderColor="Gray"/>
 
-            <Grid ColumnDefinitions="Auto,Auto,*"
+            <Grid ColumnDefinitions="Auto,Auto,Auto"
                   RowDefinitions="Auto,Auto"
                   ColumnSpacing="10" RowSpacing="2">
 

@@ -28,5 +28,9 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>  
+	<string>This App uses Bluetooth to connect and control compatible Treadmills.</string>  
+	<key>NSBluetoothPeripheralUsageDescription</key>  
+	<string>This App uses Bluetooth to connect and control compatible Treadmills.</string>
 </dict>
 </plist>

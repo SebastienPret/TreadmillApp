@@ -700,6 +700,24 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bluetooth is not enabled..
+        /// </summary>
+        public static string Txt_Bluetooth_Off {
+            get {
+                return ResourceManager.GetString("Txt_Bluetooth_Off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bluetooth is not enabled, please enable it in the settings..
+        /// </summary>
+        public static string Txt_Bluetooth_Off_Message {
+            get {
+                return ResourceManager.GetString("Txt_Bluetooth_Off_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cancel.
         /// </summary>
         public static string Txt_Cancel {
@@ -849,6 +867,33 @@ namespace TreadmillApp.Resources.Strings {
         public static string Txt_OK {
             get {
                 return ResourceManager.GetString("Txt_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Open settings.
+        /// </summary>
+        public static string Txt_Open_Settings {
+            get {
+                return ResourceManager.GetString("Txt_Open_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à The application cannot access Bluetooth; please enable it in your settings to use this application..
+        /// </summary>
+        public static string Txt_Permission_Ble_Message {
+            get {
+                return ResourceManager.GetString("Txt_Permission_Ble_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Missing permission.
+        /// </summary>
+        public static string Txt_Permission_Required {
+            get {
+                return ResourceManager.GetString("Txt_Permission_Required", resourceCulture);
             }
         }
         

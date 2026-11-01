@@ -388,4 +388,19 @@
   <data name="Btn_Update_Interval" xml:space="preserve">
     <value>Modifier l'intervalle</value>
   </data>
+  <data name="Txt_Permission_Required" xml:space="preserve">
+    <value>Permission manquante</value>
+  </data>
+  <data name="Txt_Bluetooth_Off_Message" xml:space="preserve">
+    <value>Le Bluetooth n'est pas activé, veuillez l'activer dans les paramètres.</value>
+  </data>
+  <data name="Txt_Open_Settings" xml:space="preserve">
+    <value>Ouvrir les paramètres</value>
+  </data>
+  <data name="Txt_Bluetooth_Off" xml:space="preserve">
+    <value>Le Bluetooth n'est pas activé.</value>
+  </data>
+  <data name="Txt_Permission_Ble_Message" xml:space="preserve">
+    <value>L'application ne peut pas accéder au Bluetooth, veuillez l'activer dans les paramètres pour utiliser cette application.</value>
+  </data>
 </root>

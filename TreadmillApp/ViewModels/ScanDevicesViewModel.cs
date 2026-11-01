@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Plugin.BLE.Abstractions.Contracts;
 using System.Collections.ObjectModel;
 using TreadmillApp.Resources.Strings;
+using TreadmillApp.Services;
 using TreadmillApp.Views;
 
 namespace TreadmillApp.ViewModels
@@ -18,9 +19,41 @@ namespace TreadmillApp.ViewModels
         [RelayCommand]
         private async Task StartScan()
         {
-            IsScanning = true;
-            await DashboardPage.Treadmill.StartScanningAsync();
-            IsScanning = false;
+            // 1. Permissions
+            if (!await BlePermissionHelper.EnsurePermissionsAsync())
+            {
+                bool openSettings = await Shell.Current.DisplayAlertAsync(
+                    AppResources.Txt_Permission_Required,
+                    AppResources.Txt_Permission_Ble_Message,
+                    AppResources.Txt_Open_Settings,
+                    AppResources.Txt_Cancel);
+
+                if (openSettings)
+                    AppInfo.ShowSettingsUI();   // ouvre les paramètres de l'app
+
+                return;
+            }
+
+            // 2. Bluetooth activé ?
+            if (!BlePermissionHelper.IsBluetoothOn())
+            {
+                await Shell.Current.DisplayAlertAsync(
+                    AppResources.Txt_Bluetooth_Off,
+                    AppResources.Txt_Bluetooth_Off_Message,
+                    AppResources.Txt_OK);
+                return;
+            }
+
+            // 3. Scan
+            try
+            {
+                IsScanning = true;
+                await DashboardPage.Treadmill.StartScanningAsync();
+            }
+            finally
+            {
+                IsScanning = false;   // garanti même en cas d'exception
+            }
         }
 
         [RelayCommand]

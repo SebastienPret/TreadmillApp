@@ -114,16 +114,42 @@ namespace TreadmillApp.ViewModels
             UpdatePace(value);
         }
 
+        private bool _isSyncingDuration;
+
         partial void OnDurationMinutesChanged(double value)
         {
-            DurationSeconds = value * 60;
-            OnPropertyChanged(nameof(DurationSeconds));
+            //DurationSeconds = value * 60;
+            //OnPropertyChanged(nameof(DurationSeconds));
+            if (_isSyncingDuration) return;
+
+            _isSyncingDuration = true;
+            try
+            {
+                DurationSeconds = Math.Round(value * 60);
+            }
+            finally
+            {
+                _isSyncingDuration = false;
+            }
         }
+
+        
 
         partial void OnDurationSecondsChanged(double value)
         {
-            DurationMinutes = Math.Round(value / 60.0, 2);
-            OnPropertyChanged(nameof(DurationMinutes));
+            //DurationMinutes = Math.Round(value / 60.0, 2);
+            //OnPropertyChanged(nameof(DurationMinutes));
+            if (_isSyncingDuration) return;
+
+            _isSyncingDuration = true;
+            try
+            {
+                DurationMinutes = Math.Round(value / 60.0, 2);
+            }
+            finally
+            {
+                _isSyncingDuration = false;
+            }
         }
 
         private void UpdatePace(double speed)
