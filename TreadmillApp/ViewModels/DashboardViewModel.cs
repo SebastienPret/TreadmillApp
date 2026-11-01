@@ -32,8 +32,11 @@ namespace TreadmillApp.ViewModels
         [ObservableProperty]
         public partial string ConnectButtonText { get; set; } = AppResources.Btn_Search_Treadmill;
 
-        [ObservableProperty]
-        public partial Color ConnectButtonBackgroundColor { get; set; } = Color.FromArgb("#2196F3");
+
+        // set style of the button to start with a value from the theme (blue for light, green for dark, etc.)
+
+        //[ObservableProperty]
+        //public partial Color ConnectButtonBackgroundColor { get; set; } // = Color.FromArgb("#2196F3");
 
         
 
@@ -63,7 +66,7 @@ namespace TreadmillApp.ViewModels
                     IsConnected = Treadmill.IsConnected;
 
                     ConnectButtonText = IsConnected ? AppResources.Btn_Connect : AppResources.Btn_Disconnect;
-                    ConnectButtonBackgroundColor = IsConnected ? Colors.Green : Colors.Red;
+                    //ConnectButtonBackgroundColor = IsConnected ? Colors.Green : Colors.Red;
                 });
             };
         }
@@ -98,6 +101,8 @@ namespace TreadmillApp.ViewModels
         [RelayCommand]
         private async Task RunPlan()
         {
+            if (Treadmill.IsRunning) return;   // déjà en cours
+
             //var plan = IntervalsPage.CurrentPlan;
             var plan = AppStateService.Instance.CurrentPlan;
             if (plan == null || plan.Intervals.Count == 0)
@@ -106,6 +111,13 @@ namespace TreadmillApp.ViewModels
                 await Shell.Current.Navigation.PushAsync(new SavedWorkoutsPage());
                 return;
             }
+
+            if (!Treadmill.IsConnected)
+            {
+                await Shell.Current.DisplayAlertAsync(AppResources.Error, AppResources.Error_Not_Connected, AppResources.Txt_OK);
+                return;
+            }
+
 
             _ = Task.Run(async () =>
             {

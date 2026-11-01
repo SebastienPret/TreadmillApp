@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using TreadmillApp.Services;
+﻿using TreadmillApp.Services;
 
 namespace TreadmillApp
 {
@@ -14,7 +13,9 @@ namespace TreadmillApp
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            var window = new Window(new AppShell());
+            window.Created += (s, e) => ThemeService.Apply(ThemeService.Current, save: false);
+            return window;
         }
     }
 }

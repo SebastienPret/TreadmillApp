@@ -28,6 +28,9 @@ namespace TreadmillApp.Services
             var workouts = WorkoutStorageService.LoadWorkouts();
             SavedWorkouts = new ObservableCollection<WorkoutPlan>(workouts ?? []);
         }
+
+        // auto-start workout flag from interval page
+        public bool AutoStartWorkout { get; set; }
     }
 }
 

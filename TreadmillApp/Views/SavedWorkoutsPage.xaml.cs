@@ -19,6 +19,7 @@ namespace TreadmillApp.Views
             base.OnAppearing();
             //_viewModel?.LoadWorkouts();
             AppStateService.Instance.LoadWorkouts();
+            _viewModel?.SavedWorkouts = AppStateService.Instance.SavedWorkouts;
         }
 
         private void OnRunClicked(object sender, EventArgs e)

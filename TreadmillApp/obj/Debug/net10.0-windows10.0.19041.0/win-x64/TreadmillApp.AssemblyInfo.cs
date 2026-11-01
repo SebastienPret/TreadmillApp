@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TreadmillApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+cfa63b1df42b362493979467621ca3e943afbbd1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fcfe8a041fd4024cca2e9d0b3697b92f0da9eb3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TreadmillApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TreadmillApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -409,4 +409,13 @@
   <data name="Lbl_Theme_Dark" xml:space="preserve">
     <value>Dark theme</value>
   </data>
+  <data name="DeviceStatus_Disconnected" xml:space="preserve">
+    <value>Non-connected mat</value>
+  </data>
+  <data name="_Empty[1]" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Error_Not_Connected" xml:space="preserve">
+    <value>Disconnect mat</value>
+  </data>
 </root>

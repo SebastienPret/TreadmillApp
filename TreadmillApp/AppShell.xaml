@@ -4,7 +4,8 @@
        xmlns:views="clr-namespace:TreadmillApp.Views"
        xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
        x:Class="TreadmillApp.AppShell"
-       Shell.FlyoutBehavior="Flyout">
+       Shell.FlyoutBehavior="Flyout"
+       >
 
     <!-- Barre d'onglets principale en bas (ou en haut selon la plateforme) -->
 
@@ -14,7 +15,7 @@
     <!-- Onglet 1 : Le Tableau de bord / Contrôle -->
     <!-- Tapis -->
     <FlyoutItem Title="{x:Static resources:AppResources.Tab_Dashboard}"
-            Icon="dashboard_icon.svg">
+                Icon="dashboard_icon.svg">
     <!-- Contrôle -->
         <ShellContent Title="{x:Static resources:AppResources.Ttl_Dashboard}"
                     ContentTemplate="{DataTemplate views:DashboardPage}"

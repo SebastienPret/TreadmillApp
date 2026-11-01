@@ -10,11 +10,25 @@ namespace TreadmillApp.ViewModels
 {
     public partial class ScanDevicesViewModel : ObservableObject
     {
+        private CancellationTokenSource? _connectCts;
+
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsBusy))]
         public partial bool IsScanning { get; set; } = false;
 
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsNotConnecting))]
+        [NotifyPropertyChangedFor(nameof(IsBusy))]
+        public partial bool IsConnecting { get; set; }
+
+        [ObservableProperty]
+        public partial string ConnectingText { get; set; } = string.Empty;
+
+        public bool IsNotConnecting => !IsConnecting;
+        public bool IsBusy => IsScanning || IsConnecting;   // pour le spinner
+
         // On expose la liste des appareils détectés depuis le service/tapis
-        public static ObservableCollection<IDevice> DiscoveredDevices => DashboardPage.Treadmill.DiscoveredDevices;
+        public ObservableCollection<IDevice> DiscoveredDevices => DashboardPage.Treadmill.DiscoveredDevices;
 
         [RelayCommand]
         private async Task StartScan()
@@ -59,24 +73,44 @@ namespace TreadmillApp.ViewModels
         [RelayCommand]
         private async Task DeviceSelected(IDevice selectedDevice)
         {
-            if (selectedDevice == null) return;
-            IsScanning = true;
+            if (selectedDevice == null || IsConnecting) return;
+            _connectCts = new CancellationTokenSource();
+            IsConnecting = true;
+            ConnectingText = $"{AppResources.DeviceStatus_Connecting} {selectedDevice.Name}...";
 
-            // Affichage de l'alerte de progression (Note: DisplayAlert nécessite le Shell ou une page active)
-            // Comme DisplayAlert est une méthode de Page, on peut utiliser Shell.Current pour l'afficher globalement
+            bool success = false;
+            bool wasCancelled;
 
-            bool success = await DashboardPage.Treadmill.ConnectToDeviceAsync(selectedDevice);
-            IsScanning = false;
+            try
+            {
+                success = await DashboardPage.Treadmill.ConnectToDeviceAsync(selectedDevice, _connectCts.Token);
+            }
+            finally
+            {
+                wasCancelled = _connectCts.IsCancellationRequested;
+                _connectCts.Dispose();
+                _connectCts = null;
+                IsConnecting = false;
+                ConnectingText = string.Empty;
+            }
+
+            if (!success && wasCancelled) return;   // annulation volontaire : pas d'alerte d'échec
 
             if (success)
             {
                 await Shell.Current.DisplayAlertAsync(AppResources.Txt_Success, AppResources.Txt_Connection_Success, AppResources.Txt_OK);
-                await Shell.Current.GoToAsync(".."); // Équivalent de PopAsync() avec le Shell
+                await Shell.Current.GoToAsync("..");
             }
             else
             {
-                await Shell.Current.DisplayAlertAsync(AppResources.Txt_Failure, AppResources.Txt_Connection_Failed, AppResources.Txt_OK);
+                await Shell.Current.DisplayAlertAsync(
+                    AppResources.Txt_Failure,
+                    $"{AppResources.Txt_Connection_Failed}\n\n{DashboardPage.Treadmill.LastConnectionError}",
+                    AppResources.Txt_OK);
             }
         }
+
+        [RelayCommand]
+        private void CancelConnect() => _connectCts?.Cancel();
     }
 }

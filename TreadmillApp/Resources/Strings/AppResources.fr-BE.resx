@@ -409,4 +409,10 @@
   <data name="Lbl_Theme_Dark" xml:space="preserve">
     <value>Dark thème</value>
   </data>
+  <data name="DeviceStatus_Disconnected" xml:space="preserve">
+    <value>Tapis non connecté</value>
+  </data>
+  <data name="Error_Not_Connected" xml:space="preserve">
+    <value>Tapis déconnecter</value>
+  </data>
 </root>

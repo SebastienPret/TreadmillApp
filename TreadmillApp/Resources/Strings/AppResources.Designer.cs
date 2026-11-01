@@ -61,6 +61,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string _Empty_1_ {
+            get {
+                return ResourceManager.GetString("_Empty[1]", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à No intervals configured. Select or create a new plan..
         /// </summary>
         public static string Alert_NoIntervalsMessage {
@@ -241,6 +250,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Non-connected mat.
+        /// </summary>
+        public static string DeviceStatus_Disconnected {
+            get {
+                return ResourceManager.GetString("DeviceStatus_Disconnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Error.
         /// </summary>
         public static string Error {
@@ -264,6 +282,15 @@ namespace TreadmillApp.Resources.Strings {
         public static string Error_Invalid_Interval {
             get {
                 return ResourceManager.GetString("Error_Invalid_Interval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Disconnect mat.
+        /// </summary>
+        public static string Error_Not_Connected {
+            get {
+                return ResourceManager.GetString("Error_Not_Connected", resourceCulture);
             }
         }
         

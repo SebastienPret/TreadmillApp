@@ -24,11 +24,23 @@ namespace TreadmillApp.Services
         private static readonly Guid FtmsServiceUuid = Guid.Parse("00001826-0000-1000-8000-00805f9b34fb");
         private static readonly Guid TreadmillDataCharacteristicUuid = Guid.Parse("00002ACD-0000-1000-8000-00805f9b34fb");
 
+        private const double RestSpeedKmH = 4.0;   // vitesse de récupération
+        private const int CountdownSeconds = 4;    // compte à rebours avant chaque intervalle
+
+        private bool _isWorkoutRunning;
+        private bool _isPaused;
+
         private double _currentSpeed;
         private double _currentIncline;
         private bool _isRunning;
         private bool _isConnected;
         private CancellationTokenSource? _workoutCancellationToken;
+
+        public bool IsPaused
+        {
+            get => _isPaused;
+            set { _isPaused = value; OnPropertyChanged(); }
+        }
 
         public bool IsConnected
         {
@@ -66,10 +78,19 @@ namespace TreadmillApp.Services
 
         private bool _hasStartedReported = false;
 
+        public string? LastConnectionError { get; private set; }
+
+        private void OnTreadmillDataUpdated(object? sender, CharacteristicUpdatedEventArgs e)
+            => ParseTreadmillData(e.Characteristic.Value);
+
+
         public TreadmillService()
         {
             _ble = CrossBluetoothLE.Current;
             _adapter = CrossBluetoothLE.Current.Adapter;
+
+            _adapter.DeviceDisconnected += (s, e) => HandleDisconnection(e.Device);
+            _adapter.DeviceConnectionLost += (s, e) => HandleDisconnection(e.Device);
         }
 
         public async Task StartScanningAsync()
@@ -81,34 +102,54 @@ namespace TreadmillApp.Services
                 await Application.Current!.Windows[0].Page.DisplayAlertAsync(AppResources.Error, AppResources.Bluetooth_Off, AppResources.Txt_OK);
                 return;
             }
-            DiscoveredDevices.Clear();
-            _adapter.ScanTimeout = 10000; // 10 secondes
+            await MainThread.InvokeOnMainThreadAsync(DiscoveredDevices.Clear);
+
+            _adapter.ScanMode = ScanMode.LowLatency;   // découverte plus rapide que le mode par défaut
+            _adapter.ScanTimeout = 10000; // 10 secondes de scan maximum
 
             _adapter.DeviceDiscovered -= OnDeviceDiscovered;
             _adapter.DeviceDiscovered += OnDeviceDiscovered;
+            _adapter.DeviceAdvertised -= OnDeviceDiscovered;   // capte les noms qui arrivent après le 1er paquet
+            _adapter.DeviceAdvertised += OnDeviceDiscovered;
 
             // Définition des options de scan avec le filtre FTMS
             var scanOptions = new ScanFilterOptions
             {
-                ServiceUuids = new[] { FtmsServiceUuid }
+                ServiceUuids = [FtmsServiceUuid]
             };
 
             // Durée maximale du scan (ex: 10 secondes)
-            _adapter.ScanTimeout = 10000;
+            //_adapter.ScanTimeout = 10000;
 
-            Debug.WriteLine("Début du scan des tapis FTMS...");
+            //Debug.WriteLine("Début du scan des tapis FTMS...");
 
-            // Lancement du scan avec le filtre d'UUID
-            await _adapter.StartScanningForDevicesAsync(scanOptions);
+            
+            
+
+            Debug.WriteLine("Début du scan BLE...");
+
+            try
+            {
+                // Pas de filtre d'UUID : beaucoup de tapis n'annoncent pas FTMS dans leur publicité
+                //await _adapter.StartScanningForDevicesAsync();
+                // Lancement du scan avec le filtre d'UUID
+                await _adapter.StartScanningForDevicesAsync(scanOptions);
+            }
+            finally
+            {
+                _adapter.DeviceDiscovered -= OnDeviceDiscovered;
+                _adapter.DeviceAdvertised -= OnDeviceDiscovered;
+            }
         }
 
         private void OnDeviceDiscovered(object? sender, Plugin.BLE.Abstractions.EventArgs.DeviceEventArgs e)
         {
-            if (e.Device == null || string.IsNullOrEmpty(e.Device.Name)) return;
+            var device = e.Device;
+            if (device == null) return;
 
-            string name = e.Device.Name;
+            //string name = e.Device.Name;
             //Collection<AdvertisementRecord> HUID = e.Device.AdvertisementRecords;
-            Debug.WriteLine($"Appareil découvert : {name} ({e.Device.Id})");
+            Debug.WriteLine($"Appareil découvert : {device.Name} ({device.Id})");
             // Filtre par mots-clés typiques des tapis de course et équipements de fitness
             /*bool isTreadmill = name.Contains("Treadmill", StringComparison.OrdinalIgnoreCase) ||
                                name.Contains("Fitness", StringComparison.OrdinalIgnoreCase) ||
@@ -117,13 +158,24 @@ namespace TreadmillApp.Services
                                name.Contains("Nordictrack", StringComparison.OrdinalIgnoreCase) ||
                                name.Contains("SW7745EAI", StringComparison.OrdinalIgnoreCase);
             */
-            if ( !DiscoveredDevices.Any(d => d.Id == e.Device.Id)) //isTreadmill &&
+            /*if ( !DiscoveredDevices.Any(d => d.Id == e.Device.Id)) //isTreadmill &&
             {
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     DiscoveredDevices.Add(e.Device);
                 });
             }
+            */
+
+            // Sans nom pour l'instant : sera ajouté si un paquet suivant en contient un
+            if (string.IsNullOrWhiteSpace(device.Name)) return;
+
+            // Test + ajout sur le thread UI pour éviter les doublons et les accès concurrents
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                if (!DiscoveredDevices.Any(d => d.Id == device.Id))
+                    DiscoveredDevices.Add(device);
+            });
         }
 
         public async Task StopScanningAsync()
@@ -132,38 +184,105 @@ namespace TreadmillApp.Services
             Debug.WriteLine("Scan arrêté.");
         }
 
-        public async Task<bool> ConnectToDeviceAsync(IDevice device)
+        public async Task<bool> ConnectToDeviceAsync(IDevice device, CancellationToken cancellationToken = default)
         {
+            const int maxAttempts = 3;
+            LastConnectionError = null;
+
             try
             {
-                await StopScanningAsync();
-                DeviceStatusChanged?.Invoke(this, $"{AppResources.DeviceStatus_Connecting} {device.Name}..."); // Connexion à
+                try { await StopScanningAsync(); } catch { /* le scan peut déjà être arrêté */ }
+                await Task.Delay(500, cancellationToken);
 
-                await _adapter.ConnectToDeviceAsync(device);
-                _treadmillDevice = device;
-                IsConnected = true;
-
-                var service = await _treadmillDevice.GetServiceAsync(Guid.Parse("00001826-0000-1000-8000-00805f9b34fb"));
-                if (service != null)
+                for (int attempt = 1; attempt <= maxAttempts; attempt++)
                 {
-                    _controlPointCharacteristic = await service.GetCharacteristicAsync(Guid.Parse("00002ad9-0000-1000-8000-00805f9b34fb"));
-                    _treadmillDataCharacteristic = await service.GetCharacteristicAsync(Guid.Parse("00002acd-0000-1000-8000-00805f9b34fb"));
+                    cancellationToken.ThrowIfCancellationRequested();
 
-                    if (_treadmillDataCharacteristic != null)
+                    try
                     {
-                        _treadmillDataCharacteristic.ValueUpdated += (s, e) => ParseTreadmillData(e.Characteristic.Value);
-                        await _treadmillDataCharacteristic.StartUpdatesAsync();
+                        DeviceStatusChanged?.Invoke(this,
+                            $"{AppResources.DeviceStatus_Connecting} {device.Name}... ({attempt}/{maxAttempts})");
+
+                        // Annulé soit par l'utilisateur, soit après 15 s
+                        using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                        timeoutCts.CancelAfter(TimeSpan.FromSeconds(15));
+
+                        await _adapter.ConnectToDeviceAsync(
+                            device,
+                            new ConnectParameters(autoConnect: false, forceBleTransport: true),
+                            timeoutCts.Token);
+
+                        var service = await device.GetServiceAsync(FtmsServiceUuid);
+                        if (service == null)
+                        {
+                            LastConnectionError = "Service FTMS (0x1826) introuvable : ce tapis utilise peut-être un protocole propriétaire.";
+                            await SafeDisconnectAsync(device);
+                            break;
+                        }
+
+                        var control = await service.GetCharacteristicAsync(Guid.Parse("00002ad9-0000-1000-8000-00805f9b34fb"));
+                        if (control == null)
+                        {
+                            LastConnectionError = "Caractéristique de contrôle FTMS introuvable.";
+                            await SafeDisconnectAsync(device);
+                            break;
+                        }
+
+                        var data = await service.GetCharacteristicAsync(TreadmillDataCharacteristicUuid);
+
+                        if (_treadmillDataCharacteristic != null)
+                            _treadmillDataCharacteristic.ValueUpdated -= OnTreadmillDataUpdated;
+
+                        _controlPointCharacteristic = control;
+                        _treadmillDataCharacteristic = data;
+
+                        if (data != null)
+                        {
+                            data.ValueUpdated += OnTreadmillDataUpdated;
+                            await data.StartUpdatesAsync();
+                        }
+
+                        _treadmillDevice = device;
+                        IsConnected = true;
+                        DeviceStatusChanged?.Invoke(this, AppResources.DeviceStatus_Connected);
+                        return true;
+                    }
+                    catch (Exception) when (cancellationToken.IsCancellationRequested)
+                    {
+                        // Annulation par l'utilisateur (quelle que soit l'exception levée par le plugin)
+                        throw new OperationCanceledException(cancellationToken);
+                    }
+                    catch (Exception ex)
+                    {
+                        LastConnectionError = ex.Message;
+                        Debug.WriteLine($"Connexion, tentative {attempt}/{maxAttempts} : {ex}");
+
+                        await SafeDisconnectAsync(device);
+                        if (attempt < maxAttempts)
+                            await Task.Delay(1000, cancellationToken);
                     }
                 }
-
-                DeviceStatusChanged?.Invoke(this, AppResources.DeviceStatus_Connected); // Connecté au Tapis !
-                return true;
             }
-            catch (Exception ex)
+            catch (OperationCanceledException)
             {
-                DeviceStatusChanged?.Invoke(this, $"{AppResources.Error} : {ex.Message}"); // Erreur
+                Debug.WriteLine("Connexion annulée par l'utilisateur.");
+                await SafeDisconnectAsync(device);   // stoppe la tentative native encore en cours
+
+                LastConnectionError = null;
+                IsConnected = false;
+                DeviceStatusChanged?.Invoke(this, AppResources.DeviceStatus_Disconnected);
                 return false;
             }
+
+            IsConnected = false;
+            DeviceStatusChanged?.Invoke(this, $"{AppResources.Error} : {LastConnectionError}");
+            return false;
+        }
+
+        private async Task SafeDisconnectAsync(IDevice device)
+        {
+            try { await _adapter.DisconnectDeviceAsync(device); }
+            catch (Exception ex) { Debug.WriteLine($"Déconnexion : {ex.Message}"); }
         }
 
         public async Task StartAsync()
@@ -194,14 +313,22 @@ namespace TreadmillApp.Services
 
         private static void SetKeepScreenOn(bool keepOn)
         {
-            try
+            if (MainThread.IsMainThread)
+                Apply(keepOn);
+            else
+                MainThread.BeginInvokeOnMainThread(() => Apply(keepOn));
+
+            static void Apply(bool on)
             {
-                if (DeviceDisplay.Current.KeepScreenOn != keepOn)
-                    DeviceDisplay.Current.KeepScreenOn = keepOn;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"KeepScreenOn failed: {ex.Message}");
+                try
+                {
+                    if (DeviceDisplay.Current.KeepScreenOn != on)
+                        DeviceDisplay.Current.KeepScreenOn = on;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"KeepScreenOn failed: {ex.Message}");
+                }
             }
         }
 
@@ -235,180 +362,171 @@ namespace TreadmillApp.Services
 
             // Parse Instantaneous Speed (Standard FTMS specification)
             // Bytes 0-1: Flags, Bytes 2-3: Instantaneous Speed (in 0.01 km/h)
-            ushort speedRaw = (ushort)(data[2] | (data[3] << 8));
-            CurrentSpeed = speedRaw / 100.0;
+            int flags = data[0] | (data[1] << 8);
+            int pos = 2;
 
-            // Notify listeners of the current speed
-            SpeedUpdated?.Invoke(this, CurrentSpeed);
+            bool Has(int bit) => (flags & (1 << bit)) != 0;
 
-            // Detect if the treadmill has started (Speed > 0.5 km/h)
-            if (CurrentSpeed > 0.5 && !_hasStartedReported)
+            // Bit 0 = « More Data » : la vitesse instantanée est présente quand il vaut 0
+            if (!Has(0) && pos + 2 <= data.Length)
             {
-                _hasStartedReported = true;
-                TreadmillStarted?.Invoke(this, EventArgs.Empty);
-                System.Diagnostics.Debug.WriteLine("Treadmill movement detected: STARTED");
+                CurrentSpeed = (data[pos] | (data[pos + 1] << 8)) / 100.0;   // 0,01 km/h
+                pos += 2;
+
+                SpeedUpdated?.Invoke(this, CurrentSpeed);
+
+                if (CurrentSpeed > 0.5 && !_hasStartedReported)
+                {
+                    _hasStartedReported = true;
+                    TreadmillStarted?.Invoke(this, EventArgs.Empty);
+                    Debug.WriteLine("Treadmill movement detected: STARTED");
+                }
+                else if (CurrentSpeed <= 0.1 && _hasStartedReported)
+                {
+                    _hasStartedReported = false;
+                    TreadmillStopped?.Invoke(this, EventArgs.Empty);
+                    Debug.WriteLine("Treadmill movement detected: STOPPED");
+                }
             }
-            // Detect if the treadmill has stopped (Speed drops back to 0)
-            else if (CurrentSpeed <= 0.1 && _hasStartedReported)
+
+            if (Has(1)) pos += 2;   // vitesse moyenne
+            if (Has(2)) pos += 3;   // distance totale
+
+            // Bit 3 : inclinaison (sint16, 0,1 %) + angle de rampe (sint16)
+            if (Has(3) && pos + 2 <= data.Length)
             {
-                _hasStartedReported = false;
-                TreadmillStopped?.Invoke(this, EventArgs.Empty);
-                System.Diagnostics.Debug.WriteLine("Treadmill movement detected: STOPPED");
+                short raw = (short)(data[pos] | (data[pos + 1] << 8));
+                if (raw != short.MaxValue)   // 0x7FFF = valeur non disponible
+                    CurrentIncline = raw / 10.0;
             }
         }
 
-        public async Task RunWorkoutPlanAsync(Models.WorkoutPlan plan, Action<string, int> onProgress)
+        public async Task RunWorkoutPlanAsync(WorkoutPlan plan, Action<string, int> onProgress)
         {
-            
+            if (_isWorkoutRunning) return;   // évite deux entraînements en parallèle
+            _isWorkoutRunning = true;
+
+            _workoutCancellationToken?.Dispose();
             _workoutCancellationToken = new CancellationTokenSource();
-            bool IsPaused = false; // pause pas implementée dans cette version, mais peut être ajoutée avec un bouton de pause dans l'UI
-            await StartAsync();
+            var token = _workoutCancellationToken.Token;
 
-            IntervalStatusChanged?.Invoke(this, AppResources.IntervalStatus_Starting_Workout + " [" + plan.Title + "]"); // Démarrage de l'entraînement...
-                                                                                               // waiting for the treadmill to be ready (optional, depending on treadmill behavior)
-                                                                                               // retrieve the current state of the treadmill and wait until it is ready to accept commands
+            // Copie des intervalles : modifier la liste pendant la séance n'a aucun effet sur elle
+            var intervals = plan.Intervals.ToList();
 
-            // 1. Check if the treadmill is already moving
-            while (!_hasStartedReported && !_workoutCancellationToken.Token.IsCancellationRequested)
+            IsPaused = false;
+            string finalStatus = AppResources.Lbl_Status_Run;   // statut affiché si la séance est annulée
+
+            try
             {
-                Debug.WriteLine("Waiting for the user to start the treadmill...");
-                await Task.Delay(500, _workoutCancellationToken.Token);
+                await StartAsync();
+                IntervalStatusChanged?.Invoke(this, $"{AppResources.IntervalStatus_Starting_Workout} [{plan.Title}]");
+
+                // Attend que la bande se mette réellement en mouvement (Stop annule l'attente)
+                await WaitForTreadmillToMoveAsync(token);
+
+                await PlayBeepSoundAsync();   // vérifie lui-même le réglage des alertes sonores
+
+                for (int i = 0; i < intervals.Count; i++)
+                {
+                    token.ThrowIfCancellationRequested();
+
+                    var interval = intervals[i];
+                    bool isLast = i == intervals.Count - 1;
+
+                    if (AppSettingsService.Instance.EnableCountdown)
+                        await RunCountdownAsync(interval, token);
+
+                    await SetSpeedAsync(interval.TargetSpeed);
+                    await SetInclineAsync(interval.TargetIncline);
+                    IntervalStatusChanged?.Invoke(this, $"{AppResources.IntervalStatus_Starting} : {interval.Name}");
+
+                    await RunEffortAsync(interval, onProgress, token);
+
+                    // Pas de récupération après le dernier intervalle
+                    if (!isLast && interval.EnableRest && interval.RestSecondsAfter > 0)
+                        await RunRestAsync(interval, token);
+                }
+
+                finalStatus = AppResources.IntervalStatus_Completed;
             }
-
-            Debug.WriteLine("Treadmill is running! Starting workout plan...");
-
-            while (_hasStartedReported == true || !Debugger.IsAttached)
+            catch (OperationCanceledException)
             {
-                // await Task.Delay(500, _workoutCancellationToken.Token);
-            
-#if DEBUG
-                Debug.WriteLine("Treadmill is not ready yet. Waiting for it to be ready...");
-                await Task.Delay(5000, _workoutCancellationToken.Token); // simulate a delay for treadmill readiness in debug mode
-                Debug.WriteLine("Treadmill is ready for workout plan execution.");
-            
-#endif
-                // set a 1km/h speed limit for safety and wait 5 seconds before starting the interval
-                //await SetSpeedAsync(1);
-                //await Task.Delay(5000, _workoutCancellationToken.Token);
+                // Arrêt demandé par l'utilisateur : rien à faire
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erreur pendant l'entraînement : {ex}");
+                finalStatus = $"{AppResources.Error} : {ex.Message}";
+            }
+            finally
+            {
+                IsPaused = false;
 
                 try
                 {
-                    // activer les alertes sonores si activées dans les paramètres
-                    if (AppSettingsService.Instance.EnableAudioAlerts == true)
-                    {
-                       await PlayBeepSoundAsync();
-                    }
-
-                    foreach (var interval in plan.Intervals)
-                    {
-                    
-
-                        if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-
-                        // 5. Exécuter l'intervalle avec un compte à rebours de 5 secondes avant le début
-                        RunIntervalAsync(interval, _workoutCancellationToken.Token);
-
-                    
-                    
-                        // 1. COMPTE À REBOURS DE 5s (Si activé dans les Paramètres)
-                        if (AppSettingsService.Instance.EnableCountdown)
-                        {
-                        
-                            // Optionnel : Mettre une vitesse de préparation douce ou garder le tapis stable
-                            for (int countdown = 4; countdown > 0; countdown--)
-                            {
-                                if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-
-                                // Gérer la pause manuelle pendant le compte à rebours
-                                while (IsPaused)
-                                {
-                                    if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-                                    await Task.Delay(1000, _workoutCancellationToken.Token);
-                                }
-
-                                // Joue un bip à chaque seconde du décompte (ou un bip plus grave/aigu sur la dernière seconde)
-                                // await PlayBeepSoundAsync();
-
-                                // Notifie l'UI du compte à rebours (ex: "Prêt pour [Nom] dans 5s...")
-                                IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Ready_For} [{interval.Name}] {AppResources.Txt_In} {countdown}s..."); // Prêt pour [{interval.Name}] dans {countdown}s...
-                                await Task.Delay(1000, _workoutCancellationToken.Token);
-                            }
-                        }
-
-                        if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-
-                        // 2. Envoyer les consignes de l'intervalle (Vitesse & Inclinaison)
-                        await SetSpeedAsync(interval.TargetSpeed);
-                        await SetInclineAsync(interval.TargetIncline);
-
-                        // 3. Exécution de l'intervalle (Effort)
-                        //await PlayBeepSoundAsync(); // Ou lors du passage à la phase d'effort / de pause :
-                        IntervalStatusChanged?.Invoke(this, $"{AppResources.IntervalStatus_Starting} : {interval.Name}"); //Phase
-
-                        for (double remaining = interval.DurationSeconds; remaining > 0; remaining--)
-                        {
-                            while (IsPaused)
-                            {
-                                if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-                                await Task.Delay(500, _workoutCancellationToken.Token);
-                            }
-                            onProgress(interval.Name, Convert.ToInt32(remaining));
-                            await Task.Delay(1000, _workoutCancellationToken.Token);
-                        }
-
-                        // 4. PAUSE AUTOMATIQUE (Si activée pour cet intervalle)
-                        if (interval.EnableRest && interval.RestSecondsAfter > 0)
-                        {
-                            await SetSpeedAsync(4.0); // Vitesse lente de récupération
-                            await SetInclineAsync(0);
-
-                            for (int restRemaining = interval.RestSecondsAfter; restRemaining > 0; restRemaining--)
-                            {
-                                if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-
-                                while (IsPaused)
-                                {
-                                    if (_workoutCancellationToken.Token.IsCancellationRequested) break;
-                                    await Task.Delay(500, _workoutCancellationToken.Token);
-                                }
-
-                                IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Rest_Pause} : {restRemaining}s"); // Pause automatique
-                                await Task.Delay(1000, _workoutCancellationToken.Token);
-                            }
-                        }
-                    }
+                    // Si c'est StopAsync qui a annulé, il a déjà envoyé la commande d'arrêt
+                    if (!token.IsCancellationRequested)
+                        await StopAsync();
                 }
-                catch (TaskCanceledException) { }
-                finally
+                catch (Exception ex)
                 {
-                    IsPaused = false;
-                    await StopAsync();
-                    IntervalStatusChanged?.Invoke(this, AppResources.IntervalStatus_Completed); // Entraînement terminé !
+                    Debug.WriteLine($"Erreur à l'arrêt : {ex.Message}");
                 }
+
+                IntervalStatusChanged?.Invoke(this, finalStatus);
+                _isWorkoutRunning = false;
             }
         }
 
-
-        public async static void RunIntervalAsync(WorkoutInterval interval, CancellationToken cancellationToken)
+        private async Task WaitForTreadmillToMoveAsync(CancellationToken token)
         {
-            int totalSeconds = (int)interval.DurationSeconds;
-            bool fiveSecondAlertPlayed = false;
+            while (!_hasStartedReported)
+                await Task.Delay(500, token);
+        }
 
-            for (int elapsed = 0; elapsed < totalSeconds; elapsed++)
+        private async Task WaitWhilePausedAsync(CancellationToken token)
+        {
+            while (IsPaused)
+                await Task.Delay(300, token);
+        }
+
+        private async Task RunCountdownAsync(WorkoutInterval interval, CancellationToken token)
+        {
+            for (int c = CountdownSeconds; c > 0; c--)
             {
-                if (cancellationToken.IsCancellationRequested) break;
+                await WaitWhilePausedAsync(token);
+                IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Ready_For} [{interval.Name}] {AppResources.Txt_In} {c}s...");
+                await Task.Delay(1000, token);
+            }
+        }
 
-                int remainingSeconds = totalSeconds - elapsed;
+        private async Task RunEffortAsync(WorkoutInterval interval, Action<string, int> onProgress, CancellationToken token)
+        {
+            int total = (int)Math.Round(interval.DurationSeconds);
 
-                // Check if we are exactly 5 seconds before the end
-                if (remainingSeconds == 5 && !fiveSecondAlertPlayed)
-                {
-                    PlayBeepSoundAsync();
-                    fiveSecondAlertPlayed = true; // Ensures it only plays once for this interval
-                }
+            for (int remaining = total; remaining > 0; remaining--)
+            {
+                await WaitWhilePausedAsync(token);
 
-                // Wait 1 second for the interval progress
-                await Task.Delay(1000, cancellationToken);
+                // Bip 5 secondes avant la fin de l'intervalle (sans bloquer le chrono)
+                if (remaining == 5)
+                    _ = PlayBeepSoundAsync();
+
+                onProgress(interval.Name, remaining);
+                await Task.Delay(1000, token);
+            }
+        }
+
+        private async Task RunRestAsync(WorkoutInterval interval, CancellationToken token)
+        {
+            await SetSpeedAsync(RestSpeedKmH);
+            await SetInclineAsync(0);
+
+            for (int r = interval.RestSecondsAfter; r > 0; r--)
+            {
+                await WaitWhilePausedAsync(token);
+                IntervalStatusChanged?.Invoke(this, $"{AppResources.Txt_Rest_Pause} : {r}s");
+                await Task.Delay(1000, token);
             }
         }
 
@@ -434,7 +552,7 @@ namespace TreadmillApp.Services
             }
         }
 
-        public  string PaceFormattedString(string speedString)
+        public string PaceFormattedString(string speedString)
         {
             if (double.TryParse(speedString, out double speed) && speed > 0)
             {
@@ -447,6 +565,35 @@ namespace TreadmillApp.Services
             return "0:00";
         }
 
-        
+        private void HandleDisconnection(IDevice? device)
+        {
+            // Ignore les autres appareils BLE
+            if (device == null || _treadmillDevice == null || device.Id != _treadmillDevice.Id)
+                return;
+
+            Debug.WriteLine($"Tapis déconnecté : {device.Name}");
+
+            // Arrête la séance en cours (le finally de RunWorkoutPlanAsync nettoie le reste)
+            _workoutCancellationToken?.Cancel();
+
+            if (_treadmillDataCharacteristic != null)
+                _treadmillDataCharacteristic.ValueUpdated -= OnTreadmillDataUpdated;
+
+            _treadmillDataCharacteristic = null;
+            _controlPointCharacteristic = null;
+            _treadmillDevice = null;
+            _hasStartedReported = false;
+
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                IsRunning = false;
+                IsConnected = false;
+                CurrentSpeed = 0;
+                CurrentIncline = 0;
+                SetKeepScreenOn(false);
+                DeviceStatusChanged?.Invoke(this, AppResources.DeviceStatus_Disconnected);
+            });
+        }
+
     }
 }

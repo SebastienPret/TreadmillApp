@@ -49,9 +49,61 @@ namespace TreadmillApp.Services
             app.UserAppTheme = style == AppStyle.Light ? AppTheme.Light : AppTheme.Dark;
 
             Current = style;
+            ApplyShellColors();
+            ApplySystemBars(style);
 
             if (save)
                 Preferences.Default.Set(PrefKey, style.ToString());
+        }
+
+
+        private static void ApplySystemBars(AppStyle style)
+        {
+#if ANDROID
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                try
+                {
+                    var window = Microsoft.Maui.ApplicationModel.Platform.CurrentActivity?.Window;
+                    if (window?.DecorView == null) return;
+
+                    // Icônes foncées en thème clair, claires sinon
+                    var controller = AndroidX.Core.View.WindowCompat.GetInsetsController(window, window.DecorView);
+                    if (controller != null)
+                        controller.AppearanceLightStatusBars = style == AppStyle.Light;
+
+                    // Couleur de fond de la barre d'état (sans effet sur Android 15+)
+                    if (Application.Current?.Resources.TryGetValue("SurfaceColor", out var value) == true && value is Color color)
+                    {
+                        window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+                        window.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
+#pragma warning disable CA1422
+                        window.SetStatusBarColor(Microsoft.Maui.Platform.ColorExtensions.ToPlatform(color));
+#pragma warning restore CA1422
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Barre d'état : {ex.Message}");
+                }
+            });
+#endif
+        }
+
+        /// <summary>Lie les couleurs du Shell aux ressources du thème (suit le changement de style).</summary>
+        public static void ApplyShellColors(Shell? shell = null)
+        {
+            shell ??= Shell.Current;
+            if (shell == null) return;
+
+            shell.SetDynamicResource(Shell.BackgroundColorProperty, "SurfaceColor");
+            shell.SetDynamicResource(Shell.ForegroundColorProperty, "AccentColor");
+            shell.SetDynamicResource(Shell.TitleColorProperty, "TextPrimary");
+            shell.SetDynamicResource(Shell.UnselectedColorProperty, "TextSecondary");
+            shell.SetDynamicResource(Shell.TabBarBackgroundColorProperty, "SurfaceColor");
+            shell.SetDynamicResource(Shell.TabBarForegroundColorProperty, "AccentColor");
+            shell.SetDynamicResource(Shell.TabBarTitleColorProperty, "AccentColor");
+            shell.SetDynamicResource(Shell.TabBarUnselectedColorProperty, "TextSecondary");
         }
     }
 }

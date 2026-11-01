@@ -5,6 +5,7 @@
              xmlns:ble="clr-namespace:Plugin.BLE.Abstractions.Contracts;assembly=Plugin.BLE.Abstractions"
              x:Class="TreadmillApp.Views.ScanDevicesPage"
              Title="Recherche de Tapis">
+    <!--  -->
 
     <ContentPage.BindingContext>
         <viewmodels:ScanDevicesViewModel />
@@ -12,11 +13,20 @@
 
     <VerticalStackLayout Spacing="15" Padding="20">
         <!-- 🔍 Lancer le Scan FTMS -->
-        <Button Text="{x:Static resources:AppResources.Txt_Start_Scan}" 
-                Command="{Binding StartScanCommand}" 
-                Style="{StaticResource PrimaryButton}"/>
+        <Button Text="{x:Static resources:AppResources.Txt_Start_Scan}"
+        Command="{Binding StartScanCommand}"
+        IsEnabled="{Binding IsNotConnecting}"
+        Style="{StaticResource PrimaryButton}"/>
 
         <ActivityIndicator IsRunning="{Binding IsScanning}" Style="{StaticResource ActivityIndicator}"/>
+
+        <!-- Connexion en cours -->
+        <VerticalStackLayout IsVisible="{Binding IsConnecting}" Spacing="8">
+            <Label Text="{Binding ConnectingText}" Style="{StaticResource StatusLabel}"/>
+            <Button Text="{x:Static resources:AppResources.Txt_Cancel}"
+            Command="{Binding CancelConnectCommand}"
+            Style="{StaticResource SecondaryButton}"/>
+        </VerticalStackLayout>
 
         <!-- Tapis détectés : -->
         <Label Text="{x:Static resources:AppResources.Txt_Detected_Treadmills}" Style="{StaticResource SectionLabel}"/>
@@ -25,12 +35,18 @@
                         ItemsSource="{Binding DiscoveredDevices}" 
                         SelectionMode="Single" 
                         SelectionChanged="OnDeviceSelected" 
+                        IsEnabled="{Binding IsNotConnecting}"
                         HeightRequest="400">
+            <CollectionView.Triggers>
+                <DataTrigger TargetType="CollectionView" Binding="{Binding IsConnecting}" Value="True">
+                    <Setter Property="Opacity" Value="0.4"/>
+                </DataTrigger>
+            </CollectionView.Triggers>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="ble:IDevice">
                     <VerticalStackLayout Padding="10" Spacing="2">
                         <Label Text="{Binding Name}" Style="{StaticResource SectionLabel}"/>
-                        <Label Text="{Binding Id, StringFormat='ID: {0}'}" Style="{StaticResource SubtleLabel}"/>
+                        <Label Text="{Binding Id, StringFormat='ID: {0}'}" Style="{StaticResource HintLabel}"/>
                         <BoxView HeightRequest="1" Style="{StaticResource Divider}" Margin="0,5,0,0"/>
                     </VerticalStackLayout>
                 </DataTemplate>

@@ -126,9 +126,9 @@ Installez le package suivant dans votre projet :
 
   
 
- - [ ] Icon
- - [ ] Language
- - [ ] Color
+ - [x] Icon
+ - [x] Language
+ - [x] Color
  - [x] ~~Recherhe tapis autre~~
  - [x] ~~bouton inclinaison dynamique~~
  - [x] ~~Selections d'intervale pour modification (rafrichissement)~~

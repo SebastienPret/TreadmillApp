@@ -57,6 +57,21 @@
         <Setter Property="FontSize" Value="12" />
     </Style>
 
+    <!-- Statut de la séance (Dashboard) -->
+    <Style x:Key="StatusLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource WarningColor}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="WidthRequest" Value="300" />
+        <Setter Property="MinimumHeightRequest" Value="56" />
+    </Style>
+
+    <Style x:Key="SubtleLabel" TargetType="Label" BasedOn="{StaticResource HintLabel}" />
+
     <!-- ===================== Champs de saisie ===================== -->
     <Style x:Key="BaseEntry" TargetType="Entry">
         <Setter Property="TextColor" Value="{DynamicResource TextPrimary}" />
@@ -142,6 +157,7 @@
     <Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
         <Setter Property="BackgroundColor" Value="{DynamicResource NeutralButton}" />
         <Setter Property="TextColor" Value="#FFFFFF" />
+        <Setter Property="MinimumWidthRequest" Value="100"/>
     </Style>
     
     <!-- danger button -->

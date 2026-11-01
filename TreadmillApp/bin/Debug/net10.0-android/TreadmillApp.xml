@@ -13,6 +13,21 @@
         <member name="P:TreadmillApp.Services.AppStateService.SavedWorkouts">
             <inheritdoc/>
         </member>
+        <member name="M:TreadmillApp.Services.BlePermissionHelper.EnsurePermissionsAsync">
+            <summary>Vérifie / demande les permissions nécessaires au scan BLE.</summary>
+        </member>
+        <member name="M:TreadmillApp.Services.BlePermissionHelper.IsBluetoothOn">
+            <summary>Le Bluetooth est-il activé sur l'appareil ?</summary>
+        </member>
+        <member name="M:TreadmillApp.Services.ThemeService.Initialize">
+            <summary>À appeler une fois au démarrage (App constructor).</summary>
+        </member>
+        <member name="M:TreadmillApp.Services.ThemeService.Apply(TreadmillApp.Services.AppStyle,System.Boolean)">
+            <summary>Applique un style immédiatement et le mémorise.</summary>
+        </member>
+        <member name="M:TreadmillApp.Services.ThemeService.ApplyShellColors(Microsoft.Maui.Controls.Shell)">
+            <summary>Lie les couleurs du Shell aux ressources du thème (suit le changement de style).</summary>
+        </member>
         <member name="T:TreadmillApp.Models.WorkoutInterval">
             <inheritdoc/>
         </member>
@@ -60,6 +75,11 @@
             <summary>
               Remplace la propriété CurrentUICulture du thread actuel pour toutes
               les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources._Empty_1_">
+            <summary>
+              Recherche une chaîne localisée semblable à .
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Alert_NoIntervalsMessage">
@@ -127,9 +147,19 @@
               Recherche une chaîne localisée semblable à Stop.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Btn_Update_Interval">
+            <summary>
+              Recherche une chaîne localisée semblable à Modify the interval.
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Confirmation">
             <summary>
               Recherche une chaîne localisée semblable à Confirmation.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Connection">
+            <summary>
+              Recherche une chaîne localisée semblable à Connecting ......
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.DefaultIntervalName">
@@ -152,6 +182,11 @@
               Recherche une chaîne localisée semblable à Connect to.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.DeviceStatus_Disconnected">
+            <summary>
+              Recherche une chaîne localisée semblable à Non-connected mat.
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Error">
             <summary>
               Recherche une chaîne localisée semblable à Error.
@@ -165,6 +200,11 @@
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Error_Invalid_Interval">
             <summary>
               Recherche une chaîne localisée semblable à Invalid duration.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Error_Not_Connected">
+            <summary>
+              Recherche une chaîne localisée semblable à Disconnect mat.
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Interval_CoolDown">
@@ -337,6 +377,16 @@
               Recherche une chaîne localisée semblable à Ready.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Theme">
+            <summary>
+              Recherche une chaîne localisée semblable à Select your theme.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Theme_Dark">
+            <summary>
+              Recherche une chaîne localisée semblable à Dark theme.
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Treadmill">
             <summary>
               Recherche une chaîne localisée semblable à Treadmill.
@@ -412,6 +462,16 @@
               Recherche une chaîne localisée semblable à Settings.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Bluetooth_Off">
+            <summary>
+              Recherche une chaîne localisée semblable à Bluetooth is not enabled..
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Bluetooth_Off_Message">
+            <summary>
+              Recherche une chaîne localisée semblable à Bluetooth is not enabled, please enable it in the settings..
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Cancel">
             <summary>
               Recherche une chaîne localisée semblable à Cancel.
@@ -440,11 +500,6 @@
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Connection_Success">
             <summary>
               Recherche une chaîne localisée semblable à Successfully connected to the Treadmill!.
-            </summary>
-        </member>
-        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Connection_Title_Pogress">
-            <summary>
-              Recherche une chaîne localisée semblable à Connecting ......
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Create_New_Workout">
@@ -495,6 +550,21 @@
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_OK">
             <summary>
               Recherche une chaîne localisée semblable à OK.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Open_Settings">
+            <summary>
+              Recherche une chaîne localisée semblable à Open settings.
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Permission_Ble_Message">
+            <summary>
+              Recherche une chaîne localisée semblable à The application cannot access Bluetooth; please enable it in your settings to use this application..
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Permission_Required">
+            <summary>
+              Recherche une chaîne localisée semblable à Missing permission.
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Txt_Ready_For">
@@ -574,9 +644,6 @@
         <member name="P:TreadmillApp.ViewModels.DashboardViewModel.ConnectButtonText">
             <inheritdoc/>
         </member>
-        <member name="P:TreadmillApp.ViewModels.DashboardViewModel.ConnectButtonBackgroundColor">
-            <inheritdoc/>
-        </member>
         <member name="M:TreadmillApp.ViewModels.DashboardViewModel.OnCurrentSpeedChanged(System.String)">
             <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.DashboardViewModel.CurrentSpeed"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
@@ -636,6 +703,11 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.CurrentPlan">
+            <inheritdoc/>
         </member>
         <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.PlanTitle">
             <inheritdoc/>
@@ -661,6 +733,9 @@
         <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.Intervals">
             <inheritdoc/>
         </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.EditingInterval">
+            <inheritdoc/>
+        </member>
         <member name="M:TreadmillApp.ViewModels.IntervalsViewModel.OnSpeedChanged(System.Double)">
             <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.Speed"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
@@ -681,6 +756,18 @@
         </member>
         <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.AddIntervalCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.AddInterval"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.editIntervalCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.EditIntervalCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.EditIntervalCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.EditInterval(TreadmillApp.Models.WorkoutInterval)"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.cancelEditCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.CancelEditCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.CancelEditCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.CancelEdit"/>.</summary>
         </member>
         <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.deleteIntervalCommand">
             <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.DeleteIntervalCommand"/>.</summary>
@@ -738,8 +825,15 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.IsScanning">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.IsConnecting">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.ConnectingText">
             <inheritdoc/>
         </member>
         <member name="F:TreadmillApp.ViewModels.ScanDevicesViewModel.startScanCommand">
@@ -753,6 +847,12 @@
         </member>
         <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.DeviceSelectedCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.ScanDevicesViewModel.DeviceSelected(Plugin.BLE.Abstractions.Contracts.IDevice)"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.ScanDevicesViewModel.cancelConnectCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.ScanDevicesViewModel.CancelConnectCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.CancelConnectCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.ScanDevicesViewModel.CancelConnect"/>.</summary>
         </member>
         <member name="T:TreadmillApp.ViewModels.SettingsViewModel">
             <inheritdoc/>
@@ -863,9 +963,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConnectButtonText">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConnectButtonText" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConnectButtonBackgroundColor">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConnectButtonBackgroundColor" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PlanTitle">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PlanTitle" generated properties.</summary>
         </member>
@@ -878,8 +975,29 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Incline">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Incline" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EditingInterval">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EditingInterval" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsEditing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsEditing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AddButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AddButtonText" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsScanning">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsScanning" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsConnecting">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsConnecting" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsNotConnecting">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsNotConnecting" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConnectingText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConnectingText" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedLanguageIndex">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedLanguageIndex" generated properties.</summary>
@@ -959,9 +1077,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConnectButtonText">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConnectButtonText" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConnectButtonBackgroundColor">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConnectButtonBackgroundColor" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PlanTitle">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PlanTitle" generated properties.</summary>
         </member>
@@ -974,8 +1089,29 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Incline">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Incline" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EditingInterval">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EditingInterval" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsEditing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsEditing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AddButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AddButtonText" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsScanning">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsScanning" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsConnecting">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsConnecting" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotConnecting">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotConnecting" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConnectingText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConnectingText" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedLanguageIndex">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedLanguageIndex" generated properties.</summary>

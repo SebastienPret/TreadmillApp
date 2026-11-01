@@ -12,10 +12,17 @@
         <VerticalStackLayout Spacing="20" Padding="25" HorizontalOptions="Center" VerticalOptions="Start">
 
             <!-- Connexion Bluetooth -->
-            <Button Text="{Binding ConnectButtonText}" 
-                    Command="{Binding OpenScanCommand}" 
-                    BackgroundColor="{Binding ConnectButtonBackgroundColor}" 
-                    Style="{StaticResource PrimaryButton}" WidthRequest="300"/>
+            <Button Text="{Binding ConnectButtonText}"
+                    Command="{Binding OpenScanCommand}"
+                    Style="{StaticResource PrimaryButton}"
+                    WidthRequest="300">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsConnected}" Value="True">
+                        <Setter Property="BackgroundColor" Value="{DynamicResource SuccessColor}" />
+                        <Setter Property="TextColor" Value="#FFFFFF" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
             <Label Text="{Binding DeviceStatus}" Style="{StaticResource HintLabel}" HorizontalOptions="Center"/>
 
             <!-- Indicateurs Live -->
@@ -37,7 +44,7 @@
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
-            <Label Text="{Binding StatusRun}" FontSize="18" TextColor="Yellow" HorizontalOptions="Center"/>
+            <Label Text="{Binding StatusRun}" Style="{StaticResource StatusLabel}" FontSize="35"/>
 
             <!-- Contrôles Manuels (activés/désactivés via IsConnected) -->
             <VerticalStackLayout Spacing="20" IsEnabled="{Binding IsConnected}">
@@ -52,9 +59,9 @@
                 </HorizontalStackLayout>
 
                 <!-- Start / Stop -->
-                <Grid ColumnDefinitions="*,*" ColumnSpacing="10" WidthRequest="300" HorizontalOptions="Center">
-                    <Button Grid.Column="0" Text="{x:Static resources:AppResources.Btn_Start}" Command="{Binding StartCommand}" Style="{StaticResource SuccessButton}"/>
-                    <Button Grid.Column="1" Text="{x:Static resources:AppResources.Btn_Stop}" Command="{Binding StopCommand}" Style="{StaticResource DangerButton}"/>
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="15"  HorizontalOptions="Center">
+                    <Button Grid.Column="0" Text="{x:Static resources:AppResources.Btn_Start}" MinimumWidthRequest="100" Command="{Binding StartCommand}" Style="{StaticResource SuccessButton}"/>
+                    <Button Grid.Column="1" Text="{x:Static resources:AppResources.Btn_Stop}" MinimumWidthRequest="100" Command="{Binding StopCommand}" Style="{StaticResource DangerButton}"/>
                 </Grid>
             </VerticalStackLayout>
 

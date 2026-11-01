@@ -264,6 +264,7 @@ namespace TreadmillApp.ViewModels
             // Définir le plan actif 
             //AppStateService.Instance.CurrentPlan = AppStateService.Instance.CurrentPlan;
             currentPlan?.Title = string.IsNullOrWhiteSpace(PlanTitle) ? AppResources.DefaultWorkoutTitle : PlanTitle;
+            AppStateService.Instance.AutoStartWorkout = true;   // demande le lancement automatique
             await Shell.Current.GoToAsync("//DashboardPage");
         }
     }

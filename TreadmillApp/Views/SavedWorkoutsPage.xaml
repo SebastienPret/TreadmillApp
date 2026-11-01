@@ -10,11 +10,11 @@
         <viewmodels:SavedWorkoutsViewModel x:Name="ViewModel" />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout Spacing="20" Padding="20">
+    <Grid RowDefinitions="40, *, 30, auto" Padding="10">
         <!-- Choisissez un programme enregistré : -->
-        <Label Text="{x:Static resources:AppResources.Txt_Choose_Workout}" Style="{StaticResource SectionLabel}"/>
-        <ScrollView>
-            <CollectionView ItemsSource="{Binding SavedWorkouts}" HeightRequest="450">
+        <Label Grid.Row="0" Text="{x:Static resources:AppResources.Txt_Choose_Workout}" Style="{StaticResource SectionLabel}"/>
+        <ScrollView Grid.Row="1">
+            <CollectionView ItemsSource="{Binding SavedWorkouts}" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:WorkoutPlan">
 
@@ -58,11 +58,11 @@
             </CollectionView>
 
         </ScrollView>
-        <BoxView HeightRequest="1" Style="{StaticResource Divider}" Margin="0,5,0,0"/>
+        <BoxView Grid.Row="2" HeightRequest="1" Style="{StaticResource Divider}" Margin="0,5,0,0"/>
         <!-- ➕ Créer un nouvel entraînement -->
-        <Button Text="{x:Static resources:AppResources.Txt_Create_New_Workout}" 
+        <Button Grid.Row="3" Text="{x:Static resources:AppResources.Txt_Create_New_Workout}" 
                 Command="{Binding CreateNewCommand}" 
                 Style="{StaticResource PrimaryButton}" VerticalOptions="End"/>
-    </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>

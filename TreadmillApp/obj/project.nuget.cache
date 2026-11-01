@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "E6xeP1+u7ps=",
-  "success": true,
+  "dgSpecHash": "cxbFk4pBFNY=",
+  "success": false,
   "projectFilePath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sebas\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.2\\communitytoolkit.mvvm.8.4.2.nupkg.sha512",
@@ -140,5 +140,50 @@
     "C:\\Users\\sebas\\.nuget\\packages\\xamarin.kotlinx.serialization.core.jvm\\1.9.0.1\\xamarin.kotlinx.serialization.core.jvm.1.9.0.1.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.NETCore.App.Crossgen2.win-x64 (= 10.0.12)' pour 'net10.0-windows10.0.19041'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org.",
+      "projectPath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "filePath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "libraryId": "Microsoft.NETCore.App.Crossgen2.win-x64",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.AspNetCore.App.Runtime.win-x64 (= 10.0.12)' pour 'net10.0-windows10.0.19041'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org.",
+      "projectPath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "filePath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "libraryId": "Microsoft.AspNetCore.App.Runtime.win-x64",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.WindowsDesktop.App.Runtime.win-x64 (= 10.0.12)' pour 'net10.0-windows10.0.19041'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org.",
+      "projectPath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "filePath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "libraryId": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.NETCore.App.Runtime.win-x64 (= 10.0.12)' pour 'net10.0-windows10.0.19041'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org.",
+      "projectPath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "filePath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
+      "libraryId": "Microsoft.NETCore.App.Runtime.win-x64",
+      "targetGraphs": [
+        "net10.0-windows10.0.19041"
+      ]
+    }
+  ]
 }

@@ -409,4 +409,10 @@
   <data name="Lbl_Theme_Dark" xml:space="preserve">
     <value>Donker thema</value>
   </data>
+  <data name="DeviceStatus_Disconnected" xml:space="preserve">
+    <value>Niet-verbonden mat</value>
+  </data>
+  <data name="Error_Not_Connected" xml:space="preserve">
+    <value>Tapijt loskoppelen</value>
+  </data>
 </root>

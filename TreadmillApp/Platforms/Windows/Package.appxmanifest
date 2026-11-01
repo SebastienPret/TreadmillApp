@@ -6,7 +6,7 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="maui-package-name-placeholder" Publisher="CN=User Name" Version="0.0.0.0" />
+  <Identity Name="maui-package-name-placeholder" Publisher="CN=User Name" Version="0.0.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="19294A90-002E-448E-8AD7-D6B88E8B8F5D" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -41,6 +41,7 @@
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
+    <DeviceCapability Name="bluetooth"/>
   </Capabilities>
 
 </Package>

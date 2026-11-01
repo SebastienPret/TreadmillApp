@@ -15,14 +15,19 @@ namespace TreadmillApp.Views
 
         private async void OnDeviceSelected(object sender, SelectionChangedEventArgs e)
         {
+            if (_viewModel == null || _viewModel.IsConnecting) return;
+
             if (e.CurrentSelection.FirstOrDefault() is IDevice selectedDevice)
             {
-                // Exécute la commande du ViewModel avec l'appareil sélectionné
-                await _viewModel?.DeviceSelectedCommand.ExecuteAsync(selectedDevice);
-
-                // Réinitialise la sélection pour permettre de re-cliquer si besoin
-                CvDevices.SelectedItem = null;
+                await _viewModel.DeviceSelectedCommand.ExecuteAsync(selectedDevice);
+                CvDevices.SelectedItem = null;   // permet de re-sélectionner après un échec ou une annulation
             }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _viewModel?.CancelConnectCommand.Execute(null);   // sans effet si aucune connexion en cours
         }
     }
 }
