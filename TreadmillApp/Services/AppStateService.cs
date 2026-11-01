@@ -17,7 +17,7 @@ namespace TreadmillApp.Services
 
         // 3. Vos variables globales avec notification automatique (grâce au CommunityToolkit)
         [ObservableProperty]
-        public partial WorkoutPlan? CurrentPlan { get; set; }
+        public partial WorkoutPlan? CurrentPlan { get; set; } = new WorkoutPlan();
 
         [ObservableProperty]
         public partial ObservableCollection<WorkoutPlan> SavedWorkouts { get; set; } = [];

@@ -12,16 +12,18 @@ namespace TreadmillApp.ViewModels
     public partial class SavedWorkoutsViewModel : ObservableObject
     {
         [ObservableProperty]
-        public partial ObservableCollection<WorkoutPlan> SavedWorkouts { get; set; } = new();
+        public partial ObservableCollection<WorkoutPlan> SavedWorkouts { get; set; } = AppStateService.Instance.SavedWorkouts;
 
         // Le constructeur charge les entraînements dès l'ouverture de la page
         public SavedWorkoutsViewModel()
         {
-            LoadWorkouts();
+            //LoadWorkouts();
+            AppStateService.Instance.LoadWorkouts();
+            SavedWorkouts = AppStateService.Instance.SavedWorkouts;
         }
 
         // Méthode pour charger ou rafraîchir la liste (appelée depuis le ViewModel ou le code-behind lors de l'apparition)
-        public void LoadWorkouts()
+        /*public void LoadWorkouts()
         {
             try
             {
@@ -42,14 +44,15 @@ namespace TreadmillApp.ViewModels
                 Debug.WriteLine($"Erreur chargement entraînements : {ex.Message}");
                 SavedWorkouts = [];
             }
-        }
+        }*/
 
         [RelayCommand]
         private static async Task RunWorkout(WorkoutPlan plan)
         {
             if (plan == null) return;
 
-            IntervalsPage.CurrentPlan = plan;
+            //IntervalsPage.CurrentPlan = plan;
+            AppStateService.Instance.CurrentPlan = plan;
             await Shell.Current.GoToAsync("//DashboardPage");
         }
 
@@ -58,10 +61,11 @@ namespace TreadmillApp.ViewModels
         {
             if (plan == null) return;
 
-            IntervalsPage.CurrentPlan = plan;
+            //IntervalsPage.CurrentPlan = plan;
+            AppStateService.Instance.CurrentPlan = plan;
             await Shell.Current.GoToAsync("//IntervalsPage");
             // IMPORTANT : Réinitialise la sélection pour permettre de re-sélectionner le même ou un autre
-            IntervalsPage.CurrentPlan = null; 
+            //IntervalsPage.CurrentPlan = null; 
         }
 
         [RelayCommand]
@@ -78,14 +82,17 @@ namespace TreadmillApp.ViewModels
             if (confirm)
             {
                 WorkoutStorageService.DeleteWorkout(plan);
-                LoadWorkouts(); // Rafraîchit la liste après suppression
+                //LoadWorkouts(); // Rafraîchit la liste après suppression
+                AppStateService.Instance.LoadWorkouts();
+                SavedWorkouts = AppStateService.Instance.SavedWorkouts;
             }
         }
 
         [RelayCommand]
         private static async Task CreateNew()
         {
-            IntervalsPage.CurrentPlan = new WorkoutPlan { Title = AppResources.DefaultWorkoutTitle };
+            //IntervalsPage.CurrentPlan = new WorkoutPlan { Title = AppResources.DefaultWorkoutTitle };
+            AppStateService.Instance.CurrentPlan = new WorkoutPlan { Title = AppResources.DefaultWorkoutTitle };
             await Shell.Current.GoToAsync("//IntervalsPage");
         }
     }

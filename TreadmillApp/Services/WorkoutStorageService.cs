@@ -17,12 +17,12 @@ public static class WorkoutStorageService
             var defaultPlan = new WorkoutPlan
             {
                 Title = AppResources.DefaultWorkoutTitle,
-                Intervals = new ObservableCollection<WorkoutInterval>
-                {
+                Intervals =
+                [
                     new() { Name = AppResources.Interval_EasyRun, TargetSpeed = 6.0, TargetIncline = 0, DurationSeconds = 120 },
                     new() { Name = AppResources.Interval_Sprint, TargetSpeed = 12.0, TargetIncline = 2, DurationSeconds = 30 },
                     new() { Name = AppResources.Interval_CoolDown, TargetSpeed = 6.0, TargetIncline = 0, DurationSeconds = 60 }
-                }
+                ]
             };
 
             var defaultWorkouts = new ObservableCollection<WorkoutPlan> { defaultPlan };

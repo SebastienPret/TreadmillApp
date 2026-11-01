@@ -4,6 +4,15 @@
         <name>TreadmillApp</name>
     </assembly>
     <members>
+        <member name="T:TreadmillApp.Services.AppStateService">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Services.AppStateService.CurrentPlan">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Services.AppStateService.SavedWorkouts">
+            <inheritdoc/>
+        </member>
         <member name="T:TreadmillApp.Models.WorkoutInterval">
             <inheritdoc/>
         </member>
@@ -11,6 +20,9 @@
             <inheritdoc/>
         </member>
         <member name="P:TreadmillApp.Models.WorkoutInterval.TargetSpeed">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.Models.WorkoutInterval.PaceFormattedString">
             <inheritdoc/>
         </member>
         <member name="P:TreadmillApp.Models.WorkoutInterval.TargetIncline">
@@ -148,6 +160,11 @@
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Error_Add_Interval">
             <summary>
               Recherche une chaîne localisée semblable à Add at least one interval before saving..
+            </summary>
+        </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Error_Invalid_Interval">
+            <summary>
+              Recherche une chaîne localisée semblable à Invalid duration.
             </summary>
         </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Interval_CoolDown">
@@ -641,6 +658,9 @@
         <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.DurationSeconds">
             <inheritdoc/>
         </member>
+        <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.Intervals">
+            <inheritdoc/>
+        </member>
         <member name="M:TreadmillApp.ViewModels.IntervalsViewModel.OnSpeedChanged(System.Double)">
             <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.Speed"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
@@ -660,7 +680,7 @@
             <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.AddIntervalCommand"/>.</summary>
         </member>
         <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.AddIntervalCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.AddInterval"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.AddInterval"/>.</summary>
         </member>
         <member name="F:TreadmillApp.ViewModels.IntervalsViewModel.deleteIntervalCommand">
             <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalsViewModel.DeleteIntervalCommand"/>.</summary>
@@ -680,23 +700,93 @@
         <member name="P:TreadmillApp.ViewModels.IntervalsViewModel.StartWorkoutCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalsViewModel.StartWorkout"/>.</summary>
         </member>
-        <member name="T:TreadmillApp.ViewModels.IntervalViewModel">
+        <member name="T:TreadmillApp.ViewModels.SavedWorkoutsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
         </member>
-        <member name="P:TreadmillApp.ViewModels.IntervalViewModel.DurationSeconds">
-            <inheritdoc cref="F:TreadmillApp.ViewModels.IntervalViewModel._durationSeconds"/>
+        <member name="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.SavedWorkouts">
+            <inheritdoc/>
         </member>
-        <member name="M:TreadmillApp.ViewModels.IntervalViewModel.OnDurationSecondsChanged(System.Double)">
-            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.IntervalViewModel.DurationSeconds"/> just changed.</summary>
+        <member name="F:TreadmillApp.ViewModels.SavedWorkoutsViewModel.runWorkoutCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.RunWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.RunWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.SavedWorkoutsViewModel.RunWorkout(TreadmillApp.Models.WorkoutPlan)"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.SavedWorkoutsViewModel.editWorkoutCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.EditWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.EditWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.SavedWorkoutsViewModel.EditWorkout(TreadmillApp.Models.WorkoutPlan)"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.SavedWorkoutsViewModel.deleteWorkoutCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.DeleteWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.DeleteWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.SavedWorkoutsViewModel.DeleteWorkout(TreadmillApp.Models.WorkoutPlan)"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.SavedWorkoutsViewModel.createNewCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.CreateNewCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SavedWorkoutsViewModel.CreateNewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.SavedWorkoutsViewModel.CreateNew"/>.</summary>
+        </member>
+        <member name="T:TreadmillApp.ViewModels.ScanDevicesViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.IsScanning">
+            <inheritdoc/>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.ScanDevicesViewModel.startScanCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.ScanDevicesViewModel.StartScanCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.StartScanCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.ScanDevicesViewModel.StartScan"/>.</summary>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.ScanDevicesViewModel.deviceSelectedCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.ScanDevicesViewModel.DeviceSelectedCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.ScanDevicesViewModel.DeviceSelectedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.ScanDevicesViewModel.DeviceSelected(Plugin.BLE.Abstractions.Contracts.IDevice)"/>.</summary>
+        </member>
+        <member name="T:TreadmillApp.ViewModels.SettingsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SettingsViewModel.SelectedLanguageIndex">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SettingsViewModel.EnableCountdown">
+            <inheritdoc/>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SettingsViewModel.EnableAudioAlerts">
+            <inheritdoc/>
+        </member>
+        <member name="M:TreadmillApp.ViewModels.SettingsViewModel.OnSelectedLanguageIndexChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.SettingsViewModel.SelectedLanguageIndex"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
-            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.IntervalViewModel.DurationSeconds"/> is changed.</remarks>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.SettingsViewModel.SelectedLanguageIndex"/> is changed.</remarks>
         </member>
-        <member name="F:TreadmillApp.ViewModels.IntervalViewModel.startWorkoutCommand">
-            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.IntervalViewModel.StartWorkoutCommand"/>.</summary>
+        <member name="M:TreadmillApp.ViewModels.SettingsViewModel.OnEnableCountdownChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.SettingsViewModel.EnableCountdown"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.SettingsViewModel.EnableCountdown"/> is changed.</remarks>
         </member>
-        <member name="P:TreadmillApp.ViewModels.IntervalViewModel.StartWorkoutCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.IntervalViewModel.StartWorkoutAsync"/>.</summary>
+        <member name="M:TreadmillApp.ViewModels.SettingsViewModel.OnEnableAudioAlertsChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:TreadmillApp.ViewModels.SettingsViewModel.EnableAudioAlerts"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TreadmillApp.ViewModels.SettingsViewModel.EnableAudioAlerts"/> is changed.</remarks>
+        </member>
+        <member name="F:TreadmillApp.ViewModels.SettingsViewModel.resetDataCommand">
+            <summary>The backing field for <see cref="P:TreadmillApp.ViewModels.SettingsViewModel.ResetDataCommand"/>.</summary>
+        </member>
+        <member name="P:TreadmillApp.ViewModels.SettingsViewModel.ResetDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TreadmillApp.ViewModels.SettingsViewModel.ResetData"/>.</summary>
         </member>
         <member name="T:TreadmillApp.Resource">
             <summary>
@@ -743,6 +833,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Intervals">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Intervals" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentPlan">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentPlan" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SavedWorkouts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SavedWorkouts" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DeviceStatus">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DeviceStatus" generated properties.</summary>
         </member>
@@ -781,6 +877,18 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Incline">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Incline" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsScanning">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsScanning" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedLanguageIndex">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedLanguageIndex" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EnableCountdown">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EnableCountdown" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EnableAudioAlerts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EnableAudioAlerts" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -821,6 +929,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Intervals">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Intervals" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentPlan">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentPlan" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SavedWorkouts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SavedWorkouts" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DeviceStatus">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DeviceStatus" generated properties.</summary>
         </member>
@@ -859,6 +973,18 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Incline">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Incline" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsScanning">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsScanning" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedLanguageIndex">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedLanguageIndex" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EnableCountdown">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EnableCountdown" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EnableAudioAlerts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EnableAudioAlerts" generated properties.</summary>
         </member>
     </members>
 </doc>

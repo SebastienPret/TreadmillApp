@@ -14,9 +14,11 @@ namespace TreadmillApp.ViewModels
         //public static WorkoutPlan CurrentPlan => IntervalsPage.CurrentPlan;
         [ObservableProperty]
         public partial WorkoutPlan CurrentPlan { get; set; } = new();
-
+        
+        //[ObservableProperty]
+        //public partial string PlanTitle { get; set; } = CurrentPlan.Title ?? AppResources.DefaultWorkoutTitle;
         [ObservableProperty]
-        public partial string PlanTitle { get; set; } = CurrentPlan.Title ?? AppResources.DefaultWorkoutTitle;
+        public partial string PlanTitle { get; set; } = AppStateService.Instance.CurrentPlan?.Title ?? AppResources.DefaultWorkoutTitle;
 
         // Propriétés du formulaire d'intervalle en cours de création
         [ObservableProperty]
@@ -38,15 +40,73 @@ namespace TreadmillApp.ViewModels
         public partial double DurationSeconds { get; set; } = 0;
 
         // Collection observable pour la liste d'intervalles
-        //public static ObservableCollection<WorkoutInterval> Intervals => CurrentPlan.Intervals;
+        //public static ObservableCollection<WorkoutInterval> Intervals => AppStateService.Instance.CurrentPlan?.Intervals ?? [];
 
-        public ObservableCollection<WorkoutInterval> Intervals { get; }
+        // Propriété non-statique exposant directement la collection du plan global
+        /*public ObservableCollection<WorkoutInterval> Intervals { get; set; } =
+            AppStateService.Instance.CurrentPlan?.Intervals ?? [];
+        */
+
+        // Remplace l'ancienne déclaration par celle-ci :
+        [ObservableProperty]
+        public partial ObservableCollection<WorkoutInterval> Intervals { get; set; } = [];
+
+        //public ObservableCollection<WorkoutInterval> Intervals { get; }
 
         public IntervalsViewModel()
         {
             // Convertit la List<WorkoutInterval> en ObservableCollection<WorkoutInterval>
-            Intervals = new ObservableCollection<WorkoutInterval>(CurrentPlan.Intervals);
+            //Intervals = new ObservableCollection<WorkoutInterval>(AppStateService.Instance.CurrentPlan?.Intervals);
+            //Intervals = AppStateService.Instance.CurrentPlan?.Intervals ?? [];
+            
+            // Sécurité : si aucun plan n'a été initialisé, on en crée un par défaut
+            /*if (AppStateService.Instance.CurrentPlan == null)
+            {
+                AppStateService.Instance.CurrentPlan = new WorkoutPlan
+                {
+                    Title = AppResources.DefaultWorkoutTitle,
+                    Intervals = []
+                };
+            }*/
+            LoadCurrentPlan();
         }
+
+        public void LoadCurrentPlan()
+        {
+            var plan = AppStateService.Instance.CurrentPlan;
+
+            if (plan == null)
+            {
+                // Crée un plan par défaut si aucun n'existe
+                plan = new WorkoutPlan
+                {
+                    Title = AppResources.DefaultWorkoutTitle,
+                    Intervals = []
+                };
+                AppStateService.Instance.CurrentPlan = plan;
+            }
+           
+
+            PlanTitle = plan.Title ?? AppResources.DefaultWorkoutTitle;
+
+            // Assure-toi que la collection pointe bien vers celle du plan actif
+            plan.Intervals ??= [];
+
+            CurrentPlan = plan;                 // garde le VM synchronisé avec le plan réel
+            PlanTitle = plan.Title ?? AppResources.DefaultWorkoutTitle;
+            Intervals = plan.Intervals;         // même référence : plus de copie, plus de désynchronisation
+
+        }
+        /*partial void OnSelectedIntervalChanged(WorkoutInterval? value)
+        {
+            if (value != null)
+            {
+                IntervalName = value.Name;
+                Speed = value.TargetSpeed;
+                Incline = value.TargetIncline;
+                DurationSeconds = value.DurationSeconds;
+            }
+        }*/
 
         partial void OnSpeedChanged(double value)
         {
@@ -94,41 +154,41 @@ namespace TreadmillApp.ViewModels
                 Name = string.IsNullOrWhiteSpace(IntervalName) ? AppResources.DefaultIntervalName : IntervalName,
                 TargetSpeed = Speed,
                 PaceFormattedString = PaceFormatted,
-                
                 TargetIncline = Incline,
                 DurationSeconds = DurationSeconds
             };
 
-            CurrentPlan.Intervals.Add(interval);
-            Intervals.Add(interval);
+            AppStateService.Instance.CurrentPlan?.Intervals.Add(interval);
+            //Intervals.Add(interval);
 
-            // Réinitialisation du formulaire
+            // Réinitialisation optionnelle du formulaire
             //IntervalName = string.Empty;
         }
 
         [RelayCommand]
-        private void DeleteInterval(WorkoutInterval interval)
+        private static void DeleteInterval(WorkoutInterval interval)
         {
-            if (interval != null && CurrentPlan.Intervals.Contains(interval))
+            if (interval != null && AppStateService.Instance.CurrentPlan?.Intervals.Contains(interval) == true)
             {
-                CurrentPlan.Intervals.Remove(interval);
-                Intervals.Remove(interval);
+                AppStateService.Instance.CurrentPlan.Intervals.Remove(interval);
+                //Intervals.Remove(interval);
             }
         }
 
         [RelayCommand]
         private async Task SaveWorkout()
         {
-            if (CurrentPlan.Intervals.Count == 0)
+            var currentPlan = AppStateService.Instance.CurrentPlan;
+            if (currentPlan?.Intervals.Count == 0 || currentPlan == null)
             {
                 await Shell.Current.DisplayAlertAsync(AppResources.Error, AppResources.Error_Add_Interval, AppResources.Txt_OK);
                 return;
             }
 
-            CurrentPlan.Title = string.IsNullOrWhiteSpace(PlanTitle) ? AppResources.DefaultWorkoutTitle : PlanTitle;
+            currentPlan.Title = string.IsNullOrWhiteSpace(PlanTitle) ? AppResources.DefaultWorkoutTitle : PlanTitle;
             // Définir le plan actif 
-            AppStateService.Instance.CurrentPlan = CurrentPlan;
-            WorkoutStorageService.SaveWorkout(CurrentPlan);
+            //AppStateService.Instance.CurrentPlan = AppStateService.Instance.CurrentPlan;
+            WorkoutStorageService.SaveWorkout(currentPlan);
 
             await Shell.Current.DisplayAlertAsync(AppResources.Txt_Success, AppResources.Success_Save_Workout, AppResources.Txt_OK);
         }
@@ -136,15 +196,16 @@ namespace TreadmillApp.ViewModels
         [RelayCommand]
         private async Task StartWorkout()
         {
-            if (CurrentPlan.Intervals.Count == 0)
+            var currentPlan = AppStateService.Instance.CurrentPlan;
+            if (currentPlan?.Intervals.Count == 0 || currentPlan == null)
             {
                 await Shell.Current.DisplayAlertAsync(AppResources.Error, AppResources.Error_Add_Interval, AppResources.Txt_OK);
                 return;
             }
 
             // Définir le plan actif 
-            AppStateService.Instance.CurrentPlan = CurrentPlan;
-            CurrentPlan.Title = string.IsNullOrWhiteSpace(PlanTitle) ? AppResources.DefaultWorkoutTitle : PlanTitle;
+            //AppStateService.Instance.CurrentPlan = AppStateService.Instance.CurrentPlan;
+            currentPlan?.Title = string.IsNullOrWhiteSpace(PlanTitle) ? AppResources.DefaultWorkoutTitle : PlanTitle;
             await Shell.Current.GoToAsync("//DashboardPage");
         }
     }

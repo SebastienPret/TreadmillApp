@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
+             xmlns:models="clr-namespace:TreadmillApp.Models"
              x:Class="TreadmillApp.Views.IntervalsPage"
              BackgroundColor="#121212">
 
@@ -60,7 +61,7 @@
 
             <CollectionView ItemsSource="{Binding Intervals}" MinimumHeightRequest="10" MaximumHeightRequest="500" >
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="models:WorkoutInterval">
                         <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Never">
                             <HorizontalStackLayout Spacing="15" Padding="5" VerticalOptions="Center" HorizontalOptions="Start">
                                 <Label Text="{Binding Name}" TextColor="Yellow" VerticalTextAlignment="Center"/>
@@ -70,9 +71,13 @@
                                 <Label Text="{Binding DurationMinutes, StringFormat='{}D: {0}m'}" TextColor="White" VerticalTextAlignment="Center"/>
 
                                 <!-- Bouton de suppression lié via Command et CommandParameter -->
-                                <Button Text="❌" 
+                                <!--<Button Text="❌" 
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:IntervalsViewModel}}, Path=DeleteIntervalCommand}" 
                                         CommandParameter="{Binding .}" 
+                                        BackgroundColor="Transparent" TextColor="Red" WidthRequest="40"/>
+                                -->
+                                <Button Text="❌"
+                                        Clicked="OnDeleteIntervalClicked"
                                         BackgroundColor="Transparent" TextColor="Red" WidthRequest="40"/>
                             </HorizontalStackLayout>
                         </ScrollView>

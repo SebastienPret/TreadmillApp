@@ -1,4 +1,5 @@
 ﻿using TreadmillApp.Models;
+using TreadmillApp.Services;
 using TreadmillApp.ViewModels;
 
 namespace TreadmillApp.Views
@@ -16,7 +17,8 @@ namespace TreadmillApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel?.LoadWorkouts();
+            //_viewModel?.LoadWorkouts();
+            AppStateService.Instance.LoadWorkouts();
         }
 
         private void OnRunClicked(object sender, EventArgs e)
