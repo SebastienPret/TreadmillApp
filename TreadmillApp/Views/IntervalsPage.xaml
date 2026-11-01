@@ -26,14 +26,29 @@
                    Text="{Binding IntervalName}" 
                    TextColor="White" PlaceholderColor="Gray"/>
 
-            <HorizontalStackLayout Spacing="10">
-                <Label Text="{x:Static resources:AppResources.Lbl_Speed_Km_H}" TextColor="White" VerticalTextAlignment="Center"/>
-                <Stepper Minimum="0" Maximum="20" Increment="0.5" Value="{Binding Speed}"/>
-                <Entry Text="{Binding Speed, StringFormat='{}{0:0.0}'}" Keyboard="Numeric" TextColor="Cyan"/>
-            </HorizontalStackLayout>
+            <Grid ColumnDefinitions="Auto,Auto,*"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="10" RowSpacing="2">
 
-            <!-- Pace -->
-            <Label Text="{Binding PaceFormatted}" TextColor="Cyan" VerticalTextAlignment="Center" FontSize="15" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="{x:Static resources:AppResources.Lbl_Speed_Km_H}"
+                       TextColor="White" VerticalTextAlignment="Center"/>
+
+                <Stepper Grid.Row="0" Grid.Column="1"
+                         Minimum="0" Maximum="20" Increment="0.5"
+                         Value="{Binding Speed}"/>
+
+                <Entry Grid.Row="0" Grid.Column="2"
+                       Text="{Binding Speed, StringFormat='{}{0:0.0}'}"
+                       Keyboard="Numeric" TextColor="Cyan"
+                       HorizontalTextAlignment="Center"/>
+
+                <!-- Pace sous le champ vitesse -->
+                <Label Grid.Row="1" Grid.Column="2"
+                       Text="{Binding PaceFormatted}"
+                       TextColor="Cyan" FontSize="15"
+                       HorizontalTextAlignment="Center"/>
+            </Grid>
 
             <HorizontalStackLayout Spacing="10">
                 <Label Text="{x:Static resources:AppResources.Lbl_Incline_per}" TextColor="White" VerticalTextAlignment="Center"/>
@@ -50,10 +65,18 @@
             </HorizontalStackLayout>
 
             <!-- Ajouter à l'entraînement -->
-            <Button Text="{x:Static resources:AppResources.Btn_Add_Interval}" 
+            <!--<Button Text="{x:Static resources:AppResources.Btn_Add_Interval}" 
                     Command="{Binding AddIntervalCommand}" 
                     BackgroundColor="#FF5722" TextColor="White"/>
+-->
+            <Button Text="{Binding AddButtonText}"
+                    Command="{Binding AddIntervalCommand}"
+                    BackgroundColor="#FF5722" TextColor="White"/>
 
+            <Button Text="{x:Static resources:AppResources.Txt_Cancel}"
+                    Command="{Binding CancelEditCommand}"
+                    IsVisible="{Binding IsEditing}"
+                    BackgroundColor="#555" TextColor="White"/>
             <BoxView HeightRequest="1" Color="Gray" Margin="0,10"/>
 
             <!-- Liste des intervalles -->
@@ -76,6 +99,9 @@
                                         CommandParameter="{Binding .}" 
                                         BackgroundColor="Transparent" TextColor="Red" WidthRequest="40"/>
                                 -->
+                                <Button Text="✏️"
+                                        Clicked="OnEditIntervalClicked"
+                                        BackgroundColor="Transparent" WidthRequest="40"/>
                                 <Button Text="❌"
                                         Clicked="OnDeleteIntervalClicked"
                                         BackgroundColor="Transparent" TextColor="Red" WidthRequest="40"/>

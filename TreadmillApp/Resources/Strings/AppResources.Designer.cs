@@ -178,6 +178,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Modify the interval.
+        /// </summary>
+        public static string Btn_Update_Interval {
+            get {
+                return ResourceManager.GetString("Btn_Update_Interval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Confirmation.
         /// </summary>
         public static string Confirmation {

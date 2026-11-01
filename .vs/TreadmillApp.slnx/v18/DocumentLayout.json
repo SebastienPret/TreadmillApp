@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "E:\\Code\\TreadmillApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\views\\savedworkoutspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\savedworkoutspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\views\\intervalspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\intervalspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\viewmodels\\intervalsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,12 +15,16 @@
       "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\intervalspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\views\\intervalspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\intervalspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\services\\workoutstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\services\\workoutstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\views\\savedworkoutspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|solutionrelative:treadmillapp\\views\\savedworkoutspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87BDDB67-9E00-219D-45D0-957A7053711B}|TreadmillApp\\TreadmillApp.csproj|e:\\code\\treadmillapp\\treadmillapp\\viewmodels\\savedworkoutsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,24 +50,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{79664857-03bf-4bca-aa54-ec998b3328f8}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "TreadmillApp\\ViewModels\\DashboardViewModel.cs",
               "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\DashboardViewModel.cs",
               "RelativeToolTip": "TreadmillApp\\ViewModels\\DashboardViewModel.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAgwG4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-01T14:51:53.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "SavedWorkoutsPage.xaml",
               "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\SavedWorkoutsPage.xaml",
               "RelativeDocumentMoniker": "TreadmillApp\\Views\\SavedWorkoutsPage.xaml",
@@ -92,26 +96,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "IntervalsViewModel.cs",
               "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\IntervalsViewModel.cs",
               "RelativeDocumentMoniker": "TreadmillApp\\ViewModels\\IntervalsViewModel.cs",
               "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\ViewModels\\IntervalsViewModel.cs",
               "RelativeToolTip": "TreadmillApp\\ViewModels\\IntervalsViewModel.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAzwFkAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAALYAAAAAAAAAAAAowMcAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-31T19:05:41.426Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "IntervalsPage.xaml",
+              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\IntervalsPage.xaml",
+              "RelativeDocumentMoniker": "TreadmillApp\\Views\\IntervalsPage.xaml",
+              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\IntervalsPage.xaml*",
+              "RelativeToolTip": "TreadmillApp\\Views\\IntervalsPage.xaml*",
+              "ViewState": "AgIAABcAAAAAAAAAAAAYwDEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-01T10:12:23.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "IntervalsPage.xaml.cs",
               "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\IntervalsPage.xaml.cs",
               "RelativeDocumentMoniker": "TreadmillApp\\Views\\IntervalsPage.xaml.cs",
               "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\IntervalsPage.xaml.cs",
               "RelativeToolTip": "TreadmillApp\\Views\\IntervalsPage.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBkAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-01T14:18:31.504Z",
               "EditorCaption": ""
@@ -159,11 +176,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "WorkoutStorageService.cs",
               "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Services\\WorkoutStorageService.cs",
               "RelativeDocumentMoniker": "TreadmillApp\\Services\\WorkoutStorageService.cs",
@@ -185,19 +202,6 @@
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-31T19:41:40.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IntervalsPage.xaml",
-              "DocumentMoniker": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\IntervalsPage.xaml",
-              "RelativeDocumentMoniker": "TreadmillApp\\Views\\IntervalsPage.xaml",
-              "ToolTip": "E:\\Code\\TreadmillApp\\TreadmillApp\\Views\\IntervalsPage.xaml",
-              "RelativeToolTip": "TreadmillApp\\Views\\IntervalsPage.xaml",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswFAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-11-01T10:12:23.547Z",
-              "EditorCaption": ""
             }
           ]
         }

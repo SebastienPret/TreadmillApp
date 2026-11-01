@@ -30,5 +30,13 @@ namespace TreadmillApp.Views
                 _viewModel?.DeleteIntervalCommand.Execute(interval);
             }
         }
+
+        private void OnEditIntervalClicked(object? sender, EventArgs e)
+        {
+            if (sender is Button { BindingContext: WorkoutInterval interval })
+            {
+                _viewModel?.EditIntervalCommand.Execute(interval);
+            }
+        }
     }
 }

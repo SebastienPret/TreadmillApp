@@ -385,4 +385,7 @@
   <data name="Error_Invalid_Interval" xml:space="preserve">
     <value>Invalid duration</value>
   </data>
+  <data name="Btn_Update_Interval" xml:space="preserve">
+    <value>Modify the interval</value>
+  </data>
 </root>

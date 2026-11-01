@@ -51,7 +51,17 @@ namespace TreadmillApp.ViewModels
         [ObservableProperty]
         public partial ObservableCollection<WorkoutInterval> Intervals { get; set; } = [];
 
-        //public ObservableCollection<WorkoutInterval> Intervals { get; }
+        // Intervalle en cours de modification (null = mode ajout)
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsEditing))]
+        [NotifyPropertyChangedFor(nameof(AddButtonText))]
+        public partial WorkoutInterval? EditingInterval { get; set; }
+
+        public bool IsEditing => EditingInterval != null;
+
+        public string AddButtonText => IsEditing
+            ? AppResources.Btn_Update_Interval
+            : AppResources.Btn_Add_Interval;
 
         public IntervalsViewModel()
         {
@@ -97,16 +107,7 @@ namespace TreadmillApp.ViewModels
             Intervals = plan.Intervals;         // même référence : plus de copie, plus de désynchronisation
 
         }
-        /*partial void OnSelectedIntervalChanged(WorkoutInterval? value)
-        {
-            if (value != null)
-            {
-                IntervalName = value.Name;
-                Speed = value.TargetSpeed;
-                Incline = value.TargetIncline;
-                DurationSeconds = value.DurationSeconds;
-            }
-        }*/
+        
 
         partial void OnSpeedChanged(double value)
         {
@@ -149,6 +150,9 @@ namespace TreadmillApp.ViewModels
                 return;
             }
 
+            var plan = AppStateService.Instance.CurrentPlan;
+            if (plan == null) return;
+
             var interval = new WorkoutInterval
             {
                 Name = string.IsNullOrWhiteSpace(IntervalName) ? AppResources.DefaultIntervalName : IntervalName,
@@ -158,20 +162,48 @@ namespace TreadmillApp.ViewModels
                 DurationSeconds = DurationSeconds
             };
 
-            AppStateService.Instance.CurrentPlan?.Intervals.Add(interval);
-            //Intervals.Add(interval);
+            if (EditingInterval != null)
+            {
+                int index = plan.Intervals.IndexOf(EditingInterval);
+                if (index >= 0)
+                    plan.Intervals[index] = interval;   // remplace sur place, les suivants restent intacts
 
-            // Réinitialisation optionnelle du formulaire
-            //IntervalName = string.Empty;
+                CancelEdit();
+            }
+            else
+            {
+                plan.Intervals.Add(interval);
+            }
         }
 
         [RelayCommand]
-        private static void DeleteInterval(WorkoutInterval interval)
+        private void EditInterval(WorkoutInterval interval)
         {
-            if (interval != null && AppStateService.Instance.CurrentPlan?.Intervals.Contains(interval) == true)
+            if (interval == null) return;
+
+            EditingInterval = interval;
+            IntervalName = interval.Name;
+            Speed = interval.TargetSpeed;
+            Incline = interval.TargetIncline;
+            DurationSeconds = interval.DurationSeconds;
+        }
+
+        [RelayCommand]
+        private void CancelEdit()
+        {
+            EditingInterval = null;
+            IntervalName = string.Empty;
+            // optionnel : remettre Speed / Incline / Durée à 0
+        }
+
+        [RelayCommand]
+        private void DeleteInterval(WorkoutInterval interval)
+        {
+            var plan = AppStateService.Instance.CurrentPlan;
+            if (interval != null && plan?.Intervals.Contains(interval) == true)
             {
-                AppStateService.Instance.CurrentPlan.Intervals.Remove(interval);
-                //Intervals.Remove(interval);
+                if (interval == EditingInterval) CancelEdit();
+                plan.Intervals.Remove(interval);
             }
         }
 
