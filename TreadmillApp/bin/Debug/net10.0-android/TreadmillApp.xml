@@ -252,6 +252,11 @@
               Recherche une chaîne localisée semblable à Choose language.
             </summary>
         </member>
+        <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Choose_Theme">
+            <summary>
+              Recherche une chaîne localisée semblable à Choose Theme.
+            </summary>
+        </member>
         <member name="P:TreadmillApp.Resources.Strings.AppResources.Lbl_Configure_Interval">
             <summary>
               Recherche une chaîne localisée semblable à Configure a new interval.

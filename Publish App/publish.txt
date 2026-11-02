@@ -1,0 +1,13 @@
+5. Commandes d’export
+Plateforme	
+	Commande	
+		Résultat
+Android	
+	dotnet publish -f net10.0-android -c Release	
+		.apk signé dans bin\Release\net10.0-android\publish\
+Windows	
+	dotnet publish -f net10.0-windows10.0.19041.0 -c Release -p:RuntimeIdentifierOverride=win10-x64 -p:WindowsAppSDKSelfContained=true -p:SelfContained=true	
+		dossier publish\ avec l’.exe
+iOS (sur Mac)	
+	dotnet publish -f net10.0-ios -c Release	
+		.ipa dans bin/Release/net10.0-ios/ios-arm64/publish/

@@ -32,5 +32,7 @@
 	<string>This App uses Bluetooth to connect and control compatible Treadmills.</string>  
 	<key>NSBluetoothPeripheralUsageDescription</key>  
 	<string>This App uses Bluetooth to connect and control compatible Treadmills.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

@@ -376,6 +376,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choose Theme.
+        /// </summary>
+        public static string Lbl_Choose_Theme {
+            get {
+                return ResourceManager.GetString("Lbl_Choose_Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Configure a new interval.
         /// </summary>
         public static string Lbl_Configure_Interval {

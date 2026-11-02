@@ -415,4 +415,7 @@
   <data name="Error_Not_Connected" xml:space="preserve">
     <value>Tapijt loskoppelen</value>
   </data>
+  <data name="Lbl_Choose_Theme" xml:space="preserve">
+    <value>Thema kiezen</value>
+  </data>
 </root>

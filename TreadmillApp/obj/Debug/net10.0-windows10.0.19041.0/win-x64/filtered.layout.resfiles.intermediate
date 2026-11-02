@@ -46,6 +46,11 @@ appiconWideTile.scale-125.png
 appiconWideTile.scale-150.png
 appiconWideTile.scale-200.png
 appiconWideTile.scale-400.png
+dashboard_icon.scale-100.png
+dashboard_icon.scale-125.png
+dashboard_icon.scale-150.png
+dashboard_icon.scale-200.png
+dashboard_icon.scale-400.png
 dotnet_bot.scale-100.png
 dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
@@ -71,7 +76,6 @@ splashSplashScreen.scale-125.png
 splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
-Resources\Images\dashboard_icon.svg
 AboutAssets.txt
 censor-beep-01.mp3
 mariostart.mp3

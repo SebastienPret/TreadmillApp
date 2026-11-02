@@ -418,4 +418,7 @@
   <data name="Error_Not_Connected" xml:space="preserve">
     <value>Disconnect mat</value>
   </data>
+  <data name="Lbl_Choose_Theme" xml:space="preserve">
+    <value>Choose Theme</value>
+  </data>
 </root>

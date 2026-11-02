@@ -3,7 +3,7 @@
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
              x:Class="TreadmillApp.Views.SettingsPage"
-             Title="Paramètres">
+             x:DataType="viewmodels:SettingsViewModel">
 
     <ContentPage.BindingContext>
         <viewmodels:SettingsViewModel />
@@ -21,7 +21,6 @@
                         <Label Text="{x:Static resources:AppResources.Lbl_Language_App}" Style="{StaticResource SubtleLabel}"/>
 
                         <Picker Title="{x:Static resources:AppResources.Lbl_Choose_Language}"
-                                Style="{StaticResource Picker}"
                                 WidthRequest="120"
                                 SelectedIndex="{Binding SelectedLanguageIndex}">
                             <Picker.ItemsSource>
@@ -40,8 +39,7 @@
             <Border Style="{StaticResource CardBorder}" Padding="15">
                 <VerticalStackLayout Spacing="10">
                     <Label Text="{x:Static resources:AppResources.Lbl_Theme}" Style="{StaticResource SectionLabel}"/>
-                    <Picker x:Name="StylePicker" Title="Style" />
-                    
+                    <Picker x:Name="StylePicker" Title="{x:Static resources:AppResources.Lbl_Choose_Theme}" /> 
                 </VerticalStackLayout>
             </Border>
 
@@ -75,7 +73,7 @@
 
                     <HorizontalStackLayout Spacing="10">
                         <Label Text="{x:Static resources:AppResources.Lbl_Version}" Style="{StaticResource SubtleLabel}"/>
-                        <Label Text="1.0.0 (FTMS BLE)" Style="{StaticResource SubtleLabel}"/>
+                        <Label Text="{Binding VersionText}" Style="{StaticResource SubtleLabel}"/>
                     </HorizontalStackLayout>
 
                     <!-- Réinitialiser les programmes enregistrés -->

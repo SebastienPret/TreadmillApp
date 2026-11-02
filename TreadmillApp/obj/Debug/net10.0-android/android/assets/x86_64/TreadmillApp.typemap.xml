@@ -1,10 +1,10 @@
-<api type="debug" assembly-name="TreadmillApp" mvid="f1c13af292f54be492bbaa93097a3721">
+<api type="debug" assembly-name="TreadmillApp" mvid="203d27c8b55247ed87d6aa67b604e25c">
   <java-to-managed>
-    <entry java-name="crc649ef5ca3ed60188a2/MainActivity" managed-name="TreadmillApp.MainActivity, TreadmillApp" managed-type-token-id="33554442" />
-    <entry java-name="crc649ef5ca3ed60188a2/MainApplication" managed-name="TreadmillApp.MainApplication, TreadmillApp" managed-type-token-id="33554443" />
+    <entry java-name="crc649ef5ca3ed60188a2/MainActivity" managed-name="TreadmillApp.MainActivity, TreadmillApp" managed-type-token-id="33554443" />
+    <entry java-name="crc649ef5ca3ed60188a2/MainApplication" managed-name="TreadmillApp.MainApplication, TreadmillApp" managed-type-token-id="33554444" />
   </java-to-managed>
   <managed-to-java>
-    <entry java-name="crc649ef5ca3ed60188a2/MainActivity" managed-name="TreadmillApp.MainActivity, TreadmillApp" managed-type-token-id="33554442" />
-    <entry java-name="crc649ef5ca3ed60188a2/MainApplication" managed-name="TreadmillApp.MainApplication, TreadmillApp" managed-type-token-id="33554443" />
+    <entry java-name="crc649ef5ca3ed60188a2/MainActivity" managed-name="TreadmillApp.MainActivity, TreadmillApp" managed-type-token-id="33554443" />
+    <entry java-name="crc649ef5ca3ed60188a2/MainApplication" managed-name="TreadmillApp.MainApplication, TreadmillApp" managed-type-token-id="33554444" />
   </managed-to-java>
 </api>

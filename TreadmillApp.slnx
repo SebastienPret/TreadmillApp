@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="TreadmillApp/TreadmillApp.csproj" />
+  <Project Path="TreadmillApp/TreadmillApp.csproj">
+    <Deploy />
+  </Project>
 </Solution>

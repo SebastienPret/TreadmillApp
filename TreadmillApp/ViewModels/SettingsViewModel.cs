@@ -16,30 +16,42 @@ namespace TreadmillApp.ViewModels
         [ObservableProperty]
         public partial bool EnableAudioAlerts { get; set; } = false;
 
+        //[ObservableProperty]
+        public string VersionText => $"{AppInfo.Current.VersionString} (FTMS BLE)";
+
         public SettingsViewModel()
         {
             LoadSettings();
         }
 
+        private bool _isLoading;
+
         public void LoadSettings()
         {
-            var settings = AppSettingsService.Instance;
-
-            // Détermine l'index du Picker selon la langue enregistrée
-            SelectedLanguageIndex = settings.SelectedLanguage switch
+            _isLoading = true;
+            try
             {
-                "fr-BE" => 1,
-                "nl-BE" => 2,
-                _ => 0  // "en" par défaut
-            };
+                var settings = AppSettingsService.Instance;
 
-            EnableCountdown = settings.EnableCountdown;
-            EnableAudioAlerts = settings.EnableAudioAlerts;
+                SelectedLanguageIndex = settings.SelectedLanguage switch
+                {
+                    "fr-BE" => 1,
+                    "nl-BE" => 2,
+                    _ => 0
+                };
+
+                EnableCountdown = settings.EnableCountdown;
+                EnableAudioAlerts = settings.EnableAudioAlerts;
+            }
+            finally
+            {
+                _isLoading = false;
+            }
         }
 
         partial void OnSelectedLanguageIndexChanged(int value)
         {
-            if (value == -1) return;
+            if (_isLoading || value == -1) return;
 
             string selectedLangCode = value switch
             {
@@ -60,11 +72,13 @@ namespace TreadmillApp.ViewModels
 
         partial void OnEnableCountdownChanged(bool value)
         {
+            if (_isLoading) return;
             AppSettingsService.Instance.EnableCountdown = value;
         }
 
         partial void OnEnableAudioAlertsChanged(bool value)
         {
+            if (_isLoading) return;
             AppSettingsService.Instance.EnableAudioAlerts = value;
         }
 

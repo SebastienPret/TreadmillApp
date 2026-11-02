@@ -43,3 +43,5 @@ desktop.ini
 *.env
 appsettings.Development.json
 appsettings.Local.json
+
+*.keystore

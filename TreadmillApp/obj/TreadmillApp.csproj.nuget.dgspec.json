@@ -5,12 +5,12 @@
   },
   "projects": {
     "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj": {
-      "version": "0.1.0",
+      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
         "projectName": "TreadmillApp",
         "projectPath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
-        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+        "packagesPath": "C:\\nuget",
         "outputPath": "E:\\Code\\TreadmillApp\\TreadmillApp\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
@@ -78,16 +78,16 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.14, )"
+              "version": "[10.0.13, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.120, )"
+              "version": "[10.0.110, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.12, )",
+              "version": "[10.0.14, )",
               "autoReferenced": true
             },
             "Plugin.BLE": {
@@ -121,7 +121,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -407,16 +407,16 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.14, )"
+              "version": "[10.0.13, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.120, )"
+              "version": "[10.0.110, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.12, )",
+              "version": "[10.0.14, )",
               "autoReferenced": true
             },
             "Plugin.BLE": {
@@ -450,7 +450,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -736,16 +736,16 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.14, )"
+              "version": "[10.0.13, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.120, )"
+              "version": "[10.0.110, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.12, )",
+              "version": "[10.0.14, )",
               "autoReferenced": true
             },
             "Plugin.BLE": {
@@ -780,7 +780,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1066,11 +1066,11 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.14, )"
+              "version": "[10.0.13, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.120, )"
+              "version": "[10.0.110, )"
             },
             "Plugin.BLE": {
               "target": "Package",
@@ -1095,15 +1095,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[10.0.12, 10.0.12]"
+              "version": "[10.0.14, 10.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-              "version": "[10.0.12, 10.0.12]"
+              "version": "[10.0.14, 10.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[10.0.12, 10.0.12]"
+              "version": "[10.0.14, 10.0.14]"
             },
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
@@ -1111,7 +1111,7 @@
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[10.0.12, 10.0.12]"
+              "version": "[10.0.14, 10.0.14]"
             }
           ],
           "frameworkReferences": {
@@ -1122,7 +1122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
