@@ -433,6 +433,12 @@ androidx.appcompat.view.menu.MenuView;androidx.appcompat.view.menu.MenuView
 AndroidX.AppCompat.View.Menu.MenuBuilder+ICallback, Xamarin.AndroidX.AppCompat;androidx.appcompat.view.menu.MenuBuilder$Callback
 AndroidX.AppCompat.View.Menu.MenuBuilder.ICallback;androidx.appcompat.view.menu.MenuBuilder$Callback
 androidx.appcompat.view.menu.MenuBuilder$Callback;androidx.appcompat.view.menu.MenuBuilder$Callback
+AndroidX.AppCompat.Widget.ActionMenuView+IOnMenuItemClickListener, Xamarin.AndroidX.AppCompat;androidx.appcompat.widget.ActionMenuView$OnMenuItemClickListener
+AndroidX.AppCompat.Widget.ActionMenuView.IOnMenuItemClickListener;androidx.appcompat.widget.ActionMenuView$OnMenuItemClickListener
+androidx.appcompat.widget.ActionMenuView$OnMenuItemClickListener;androidx.appcompat.widget.ActionMenuView$OnMenuItemClickListener
+AndroidX.AppCompat.Widget.ActionMenuView+IOnMenuItemClickListenerImplementor, Xamarin.AndroidX.AppCompat;mono.androidx.appcompat.widget.ActionMenuView_OnMenuItemClickListenerImplementor
+AndroidX.AppCompat.Widget.ActionMenuView.IOnMenuItemClickListenerImplementor;mono.androidx.appcompat.widget.ActionMenuView_OnMenuItemClickListenerImplementor
+mono.androidx.appcompat.widget.ActionMenuView_OnMenuItemClickListenerImplementor;mono.androidx.appcompat.widget.ActionMenuView_OnMenuItemClickListenerImplementor
 AndroidX.AppCompat.Widget.IDecorToolbar, Xamarin.AndroidX.AppCompat;androidx.appcompat.widget.DecorToolbar
 AndroidX.AppCompat.Widget.IDecorToolbar;androidx.appcompat.widget.DecorToolbar
 androidx.appcompat.widget.DecorToolbar;androidx.appcompat.widget.DecorToolbar

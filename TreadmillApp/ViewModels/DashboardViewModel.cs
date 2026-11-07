@@ -78,7 +78,7 @@ namespace TreadmillApp.ViewModels
         }
 
         [RelayCommand]
-        private static async Task OpenScan() => await Shell.Current.Navigation.PushAsync(new ScanDevicesPage());
+        private async Task OpenScan() => await Shell.Current.GoToAsync(nameof(ScanDevicesPage));  //Navigation.PushAsync(new ScanDevicesPage());
 
         [RelayCommand]
         private static async Task DecreaseSpeed() => await Treadmill.SetSpeedAsync(Treadmill.CurrentSpeed - 0.5);

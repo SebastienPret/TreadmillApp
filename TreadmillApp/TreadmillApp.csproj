@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net10.0-android</TargetFrameworks>
@@ -11,7 +11,7 @@
 		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
 		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
-		
+
 		<!-- Note for IOS -->
 		<!-- iOS : archive .ipa en Release -->
 		<!--<PropertyGroup Condition="'$(Configuration)' == 'Release' And $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
@@ -21,8 +21,8 @@
 			<CodesignProvision>Nom de ton profil App Store</CodesignProvision>
 		</PropertyGroup>
 -->
-		
-		
+
+
 		<OutputType>Exe</OutputType>
 		<RootNamespace>TreadmillApp</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -49,7 +49,7 @@
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
-		<WindowsPackageType>None</WindowsPackageType>
+		<WindowsPackageType>MSIX</WindowsPackageType>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -74,23 +74,35 @@
 	  <ApplicationId>com.lievretrack.treadmillapp</ApplicationId>
 	</PropertyGroup>
 -->
-	  
+
+
+	<ItemGroup>
+		<TrimmerRootAssembly Include="Plugin.BLE" />
+		<!--<TrimmerRootAssembly Include="Plugin.BLE.Abstractions" />-->
+	</ItemGroup>
+
 	<!-- Android : APK en Release -->
 	<PropertyGroup Condition="'$(Configuration)' == 'Release' And $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-	  <ApplicationId>com.lievretrack.treadmillapp</ApplicationId>
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <AndroidKeyStore>True</AndroidKeyStore>
+		<ApplicationId>com.lievretrack.treadmillapp</ApplicationId>
+		<AndroidPackageFormat>apk</AndroidPackageFormat>
+		<AndroidKeyStore>True</AndroidKeyStore>
+		
+		
+		<!--<AndroidIncludeDebugSymbols>true</AndroidIncludeDebugSymbols>
+		<PublishTrimmed>true</PublishTrimmed>  Désactive temporairement le trimming pour éviter que le code ne soit supprimé -->
+		<!--<RunAOTCompilation>true</RunAOTCompilation>-->
+		
 		<AndroidSigningKeyStore>treadmillapp.keystore</AndroidSigningKeyStore>
 		<AndroidSigningKeyAlias>treadmillapp</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass>env:AndroidSigningPassword</AndroidSigningKeyPass>
 		<AndroidSigningStorePass>env:AndroidSigningPassword</AndroidSigningStorePass>
 	</PropertyGroup>
-	
+
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-android|AnyCPU'">
-	  <AndroidKeyStore>false</AndroidKeyStore>
-	  <AndroidSigningKeyAlias>TreadmillApp</AndroidSigningKeyAlias>
+		<AndroidKeyStore>false</AndroidKeyStore>
+		<AndroidSigningKeyAlias>TreadmillApp</AndroidSigningKeyAlias>
 	</PropertyGroup>
-<!--
+	<!--
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-ios|AnyCPU'">
 	  <ApplicationId>com.lievretrack.treadmillapp</ApplicationId>
 	</PropertyGroup>
@@ -123,8 +135,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.110" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.13" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.120" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.14" />
 		<PackageReference Include="Plugin.BLE" Version="3.2.1" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
 	</ItemGroup>

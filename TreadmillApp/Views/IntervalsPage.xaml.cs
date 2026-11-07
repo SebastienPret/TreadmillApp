@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using TreadmillApp.Models;
 using TreadmillApp.ViewModels;
 
@@ -7,12 +8,33 @@ namespace TreadmillApp.Views
     {
         //public static Models.WorkoutPlan CurrentPlan { get; set; } = new();
 
-        private readonly IntervalsViewModel? _viewModel;
+        private readonly IntervalsViewModel _viewModel;
 
         public IntervalsPage()
         {
-            InitializeComponent();
-            _viewModel = BindingContext as IntervalsViewModel;
+            try
+            {
+                InitializeComponent();
+                _viewModel = new IntervalsViewModel(); //BindingContext as IntervalsViewModel;
+                BindingContext = _viewModel;
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erreur lors de l'initialisation de la page IntervalsPage : {ex.Message}");
+                // TEMPORAIRE : affiche l'erreur à l'écran pour la lire en Release
+                Content = new ScrollView
+                {
+                    Content = new Label
+                    {
+                        Text = ex.ToString(),
+                        Margin = 20,
+                        FontSize = 12
+                    }
+                };
+                //throw; // Relance l'exception pour ne pas masquer l'erreur
+            }
+            
         }
 
         protected override void OnAppearing()

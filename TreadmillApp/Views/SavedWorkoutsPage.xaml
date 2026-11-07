@@ -4,60 +4,63 @@
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
              x:Class="TreadmillApp.Views.SavedWorkoutsPage"
+             x:DataType="viewmodels:SavedWorkoutsViewModel"
              x:Name="thisPage">
 
+    
     <ContentPage.BindingContext>
         <viewmodels:SavedWorkoutsViewModel x:Name="ViewModel" />
     </ContentPage.BindingContext>
-
+    
+    
     <Grid RowDefinitions="40, *, 30, auto" Padding="10">
         <!-- Choisissez un programme enregistré : -->
         <Label Grid.Row="0" Text="{x:Static resources:AppResources.Txt_Choose_Workout}" Style="{StaticResource SectionLabel}"/>
-        <ScrollView Grid.Row="1">
-            <CollectionView ItemsSource="{Binding SavedWorkouts}" >
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:WorkoutPlan">
+        <!--<ScrollView Grid.Row="1">-->
+        <CollectionView ItemsSource="{Binding SavedWorkouts}" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:WorkoutPlan">
 
-                        <Border Style="{StaticResource CardBorder}" Padding="10,0">
+                    <Border Style="{StaticResource CardBorder}" Padding="10,0">
 
-                            <FlexLayout Direction="Row" 
+                        <FlexLayout Direction="Row" 
                                         Wrap="Wrap" 
                                         JustifyContent="SpaceBetween" 
                                         AlignItems="Center">
-                                <VerticalStackLayout Padding="5" Margin="0,2">
-                                    <Label Text="{Binding Title}" Style="{StaticResource TitleLabel}"/>
-                                    <HorizontalStackLayout Spacing="10" >
-                                        <Label Text="{x:Static resources:AppResources.Txt_Intervals_Count}" Style="{StaticResource SubtleLabel}"/>
-                                        <Label Text="{Binding Intervals.Count}" Style="{StaticResource SubtleLabel}"/>
-                                    </HorizontalStackLayout>
-                                </VerticalStackLayout>
+                            <VerticalStackLayout Padding="5" Margin="0,2">
+                                <Label Text="{Binding Title}" Style="{StaticResource TitleLabel}"/>
+                                <HorizontalStackLayout Spacing="10" >
+                                    <Label Text="{x:Static resources:AppResources.Txt_Intervals_Count}" Style="{StaticResource SubtleLabel}"/>
+                                    <Label Text="{Binding Intervals.Count}" Style="{StaticResource SubtleLabel}"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
 
 
-                                <HorizontalStackLayout Spacing="10" Padding="0,10"  Margin="0,0" HorizontalOptions="Center">
-                                    <!-- Boutons d'actions avec des événements Clicked (100% stable) -->
-                                    <!-- ▶️ Lancer -->
-                                    <Button Text="{x:Static resources:AppResources.Txt_Run_Workout}" 
+                            <HorizontalStackLayout Spacing="10" Padding="0,10"  Margin="0,0" HorizontalOptions="Center">
+                                <!-- Boutons d'actions avec des événements Clicked (100% stable) -->
+                                <!-- ▶️ Lancer -->
+                                <Button Text="{x:Static resources:AppResources.Txt_Run_Workout}" 
                                         Clicked="OnRunClicked" 
                                         Style="{StaticResource SuccessButton}"/>
 
-                                    <!-- ✏️ Modifier -->
-                                    <Button Text="{x:Static resources:AppResources.Txt_Edit_Workout}" 
+                                <!-- ✏️ Modifier -->
+                                <Button Text="{x:Static resources:AppResources.Txt_Edit_Workout}" 
                                         Clicked="OnEditClicked" 
                                         Style="{StaticResource SecondaryButton}"/>
 
-                                    <!-- 🗑️ Supprimer -->
-                                    <Button Text="{x:Static resources:AppResources.Txt_Delete_Workout}" 
+                                <!-- 🗑️ Supprimer -->
+                                <Button Text="{x:Static resources:AppResources.Txt_Delete_Workout}" 
                                         Clicked="OnDeleteClicked" 
                                         Style="{StaticResource DangerButton}"/>
-                                </HorizontalStackLayout>
-                            </FlexLayout>
-                        </Border>
+                            </HorizontalStackLayout>
+                        </FlexLayout>
+                    </Border>
 
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        </ScrollView>
+        <!--</ScrollView>-->
         <BoxView Grid.Row="2" HeightRequest="1" Style="{StaticResource Divider}" Margin="0,5,0,0"/>
         <!-- ➕ Créer un nouvel entraînement -->
         <Button Grid.Row="3" Text="{x:Static resources:AppResources.Txt_Create_New_Workout}" 

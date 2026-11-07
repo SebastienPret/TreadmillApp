@@ -14,6 +14,9 @@ namespace TreadmillApp.Services
 
             // Met à jour la ressource globale
             AppResources.Culture = culture;
+
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
         }
     }
 }

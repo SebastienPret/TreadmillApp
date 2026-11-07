@@ -83,6 +83,7 @@ obj\Release\net10.0-android\android-arm64\aot\System.Text.Encodings.Web.dll.so
 obj\Release\net10.0-android\android-arm64\aot\System.Text.Json.dll.so
 obj\Release\net10.0-android\android-arm64\aot\System.Text.RegularExpressions.dll.so
 obj\Release\net10.0-android\android-arm64\aot\System.Threading.Thread.dll.so
+obj\Release\net10.0-android\android-arm64\aot\System.Threading.ThreadPool.dll.so
 obj\Release\net10.0-android\android-arm64\aot\System.Threading.dll.so
 obj\Release\net10.0-android\android-arm64\aot\System.Xml.ReaderWriter.dll.so
 obj\Release\net10.0-android\android-arm64\aot\System.dll.so

@@ -2,12 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
+             x:DataType="viewmodels:DashboardViewModel"
              x:Class="TreadmillApp.Views.DashboardPage">
 
     <ContentPage.BindingContext>
         <viewmodels:DashboardViewModel />
     </ContentPage.BindingContext>
-
+    
+    
     <ScrollView>
         <VerticalStackLayout Spacing="20" Padding="25" HorizontalOptions="Center" VerticalOptions="Start">
 

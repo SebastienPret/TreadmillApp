@@ -1,5 +1,5 @@
-<api type="release" assembly-name="Microsoft.Maui.Essentials" mvid="fc0cfc19a65b490ba584c6b87354b979">
-  <module assembly-name="Microsoft.Maui.Essentials" mvid="fc0cfc19a65b490ba584c6b87354b979" mvid-bytes="GfwM/FumC0mlhMa4c1S5eQ==">
+<api type="release" assembly-name="Microsoft.Maui.Essentials" mvid="49a639d20f9b4a76885731d3eda42e16">
+  <module assembly-name="Microsoft.Maui.Essentials" mvid="49a639d20f9b4a76885731d3eda42e16" mvid-bytes="0jmmSZsPdkqIVzHT7aQuFg==">
     <types-scratch>
       <entry key="crc6468b6408a11370c2f/WebAuthenticatorIntermediateActivity" java-name="crc6468b6408a11370c2f/WebAuthenticatorIntermediateActivity" managed-type-name="Microsoft.Maui.Authentication.WebAuthenticatorIntermediateActivity" token="33554445" />
       <entry key="crc6493855b22b6fa0721/ScreenshotImplementation_PixelCopyFinishedListener" java-name="crc6493855b22b6fa0721/ScreenshotImplementation_PixelCopyFinishedListener" managed-type-name="Microsoft.Maui.Media.ScreenshotImplementation/PixelCopyFinishedListener" token="33554461" />

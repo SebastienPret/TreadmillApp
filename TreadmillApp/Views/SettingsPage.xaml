@@ -5,10 +5,12 @@
              x:Class="TreadmillApp.Views.SettingsPage"
              x:DataType="viewmodels:SettingsViewModel">
 
+    
     <ContentPage.BindingContext>
         <viewmodels:SettingsViewModel />
     </ContentPage.BindingContext>
-
+    
+    
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
 

@@ -2,34 +2,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
-             xmlns:ble="clr-namespace:Plugin.BLE.Abstractions.Contracts;assembly=Plugin.BLE.Abstractions"
+             
+             xmlns:ble="clr-namespace:Plugin.BLE.Abstractions.Contracts;assembly=Plugin.BLE"
              x:Class="TreadmillApp.Views.ScanDevicesPage"
-             Title="Recherche de Tapis">
-    <!--  -->
+             x:DataType="viewmodels:ScanDevicesViewModel"
+             BackgroundColor="{StaticResource PageBackground}">
+    <!-- xmlns:ble="clr-namespace:Plugin.BLE.Abstractions.Contracts;assembly=Plugin.BLE.Abstractions" -->
 
     <ContentPage.BindingContext>
         <viewmodels:ScanDevicesViewModel />
     </ContentPage.BindingContext>
+    
 
     <VerticalStackLayout Spacing="15" Padding="20">
         <!-- 🔍 Lancer le Scan FTMS -->
         <Button Text="{x:Static resources:AppResources.Txt_Start_Scan}"
-        Command="{Binding StartScanCommand}"
-        IsEnabled="{Binding IsNotConnecting}"
-        Style="{StaticResource PrimaryButton}"/>
+                Command="{Binding StartScanCommand}"
+                IsEnabled="{Binding IsNotConnecting}"
+                BackgroundColor="{StaticResource AccentColor}"
+                TextColor="{StaticResource AccentTextColor}"
+                FontAttributes="Bold"
+                HeightRequest="48"
+                CornerRadius="8"/>
+        <!-- Style="{StaticResource PrimaryButton}" -->
 
-        <ActivityIndicator IsRunning="{Binding IsScanning}" Style="{StaticResource ActivityIndicator}"/>
+        <ActivityIndicator IsRunning="{Binding IsScanning}" 
+                           Color="{StaticResource AccentColor}" 
+                           HeightRequest="40"/>
+        <!-- Style="{StaticResource ActivityIndicator}" -->
 
         <!-- Connexion en cours -->
         <VerticalStackLayout IsVisible="{Binding IsConnecting}" Spacing="8">
-            <Label Text="{Binding ConnectingText}" Style="{StaticResource StatusLabel}"/>
+            <Label Text="{Binding ConnectingText}" 
+                   TextColor="{StaticResource TextPrimary}"
+                   FontSize="14"
+                   HorizontalTextAlignment="Center"/>
+            <!-- Style="{StaticResource StatusLabel}" -->
             <Button Text="{x:Static resources:AppResources.Txt_Cancel}"
-            Command="{Binding CancelConnectCommand}"
-            Style="{StaticResource SecondaryButton}"/>
+                    Command="{Binding CancelConnectCommand}"
+                    BackgroundColor="{StaticResource NeutralButton}"
+                    TextColor="{StaticResource AccentTextColor}"
+                    HeightRequest="40"
+                    CornerRadius="8"/>
+            <!-- Style="{StaticResource SecondaryButton}" -->
         </VerticalStackLayout>
 
         <!-- Tapis détectés : -->
-        <Label Text="{x:Static resources:AppResources.Txt_Detected_Treadmills}" Style="{StaticResource SectionLabel}"/>
+        <Label Text="{x:Static resources:AppResources.Txt_Detected_Treadmills}"
+               TextColor="{StaticResource TextPrimary}"
+               FontSize="16"
+               FontAttributes="Bold"/>
+        <!--  Style="{StaticResource SectionLabel}" -->
 
         <CollectionView x:Name="CvDevices" 
                         ItemsSource="{Binding DiscoveredDevices}" 
@@ -44,11 +67,25 @@
             </CollectionView.Triggers>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="ble:IDevice">
-                    <VerticalStackLayout Padding="10" Spacing="2">
-                        <Label Text="{Binding Name}" Style="{StaticResource SectionLabel}"/>
-                        <Label Text="{Binding Id, StringFormat='ID: {0}'}" Style="{StaticResource HintLabel}"/>
-                        <BoxView HeightRequest="1" Style="{StaticResource Divider}" Margin="0,5,0,0"/>
-                    </VerticalStackLayout>
+                    <Border Padding="12" 
+                            Margin="0,4" 
+                            BackgroundColor="{StaticResource SurfaceColor}"
+                            Stroke="{StaticResource DividerColor}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 8">
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="{Binding Name}" 
+                                   TextColor="{StaticResource TextPrimary}"
+                                   FontAttributes="Bold" 
+                                   FontSize="15"/>
+                            <Label Text="{Binding Id, StringFormat='ID: {0}'}" 
+                                   TextColor="{StaticResource TextSecondary}"
+                                   FontSize="12"/>
+                            <BoxView HeightRequest="1" 
+                                     Color="{StaticResource DividerColor}" 
+                                     Margin="0,6,0,0"/>
+                        </VerticalStackLayout>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

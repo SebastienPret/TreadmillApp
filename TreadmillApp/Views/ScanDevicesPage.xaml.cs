@@ -11,6 +11,12 @@ namespace TreadmillApp.Views
         {
             InitializeComponent();
             _viewModel = BindingContext as ScanDevicesViewModel;
+            BindingContext = _viewModel;
+        }
+        private async void OnAppearing(object sender, EventArgs e)
+        {
+            base.OnAppearing();
+            await Task.Delay(2000);   // laisse le temps à l'UI de se mettre à jour avant de lancer le scan
         }
 
         private async void OnDeviceSelected(object sender, SelectionChangedEventArgs e)

@@ -9,7 +9,23 @@ namespace TreadmillApp.Views
 
         public DashboardPage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                // TEMPORAIRE : affiche l'erreur à l'écran pour la lire en Release
+                Content = new ScrollView
+                {
+                    Content = new Label
+                    {
+                        Text = ex.ToString(),
+                        Margin = 20,
+                        FontSize = 12
+                    }
+                };
+            }
         }
         protected override void OnAppearing()
         {

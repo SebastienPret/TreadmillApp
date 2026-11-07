@@ -3,6 +3,11 @@ E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\TreadmillApp.dll
 E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\TreadmillApp.pdb
 E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\fr-BE\TreadmillApp.resources.dll
 E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\nl-BE\TreadmillApp.resources.dll
+E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.lievretrack.treadmillapp.apk
+E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.lievretrack.treadmillapp.aab
+E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.lievretrack.treadmillapp-Signed.aab
+E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.lievretrack.treadmillapp-Signed.apk
+E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.lievretrack.treadmillapp-Signed.apk.idsig
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\build.props
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\adb.props
@@ -154,7 +159,10 @@ E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\TreadmillApp.dll
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\TreadmillApp.pdb
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\TreadmillApp.genruntimeconfig.cache
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\TreadmillApp.runtimeconfig.json.bin
+E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\com.lievretrack.treadmillapp.apk
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\base.zip
+E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\com.lievretrack.treadmillapp.aab
+E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\com.lievretrack.treadmillapp.apks
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\res\values\colors.xml
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\uploadflags.txt
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\resolvedassemblies.hash
@@ -456,6 +464,7 @@ E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\micros
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\microsoft\maui\R.java
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\mono\androidx\activity\contextaware\OnContextAvailableListenerImplementor.java
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\mono\androidx\appcompat\app\ActionBar_OnMenuVisibilityListenerImplementor.java
+E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\mono\androidx\appcompat\widget\ActionMenuView_OnMenuItemClickListenerImplementor.java
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\mono\androidx\appcompat\widget\SearchView_OnCloseListenerImplementor.java
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\mono\androidx\appcompat\widget\SearchView_OnQueryTextListenerImplementor.java
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\mono\androidx\appcompat\widget\SearchView_OnSuggestionListenerImplementor.java
@@ -522,6 +531,7 @@ E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\assets\mariostart.
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\assets\OpenSans-Regular.ttf
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\assets\OpenSans-Semibold.ttf
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\packaged_resources
+E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\com\lievretrack\treadmillapp\R.java
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\_CompileJava.FileList.txt
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\compressed_assemblies.arm64-v8a.ll
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\compressed_assemblies.x86_64.ll
@@ -548,12 +558,3 @@ E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\stamp\_ConvertReso
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\stamp\_GenerateJavaStubs.stamp
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\stamp\_GeneratePackageManagerJava.stamp
 E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\stamp\_ResolveLibraryProjectImports.stamp
-E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.LievreTrack.treadmillapp.apk
-E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.LievreTrack.treadmillapp.aab
-E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.LievreTrack.treadmillapp-Signed.aab
-E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.LievreTrack.treadmillapp-Signed.apk
-E:\Code\TreadmillApp\TreadmillApp\bin\Release\net10.0-android\com.LievreTrack.treadmillapp-Signed.apk.idsig
-E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\com.LievreTrack.treadmillapp.apk
-E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\com.LievreTrack.treadmillapp.aab
-E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\bin\com.LievreTrack.treadmillapp.apks
-E:\Code\TreadmillApp\TreadmillApp\obj\Release\net10.0-android\android\src\com\lievretrack\treadmillapp\R.java

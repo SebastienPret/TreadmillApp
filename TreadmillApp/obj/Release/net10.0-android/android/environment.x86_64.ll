@@ -112,14 +112,14 @@ target triple = "x86_64-unknown-linux-android21"
 	i32 3, ; uint32_t package_naming_policy
 	i32 4, ; uint32_t environment_variable_count
 	i32 0, ; uint32_t system_property_count
-	i32 128, ; uint32_t number_of_assemblies_in_apk
+	i32 129, ; uint32_t number_of_assemblies_in_apk
 	i32 0, ; uint32_t bundled_assembly_name_width
 	i32 28, ; uint32_t number_of_dso_cache_entries
-	i32 828, ; uint32_t number_of_aot_cache_entries
-	i32 99, ; uint32_t number_of_shared_libraries
-	i32 u0x0200033d, ; uint32_t android_runtime_jnienv_class_token
-	i32 u0x06002115, ; uint32_t jnienv_initialize_method_token
-	i32 u0x06002114, ; uint32_t jnienv_registerjninatives_method_token
+	i32 837, ; uint32_t number_of_aot_cache_entries
+	i32 100, ; uint32_t number_of_shared_libraries
+	i32 u0x0200033e, ; uint32_t android_runtime_jnienv_class_token
+	i32 u0x06002124, ; uint32_t jnienv_initialize_method_token
+	i32 u0x06002123, ; uint32_t jnienv_registerjninatives_method_token
 	i32 0, ; uint32_t jni_remapping_replacement_type_count
 	i32 0, ; uint32_t jni_remapping_replacement_method_index_entry_count
 	i32 u0x00000000, ; uint32_t mono_components_mask
@@ -368,7 +368,7 @@ target triple = "x86_64-unknown-linux-android21"
 ], align 16
 
 ; AOT DSO cache entries
-@aot_dso_cache = dso_local local_unnamed_addr global [828 x %struct.DSOCacheEntry] [
+@aot_dso_cache = dso_local local_unnamed_addr global [837 x %struct.DSOCacheEntry] [
 	%struct.DSOCacheEntry {
 		i64 u0x00a317d210f9e383, ; from name: Xamarin.AndroidX.CoordinatorLayout.so
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -390,7 +390,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
 	}, ; 2
 	%struct.DSOCacheEntry {
@@ -438,7 +438,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
 	}, ; 8
 	%struct.DSOCacheEntry {
@@ -526,7 +526,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
 	}, ; 19
 	%struct.DSOCacheEntry {
@@ -542,7 +542,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
 	}, ; 21
 	%struct.DSOCacheEntry {
@@ -726,7 +726,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
 	}, ; 44
 	%struct.DSOCacheEntry {
@@ -758,7 +758,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
 	}, ; 48
 	%struct.DSOCacheEntry {
@@ -782,7 +782,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
 	}, ; 51
 	%struct.DSOCacheEntry {
@@ -790,7 +790,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
 	}, ; 52
 	%struct.DSOCacheEntry {
@@ -798,7 +798,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
 	}, ; 53
 	%struct.DSOCacheEntry {
@@ -814,7 +814,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
 	}, ; 55
 	%struct.DSOCacheEntry {
@@ -822,7 +822,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
 	}, ; 56
 	%struct.DSOCacheEntry {
@@ -990,7 +990,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
 	}, ; 77
 	%struct.DSOCacheEntry {
@@ -1102,7 +1102,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
 	}, ; 91
 	%struct.DSOCacheEntry {
@@ -1286,7 +1286,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
 	}, ; 114
 	%struct.DSOCacheEntry {
@@ -1318,7 +1318,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
 	}, ; 118
 	%struct.DSOCacheEntry {
@@ -1462,7 +1462,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
 	}, ; 136
 	%struct.DSOCacheEntry {
@@ -1542,7 +1542,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
 	}, ; 146
 	%struct.DSOCacheEntry {
@@ -1678,7 +1678,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
 	}, ; 163
 	%struct.DSOCacheEntry {
@@ -1734,7 +1734,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
 	}, ; 170
 	%struct.DSOCacheEntry {
@@ -1774,7 +1774,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
 	}, ; 175
 	%struct.DSOCacheEntry {
@@ -1922,13 +1922,21 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr null; void* handle
 	}, ; 193
 	%struct.DSOCacheEntry {
+		i64 u0x3e2148e1cd8f9025, ; from name: libaot-System.Threading.ThreadPool
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 194
+	%struct.DSOCacheEntry {
 		i64 u0x3e3a8856d166de57, ; from name: aot-System.Numerics.Vectors
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 194
+	}, ; 195
 	%struct.DSOCacheEntry {
 		i64 u0x3f6f5914291cdcf7, ; from name: Microsoft.Extensions.Hosting.Abstractions
 		i64 u0x0bdc487294fc9a85, ; uint64_t real_name_hash
@@ -1936,7 +1944,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.16_name, ; name: libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 195
+	}, ; 196
 	%struct.DSOCacheEntry {
 		i64 u0x41342781d40c38c6, ; from name: aot-System.Text.RegularExpressions
 		i64 u0x7c2c39dae387b52d, ; uint64_t real_name_hash
@@ -1944,7 +1952,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.90_name, ; name: libaot-System.Text.RegularExpressions.dll.so
 		ptr null; void* handle
-	}, ; 196
+	}, ; 197
 	%struct.DSOCacheEntry {
 		i64 u0x41c1b507cc22deb1, ; from name: aot-Xamarin.AndroidX.Collection.Jvm.so
 		i64 u0x1adc5c3038254713, ; uint64_t real_name_hash
@@ -1952,7 +1960,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.32_name, ; name: libaot-Xamarin.AndroidX.Collection.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 197
+	}, ; 198
 	%struct.DSOCacheEntry {
 		i64 u0x42c7eb0880ff24a4, ; from name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		i64 u0x42c7eb0880ff24a4, ; uint64_t real_name_hash
@@ -1960,7 +1968,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.29_name, ; name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		ptr null; void* handle
-	}, ; 198
+	}, ; 199
 	%struct.DSOCacheEntry {
 		i64 u0x4369960919e5e6e9, ; from name: libaot-System.Threading.Thread.so
 		i64 u0x675935a1e3b604dc, ; uint64_t real_name_hash
@@ -1968,7 +1976,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.91_name, ; name: libaot-System.Threading.Thread.dll.so
 		ptr null; void* handle
-	}, ; 199
+	}, ; 200
 	%struct.DSOCacheEntry {
 		i64 u0x43878f709b5ae552, ; from name: aot-Xamarin.AndroidX.Loader
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -1976,7 +1984,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 200
+	}, ; 201
 	%struct.DSOCacheEntry {
 		i64 u0x44b4c8e72786eb98, ; from name: libaot-System.Private.Uri.so
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -1984,7 +1992,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 201
+	}, ; 202
+	%struct.DSOCacheEntry {
+		i64 u0x44f0be8ec488ede1, ; from name: aot-System.Threading.ThreadPool.dll.so
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 203
 	%struct.DSOCacheEntry {
 		i64 u0x456e37cd491657b0, ; from name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		i64 u0x456e37cd491657b0, ; uint64_t real_name_hash
@@ -1992,7 +2008,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.30_name, ; name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		ptr null; void* handle
-	}, ; 202
+	}, ; 204
 	%struct.DSOCacheEntry {
 		i64 u0x4595d9c27242b287, ; from name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -2000,7 +2016,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 203
+	}, ; 205
 	%struct.DSOCacheEntry {
 		i64 u0x45c40276a42e283e, ; from name: System.Diagnostics.TraceSource
 		i64 u0x2119cc81025daa05, ; uint64_t real_name_hash
@@ -2008,7 +2024,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.66_name, ; name: libaot-System.Diagnostics.TraceSource.dll.so
 		ptr null; void* handle
-	}, ; 204
+	}, ; 206
 	%struct.DSOCacheEntry {
 		i64 u0x45dd035e939418ff, ; from name: Xamarin.AndroidX.Lifecycle.Common.Jvm.so
 		i64 u0x2ec8d2dcf2c4a71b, ; uint64_t real_name_hash
@@ -2016,7 +2032,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.39_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 205
+	}, ; 207
 	%struct.DSOCacheEntry {
 		i64 u0x45f5da81c2af55b6, ; from name: aot-CommunityToolkit.Mvvm.so
 		i64 u0x324cedd7271c2c92, ; uint64_t real_name_hash
@@ -2024,7 +2040,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.9_name, ; name: libaot-CommunityToolkit.Mvvm.dll.so
 		ptr null; void* handle
-	}, ; 206
+	}, ; 208
 	%struct.DSOCacheEntry {
 		i64 u0x4610877cf9ab8b85, ; from name: aot-System.Memory.dll.so
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -2032,7 +2048,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 207
+	}, ; 209
 	%struct.DSOCacheEntry {
 		i64 u0x4643d8f925d8e6b7, ; from name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		i64 u0x4643d8f925d8e6b7, ; uint64_t real_name_hash
@@ -2040,15 +2056,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.13_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 208
+	}, ; 210
 	%struct.DSOCacheEntry {
 		i64 u0x46fe6fb82f79008c, ; from name: libaot-Java.Interop.so
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 209
+	}, ; 211
 	%struct.DSOCacheEntry {
 		i64 u0x47b6721df9ec201e, ; from name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		i64 u0x47b6721df9ec201e, ; uint64_t real_name_hash
@@ -2056,7 +2072,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.49_name, ; name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 210
+	}, ; 212
 	%struct.DSOCacheEntry {
 		i64 u0x480a488133b8d5a9, ; from name: aot-Microsoft.Extensions.Diagnostics.Abstractions
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -2064,7 +2080,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 211
+	}, ; 213
 	%struct.DSOCacheEntry {
 		i64 u0x480ae1b0fafcfa88, ; from name: aot-System.Collections.NonGeneric.so
 		i64 u0x6fd15fb6a42c9afc, ; uint64_t real_name_hash
@@ -2072,7 +2088,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.58_name, ; name: libaot-System.Collections.NonGeneric.dll.so
 		ptr null; void* handle
-	}, ; 212
+	}, ; 214
 	%struct.DSOCacheEntry {
 		i64 u0x49e952f19a4e2022, ; from name: System.ObjectModel
 		i64 u0x914167d87d2ee1b1, ; uint64_t real_name_hash
@@ -2080,7 +2096,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.80_name, ; name: libaot-System.ObjectModel.dll.so
 		ptr null; void* handle
-	}, ; 213
+	}, ; 215
 	%struct.DSOCacheEntry {
 		i64 u0x4a42c40ce544bc4a, ; from name: libaot-System.Numerics.Vectors.so
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
@@ -2088,7 +2104,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 214
+	}, ; 216
 	%struct.DSOCacheEntry {
 		i64 u0x4a98c34e2b2d4181, ; from name: libaot-Microsoft.Extensions.Logging.so
 		i64 u0x9b6f0babce2a1934, ; uint64_t real_name_hash
@@ -2096,7 +2112,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.17_name, ; name: libaot-Microsoft.Extensions.Logging.dll.so
 		ptr null; void* handle
-	}, ; 215
+	}, ; 217
 	%struct.DSOCacheEntry {
 		i64 u0x4a9bda0e8528b414, ; from name: libaot-System.Formats.Asn1.dll.so
 		i64 u0x4a9bda0e8528b414, ; uint64_t real_name_hash
@@ -2104,7 +2120,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.69_name, ; name: libaot-System.Formats.Asn1.dll.so
 		ptr null; void* handle
-	}, ; 216
+	}, ; 218
 	%struct.DSOCacheEntry {
 		i64 u0x4ab03d455304c4e4, ; from name: aot-Microsoft.Extensions.Hosting.Abstractions
 		i64 u0x0bdc487294fc9a85, ; uint64_t real_name_hash
@@ -2112,7 +2128,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.16_name, ; name: libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 217
+	}, ; 219
 	%struct.DSOCacheEntry {
 		i64 u0x4b7b6532ded934b7, ; from name: System.Text.Json
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -2120,7 +2136,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 218
+	}, ; 220
 	%struct.DSOCacheEntry {
 		i64 u0x4bea014989424a56, ; from name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		i64 u0x4bea014989424a56, ; uint64_t real_name_hash
@@ -2128,7 +2144,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.37_name, ; name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		ptr null; void* handle
-	}, ; 219
+	}, ; 221
 	%struct.DSOCacheEntry {
 		i64 u0x4beb4f32e5e8b27b, ; from name: aot-Xamarin.AndroidX.AppCompat.so
 		i64 u0x42c7eb0880ff24a4, ; uint64_t real_name_hash
@@ -2136,7 +2152,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.29_name, ; name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		ptr null; void* handle
-	}, ; 220
+	}, ; 222
 	%struct.DSOCacheEntry {
 		i64 u0x4c020054a4380f1b, ; from name: aot-System.Drawing
 		i64 u0x366c3ed8a6266ffb, ; uint64_t real_name_hash
@@ -2144,7 +2160,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.68_name, ; name: libaot-System.Drawing.dll.so
 		ptr null; void* handle
-	}, ; 221
+	}, ; 223
 	%struct.DSOCacheEntry {
 		i64 u0x4c1e6df1abbaf0bd, ; from name: aot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -2152,7 +2168,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 222
+	}, ; 224
 	%struct.DSOCacheEntry {
 		i64 u0x4c2029a97af23a8d, ; from name: Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android
 		i64 u0x5a157918545794b7, ; uint64_t real_name_hash
@@ -2160,7 +2176,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.42_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 223
+	}, ; 225
 	%struct.DSOCacheEntry {
 		i64 u0x4c84dfc50c0bd80f, ; from name: aot-Xamarin.AndroidX.CustomView.dll.so
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -2168,7 +2184,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 224
+	}, ; 226
 	%struct.DSOCacheEntry {
 		i64 u0x4c99806689e74f14, ; from name: libaot-Xamarin.Kotlin.StdLib
 		i64 u0x0c644d6a2b020c43, ; uint64_t real_name_hash
@@ -2176,7 +2192,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.54_name, ; name: libaot-Xamarin.Kotlin.StdLib.dll.so
 		ptr null; void* handle
-	}, ; 225
+	}, ; 227
 	%struct.DSOCacheEntry {
 		i64 u0x4cfc35da95507261, ; from name: Xamarin.AndroidX.Fragment.so
 		i64 u0x8ab6d3431da5497e, ; uint64_t real_name_hash
@@ -2184,7 +2200,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.38_name, ; name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 226
+	}, ; 228
 	%struct.DSOCacheEntry {
 		i64 u0x4d12310dad3f4532, ; from name: aot-System.Linq.Expressions.so
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -2192,7 +2208,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 227
+	}, ; 229
 	%struct.DSOCacheEntry {
 		i64 u0x4d55a010ffc4faff, ; from name: System.Private.Xml
 		i64 u0x52bbd048717682d4, ; uint64_t real_name_hash
@@ -2200,7 +2216,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.82_name, ; name: libaot-System.Private.Xml.dll.so
 		ptr null; void* handle
-	}, ; 228
+	}, ; 230
 	%struct.DSOCacheEntry {
 		i64 u0x4dc49a967a8c3c12, ; from name: aot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -2208,15 +2224,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 229
+	}, ; 231
 	%struct.DSOCacheEntry {
 		i64 u0x4e32f00cb0937401, ; from name: Mono.Android.Runtime
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 230
+	}, ; 232
 	%struct.DSOCacheEntry {
 		i64 u0x4fb15a4a8810e42f, ; from name: aot-System.Memory.so
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -2224,7 +2240,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 231
+	}, ; 233
 	%struct.DSOCacheEntry {
 		i64 u0x50e73e630c8fbd4e, ; from name: libaot-Microsoft.Extensions.Options
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -2232,7 +2248,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 232
+	}, ; 234
 	%struct.DSOCacheEntry {
 		i64 u0x50f8d125d8dd00cf, ; from name: libaot-System.Console
 		i64 u0xc2da5dca6ccd8b0a, ; uint64_t real_name_hash
@@ -2240,7 +2256,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.64_name, ; name: libaot-System.Console.dll.so
 		ptr null; void* handle
-	}, ; 233
+	}, ; 235
 	%struct.DSOCacheEntry {
 		i64 u0x510a6e81b159c636, ; from name: aot-Xamarin.AndroidX.CursorAdapter.so
 		i64 u0xdf3c491694996c7e, ; uint64_t real_name_hash
@@ -2248,7 +2264,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.35_name, ; name: libaot-Xamarin.AndroidX.CursorAdapter.dll.so
 		ptr null; void* handle
-	}, ; 234
+	}, ; 236
 	%struct.DSOCacheEntry {
 		i64 u0x5112ed116d87baf8, ; from name: CommunityToolkit.Mvvm
 		i64 u0x324cedd7271c2c92, ; uint64_t real_name_hash
@@ -2256,7 +2272,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.9_name, ; name: libaot-CommunityToolkit.Mvvm.dll.so
 		ptr null; void* handle
-	}, ; 235
+	}, ; 237
 	%struct.DSOCacheEntry {
 		i64 u0x5175c7f043f8e788, ; from name: Xamarin.AndroidX.Loader.so
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -2264,7 +2280,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 236
+	}, ; 238
 	%struct.DSOCacheEntry {
 		i64 u0x51bb8a2afe774e32, ; from name: System.Drawing
 		i64 u0x366c3ed8a6266ffb, ; uint64_t real_name_hash
@@ -2272,15 +2288,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.68_name, ; name: libaot-System.Drawing.dll.so
 		ptr null; void* handle
-	}, ; 237
+	}, ; 239
 	%struct.DSOCacheEntry {
 		i64 u0x51c50b4f4c87593e, ; from name: System.dll.so
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 238
+	}, ; 240
 	%struct.DSOCacheEntry {
 		i64 u0x52429a82a66c40af, ; from name: aot-System.Collections.Specialized.dll.so
 		i64 u0x355b66670e6bf2e4, ; uint64_t real_name_hash
@@ -2288,7 +2304,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.59_name, ; name: libaot-System.Collections.Specialized.dll.so
 		ptr null; void* handle
-	}, ; 239
+	}, ; 241
 	%struct.DSOCacheEntry {
 		i64 u0x5298030147080bcb, ; from name: Xamarin.AndroidX.Activity.so
 		i64 u0x8a05820e9e77c0c3, ; uint64_t real_name_hash
@@ -2296,7 +2312,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.28_name, ; name: libaot-Xamarin.AndroidX.Activity.dll.so
 		ptr null; void* handle
-	}, ; 240
+	}, ; 242
 	%struct.DSOCacheEntry {
 		i64 u0x529ffe06f39ab8db, ; from name: Xamarin.AndroidX.Core
 		i64 u0x28a319e875b39488, ; uint64_t real_name_hash
@@ -2304,7 +2320,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.34_name, ; name: libaot-Xamarin.AndroidX.Core.dll.so
 		ptr null; void* handle
-	}, ; 241
+	}, ; 243
 	%struct.DSOCacheEntry {
 		i64 u0x52bbd048717682d4, ; from name: libaot-System.Private.Xml.dll.so
 		i64 u0x52bbd048717682d4, ; uint64_t real_name_hash
@@ -2312,7 +2328,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.82_name, ; name: libaot-System.Private.Xml.dll.so
 		ptr null; void* handle
-	}, ; 242
+	}, ; 244
 	%struct.DSOCacheEntry {
 		i64 u0x52ff996554dbf352, ; from name: Microsoft.Maui.Graphics
 		i64 u0x285d22da351d937a, ; uint64_t real_name_hash
@@ -2320,7 +2336,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.25_name, ; name: libaot-Microsoft.Maui.Graphics.dll.so
 		ptr null; void* handle
-	}, ; 243
+	}, ; 245
 	%struct.DSOCacheEntry {
 		i64 u0x53f25aca65457dff, ; from name: aot-Xamarin.Google.Android.Material.so
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -2328,15 +2344,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 244
+	}, ; 246
 	%struct.DSOCacheEntry {
 		i64 u0x5424938e04124349, ; from name: aot-System.Private.CoreLib
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
-	}, ; 245
+	}, ; 247
 	%struct.DSOCacheEntry {
 		i64 u0x54379c3984bea3cb, ; from name: libaot-System.Net.Requests.so
 		i64 u0x2a8da1e7722aaaff, ; uint64_t real_name_hash
@@ -2344,7 +2360,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.78_name, ; name: libaot-System.Net.Requests.dll.so
 		ptr null; void* handle
-	}, ; 246
+	}, ; 248
 	%struct.DSOCacheEntry {
 		i64 u0x5476d5bc8f23d6da, ; from name: aot-Xamarin.AndroidX.Navigation.Common.Android
 		i64 u0x348910547422a64d, ; uint64_t real_name_hash
@@ -2352,7 +2368,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.44_name, ; name: libaot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		ptr null; void* handle
-	}, ; 247
+	}, ; 249
 	%struct.DSOCacheEntry {
 		i64 u0x54909eee5de1ce97, ; from name: libaot-Microsoft.Extensions.FileProviders.Abstractions.so
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -2360,7 +2376,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 248
+	}, ; 250
 	%struct.DSOCacheEntry {
 		i64 u0x54b851bc9b470503, ; from name: Xamarin.AndroidX.Navigation.Common.Android
 		i64 u0x348910547422a64d, ; uint64_t real_name_hash
@@ -2368,7 +2384,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.44_name, ; name: libaot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		ptr null; void* handle
-	}, ; 249
+	}, ; 251
 	%struct.DSOCacheEntry {
 		i64 u0x5525381bef4d9b6a, ; from name: aot-System.ComponentModel
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -2376,7 +2392,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 250
+	}, ; 252
 	%struct.DSOCacheEntry {
 		i64 u0x553b3f85d61de6a2, ; from name: aot-Xamarin.AndroidX.Activity
 		i64 u0x8a05820e9e77c0c3, ; uint64_t real_name_hash
@@ -2384,7 +2400,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.28_name, ; name: libaot-Xamarin.AndroidX.Activity.dll.so
 		ptr null; void* handle
-	}, ; 251
+	}, ; 253
 	%struct.DSOCacheEntry {
 		i64 u0x553fd3f1268396f3, ; from name: libaot-Xamarin.AndroidX.RecyclerView
 		i64 u0x34c6f5c746796bcc, ; uint64_t real_name_hash
@@ -2392,7 +2408,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.48_name, ; name: libaot-Xamarin.AndroidX.RecyclerView.dll.so
 		ptr null; void* handle
-	}, ; 252
+	}, ; 254
 	%struct.DSOCacheEntry {
 		i64 u0x5588627c9a108ec9, ; from name: System.Collections.Specialized
 		i64 u0x355b66670e6bf2e4, ; uint64_t real_name_hash
@@ -2400,7 +2416,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.59_name, ; name: libaot-System.Collections.Specialized.dll.so
 		ptr null; void* handle
-	}, ; 253
+	}, ; 255
 	%struct.DSOCacheEntry {
 		i64 u0x5594b077481089e1, ; from name: aot-Xamarin.Kotlin.StdLib.dll.so
 		i64 u0x0c644d6a2b020c43, ; uint64_t real_name_hash
@@ -2408,7 +2424,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.54_name, ; name: libaot-Xamarin.Kotlin.StdLib.dll.so
 		ptr null; void* handle
-	}, ; 254
+	}, ; 256
 	%struct.DSOCacheEntry {
 		i64 u0x55c25b4d27ae6f23, ; from name: libaot-System.Runtime.Loader.dll.so
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -2416,7 +2432,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 255
+	}, ; 257
 	%struct.DSOCacheEntry {
 		i64 u0x55fcf2ccc005141e, ; from name: aot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		i64 u0x4643d8f925d8e6b7, ; uint64_t real_name_hash
@@ -2424,7 +2440,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.13_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 256
+	}, ; 258
 	%struct.DSOCacheEntry {
 		i64 u0x562760c15bec01ba, ; from name: System.Linq.Expressions.so
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -2432,7 +2448,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 257
+	}, ; 259
 	%struct.DSOCacheEntry {
 		i64 u0x5633aba1fd262138, ; from name: System.ObjectModel.so
 		i64 u0x914167d87d2ee1b1, ; uint64_t real_name_hash
@@ -2440,7 +2456,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.80_name, ; name: libaot-System.ObjectModel.dll.so
 		ptr null; void* handle
-	}, ; 258
+	}, ; 260
 	%struct.DSOCacheEntry {
 		i64 u0x564d1ea7742a1a65, ; from name: Xamarin.AndroidX.Navigation.Runtime.Android.so
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -2448,7 +2464,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 259
+	}, ; 261
 	%struct.DSOCacheEntry {
 		i64 u0x564eb03d5e1253d4, ; from name: System.Net.Http.dll.so
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -2456,7 +2472,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 260
+	}, ; 262
 	%struct.DSOCacheEntry {
 		i64 u0x56586153175e9a7b, ; from name: aot-Microsoft.Extensions.Logging.dll.so
 		i64 u0x9b6f0babce2a1934, ; uint64_t real_name_hash
@@ -2464,7 +2480,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.17_name, ; name: libaot-Microsoft.Extensions.Logging.dll.so
 		ptr null; void* handle
-	}, ; 261
+	}, ; 263
 	%struct.DSOCacheEntry {
 		i64 u0x56dfb6d308b9e745, ; from name: aot-System.Collections.Concurrent
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -2472,7 +2488,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 262
+	}, ; 264
 	%struct.DSOCacheEntry {
 		i64 u0x56e8575851fa23df, ; from name: System.Diagnostics.DiagnosticSource.dll.so
 		i64 u0x77156c94b5eff927, ; uint64_t real_name_hash
@@ -2480,7 +2496,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.65_name, ; name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		ptr null; void* handle
-	}, ; 263
+	}, ; 265
 	%struct.DSOCacheEntry {
 		i64 u0x5715f89db0aca1ea, ; from name: libaot-System.Runtime.InteropServices.so
 		i64 u0x5ae6db1ddadc230b, ; uint64_t real_name_hash
@@ -2488,7 +2504,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.83_name, ; name: libaot-System.Runtime.InteropServices.dll.so
 		ptr null; void* handle
-	}, ; 264
+	}, ; 266
 	%struct.DSOCacheEntry {
 		i64 u0x571c5cfbec5ae8e2, ; from name: System.Private.Uri
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -2496,7 +2512,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 265
+	}, ; 267
 	%struct.DSOCacheEntry {
 		i64 u0x573f908812386eb5, ; from name: aot-System.Diagnostics.TraceSource.dll.so
 		i64 u0x2119cc81025daa05, ; uint64_t real_name_hash
@@ -2504,7 +2520,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.66_name, ; name: libaot-System.Diagnostics.TraceSource.dll.so
 		ptr null; void* handle
-	}, ; 266
+	}, ; 268
 	%struct.DSOCacheEntry {
 		i64 u0x5777ddba4d29c37e, ; from name: Xamarin.AndroidX.Fragment.dll.so
 		i64 u0x8ab6d3431da5497e, ; uint64_t real_name_hash
@@ -2512,7 +2528,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.38_name, ; name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 267
+	}, ; 269
 	%struct.DSOCacheEntry {
 		i64 u0x579f7955a9783e96, ; from name: System.Linq.so
 		i64 u0x2fb7a3952b307fae, ; uint64_t real_name_hash
@@ -2520,7 +2536,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.74_name, ; name: libaot-System.Linq.dll.so
 		ptr null; void* handle
-	}, ; 268
+	}, ; 270
 	%struct.DSOCacheEntry {
 		i64 u0x57c542c14049b66d, ; from name: System.Diagnostics.DiagnosticSource
 		i64 u0x77156c94b5eff927, ; uint64_t real_name_hash
@@ -2528,7 +2544,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.65_name, ; name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		ptr null; void* handle
-	}, ; 269
+	}, ; 271
 	%struct.DSOCacheEntry {
 		i64 u0x57fcf7f6e8a50c14, ; from name: aot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.so
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -2536,7 +2552,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 270
+	}, ; 272
 	%struct.DSOCacheEntry {
 		i64 u0x58b7515784e1adcd, ; from name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android.so
 		i64 u0x47b6721df9ec201e, ; uint64_t real_name_hash
@@ -2544,7 +2560,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.49_name, ; name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 271
+	}, ; 273
 	%struct.DSOCacheEntry {
 		i64 u0x58cd310024b735d8, ; from name: libaot-Microsoft.Maui.dll.so
 		i64 u0x58cd310024b735d8, ; uint64_t real_name_hash
@@ -2552,7 +2568,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.23_name, ; name: libaot-Microsoft.Maui.dll.so
 		ptr null; void* handle
-	}, ; 272
+	}, ; 274
 	%struct.DSOCacheEntry {
 		i64 u0x59ef7f3392194f6b, ; from name: libaot-Microsoft.Extensions.Hosting.Abstractions.so
 		i64 u0x0bdc487294fc9a85, ; uint64_t real_name_hash
@@ -2560,7 +2576,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.16_name, ; name: libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 273
+	}, ; 275
 	%struct.DSOCacheEntry {
 		i64 u0x5a157918545794b7, ; from name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		i64 u0x5a157918545794b7, ; uint64_t real_name_hash
@@ -2568,7 +2584,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.42_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 274
+	}, ; 276
 	%struct.DSOCacheEntry {
 		i64 u0x5a196e3fd4834caf, ; from name: aot-Xamarin.AndroidX.Core
 		i64 u0x28a319e875b39488, ; uint64_t real_name_hash
@@ -2576,7 +2592,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.34_name, ; name: libaot-Xamarin.AndroidX.Core.dll.so
 		ptr null; void* handle
-	}, ; 275
+	}, ; 277
 	%struct.DSOCacheEntry {
 		i64 u0x5ae6db1ddadc230b, ; from name: libaot-System.Runtime.InteropServices.dll.so
 		i64 u0x5ae6db1ddadc230b, ; uint64_t real_name_hash
@@ -2584,7 +2600,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.83_name, ; name: libaot-System.Runtime.InteropServices.dll.so
 		ptr null; void* handle
-	}, ; 276
+	}, ; 278
 	%struct.DSOCacheEntry {
 		i64 u0x5ae9cd33b15841bf, ; from name: System.ComponentModel
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -2592,7 +2608,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 277
+	}, ; 279
 	%struct.DSOCacheEntry {
 		i64 u0x5af23c65728efd35, ; from name: System.ComponentModel.so
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -2600,7 +2616,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 278
+	}, ; 280
 	%struct.DSOCacheEntry {
 		i64 u0x5b4292e687b69639, ; from name: aot-Xamarin.AndroidX.AppCompat.dll.so
 		i64 u0x42c7eb0880ff24a4, ; uint64_t real_name_hash
@@ -2608,7 +2624,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.29_name, ; name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		ptr null; void* handle
-	}, ; 279
+	}, ; 281
 	%struct.DSOCacheEntry {
 		i64 u0x5b71e48b5e32d35e, ; from name: Plugin.Maui.Audio.so
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -2616,7 +2632,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 280
+	}, ; 282
 	%struct.DSOCacheEntry {
 		i64 u0x5b7d43cc7dd5f215, ; from name: Microsoft.Maui.Graphics.dll.so
 		i64 u0x285d22da351d937a, ; uint64_t real_name_hash
@@ -2624,7 +2640,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.25_name, ; name: libaot-Microsoft.Maui.Graphics.dll.so
 		ptr null; void* handle
-	}, ; 281
+	}, ; 283
 	%struct.DSOCacheEntry {
 		i64 u0x5bacada79b845b29, ; from name: aot-System.ComponentModel.TypeConverter.dll.so
 		i64 u0xcb7e41356728fd07, ; uint64_t real_name_hash
@@ -2632,7 +2648,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.62_name, ; name: libaot-System.ComponentModel.TypeConverter.dll.so
 		ptr null; void* handle
-	}, ; 282
+	}, ; 284
 	%struct.DSOCacheEntry {
 		i64 u0x5bf0c23bdb13c0d6, ; from name: libaot-System.Security.Cryptography.so
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -2640,7 +2656,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 283
+	}, ; 285
 	%struct.DSOCacheEntry {
 		i64 u0x5c2774eef3bb77cb, ; from name: Microsoft.Maui.Essentials.dll.so
 		i64 u0xdc3ba4771239be2d, ; uint64_t real_name_hash
@@ -2648,7 +2664,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.24_name, ; name: libaot-Microsoft.Maui.Essentials.dll.so
 		ptr null; void* handle
-	}, ; 284
+	}, ; 286
 	%struct.DSOCacheEntry {
 		i64 u0x5c79a104cea274d1, ; from name: libaot-Xamarin.AndroidX.CursorAdapter.so
 		i64 u0xdf3c491694996c7e, ; uint64_t real_name_hash
@@ -2656,7 +2672,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.35_name, ; name: libaot-Xamarin.AndroidX.CursorAdapter.dll.so
 		ptr null; void* handle
-	}, ; 285
+	}, ; 287
 	%struct.DSOCacheEntry {
 		i64 u0x5cc157f14ad19fc0, ; from name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -2664,7 +2680,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 286
+	}, ; 288
 	%struct.DSOCacheEntry {
 		i64 u0x5ce43a590492daee, ; from name: aot-Xamarin.AndroidX.ViewPager2
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -2672,7 +2688,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 287
+	}, ; 289
 	%struct.DSOCacheEntry {
 		i64 u0x5d131ff27d79bbb1, ; from name: aot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		i64 u0xd6a1ce9f7ccd35cb, ; uint64_t real_name_hash
@@ -2680,7 +2696,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.11_name, ; name: libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 288
+	}, ; 290
 	%struct.DSOCacheEntry {
 		i64 u0x5d9c2521942e02ea, ; from name: Microsoft.Extensions.Configuration.so
 		i64 u0x07a45374fab68acc, ; uint64_t real_name_hash
@@ -2688,7 +2704,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.10_name, ; name: libaot-Microsoft.Extensions.Configuration.dll.so
 		ptr null; void* handle
-	}, ; 289
+	}, ; 291
 	%struct.DSOCacheEntry {
 		i64 u0x5da2908f19f785b8, ; from name: aot-Xamarin.AndroidX.CardView
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -2696,7 +2712,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 290
+	}, ; 292
 	%struct.DSOCacheEntry {
 		i64 u0x5eb8046dd40e9ac3, ; from name: System.ComponentModel.Primitives
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -2704,15 +2720,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 291
+	}, ; 293
 	%struct.DSOCacheEntry {
 		i64 u0x5f435aa7f5fde870, ; from name: libaot-System.Threading.dll.so
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
-	}, ; 292
+	}, ; 294
 	%struct.DSOCacheEntry {
 		i64 u0x5fc3bca990f46fb4, ; from name: libaot-Microsoft.Maui.Controls.Xaml.dll.so
 		i64 u0x5fc3bca990f46fb4, ; uint64_t real_name_hash
@@ -2720,7 +2736,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.22_name, ; name: libaot-Microsoft.Maui.Controls.Xaml.dll.so
 		ptr null; void* handle
-	}, ; 293
+	}, ; 295
 	%struct.DSOCacheEntry {
 		i64 u0x5fec18d88009a455, ; from name: aot-System.Runtime.Loader
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -2728,7 +2744,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 294
+	}, ; 296
 	%struct.DSOCacheEntry {
 		i64 u0x5ff8a747b135ea37, ; from name: libaot-System.ComponentModel
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -2736,7 +2752,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 295
+	}, ; 297
 	%struct.DSOCacheEntry {
 		i64 u0x60439a7b16871d7f, ; from name: aot-Plugin.Maui.Audio.so
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -2744,7 +2760,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 296
+	}, ; 298
 	%struct.DSOCacheEntry {
 		i64 u0x6065d7ef54a29a4b, ; from name: aot-System.Numerics.Vectors.so
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
@@ -2752,7 +2768,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 297
+	}, ; 299
 	%struct.DSOCacheEntry {
 		i64 u0x60cd4e33d7e60134, ; from name: Xamarin.KotlinX.Coroutines.Core.Jvm
 		i64 u0x811e0efc0e57d069, ; uint64_t real_name_hash
@@ -2760,7 +2776,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.55_name, ; name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 298
+	}, ; 300
 	%struct.DSOCacheEntry {
 		i64 u0x60f62d786afcf130, ; from name: System.Memory
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -2768,7 +2784,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 299
+	}, ; 301
 	%struct.DSOCacheEntry {
 		i64 u0x61be8d1299194243, ; from name: Microsoft.Maui.Controls.Xaml
 		i64 u0x5fc3bca990f46fb4, ; uint64_t real_name_hash
@@ -2776,15 +2792,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.22_name, ; name: libaot-Microsoft.Maui.Controls.Xaml.dll.so
 		ptr null; void* handle
-	}, ; 300
+	}, ; 302
 	%struct.DSOCacheEntry {
 		i64 u0x622eef6f9e59068d, ; from name: System.Private.CoreLib
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
-	}, ; 301
+	}, ; 303
 	%struct.DSOCacheEntry {
 		i64 u0x6250af18a9734a88, ; from name: aot-System.Console.so
 		i64 u0xc2da5dca6ccd8b0a, ; uint64_t real_name_hash
@@ -2792,7 +2808,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.64_name, ; name: libaot-System.Console.dll.so
 		ptr null; void* handle
-	}, ; 302
+	}, ; 304
 	%struct.DSOCacheEntry {
 		i64 u0x626c68ec3688760d, ; from name: aot-Plugin.Maui.Audio
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -2800,7 +2816,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 303
+	}, ; 305
 	%struct.DSOCacheEntry {
 		i64 u0x62ef93d6571f3a8a, ; from name: libaot-Microsoft.Maui.so
 		i64 u0x58cd310024b735d8, ; uint64_t real_name_hash
@@ -2808,7 +2824,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.23_name, ; name: libaot-Microsoft.Maui.dll.so
 		ptr null; void* handle
-	}, ; 304
+	}, ; 306
 	%struct.DSOCacheEntry {
 		i64 u0x64124dac20f9924e, ; from name: libaot-System.Security.Cryptography
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -2816,7 +2832,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 305
+	}, ; 307
 	%struct.DSOCacheEntry {
 		i64 u0x646bdbe98d5e615d, ; from name: aot-System.IO.Compression.Brotli.so
 		i64 u0x7b22585c66d48a81, ; uint64_t real_name_hash
@@ -2824,23 +2840,23 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.70_name, ; name: libaot-System.IO.Compression.Brotli.dll.so
 		ptr null; void* handle
-	}, ; 306
+	}, ; 308
 	%struct.DSOCacheEntry {
 		i64 u0x64be874ebbce6bd2, ; from name: aot-System.Private.CoreLib.so
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
-	}, ; 307
+	}, ; 309
 	%struct.DSOCacheEntry {
 		i64 u0x65037a642d353597, ; from name: aot-System.dll.so
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 308
+	}, ; 310
 	%struct.DSOCacheEntry {
 		i64 u0x654a1612f95f8409, ; from name: aot-_Microsoft.Android.Resource.Designer.dll.so
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -2848,7 +2864,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 309
+	}, ; 311
+	%struct.DSOCacheEntry {
+		i64 u0x65c027309e0dbe63, ; from name: libaot-System.Threading.ThreadPool.so
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 312
 	%struct.DSOCacheEntry {
 		i64 u0x65cd21401fecc3dc, ; from name: libaot-System.Collections.Concurrent.dll.so
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -2856,7 +2880,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 310
+	}, ; 313
 	%struct.DSOCacheEntry {
 		i64 u0x6619888793b3b2dd, ; from name: libaot-System.Runtime.Numerics.dll.so
 		i64 u0x6619888793b3b2dd, ; uint64_t real_name_hash
@@ -2864,7 +2888,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.85_name, ; name: libaot-System.Runtime.Numerics.dll.so
 		ptr null; void* handle
-	}, ; 311
+	}, ; 314
 	%struct.DSOCacheEntry {
 		i64 u0x663073929cb67ebe, ; from name: libaot-Xamarin.AndroidX.Navigation.UI
 		i64 u0x21b741f2635aa744, ; uint64_t real_name_hash
@@ -2872,7 +2896,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.47_name, ; name: libaot-Xamarin.AndroidX.Navigation.UI.dll.so
 		ptr null; void* handle
-	}, ; 312
+	}, ; 315
 	%struct.DSOCacheEntry {
 		i64 u0x66d13304ce1a3efa, ; from name: Xamarin.AndroidX.CursorAdapter
 		i64 u0xdf3c491694996c7e, ; uint64_t real_name_hash
@@ -2880,7 +2904,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.35_name, ; name: libaot-Xamarin.AndroidX.CursorAdapter.dll.so
 		ptr null; void* handle
-	}, ; 313
+	}, ; 316
 	%struct.DSOCacheEntry {
 		i64 u0x66d73be3c1eef8a7, ; from name: libaot-Microsoft.Extensions.FileProviders.Abstractions
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -2888,7 +2912,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 314
+	}, ; 317
 	%struct.DSOCacheEntry {
 		i64 u0x675935a1e3b604dc, ; from name: libaot-System.Threading.Thread.dll.so
 		i64 u0x675935a1e3b604dc, ; uint64_t real_name_hash
@@ -2896,7 +2920,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.91_name, ; name: libaot-System.Threading.Thread.dll.so
 		ptr null; void* handle
-	}, ; 315
+	}, ; 318
 	%struct.DSOCacheEntry {
 		i64 u0x6799522a23e8ae63, ; from name: aot-Microsoft.Extensions.Options.dll.so
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -2904,7 +2928,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 316
+	}, ; 319
 	%struct.DSOCacheEntry {
 		i64 u0x67a5a044eb971974, ; from name: aot-Xamarin.AndroidX.ViewPager2.so
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -2912,15 +2936,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 317
+	}, ; 320
 	%struct.DSOCacheEntry {
 		i64 u0x67afd0bf45d8aeec, ; from name: libaot-System.Threading
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
-	}, ; 318
+	}, ; 321
 	%struct.DSOCacheEntry {
 		i64 u0x67b9e9e88f49bc96, ; from name: aot-System.Text.Encodings.Web
 		i64 u0x209bcec5b3b022b8, ; uint64_t real_name_hash
@@ -2928,7 +2952,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.88_name, ; name: libaot-System.Text.Encodings.Web.dll.so
 		ptr null; void* handle
-	}, ; 319
+	}, ; 322
 	%struct.DSOCacheEntry {
 		i64 u0x67ef4c1a9d5f7c55, ; from name: libaot-System.Private.Xml.so
 		i64 u0x52bbd048717682d4, ; uint64_t real_name_hash
@@ -2936,7 +2960,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.82_name, ; name: libaot-System.Private.Xml.dll.so
 		ptr null; void* handle
-	}, ; 320
+	}, ; 323
 	%struct.DSOCacheEntry {
 		i64 u0x67f2c869b5e2bd8b, ; from name: aot-System.Formats.Asn1.dll.so
 		i64 u0x4a9bda0e8528b414, ; uint64_t real_name_hash
@@ -2944,7 +2968,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.69_name, ; name: libaot-System.Formats.Asn1.dll.so
 		ptr null; void* handle
-	}, ; 321
+	}, ; 324
 	%struct.DSOCacheEntry {
 		i64 u0x6826feb0fb5a8799, ; from name: System.Text.RegularExpressions.dll.so
 		i64 u0x7c2c39dae387b52d, ; uint64_t real_name_hash
@@ -2952,15 +2976,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.90_name, ; name: libaot-System.Text.RegularExpressions.dll.so
 		ptr null; void* handle
-	}, ; 322
+	}, ; 325
 	%struct.DSOCacheEntry {
 		i64 u0x68f3b8b1aeb8e58f, ; from name: libaot-System.so
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 323
+	}, ; 326
 	%struct.DSOCacheEntry {
 		i64 u0x68fbbbe2eb455198, ; from name: System.Formats.Asn1
 		i64 u0x4a9bda0e8528b414, ; uint64_t real_name_hash
@@ -2968,7 +2992,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.69_name, ; name: libaot-System.Formats.Asn1.dll.so
 		ptr null; void* handle
-	}, ; 324
+	}, ; 327
 	%struct.DSOCacheEntry {
 		i64 u0x69997307aa75ab1d, ; from name: Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		i64 u0x811e0efc0e57d069, ; uint64_t real_name_hash
@@ -2976,7 +3000,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.55_name, ; name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 325
+	}, ; 328
 	%struct.DSOCacheEntry {
 		i64 u0x69f8bcaead2613c0, ; from name: System.Runtime.InteropServices.so
 		i64 u0x5ae6db1ddadc230b, ; uint64_t real_name_hash
@@ -2984,7 +3008,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.83_name, ; name: libaot-System.Runtime.InteropServices.dll.so
 		ptr null; void* handle
-	}, ; 326
+	}, ; 329
 	%struct.DSOCacheEntry {
 		i64 u0x6a039c1f557cc435, ; from name: System.Collections.so
 		i64 u0xb3f9fc836ae7ebb5, ; uint64_t real_name_hash
@@ -2992,7 +3016,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.60_name, ; name: libaot-System.Collections.dll.so
 		ptr null; void* handle
-	}, ; 327
+	}, ; 330
 	%struct.DSOCacheEntry {
 		i64 u0x6a332e01293b6f72, ; from name: Microsoft.Extensions.Options.dll.so
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -3000,7 +3024,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 328
+	}, ; 331
 	%struct.DSOCacheEntry {
 		i64 u0x6ae597fd7fbafbfa, ; from name: aot-System.IO.Compression.Brotli.dll.so
 		i64 u0x7b22585c66d48a81, ; uint64_t real_name_hash
@@ -3008,7 +3032,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.70_name, ; name: libaot-System.IO.Compression.Brotli.dll.so
 		ptr null; void* handle
-	}, ; 329
+	}, ; 332
 	%struct.DSOCacheEntry {
 		i64 u0x6b08ee2009339a0a, ; from name: aot-Microsoft.Maui
 		i64 u0x58cd310024b735d8, ; uint64_t real_name_hash
@@ -3016,15 +3040,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.23_name, ; name: libaot-Microsoft.Maui.dll.so
 		ptr null; void* handle
-	}, ; 330
+	}, ; 333
 	%struct.DSOCacheEntry {
 		i64 u0x6b191693b6226982, ; from name: Mono.Android.so
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
-	}, ; 331
+	}, ; 334
 	%struct.DSOCacheEntry {
 		i64 u0x6b194963909c6f96, ; from name: TreadmillApp
 		i64 u0x880896da5db2c5f7, ; uint64_t real_name_hash
@@ -3032,7 +3056,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.8_name, ; name: libaot-TreadmillApp.dll.so
 		ptr null; void* handle
-	}, ; 332
+	}, ; 335
 	%struct.DSOCacheEntry {
 		i64 u0x6b9ab6d29bea4f7c, ; from name: Microsoft.Maui.Controls.so
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -3040,7 +3064,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 333
+	}, ; 336
 	%struct.DSOCacheEntry {
 		i64 u0x6c3e41346855f8e3, ; from name: libaot-System.ObjectModel.so
 		i64 u0x914167d87d2ee1b1, ; uint64_t real_name_hash
@@ -3048,7 +3072,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.80_name, ; name: libaot-System.ObjectModel.dll.so
 		ptr null; void* handle
-	}, ; 334
+	}, ; 337
 	%struct.DSOCacheEntry {
 		i64 u0x6c4e830c0d79912d, ; from name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -3056,15 +3080,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 335
+	}, ; 338
 	%struct.DSOCacheEntry {
 		i64 u0x6ce045494a545eab, ; from name: libaot-Java.Interop.dll.so
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 336
+	}, ; 339
 	%struct.DSOCacheEntry {
 		i64 u0x6d18e7d106d6e85f, ; from name: Microsoft.Extensions.Hosting.Abstractions.dll.so
 		i64 u0x0bdc487294fc9a85, ; uint64_t real_name_hash
@@ -3072,7 +3096,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.16_name, ; name: libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 337
+	}, ; 340
 	%struct.DSOCacheEntry {
 		i64 u0x6d79993361e10ef2, ; from name: Microsoft.Extensions.Primitives
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -3080,7 +3104,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 338
+	}, ; 341
 	%struct.DSOCacheEntry {
 		i64 u0x6e64b60d447b8c7e, ; from name: aot-System.Net.Http
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -3088,7 +3112,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 339
+	}, ; 342
 	%struct.DSOCacheEntry {
 		i64 u0x6e894829e650209e, ; from name: aot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -3096,7 +3120,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 340
+	}, ; 343
 	%struct.DSOCacheEntry {
 		i64 u0x6e8d35737ec9d942, ; from name: System.Memory.so
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -3104,7 +3128,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 341
+	}, ; 344
 	%struct.DSOCacheEntry {
 		i64 u0x6ef00c5a40a84578, ; from name: libaot-System.Diagnostics.DiagnosticSource.so
 		i64 u0x77156c94b5eff927, ; uint64_t real_name_hash
@@ -3112,7 +3136,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.65_name, ; name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		ptr null; void* handle
-	}, ; 342
+	}, ; 345
 	%struct.DSOCacheEntry {
 		i64 u0x6f7d52bca595ee57, ; from name: libaot-Xamarin.AndroidX.Lifecycle.LiveData.Core.so
 		i64 u0x38e4553d8764fa45, ; uint64_t real_name_hash
@@ -3120,7 +3144,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.40_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
 		ptr null; void* handle
-	}, ; 343
+	}, ; 346
 	%struct.DSOCacheEntry {
 		i64 u0x6fd15fb6a42c9afc, ; from name: libaot-System.Collections.NonGeneric.dll.so
 		i64 u0x6fd15fb6a42c9afc, ; uint64_t real_name_hash
@@ -3128,7 +3152,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.58_name, ; name: libaot-System.Collections.NonGeneric.dll.so
 		ptr null; void* handle
-	}, ; 344
+	}, ; 347
 	%struct.DSOCacheEntry {
 		i64 u0x70680ffd8b50cafe, ; from name: libaot-System.Diagnostics.TraceSource.so
 		i64 u0x2119cc81025daa05, ; uint64_t real_name_hash
@@ -3136,7 +3160,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.66_name, ; name: libaot-System.Diagnostics.TraceSource.dll.so
 		ptr null; void* handle
-	}, ; 345
+	}, ; 348
 	%struct.DSOCacheEntry {
 		i64 u0x70849ceb23f02ae5, ; from name: aot-Microsoft.Maui.Graphics.so
 		i64 u0x285d22da351d937a, ; uint64_t real_name_hash
@@ -3144,7 +3168,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.25_name, ; name: libaot-Microsoft.Maui.Graphics.dll.so
 		ptr null; void* handle
-	}, ; 346
+	}, ; 349
 	%struct.DSOCacheEntry {
 		i64 u0x71119f59fccb3f0b, ; from name: aot-System.ComponentModel.Primitives.dll.so
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -3152,7 +3176,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 347
+	}, ; 350
 	%struct.DSOCacheEntry {
 		i64 u0x71ba5cfb90a38209, ; from name: libaot-Xamarin.AndroidX.SwipeRefreshLayout
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -3160,7 +3184,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 348
+	}, ; 351
 	%struct.DSOCacheEntry {
 		i64 u0x71ce172a47b85dd6, ; from name: aot-Microsoft.Extensions.Options.so
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -3168,7 +3192,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 349
+	}, ; 352
 	%struct.DSOCacheEntry {
 		i64 u0x71e364db63da2efa, ; from name: aot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -3176,7 +3200,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 350
+	}, ; 353
 	%struct.DSOCacheEntry {
 		i64 u0x72390be79b9026fa, ; from name: libaot-System.Console.so
 		i64 u0xc2da5dca6ccd8b0a, ; uint64_t real_name_hash
@@ -3184,7 +3208,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.64_name, ; name: libaot-System.Console.dll.so
 		ptr null; void* handle
-	}, ; 351
+	}, ; 354
 	%struct.DSOCacheEntry {
 		i64 u0x7247abfd5606ac26, ; from name: libaot-System.Diagnostics.DiagnosticSource
 		i64 u0x77156c94b5eff927, ; uint64_t real_name_hash
@@ -3192,15 +3216,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.65_name, ; name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		ptr null; void* handle
-	}, ; 352
+	}, ; 355
 	%struct.DSOCacheEntry {
 		i64 u0x72de88ad1e1d7001, ; from name: System.so
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 353
+	}, ; 356
 	%struct.DSOCacheEntry {
 		i64 u0x737c75d31bd01ca8, ; from name: aot-Xamarin.AndroidX.AppCompat.AppCompatResources.so
 		i64 u0x456e37cd491657b0, ; uint64_t real_name_hash
@@ -3208,7 +3232,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.30_name, ; name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		ptr null; void* handle
-	}, ; 354
+	}, ; 357
 	%struct.DSOCacheEntry {
 		i64 u0x7393060acfd95c29, ; from name: aot-Xamarin.AndroidX.Activity.so
 		i64 u0x8a05820e9e77c0c3, ; uint64_t real_name_hash
@@ -3216,7 +3240,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.28_name, ; name: libaot-Xamarin.AndroidX.Activity.dll.so
 		ptr null; void* handle
-	}, ; 355
+	}, ; 358
 	%struct.DSOCacheEntry {
 		i64 u0x73cc013549e3c965, ; from name: Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -3224,7 +3248,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 356
+	}, ; 359
 	%struct.DSOCacheEntry {
 		i64 u0x74123580a0ac87e4, ; from name: System.IO.Compression.Brotli.dll.so
 		i64 u0x7b22585c66d48a81, ; uint64_t real_name_hash
@@ -3232,7 +3256,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.70_name, ; name: libaot-System.IO.Compression.Brotli.dll.so
 		ptr null; void* handle
-	}, ; 357
+	}, ; 360
 	%struct.DSOCacheEntry {
 		i64 u0x7465e066858b0423, ; from name: aot-Xamarin.KotlinX.Coroutines.Core.Jvm
 		i64 u0x811e0efc0e57d069, ; uint64_t real_name_hash
@@ -3240,7 +3264,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.55_name, ; name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 358
+	}, ; 361
 	%struct.DSOCacheEntry {
 		i64 u0x748735b7db53ac6b, ; from name: TreadmillApp.dll.so
 		i64 u0x880896da5db2c5f7, ; uint64_t real_name_hash
@@ -3248,7 +3272,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.8_name, ; name: libaot-TreadmillApp.dll.so
 		ptr null; void* handle
-	}, ; 359
+	}, ; 362
 	%struct.DSOCacheEntry {
 		i64 u0x74b0aefe8f467d50, ; from name: libaot-Xamarin.AndroidX.Loader.dll.so
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -3256,7 +3280,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 360
+	}, ; 363
 	%struct.DSOCacheEntry {
 		i64 u0x7532cc5bf9c97227, ; from name: aot-System.IO.Pipelines
 		i64 u0x027079cd6cbb2479, ; uint64_t real_name_hash
@@ -3264,7 +3288,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.72_name, ; name: libaot-System.IO.Pipelines.dll.so
 		ptr null; void* handle
-	}, ; 361
+	}, ; 364
 	%struct.DSOCacheEntry {
 		i64 u0x7534942bd463ab24, ; from name: Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		i64 u0x348910547422a64d, ; uint64_t real_name_hash
@@ -3272,7 +3296,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.44_name, ; name: libaot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		ptr null; void* handle
-	}, ; 362
+	}, ; 365
 	%struct.DSOCacheEntry {
 		i64 u0x75539c602a2554b5, ; from name: Microsoft.Extensions.Logging.Abstractions.so
 		i64 u0xe6757a5fac324e53, ; uint64_t real_name_hash
@@ -3280,7 +3304,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.18_name, ; name: libaot-Microsoft.Extensions.Logging.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 363
+	}, ; 366
 	%struct.DSOCacheEntry {
 		i64 u0x7577967f509b9961, ; from name: Microsoft.Maui.Controls.dll.so
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -3288,7 +3312,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 364
+	}, ; 367
 	%struct.DSOCacheEntry {
 		i64 u0x757898ba637db46e, ; from name: libaot-Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		i64 u0x757898ba637db46e, ; uint64_t real_name_hash
@@ -3296,7 +3320,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.56_name, ; name: libaot-Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 365
+	}, ; 368
 	%struct.DSOCacheEntry {
 		i64 u0x7648004a8fe5501d, ; from name: System.Diagnostics.DiagnosticSource.so
 		i64 u0x77156c94b5eff927, ; uint64_t real_name_hash
@@ -3304,15 +3328,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.65_name, ; name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		ptr null; void* handle
-	}, ; 366
+	}, ; 369
 	%struct.DSOCacheEntry {
 		i64 u0x764e09afb7f22c1f, ; from name: libaot-System.Private.CoreLib
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
-	}, ; 367
+	}, ; 370
 	%struct.DSOCacheEntry {
 		i64 u0x76fe8b3923138ef8, ; from name: libaot-Xamarin.AndroidX.Navigation.Common.Android
 		i64 u0x348910547422a64d, ; uint64_t real_name_hash
@@ -3320,7 +3344,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.44_name, ; name: libaot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		ptr null; void* handle
-	}, ; 368
+	}, ; 371
 	%struct.DSOCacheEntry {
 		i64 u0x77156c94b5eff927, ; from name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		i64 u0x77156c94b5eff927, ; uint64_t real_name_hash
@@ -3328,7 +3352,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.65_name, ; name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		ptr null; void* handle
-	}, ; 369
+	}, ; 372
 	%struct.DSOCacheEntry {
 		i64 u0x781c8723c428ecd1, ; from name: aot-System.Runtime.Numerics.so
 		i64 u0x6619888793b3b2dd, ; uint64_t real_name_hash
@@ -3336,7 +3360,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.85_name, ; name: libaot-System.Runtime.Numerics.dll.so
 		ptr null; void* handle
-	}, ; 370
+	}, ; 373
 	%struct.DSOCacheEntry {
 		i64 u0x78740426415b2618, ; from name: Xamarin.AndroidX.ViewPager2.so
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -3344,7 +3368,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 371
+	}, ; 374
 	%struct.DSOCacheEntry {
 		i64 u0x78f5da5f3dbb8df3, ; from name: libaot-System.ComponentModel.so
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -3352,7 +3376,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 372
+	}, ; 375
 	%struct.DSOCacheEntry {
 		i64 u0x79017b2654a639ed, ; from name: Xamarin.AndroidX.Navigation.Common.Android.so
 		i64 u0x348910547422a64d, ; uint64_t real_name_hash
@@ -3360,7 +3384,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.44_name, ; name: libaot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		ptr null; void* handle
-	}, ; 373
+	}, ; 376
 	%struct.DSOCacheEntry {
 		i64 u0x7aa7acc28fe6692d, ; from name: aot-System.ComponentModel.TypeConverter.so
 		i64 u0xcb7e41356728fd07, ; uint64_t real_name_hash
@@ -3368,7 +3392,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.62_name, ; name: libaot-System.ComponentModel.TypeConverter.dll.so
 		ptr null; void* handle
-	}, ; 374
+	}, ; 377
 	%struct.DSOCacheEntry {
 		i64 u0x7abe2531e9b9835b, ; from name: System.Private.Xml.dll.so
 		i64 u0x52bbd048717682d4, ; uint64_t real_name_hash
@@ -3376,7 +3400,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.82_name, ; name: libaot-System.Private.Xml.dll.so
 		ptr null; void* handle
-	}, ; 375
+	}, ; 378
 	%struct.DSOCacheEntry {
 		i64 u0x7ac07a6713abaa3b, ; from name: aot-Microsoft.Maui.so
 		i64 u0x58cd310024b735d8, ; uint64_t real_name_hash
@@ -3384,15 +3408,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.23_name, ; name: libaot-Microsoft.Maui.dll.so
 		ptr null; void* handle
-	}, ; 376
+	}, ; 379
 	%struct.DSOCacheEntry {
 		i64 u0x7adcf889f929072e, ; from name: libaot-Mono.Android.Runtime.so
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 377
+	}, ; 380
 	%struct.DSOCacheEntry {
 		i64 u0x7b07e6f22884b91b, ; from name: System.Drawing.Primitives.dll.so
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -3400,7 +3424,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 378
+	}, ; 381
 	%struct.DSOCacheEntry {
 		i64 u0x7b22585c66d48a81, ; from name: libaot-System.IO.Compression.Brotli.dll.so
 		i64 u0x7b22585c66d48a81, ; uint64_t real_name_hash
@@ -3408,15 +3432,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.70_name, ; name: libaot-System.IO.Compression.Brotli.dll.so
 		ptr null; void* handle
-	}, ; 379
+	}, ; 382
 	%struct.DSOCacheEntry {
 		i64 u0x7b91ac8ddc528deb, ; from name: libaot-System.dll.so
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 380
+	}, ; 383
 	%struct.DSOCacheEntry {
 		i64 u0x7bc3d53eeee718e3, ; from name: aot-Xamarin.AndroidX.Navigation.UI.dll.so
 		i64 u0x21b741f2635aa744, ; uint64_t real_name_hash
@@ -3424,7 +3448,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.47_name, ; name: libaot-Xamarin.AndroidX.Navigation.UI.dll.so
 		ptr null; void* handle
-	}, ; 381
+	}, ; 384
 	%struct.DSOCacheEntry {
 		i64 u0x7bef86a4335c4870, ; from name: System.ComponentModel.TypeConverter
 		i64 u0xcb7e41356728fd07, ; uint64_t real_name_hash
@@ -3432,7 +3456,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.62_name, ; name: libaot-System.ComponentModel.TypeConverter.dll.so
 		ptr null; void* handle
-	}, ; 382
+	}, ; 385
 	%struct.DSOCacheEntry {
 		i64 u0x7c2c39dae387b52d, ; from name: libaot-System.Text.RegularExpressions.dll.so
 		i64 u0x7c2c39dae387b52d, ; uint64_t real_name_hash
@@ -3440,7 +3464,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.90_name, ; name: libaot-System.Text.RegularExpressions.dll.so
 		ptr null; void* handle
-	}, ; 383
+	}, ; 386
 	%struct.DSOCacheEntry {
 		i64 u0x7d09412e094065be, ; from name: aot-Xamarin.AndroidX.Core.dll.so
 		i64 u0x28a319e875b39488, ; uint64_t real_name_hash
@@ -3448,7 +3472,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.34_name, ; name: libaot-Xamarin.AndroidX.Core.dll.so
 		ptr null; void* handle
-	}, ; 384
+	}, ; 387
 	%struct.DSOCacheEntry {
 		i64 u0x7d13a780ac9c1725, ; from name: libaot-System.Numerics.Vectors
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
@@ -3456,7 +3480,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 385
+	}, ; 388
+	%struct.DSOCacheEntry {
+		i64 u0x7d7a84dcff7fdb59, ; from name: libaot-System.Threading.ThreadPool.dll.so
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 389
 	%struct.DSOCacheEntry {
 		i64 u0x7d8ee2bdc8e3aad1, ; from name: System.Numerics.Vectors
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
@@ -3464,7 +3496,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 386
+	}, ; 390
 	%struct.DSOCacheEntry {
 		i64 u0x7d996a621678709b, ; from name: libaot-Xamarin.AndroidX.Navigation.Fragment
 		i64 u0xaa2eca1145f3a7cc, ; uint64_t real_name_hash
@@ -3472,7 +3504,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.45_name, ; name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 387
+	}, ; 391
 	%struct.DSOCacheEntry {
 		i64 u0x7d9f5085bfa11590, ; from name: libaot-System.Text.Json
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -3480,7 +3512,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 388
+	}, ; 392
 	%struct.DSOCacheEntry {
 		i64 u0x7dec6152c2473976, ; from name: libaot-_Microsoft.Android.Resource.Designer.so
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -3488,7 +3520,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 389
+	}, ; 393
 	%struct.DSOCacheEntry {
 		i64 u0x7dfc3d6d9d8d7b70, ; from name: System.Collections
 		i64 u0xb3f9fc836ae7ebb5, ; uint64_t real_name_hash
@@ -3496,7 +3528,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.60_name, ; name: libaot-System.Collections.dll.so
 		ptr null; void* handle
-	}, ; 390
+	}, ; 394
 	%struct.DSOCacheEntry {
 		i64 u0x7e1466a1099bd7be, ; from name: libaot-Plugin.Maui.Audio
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -3504,7 +3536,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 391
+	}, ; 395
 	%struct.DSOCacheEntry {
 		i64 u0x7e2a7dc5fa88338e, ; from name: libaot-Xamarin.AndroidX.CoordinatorLayout.so
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -3512,15 +3544,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 392
+	}, ; 396
 	%struct.DSOCacheEntry {
 		i64 u0x7edbb351f3f9be56, ; from name: libaot-System.Private.CoreLib.so
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
-	}, ; 393
+	}, ; 397
 	%struct.DSOCacheEntry {
 		i64 u0x7f174db5a2c913e7, ; from name: libaot-Microsoft.Maui.Controls.dll.so
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -3528,7 +3560,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 394
+	}, ; 398
 	%struct.DSOCacheEntry {
 		i64 u0x7f8f286bea7d27c8, ; from name: libaot-System.Collections.Specialized.so
 		i64 u0x355b66670e6bf2e4, ; uint64_t real_name_hash
@@ -3536,7 +3568,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.59_name, ; name: libaot-System.Collections.Specialized.dll.so
 		ptr null; void* handle
-	}, ; 395
+	}, ; 399
 	%struct.DSOCacheEntry {
 		i64 u0x7f9351cd44b1273f, ; from name: Microsoft.Extensions.Configuration.Abstractions
 		i64 u0xd6a1ce9f7ccd35cb, ; uint64_t real_name_hash
@@ -3544,7 +3576,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.11_name, ; name: libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 396
+	}, ; 400
 	%struct.DSOCacheEntry {
 		i64 u0x7fb3d22a29fb88db, ; from name: _Microsoft.Android.Resource.Designer.dll.so
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -3552,7 +3584,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 397
+	}, ; 401
 	%struct.DSOCacheEntry {
 		i64 u0x7feafaeaaa627797, ; from name: libaot-Xamarin.AndroidX.DrawerLayout
 		i64 u0x4bea014989424a56, ; uint64_t real_name_hash
@@ -3560,7 +3592,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.37_name, ; name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		ptr null; void* handle
-	}, ; 398
+	}, ; 402
 	%struct.DSOCacheEntry {
 		i64 u0x800dd28c71d7ee1d, ; from name: libaot-System.Collections.NonGeneric.so
 		i64 u0x6fd15fb6a42c9afc, ; uint64_t real_name_hash
@@ -3568,7 +3600,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.58_name, ; name: libaot-System.Collections.NonGeneric.dll.so
 		ptr null; void* handle
-	}, ; 399
+	}, ; 403
 	%struct.DSOCacheEntry {
 		i64 u0x809b1d586a1c34b9, ; from name: Plugin.Maui.Audio
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -3576,7 +3608,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 400
+	}, ; 404
 	%struct.DSOCacheEntry {
 		i64 u0x81119bd638dcee05, ; from name: libaot-Xamarin.Google.Android.Material
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -3584,7 +3616,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 401
+	}, ; 405
 	%struct.DSOCacheEntry {
 		i64 u0x811e0efc0e57d069, ; from name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		i64 u0x811e0efc0e57d069, ; uint64_t real_name_hash
@@ -3592,7 +3624,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.55_name, ; name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 402
+	}, ; 406
 	%struct.DSOCacheEntry {
 		i64 u0x8196d5842b8a075e, ; from name: Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -3600,7 +3632,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 403
+	}, ; 407
 	%struct.DSOCacheEntry {
 		i64 u0x81ae5161ef344a32, ; from name: System.Numerics.Vectors.dll.so
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
@@ -3608,7 +3640,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 404
+	}, ; 408
 	%struct.DSOCacheEntry {
 		i64 u0x825b78cb157ba9fe, ; from name: aot-Xamarin.AndroidX.ViewPager.so
 		i64 u0xb5351dcbaf438cb6, ; uint64_t real_name_hash
@@ -3616,7 +3648,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.51_name, ; name: libaot-Xamarin.AndroidX.ViewPager.dll.so
 		ptr null; void* handle
-	}, ; 405
+	}, ; 409
 	%struct.DSOCacheEntry {
 		i64 u0x825c8f5943a12784, ; from name: Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -3624,7 +3656,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 406
+	}, ; 410
 	%struct.DSOCacheEntry {
 		i64 u0x8277f2be6b5ce05f, ; from name: Xamarin.AndroidX.AppCompat
 		i64 u0x42c7eb0880ff24a4, ; uint64_t real_name_hash
@@ -3632,7 +3664,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.29_name, ; name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		ptr null; void* handle
-	}, ; 407
+	}, ; 411
 	%struct.DSOCacheEntry {
 		i64 u0x82a2e2148ec96b41, ; from name: libaot-System.Linq.so
 		i64 u0x2fb7a3952b307fae, ; uint64_t real_name_hash
@@ -3640,7 +3672,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.74_name, ; name: libaot-System.Linq.dll.so
 		ptr null; void* handle
-	}, ; 408
+	}, ; 412
 	%struct.DSOCacheEntry {
 		i64 u0x82b65efc7b0bc50f, ; from name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -3648,7 +3680,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 409
+	}, ; 413
 	%struct.DSOCacheEntry {
 		i64 u0x84a855406853f510, ; from name: aot-System.IO.Compression
 		i64 u0x07869dd1c492a791, ; uint64_t real_name_hash
@@ -3656,7 +3688,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.71_name, ; name: libaot-System.IO.Compression.dll.so
 		ptr null; void* handle
-	}, ; 410
+	}, ; 414
 	%struct.DSOCacheEntry {
 		i64 u0x84bb91257f7a6c6d, ; from name: Microsoft.Extensions.DependencyInjection.dll.so
 		i64 u0xe8726752705c8ce9, ; uint64_t real_name_hash
@@ -3664,7 +3696,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.12_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.dll.so
 		ptr null; void* handle
-	}, ; 411
+	}, ; 415
 	%struct.DSOCacheEntry {
 		i64 u0x8506adc22bb03c84, ; from name: Microsoft.Extensions.Logging.Abstractions.dll.so
 		i64 u0xe6757a5fac324e53, ; uint64_t real_name_hash
@@ -3672,7 +3704,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.18_name, ; name: libaot-Microsoft.Extensions.Logging.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 412
+	}, ; 416
 	%struct.DSOCacheEntry {
 		i64 u0x8532df22d4a7f8dc, ; from name: System.ComponentModel.TypeConverter.dll.so
 		i64 u0xcb7e41356728fd07, ; uint64_t real_name_hash
@@ -3680,7 +3712,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.62_name, ; name: libaot-System.ComponentModel.TypeConverter.dll.so
 		ptr null; void* handle
-	}, ; 413
+	}, ; 417
 	%struct.DSOCacheEntry {
 		i64 u0x8584a5172bd7d8bc, ; from name: Xamarin.AndroidX.Lifecycle.LiveData.Core.so
 		i64 u0x38e4553d8764fa45, ; uint64_t real_name_hash
@@ -3688,7 +3720,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.40_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
 		ptr null; void* handle
-	}, ; 414
+	}, ; 418
 	%struct.DSOCacheEntry {
 		i64 u0x8588c27c4ab35aae, ; from name: aot-System.Text.Encodings.Web.so
 		i64 u0x209bcec5b3b022b8, ; uint64_t real_name_hash
@@ -3696,7 +3728,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.88_name, ; name: libaot-System.Text.Encodings.Web.dll.so
 		ptr null; void* handle
-	}, ; 415
+	}, ; 419
 	%struct.DSOCacheEntry {
 		i64 u0x858cd519f13e3ea3, ; from name: aot-System.Security.Cryptography
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -3704,7 +3736,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 416
+	}, ; 420
 	%struct.DSOCacheEntry {
 		i64 u0x85dab7cad5f9d52a, ; from name: libaot-System.IO.Compression.Brotli.so
 		i64 u0x7b22585c66d48a81, ; uint64_t real_name_hash
@@ -3712,7 +3744,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.70_name, ; name: libaot-System.IO.Compression.Brotli.dll.so
 		ptr null; void* handle
-	}, ; 417
+	}, ; 421
 	%struct.DSOCacheEntry {
 		i64 u0x8714f909546cdb5a, ; from name: aot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		i64 u0x456e37cd491657b0, ; uint64_t real_name_hash
@@ -3720,7 +3752,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.30_name, ; name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		ptr null; void* handle
-	}, ; 418
+	}, ; 422
 	%struct.DSOCacheEntry {
 		i64 u0x87532963d7155867, ; from name: aot-System.Memory
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -3728,7 +3760,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 419
+	}, ; 423
 	%struct.DSOCacheEntry {
 		i64 u0x87a4f6a24a3cad9d, ; from name: aot-System.Formats.Asn1
 		i64 u0x4a9bda0e8528b414, ; uint64_t real_name_hash
@@ -3736,15 +3768,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.69_name, ; name: libaot-System.Formats.Asn1.dll.so
 		ptr null; void* handle
-	}, ; 420
+	}, ; 424
 	%struct.DSOCacheEntry {
 		i64 u0x87e71d68120b9580, ; from name: aot-Java.Interop.dll.so
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 421
+	}, ; 425
 	%struct.DSOCacheEntry {
 		i64 u0x880896da5db2c5f7, ; from name: libaot-TreadmillApp.dll.so
 		i64 u0x880896da5db2c5f7, ; uint64_t real_name_hash
@@ -3752,7 +3784,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.8_name, ; name: libaot-TreadmillApp.dll.so
 		ptr null; void* handle
-	}, ; 422
+	}, ; 426
 	%struct.DSOCacheEntry {
 		i64 u0x8842b3a5d2d3fb36, ; from name: Microsoft.Maui.Essentials
 		i64 u0xdc3ba4771239be2d, ; uint64_t real_name_hash
@@ -3760,7 +3792,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.24_name, ; name: libaot-Microsoft.Maui.Essentials.dll.so
 		ptr null; void* handle
-	}, ; 423
+	}, ; 427
 	%struct.DSOCacheEntry {
 		i64 u0x884ca78516a55666, ; from name: aot-System.IO.Pipelines.so
 		i64 u0x027079cd6cbb2479, ; uint64_t real_name_hash
@@ -3768,7 +3800,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.72_name, ; name: libaot-System.IO.Pipelines.dll.so
 		ptr null; void* handle
-	}, ; 424
+	}, ; 428
 	%struct.DSOCacheEntry {
 		i64 u0x8915d6eea348fe49, ; from name: libaot-Microsoft.Extensions.Configuration.Abstractions.so
 		i64 u0xd6a1ce9f7ccd35cb, ; uint64_t real_name_hash
@@ -3776,7 +3808,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.11_name, ; name: libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 425
+	}, ; 429
 	%struct.DSOCacheEntry {
 		i64 u0x89613433a5741fe7, ; from name: System.Drawing.dll.so
 		i64 u0x366c3ed8a6266ffb, ; uint64_t real_name_hash
@@ -3784,7 +3816,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.68_name, ; name: libaot-System.Drawing.dll.so
 		ptr null; void* handle
-	}, ; 426
+	}, ; 430
 	%struct.DSOCacheEntry {
 		i64 u0x89c9595aeecca3fc, ; from name: libaot-System.IO.Compression.so
 		i64 u0x07869dd1c492a791, ; uint64_t real_name_hash
@@ -3792,7 +3824,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.71_name, ; name: libaot-System.IO.Compression.dll.so
 		ptr null; void* handle
-	}, ; 427
+	}, ; 431
 	%struct.DSOCacheEntry {
 		i64 u0x8a05820e9e77c0c3, ; from name: libaot-Xamarin.AndroidX.Activity.dll.so
 		i64 u0x8a05820e9e77c0c3, ; uint64_t real_name_hash
@@ -3800,7 +3832,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.28_name, ; name: libaot-Xamarin.AndroidX.Activity.dll.so
 		ptr null; void* handle
-	}, ; 428
+	}, ; 432
 	%struct.DSOCacheEntry {
 		i64 u0x8aa238a08da31f37, ; from name: System.Text.Json.so
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -3808,15 +3840,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 429
+	}, ; 433
 	%struct.DSOCacheEntry {
 		i64 u0x8ab573a2f264ef6e, ; from name: libaot-Java.Interop
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 430
+	}, ; 434
 	%struct.DSOCacheEntry {
 		i64 u0x8ab6d3431da5497e, ; from name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		i64 u0x8ab6d3431da5497e, ; uint64_t real_name_hash
@@ -3824,7 +3856,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.38_name, ; name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 431
+	}, ; 435
 	%struct.DSOCacheEntry {
 		i64 u0x8ad229ea26432ee2, ; from name: Xamarin.AndroidX.Loader
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -3832,7 +3864,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 432
+	}, ; 436
 	%struct.DSOCacheEntry {
 		i64 u0x8b06991f459cf97b, ; from name: System.IO.Compression.so
 		i64 u0x07869dd1c492a791, ; uint64_t real_name_hash
@@ -3840,7 +3872,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.71_name, ; name: libaot-System.IO.Compression.dll.so
 		ptr null; void* handle
-	}, ; 433
+	}, ; 437
 	%struct.DSOCacheEntry {
 		i64 u0x8b6737c4464ef9c9, ; from name: aot-System.Collections.Specialized
 		i64 u0x355b66670e6bf2e4, ; uint64_t real_name_hash
@@ -3848,7 +3880,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.59_name, ; name: libaot-System.Collections.Specialized.dll.so
 		ptr null; void* handle
-	}, ; 434
+	}, ; 438
 	%struct.DSOCacheEntry {
 		i64 u0x8bdde98d31c34948, ; from name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.so
 		i64 u0x2ec8d2dcf2c4a71b, ; uint64_t real_name_hash
@@ -3856,7 +3888,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.39_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 435
+	}, ; 439
+	%struct.DSOCacheEntry {
+		i64 u0x8c1da76084515ed9, ; from name: aot-System.Threading.ThreadPool
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 440
 	%struct.DSOCacheEntry {
 		i64 u0x8c575135aa1ccef4, ; from name: Microsoft.Extensions.FileProviders.Abstractions
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -3864,7 +3904,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 436
+	}, ; 441
 	%struct.DSOCacheEntry {
 		i64 u0x8ce5133f826f156c, ; from name: aot-Xamarin.AndroidX.ViewPager2.dll.so
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -3872,7 +3912,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 437
+	}, ; 442
 	%struct.DSOCacheEntry {
 		i64 u0x8d311eaba088f02f, ; from name: aot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -3880,15 +3920,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 438
+	}, ; 443
 	%struct.DSOCacheEntry {
 		i64 u0x8d7b8ab4b3310ead, ; from name: System.Threading
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
-	}, ; 439
+	}, ; 444
 	%struct.DSOCacheEntry {
 		i64 u0x8da188285aadfe8e, ; from name: System.Collections.Concurrent
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -3896,7 +3936,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 440
+	}, ; 445
 	%struct.DSOCacheEntry {
 		i64 u0x8e7bcc98607276e4, ; from name: System.Collections.Concurrent.dll.so
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -3904,7 +3944,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 441
+	}, ; 446
 	%struct.DSOCacheEntry {
 		i64 u0x8f9cbb0d8be607ae, ; from name: aot-Microsoft.Extensions.DependencyInjection.so
 		i64 u0xe8726752705c8ce9, ; uint64_t real_name_hash
@@ -3912,7 +3952,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.12_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.dll.so
 		ptr null; void* handle
-	}, ; 442
+	}, ; 447
 	%struct.DSOCacheEntry {
 		i64 u0x9012bf27f217d9ef, ; from name: libaot-TreadmillApp.so
 		i64 u0x880896da5db2c5f7, ; uint64_t real_name_hash
@@ -3920,7 +3960,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.8_name, ; name: libaot-TreadmillApp.dll.so
 		ptr null; void* handle
-	}, ; 443
+	}, ; 448
 	%struct.DSOCacheEntry {
 		i64 u0x90165fc5d6da6d5e, ; from name: aot-Xamarin.AndroidX.AppCompat.AppCompatResources
 		i64 u0x456e37cd491657b0, ; uint64_t real_name_hash
@@ -3928,7 +3968,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.30_name, ; name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		ptr null; void* handle
-	}, ; 444
+	}, ; 449
 	%struct.DSOCacheEntry {
 		i64 u0x903101b46fb73a04, ; from name: _Microsoft.Android.Resource.Designer
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -3936,7 +3976,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 445
+	}, ; 450
 	%struct.DSOCacheEntry {
 		i64 u0x90634f86c5ebe2b5, ; from name: Xamarin.AndroidX.Lifecycle.ViewModel.Android
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -3944,7 +3984,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 446
+	}, ; 451
 	%struct.DSOCacheEntry {
 		i64 u0x9074a5999bae75fc, ; from name: aot-System.Drawing.Primitives.dll.so
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -3952,7 +3992,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 447
+	}, ; 452
 	%struct.DSOCacheEntry {
 		i64 u0x90d9aa4c8cd014aa, ; from name: libaot-System.IO.Pipelines
 		i64 u0x027079cd6cbb2479, ; uint64_t real_name_hash
@@ -3960,7 +4000,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.72_name, ; name: libaot-System.IO.Pipelines.dll.so
 		ptr null; void* handle
-	}, ; 448
+	}, ; 453
 	%struct.DSOCacheEntry {
 		i64 u0x914167d87d2ee1b1, ; from name: libaot-System.ObjectModel.dll.so
 		i64 u0x914167d87d2ee1b1, ; uint64_t real_name_hash
@@ -3968,7 +4008,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.80_name, ; name: libaot-System.ObjectModel.dll.so
 		ptr null; void* handle
-	}, ; 449
+	}, ; 454
 	%struct.DSOCacheEntry {
 		i64 u0x9184d143ca1c7368, ; from name: aot-TreadmillApp
 		i64 u0x880896da5db2c5f7, ; uint64_t real_name_hash
@@ -3976,7 +4016,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.8_name, ; name: libaot-TreadmillApp.dll.so
 		ptr null; void* handle
-	}, ; 450
+	}, ; 455
 	%struct.DSOCacheEntry {
 		i64 u0x91956ff1daa9687e, ; from name: libaot-Microsoft.Maui.Essentials
 		i64 u0xdc3ba4771239be2d, ; uint64_t real_name_hash
@@ -3984,15 +4024,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.24_name, ; name: libaot-Microsoft.Maui.Essentials.dll.so
 		ptr null; void* handle
-	}, ; 451
+	}, ; 456
 	%struct.DSOCacheEntry {
 		i64 u0x91d3ce88c87781b2, ; from name: System.Xml.ReaderWriter.dll.so
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
-	}, ; 452
+	}, ; 457
 	%struct.DSOCacheEntry {
 		i64 u0x92f29455a04afdf6, ; from name: libaot-Plugin.Maui.Audio.dll.so
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -4000,7 +4040,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 453
+	}, ; 458
 	%struct.DSOCacheEntry {
 		i64 u0x933c13d587fd4708, ; from name: aot-System.Collections.Specialized.so
 		i64 u0x355b66670e6bf2e4, ; uint64_t real_name_hash
@@ -4008,7 +4048,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.59_name, ; name: libaot-System.Collections.Specialized.dll.so
 		ptr null; void* handle
-	}, ; 454
+	}, ; 459
 	%struct.DSOCacheEntry {
 		i64 u0x9345748e3d9d87ff, ; from name: libaot-System.Linq.Expressions.so
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -4016,7 +4056,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 455
+	}, ; 460
 	%struct.DSOCacheEntry {
 		i64 u0x934cbfda9b40e895, ; from name: libaot-System.Drawing.Primitives.dll.so
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -4024,7 +4064,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 456
+	}, ; 461
 	%struct.DSOCacheEntry {
 		i64 u0x937abea3fe5296af, ; from name: libaot-Xamarin.Google.Android.Material.dll.so
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -4032,7 +4072,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 457
+	}, ; 462
 	%struct.DSOCacheEntry {
 		i64 u0x93b2bf77d26dbbcf, ; from name: Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
 		i64 u0x38e4553d8764fa45, ; uint64_t real_name_hash
@@ -4040,7 +4080,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.40_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
 		ptr null; void* handle
-	}, ; 458
+	}, ; 463
 	%struct.DSOCacheEntry {
 		i64 u0x93e4c54304a2e819, ; from name: libaot-System.Collections.Concurrent.so
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -4048,7 +4088,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 459
+	}, ; 464
 	%struct.DSOCacheEntry {
 		i64 u0x945436fe733eac24, ; from name: libaot-System.Net.Primitives
 		i64 u0xaac4801194f87f4f, ; uint64_t real_name_hash
@@ -4056,7 +4096,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.77_name, ; name: libaot-System.Net.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 460
+	}, ; 465
 	%struct.DSOCacheEntry {
 		i64 u0x94c36bd34f077936, ; from name: System.Private.Uri.dll.so
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -4064,7 +4104,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 461
+	}, ; 466
 	%struct.DSOCacheEntry {
 		i64 u0x94f58b52e536e8a3, ; from name: aot-Microsoft.Extensions.DependencyInjection.Abstractions
 		i64 u0x4643d8f925d8e6b7, ; uint64_t real_name_hash
@@ -4072,23 +4112,23 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.13_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 462
+	}, ; 467
 	%struct.DSOCacheEntry {
 		i64 u0x9527948cf7bb1991, ; from name: libaot-System.Threading.so
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
-	}, ; 463
+	}, ; 468
 	%struct.DSOCacheEntry {
 		i64 u0x956f26e96f96282b, ; from name: Mono.Android.Runtime.so
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 464
+	}, ; 469
 	%struct.DSOCacheEntry {
 		i64 u0x95ccfe1d9785405e, ; from name: aot-Xamarin.Kotlin.StdLib
 		i64 u0x0c644d6a2b020c43, ; uint64_t real_name_hash
@@ -4096,7 +4136,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.54_name, ; name: libaot-Xamarin.Kotlin.StdLib.dll.so
 		ptr null; void* handle
-	}, ; 465
+	}, ; 470
 	%struct.DSOCacheEntry {
 		i64 u0x95d1b04e08afdac9, ; from name: aot-Microsoft.Extensions.Primitives.dll.so
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -4104,7 +4144,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 466
+	}, ; 471
 	%struct.DSOCacheEntry {
 		i64 u0x95ed0349cb4cb979, ; from name: System.Text.RegularExpressions.so
 		i64 u0x7c2c39dae387b52d, ; uint64_t real_name_hash
@@ -4112,7 +4152,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.90_name, ; name: libaot-System.Text.RegularExpressions.dll.so
 		ptr null; void* handle
-	}, ; 467
+	}, ; 472
 	%struct.DSOCacheEntry {
 		i64 u0x95f0ac6bcefe3d78, ; from name: aot-CommunityToolkit.Mvvm.dll.so
 		i64 u0x324cedd7271c2c92, ; uint64_t real_name_hash
@@ -4120,7 +4160,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.9_name, ; name: libaot-CommunityToolkit.Mvvm.dll.so
 		ptr null; void* handle
-	}, ; 468
+	}, ; 473
 	%struct.DSOCacheEntry {
 		i64 u0x963ee8bdd5b1c36f, ; from name: Xamarin.AndroidX.Activity.dll.so
 		i64 u0x8a05820e9e77c0c3, ; uint64_t real_name_hash
@@ -4128,7 +4168,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.28_name, ; name: libaot-Xamarin.AndroidX.Activity.dll.so
 		ptr null; void* handle
-	}, ; 469
+	}, ; 474
 	%struct.DSOCacheEntry {
 		i64 u0x96753d66e2619fc0, ; from name: aot-System.Security.Cryptography.dll.so
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -4136,7 +4176,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 470
+	}, ; 475
 	%struct.DSOCacheEntry {
 		i64 u0x9706fc81d36c21c0, ; from name: aot-Microsoft.Maui.Essentials
 		i64 u0xdc3ba4771239be2d, ; uint64_t real_name_hash
@@ -4144,7 +4184,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.24_name, ; name: libaot-Microsoft.Maui.Essentials.dll.so
 		ptr null; void* handle
-	}, ; 471
+	}, ; 476
+	%struct.DSOCacheEntry {
+		i64 u0x970c8672bfd02cd0, ; from name: System.Threading.ThreadPool.dll.so
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 477
 	%struct.DSOCacheEntry {
 		i64 u0x974407ee353a91bf, ; from name: libaot-Xamarin.Kotlin.StdLib.so
 		i64 u0x0c644d6a2b020c43, ; uint64_t real_name_hash
@@ -4152,7 +4200,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.54_name, ; name: libaot-Xamarin.Kotlin.StdLib.dll.so
 		ptr null; void* handle
-	}, ; 472
+	}, ; 478
 	%struct.DSOCacheEntry {
 		i64 u0x97529a82db270486, ; from name: aot-System.Runtime.InteropServices.dll.so
 		i64 u0x5ae6db1ddadc230b, ; uint64_t real_name_hash
@@ -4160,7 +4208,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.83_name, ; name: libaot-System.Runtime.InteropServices.dll.so
 		ptr null; void* handle
-	}, ; 473
+	}, ; 479
 	%struct.DSOCacheEntry {
 		i64 u0x9779a7876628f915, ; from name: aot-System.ComponentModel.Primitives
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -4168,7 +4216,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 474
+	}, ; 480
 	%struct.DSOCacheEntry {
 		i64 u0x9793febe657f5b29, ; from name: libaot-Microsoft.Extensions.DependencyInjection
 		i64 u0xe8726752705c8ce9, ; uint64_t real_name_hash
@@ -4176,7 +4224,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.12_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.dll.so
 		ptr null; void* handle
-	}, ; 475
+	}, ; 481
 	%struct.DSOCacheEntry {
 		i64 u0x984a5bf1c8ad2a21, ; from name: libaot-System.Runtime.so
 		i64 u0xbbc0e6e747d7877a, ; uint64_t real_name_hash
@@ -4184,7 +4232,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.86_name, ; name: libaot-System.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 476
+	}, ; 482
 	%struct.DSOCacheEntry {
 		i64 u0x98834bb0d43301d2, ; from name: aot-System.Collections.Concurrent.dll.so
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -4192,7 +4240,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 477
+	}, ; 483
 	%struct.DSOCacheEntry {
 		i64 u0x9894cc04ddb732f3, ; from name: Xamarin.AndroidX.Collection.Jvm.dll.so
 		i64 u0x1adc5c3038254713, ; uint64_t real_name_hash
@@ -4200,7 +4248,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.32_name, ; name: libaot-Xamarin.AndroidX.Collection.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 478
+	}, ; 484
 	%struct.DSOCacheEntry {
 		i64 u0x98a8c89b58a933bc, ; from name: libaot-Xamarin.AndroidX.CoordinatorLayout
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -4208,7 +4256,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 479
+	}, ; 485
 	%struct.DSOCacheEntry {
 		i64 u0x98ba904da6358519, ; from name: libaot-Xamarin.AndroidX.DrawerLayout.so
 		i64 u0x4bea014989424a56, ; uint64_t real_name_hash
@@ -4216,7 +4264,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.37_name, ; name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		ptr null; void* handle
-	}, ; 480
+	}, ; 486
 	%struct.DSOCacheEntry {
 		i64 u0x991d510397f92d9d, ; from name: System.Linq.Expressions
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -4224,7 +4272,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 481
+	}, ; 487
 	%struct.DSOCacheEntry {
 		i64 u0x9951ebda72b82022, ; from name: Xamarin.AndroidX.RecyclerView.dll.so
 		i64 u0x34c6f5c746796bcc, ; uint64_t real_name_hash
@@ -4232,7 +4280,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.48_name, ; name: libaot-Xamarin.AndroidX.RecyclerView.dll.so
 		ptr null; void* handle
-	}, ; 482
+	}, ; 488
 	%struct.DSOCacheEntry {
 		i64 u0x99d01882ba964688, ; from name: libaot-Xamarin.AndroidX.Navigation.Fragment.so
 		i64 u0xaa2eca1145f3a7cc, ; uint64_t real_name_hash
@@ -4240,7 +4288,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.45_name, ; name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 483
+	}, ; 489
 	%struct.DSOCacheEntry {
 		i64 u0x99e783e6676e7adf, ; from name: System.Runtime.InteropServices.dll.so
 		i64 u0x5ae6db1ddadc230b, ; uint64_t real_name_hash
@@ -4248,7 +4296,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.83_name, ; name: libaot-System.Runtime.InteropServices.dll.so
 		ptr null; void* handle
-	}, ; 484
+	}, ; 490
 	%struct.DSOCacheEntry {
 		i64 u0x9a1f1958a14a59c2, ; from name: aot-Xamarin.AndroidX.CustomView.so
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -4256,7 +4304,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 485
+	}, ; 491
 	%struct.DSOCacheEntry {
 		i64 u0x9a6f648da172667e, ; from name: _Microsoft.Android.Resource.Designer.so
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -4264,7 +4312,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 486
+	}, ; 492
 	%struct.DSOCacheEntry {
 		i64 u0x9b0176cb40ddab04, ; from name: System.Text.Encodings.Web.so
 		i64 u0x209bcec5b3b022b8, ; uint64_t real_name_hash
@@ -4272,7 +4320,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.88_name, ; name: libaot-System.Text.Encodings.Web.dll.so
 		ptr null; void* handle
-	}, ; 487
+	}, ; 493
 	%struct.DSOCacheEntry {
 		i64 u0x9b357efd475c443b, ; from name: aot-Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		i64 u0x47b6721df9ec201e, ; uint64_t real_name_hash
@@ -4280,7 +4328,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.49_name, ; name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 488
+	}, ; 494
 	%struct.DSOCacheEntry {
 		i64 u0x9b6f0babce2a1934, ; from name: libaot-Microsoft.Extensions.Logging.dll.so
 		i64 u0x9b6f0babce2a1934, ; uint64_t real_name_hash
@@ -4288,7 +4336,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.17_name, ; name: libaot-Microsoft.Extensions.Logging.dll.so
 		ptr null; void* handle
-	}, ; 489
+	}, ; 495
 	%struct.DSOCacheEntry {
 		i64 u0x9bb35aa4bcef7b80, ; from name: libaot-System.Text.Json.dll.so
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -4296,7 +4344,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 490
+	}, ; 496
 	%struct.DSOCacheEntry {
 		i64 u0x9c452e2fa9b9a40d, ; from name: aot-Xamarin.AndroidX.CardView.dll.so
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -4304,7 +4352,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 491
+	}, ; 497
 	%struct.DSOCacheEntry {
 		i64 u0x9c7333fd91b4c899, ; from name: aot-Xamarin.Google.Android.Material
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -4312,7 +4360,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 492
+	}, ; 498
 	%struct.DSOCacheEntry {
 		i64 u0x9cbca1c74026e295, ; from name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -4320,7 +4368,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 493
+	}, ; 499
 	%struct.DSOCacheEntry {
 		i64 u0x9cbd1d72a9e5192f, ; from name: System.Runtime.dll.so
 		i64 u0xbbc0e6e747d7877a, ; uint64_t real_name_hash
@@ -4328,7 +4376,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.86_name, ; name: libaot-System.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 494
+	}, ; 500
 	%struct.DSOCacheEntry {
 		i64 u0x9cea5e0cbd4be75e, ; from name: libaot-CommunityToolkit.Mvvm
 		i64 u0x324cedd7271c2c92, ; uint64_t real_name_hash
@@ -4336,7 +4384,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.9_name, ; name: libaot-CommunityToolkit.Mvvm.dll.so
 		ptr null; void* handle
-	}, ; 495
+	}, ; 501
+	%struct.DSOCacheEntry {
+		i64 u0x9ddd789d1d5b5ca0, ; from name: aot-System.Threading.ThreadPool.so
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 502
 	%struct.DSOCacheEntry {
 		i64 u0x9dea7ba8a000dd35, ; from name: System.IO.Pipelines.so
 		i64 u0x027079cd6cbb2479, ; uint64_t real_name_hash
@@ -4344,7 +4400,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.72_name, ; name: libaot-System.IO.Pipelines.dll.so
 		ptr null; void* handle
-	}, ; 496
+	}, ; 503
 	%struct.DSOCacheEntry {
 		i64 u0x9df2f15d2ed44e61, ; from name: libaot-Microsoft.Extensions.Primitives.dll.so
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -4352,7 +4408,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 497
+	}, ; 504
 	%struct.DSOCacheEntry {
 		i64 u0x9e16f3b6bfaf3c94, ; from name: aot-Plugin.BLE.so
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -4360,7 +4416,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 498
+	}, ; 505
 	%struct.DSOCacheEntry {
 		i64 u0x9eb4ae89ecef09f8, ; from name: System.Diagnostics.TraceSource.so
 		i64 u0x2119cc81025daa05, ; uint64_t real_name_hash
@@ -4368,7 +4424,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.66_name, ; name: libaot-System.Diagnostics.TraceSource.dll.so
 		ptr null; void* handle
-	}, ; 499
+	}, ; 506
 	%struct.DSOCacheEntry {
 		i64 u0x9ef542cf1f78c506, ; from name: Xamarin.AndroidX.Lifecycle.LiveData.Core
 		i64 u0x38e4553d8764fa45, ; uint64_t real_name_hash
@@ -4376,7 +4432,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.40_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
 		ptr null; void* handle
-	}, ; 500
+	}, ; 507
 	%struct.DSOCacheEntry {
 		i64 u0x9f473a65f10d6fa9, ; from name: aot-System.Console
 		i64 u0xc2da5dca6ccd8b0a, ; uint64_t real_name_hash
@@ -4384,7 +4440,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.64_name, ; name: libaot-System.Console.dll.so
 		ptr null; void* handle
-	}, ; 501
+	}, ; 508
 	%struct.DSOCacheEntry {
 		i64 u0xa11d36f87c530f82, ; from name: libaot-System.IO.Pipelines.so
 		i64 u0x027079cd6cbb2479, ; uint64_t real_name_hash
@@ -4392,7 +4448,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.72_name, ; name: libaot-System.IO.Pipelines.dll.so
 		ptr null; void* handle
-	}, ; 502
+	}, ; 509
 	%struct.DSOCacheEntry {
 		i64 u0xa13c2355f98c4bfd, ; from name: libaot-Plugin.BLE.so
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -4400,7 +4456,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 503
+	}, ; 510
 	%struct.DSOCacheEntry {
 		i64 u0xa1440773ee9d341e, ; from name: Xamarin.Google.Android.Material
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -4408,7 +4464,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 504
+	}, ; 511
 	%struct.DSOCacheEntry {
 		i64 u0xa1b6964c34f0f854, ; from name: aot-Xamarin.AndroidX.RecyclerView
 		i64 u0x34c6f5c746796bcc, ; uint64_t real_name_hash
@@ -4416,7 +4472,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.48_name, ; name: libaot-Xamarin.AndroidX.RecyclerView.dll.so
 		ptr null; void* handle
-	}, ; 505
+	}, ; 512
 	%struct.DSOCacheEntry {
 		i64 u0xa2b4fd670b3d1621, ; from name: libaot-System.ComponentModel.Primitives
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -4424,7 +4480,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 506
+	}, ; 513
 	%struct.DSOCacheEntry {
 		i64 u0xa2bdab17c07b52cb, ; from name: Xamarin.AndroidX.AppCompat.AppCompatResources.so
 		i64 u0x456e37cd491657b0, ; uint64_t real_name_hash
@@ -4432,7 +4488,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.30_name, ; name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		ptr null; void* handle
-	}, ; 507
+	}, ; 514
 	%struct.DSOCacheEntry {
 		i64 u0xa2d571bfa62e4377, ; from name: Microsoft.Extensions.Logging.so
 		i64 u0x9b6f0babce2a1934, ; uint64_t real_name_hash
@@ -4440,7 +4496,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.17_name, ; name: libaot-Microsoft.Extensions.Logging.dll.so
 		ptr null; void* handle
-	}, ; 508
+	}, ; 515
 	%struct.DSOCacheEntry {
 		i64 u0xa2e45747baf3f459, ; from name: libaot-Plugin.Maui.Audio.so
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -4448,7 +4504,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 509
+	}, ; 516
 	%struct.DSOCacheEntry {
 		i64 u0xa3600d7904da7121, ; from name: libaot-System.ComponentModel.TypeConverter
 		i64 u0xcb7e41356728fd07, ; uint64_t real_name_hash
@@ -4456,15 +4512,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.62_name, ; name: libaot-System.ComponentModel.TypeConverter.dll.so
 		ptr null; void* handle
-	}, ; 510
+	}, ; 517
 	%struct.DSOCacheEntry {
 		i64 u0xa36762ce482f6584, ; from name: Java.Interop.so
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 511
+	}, ; 518
 	%struct.DSOCacheEntry {
 		i64 u0xa3dc3bd6aae2cea1, ; from name: Xamarin.AndroidX.Loader.dll.so
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -4472,7 +4528,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 512
+	}, ; 519
 	%struct.DSOCacheEntry {
 		i64 u0xa40fc435d199e5e0, ; from name: libaot-Xamarin.AndroidX.CardView
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -4480,7 +4536,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 513
+	}, ; 520
 	%struct.DSOCacheEntry {
 		i64 u0xa526035d994803cd, ; from name: aot-System.Net.Http.dll.so
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -4488,7 +4544,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 514
+	}, ; 521
 	%struct.DSOCacheEntry {
 		i64 u0xa57746d2a371c785, ; from name: aot-System.Runtime.so
 		i64 u0xbbc0e6e747d7877a, ; uint64_t real_name_hash
@@ -4496,7 +4552,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.86_name, ; name: libaot-System.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 515
+	}, ; 522
 	%struct.DSOCacheEntry {
 		i64 u0xa58e5c89fb869cde, ; from name: aot-System.Text.Encodings.Web.dll.so
 		i64 u0x209bcec5b3b022b8, ; uint64_t real_name_hash
@@ -4504,7 +4560,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.88_name, ; name: libaot-System.Text.Encodings.Web.dll.so
 		ptr null; void* handle
-	}, ; 516
+	}, ; 523
 	%struct.DSOCacheEntry {
 		i64 u0xa66711e6890279dc, ; from name: aot-System.Drawing.Primitives
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -4512,7 +4568,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 517
+	}, ; 524
 	%struct.DSOCacheEntry {
 		i64 u0xa6792e826db2954e, ; from name: libaot-Xamarin.AndroidX.AppCompat
 		i64 u0x42c7eb0880ff24a4, ; uint64_t real_name_hash
@@ -4520,15 +4576,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.29_name, ; name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		ptr null; void* handle
-	}, ; 518
+	}, ; 525
 	%struct.DSOCacheEntry {
 		i64 u0xa6d29cffa841bf87, ; from name: Mono.Android.Runtime.dll.so
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 519
+	}, ; 526
 	%struct.DSOCacheEntry {
 		i64 u0xa72729a65d3ffb37, ; from name: Plugin.BLE.dll.so
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -4536,7 +4592,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 520
+	}, ; 527
 	%struct.DSOCacheEntry {
 		i64 u0xa7897b09eef1a814, ; from name: aot-Plugin.Maui.Audio.dll.so
 		i64 u0x92f29455a04afdf6, ; uint64_t real_name_hash
@@ -4544,7 +4600,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.27_name, ; name: libaot-Plugin.Maui.Audio.dll.so
 		ptr null; void* handle
-	}, ; 521
+	}, ; 528
 	%struct.DSOCacheEntry {
 		i64 u0xa78ce3745383236a, ; from name: Xamarin.AndroidX.Lifecycle.Common.Jvm
 		i64 u0x2ec8d2dcf2c4a71b, ; uint64_t real_name_hash
@@ -4552,7 +4608,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.39_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 522
+	}, ; 529
 	%struct.DSOCacheEntry {
 		i64 u0xa7a0a8e9c88b0fe7, ; from name: aot-Microsoft.Extensions.FileProviders.Abstractions.so
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -4560,7 +4616,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 523
+	}, ; 530
 	%struct.DSOCacheEntry {
 		i64 u0xa7b7eaf43544b3a7, ; from name: System.Collections.Specialized.dll.so
 		i64 u0x355b66670e6bf2e4, ; uint64_t real_name_hash
@@ -4568,7 +4624,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.59_name, ; name: libaot-System.Collections.Specialized.dll.so
 		ptr null; void* handle
-	}, ; 524
+	}, ; 531
 	%struct.DSOCacheEntry {
 		i64 u0xa86a1a01c3db8f2d, ; from name: Xamarin.AndroidX.Navigation.Fragment.dll.so
 		i64 u0xaa2eca1145f3a7cc, ; uint64_t real_name_hash
@@ -4576,7 +4632,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.45_name, ; name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 525
+	}, ; 532
 	%struct.DSOCacheEntry {
 		i64 u0xa89dcbf7ffd87c31, ; from name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -4584,7 +4640,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 526
+	}, ; 533
 	%struct.DSOCacheEntry {
 		i64 u0xa8d4d47d91d2e9d6, ; from name: Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		i64 u0x2ec8d2dcf2c4a71b, ; uint64_t real_name_hash
@@ -4592,15 +4648,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.39_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 527
+	}, ; 534
 	%struct.DSOCacheEntry {
 		i64 u0xa99fc710fdd6e008, ; from name: System.Threading.so
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
-	}, ; 528
+	}, ; 535
 	%struct.DSOCacheEntry {
 		i64 u0xaa2219c8e3449ff5, ; from name: Microsoft.Extensions.Logging.Abstractions
 		i64 u0xe6757a5fac324e53, ; uint64_t real_name_hash
@@ -4608,7 +4664,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.18_name, ; name: libaot-Microsoft.Extensions.Logging.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 529
+	}, ; 536
 	%struct.DSOCacheEntry {
 		i64 u0xaa2eca1145f3a7cc, ; from name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		i64 u0xaa2eca1145f3a7cc, ; uint64_t real_name_hash
@@ -4616,7 +4672,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.45_name, ; name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 530
+	}, ; 537
 	%struct.DSOCacheEntry {
 		i64 u0xaa52de307ef5d1dd, ; from name: System.Net.Http
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -4624,7 +4680,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 531
+	}, ; 538
 	%struct.DSOCacheEntry {
 		i64 u0xaaba20554af6cac2, ; from name: System.ObjectModel.dll.so
 		i64 u0x914167d87d2ee1b1, ; uint64_t real_name_hash
@@ -4632,7 +4688,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.80_name, ; name: libaot-System.ObjectModel.dll.so
 		ptr null; void* handle
-	}, ; 532
+	}, ; 539
 	%struct.DSOCacheEntry {
 		i64 u0xaac4801194f87f4f, ; from name: libaot-System.Net.Primitives.dll.so
 		i64 u0xaac4801194f87f4f, ; uint64_t real_name_hash
@@ -4640,7 +4696,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.77_name, ; name: libaot-System.Net.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 533
+	}, ; 540
 	%struct.DSOCacheEntry {
 		i64 u0xaace8b830d9ec31f, ; from name: Microsoft.Maui.dll.so
 		i64 u0x58cd310024b735d8, ; uint64_t real_name_hash
@@ -4648,7 +4704,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.23_name, ; name: libaot-Microsoft.Maui.dll.so
 		ptr null; void* handle
-	}, ; 534
+	}, ; 541
 	%struct.DSOCacheEntry {
 		i64 u0xab58dfeac8661c19, ; from name: libaot-System.Net.Primitives.so
 		i64 u0xaac4801194f87f4f, ; uint64_t real_name_hash
@@ -4656,7 +4712,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.77_name, ; name: libaot-System.Net.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 535
+	}, ; 542
 	%struct.DSOCacheEntry {
 		i64 u0xac2af3fa195a15ce, ; from name: System.Runtime.Numerics
 		i64 u0x6619888793b3b2dd, ; uint64_t real_name_hash
@@ -4664,7 +4720,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.85_name, ; name: libaot-System.Runtime.Numerics.dll.so
 		ptr null; void* handle
-	}, ; 536
+	}, ; 543
 	%struct.DSOCacheEntry {
 		i64 u0xac349d00a07b46d2, ; from name: libaot-Microsoft.Maui.Graphics.so
 		i64 u0x285d22da351d937a, ; uint64_t real_name_hash
@@ -4672,7 +4728,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.25_name, ; name: libaot-Microsoft.Maui.Graphics.dll.so
 		ptr null; void* handle
-	}, ; 537
+	}, ; 544
 	%struct.DSOCacheEntry {
 		i64 u0xac85a7e3562ecec4, ; from name: aot-Xamarin.AndroidX.Lifecycle.Common.Jvm.so
 		i64 u0x2ec8d2dcf2c4a71b, ; uint64_t real_name_hash
@@ -4680,7 +4736,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.39_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 538
+	}, ; 545
 	%struct.DSOCacheEntry {
 		i64 u0xad27d487bd27a6ac, ; from name: libaot-Microsoft.Extensions.Primitives
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -4688,7 +4744,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 539
+	}, ; 546
 	%struct.DSOCacheEntry {
 		i64 u0xad582851e7d05243, ; from name: libaot-System.Memory.dll.so
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -4696,7 +4752,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 540
+	}, ; 547
 	%struct.DSOCacheEntry {
 		i64 u0xadfd3002707c5b3e, ; from name: System.Text.Json.dll.so
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -4704,7 +4760,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 541
+	}, ; 548
 	%struct.DSOCacheEntry {
 		i64 u0xadff56a34a4d04d7, ; from name: Xamarin.Google.Android.Material.so
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -4712,7 +4768,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 542
+	}, ; 549
 	%struct.DSOCacheEntry {
 		i64 u0xae188641c0446425, ; from name: TreadmillApp.so
 		i64 u0x880896da5db2c5f7, ; uint64_t real_name_hash
@@ -4720,15 +4776,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.8_name, ; name: libaot-TreadmillApp.dll.so
 		ptr null; void* handle
-	}, ; 543
+	}, ; 550
 	%struct.DSOCacheEntry {
 		i64 u0xae282bcd03739de7, ; from name: Java.Interop
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 544
+	}, ; 551
 	%struct.DSOCacheEntry {
 		i64 u0xae8282b3068f87cd, ; from name: Xamarin.AndroidX.DrawerLayout.so
 		i64 u0x4bea014989424a56, ; uint64_t real_name_hash
@@ -4736,7 +4792,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.37_name, ; name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		ptr null; void* handle
-	}, ; 545
+	}, ; 552
 	%struct.DSOCacheEntry {
 		i64 u0xaec94df3f1a01f27, ; from name: aot-Xamarin.KotlinX.Coroutines.Core.Jvm.so
 		i64 u0x811e0efc0e57d069, ; uint64_t real_name_hash
@@ -4744,7 +4800,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.55_name, ; name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 546
+	}, ; 553
 	%struct.DSOCacheEntry {
 		i64 u0xaef55035077cd01c, ; from name: System.ComponentModel.dll.so
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -4752,7 +4808,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 547
+	}, ; 554
 	%struct.DSOCacheEntry {
 		i64 u0xaefcd08794660058, ; from name: aot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -4760,7 +4816,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 548
+	}, ; 555
 	%struct.DSOCacheEntry {
 		i64 u0xaf141c9703ea27c2, ; from name: libaot-Microsoft.Extensions.Configuration.so
 		i64 u0x07a45374fab68acc, ; uint64_t real_name_hash
@@ -4768,7 +4824,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.10_name, ; name: libaot-Microsoft.Extensions.Configuration.dll.so
 		ptr null; void* handle
-	}, ; 549
+	}, ; 556
 	%struct.DSOCacheEntry {
 		i64 u0xaf2fccd8d6eb63cb, ; from name: aot-System.Net.Primitives.dll.so
 		i64 u0xaac4801194f87f4f, ; uint64_t real_name_hash
@@ -4776,7 +4832,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.77_name, ; name: libaot-System.Net.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 550
+	}, ; 557
 	%struct.DSOCacheEntry {
 		i64 u0xafc457dafdcf4b0f, ; from name: aot-Xamarin.AndroidX.Navigation.Runtime.Android.so
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -4784,7 +4840,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 551
+	}, ; 558
 	%struct.DSOCacheEntry {
 		i64 u0xb10621098b80722c, ; from name: aot-Xamarin.Google.Android.Material.dll.so
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -4792,7 +4848,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 552
+	}, ; 559
 	%struct.DSOCacheEntry {
 		i64 u0xb1267f747d003d17, ; from name: aot-Xamarin.AndroidX.RecyclerView.so
 		i64 u0x34c6f5c746796bcc, ; uint64_t real_name_hash
@@ -4800,7 +4856,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.48_name, ; name: libaot-Xamarin.AndroidX.RecyclerView.dll.so
 		ptr null; void* handle
-	}, ; 553
+	}, ; 560
 	%struct.DSOCacheEntry {
 		i64 u0xb220631954820169, ; from name: System.Text.RegularExpressions
 		i64 u0x7c2c39dae387b52d, ; uint64_t real_name_hash
@@ -4808,7 +4864,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.90_name, ; name: libaot-System.Text.RegularExpressions.dll.so
 		ptr null; void* handle
-	}, ; 554
+	}, ; 561
 	%struct.DSOCacheEntry {
 		i64 u0xb29024b995e4ccc2, ; from name: libaot-System.ComponentModel.TypeConverter.so
 		i64 u0xcb7e41356728fd07, ; uint64_t real_name_hash
@@ -4816,7 +4872,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.62_name, ; name: libaot-System.ComponentModel.TypeConverter.dll.so
 		ptr null; void* handle
-	}, ; 555
+	}, ; 562
 	%struct.DSOCacheEntry {
 		i64 u0xb2a3b0b9445d4908, ; from name: libaot-System.Private.Uri
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -4824,7 +4880,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 556
+	}, ; 563
 	%struct.DSOCacheEntry {
 		i64 u0xb2d0ce1b008afb2a, ; from name: libaot-System.Linq
 		i64 u0x2fb7a3952b307fae, ; uint64_t real_name_hash
@@ -4832,7 +4888,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.74_name, ; name: libaot-System.Linq.dll.so
 		ptr null; void* handle
-	}, ; 557
+	}, ; 564
 	%struct.DSOCacheEntry {
 		i64 u0xb373ed6de60e4cfc, ; from name: System.Linq.Expressions.dll.so
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -4840,7 +4896,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 558
+	}, ; 565
 	%struct.DSOCacheEntry {
 		i64 u0xb3f0a0fcda8d3ebc, ; from name: Xamarin.AndroidX.CardView
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -4848,7 +4904,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 559
+	}, ; 566
 	%struct.DSOCacheEntry {
 		i64 u0xb3f9fc836ae7ebb5, ; from name: libaot-System.Collections.dll.so
 		i64 u0xb3f9fc836ae7ebb5, ; uint64_t real_name_hash
@@ -4856,7 +4912,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.60_name, ; name: libaot-System.Collections.dll.so
 		ptr null; void* handle
-	}, ; 560
+	}, ; 567
 	%struct.DSOCacheEntry {
 		i64 u0xb3ff7b96f0f18625, ; from name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.so
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -4864,15 +4920,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 561
+	}, ; 568
 	%struct.DSOCacheEntry {
 		i64 u0xb48e9e71b06b9446, ; from name: aot-Mono.Android
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
-	}, ; 562
+	}, ; 569
 	%struct.DSOCacheEntry {
 		i64 u0xb49662abc254b87c, ; from name: aot-Microsoft.Extensions.Primitives.so
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -4880,7 +4936,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 563
+	}, ; 570
 	%struct.DSOCacheEntry {
 		i64 u0xb4bd7015ecee9d86, ; from name: System.IO.Pipelines
 		i64 u0x027079cd6cbb2479, ; uint64_t real_name_hash
@@ -4888,7 +4944,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.72_name, ; name: libaot-System.IO.Pipelines.dll.so
 		ptr null; void* handle
-	}, ; 564
+	}, ; 571
 	%struct.DSOCacheEntry {
 		i64 u0xb5351dcbaf438cb6, ; from name: libaot-Xamarin.AndroidX.ViewPager.dll.so
 		i64 u0xb5351dcbaf438cb6, ; uint64_t real_name_hash
@@ -4896,7 +4952,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.51_name, ; name: libaot-Xamarin.AndroidX.ViewPager.dll.so
 		ptr null; void* handle
-	}, ; 565
+	}, ; 572
 	%struct.DSOCacheEntry {
 		i64 u0xb6268752f2c3d35c, ; from name: Xamarin.AndroidX.Lifecycle.ViewModel.Android.so
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -4904,7 +4960,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 566
+	}, ; 573
 	%struct.DSOCacheEntry {
 		i64 u0xb6d775e06cf5d43d, ; from name: libaot-System.Drawing
 		i64 u0x366c3ed8a6266ffb, ; uint64_t real_name_hash
@@ -4912,7 +4968,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.68_name, ; name: libaot-System.Drawing.dll.so
 		ptr null; void* handle
-	}, ; 567
+	}, ; 574
 	%struct.DSOCacheEntry {
 		i64 u0xb71bb9a8d392fa40, ; from name: System.Linq.dll.so
 		i64 u0x2fb7a3952b307fae, ; uint64_t real_name_hash
@@ -4920,7 +4976,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.74_name, ; name: libaot-System.Linq.dll.so
 		ptr null; void* handle
-	}, ; 568
+	}, ; 575
 	%struct.DSOCacheEntry {
 		i64 u0xb7212c4683a94afe, ; from name: System.Drawing.Primitives
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -4928,15 +4984,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 569
+	}, ; 576
 	%struct.DSOCacheEntry {
 		i64 u0xb7879ed14a810ab4, ; from name: Java.Interop.dll.so
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 570
+	}, ; 577
 	%struct.DSOCacheEntry {
 		i64 u0xb7ec9a9b7ef08a80, ; from name: libaot-System.Net.Http.so
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -4944,7 +5000,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 571
+	}, ; 578
 	%struct.DSOCacheEntry {
 		i64 u0xb7f547ba07c1b723, ; from name: libaot-Microsoft.Extensions.Options.so
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -4952,7 +5008,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 572
+	}, ; 579
 	%struct.DSOCacheEntry {
 		i64 u0xb80075262344d8c0, ; from name: aot-Xamarin.AndroidX.Lifecycle.LiveData.Core.so
 		i64 u0x38e4553d8764fa45, ; uint64_t real_name_hash
@@ -4960,7 +5016,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.40_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
 		ptr null; void* handle
-	}, ; 573
+	}, ; 580
 	%struct.DSOCacheEntry {
 		i64 u0xb80cb6b50f8d4c7e, ; from name: Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		i64 u0x47b6721df9ec201e, ; uint64_t real_name_hash
@@ -4968,7 +5024,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.49_name, ; name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 574
+	}, ; 581
 	%struct.DSOCacheEntry {
 		i64 u0xb80e4cd92e569c19, ; from name: System.Collections.NonGeneric.so
 		i64 u0x6fd15fb6a42c9afc, ; uint64_t real_name_hash
@@ -4976,7 +5032,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.58_name, ; name: libaot-System.Collections.NonGeneric.dll.so
 		ptr null; void* handle
-	}, ; 575
+	}, ; 582
 	%struct.DSOCacheEntry {
 		i64 u0xb88aaf70962c6080, ; from name: aot-System.Linq.dll.so
 		i64 u0x2fb7a3952b307fae, ; uint64_t real_name_hash
@@ -4984,7 +5040,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.74_name, ; name: libaot-System.Linq.dll.so
 		ptr null; void* handle
-	}, ; 576
+	}, ; 583
 	%struct.DSOCacheEntry {
 		i64 u0xb88dd80872e6363c, ; from name: Microsoft.Maui.so
 		i64 u0x58cd310024b735d8, ; uint64_t real_name_hash
@@ -4992,7 +5048,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.23_name, ; name: libaot-Microsoft.Maui.dll.so
 		ptr null; void* handle
-	}, ; 577
+	}, ; 584
 	%struct.DSOCacheEntry {
 		i64 u0xb8af35d774e84f71, ; from name: libaot-Microsoft.Extensions.DependencyInjection.so
 		i64 u0xe8726752705c8ce9, ; uint64_t real_name_hash
@@ -5000,15 +5056,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.12_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.dll.so
 		ptr null; void* handle
-	}, ; 578
+	}, ; 585
 	%struct.DSOCacheEntry {
 		i64 u0xb8c4e6d79b2bf900, ; from name: System.Private.CoreLib.dll.so
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
-	}, ; 579
+	}, ; 586
 	%struct.DSOCacheEntry {
 		i64 u0xb97db6485ee8beb7, ; from name: libaot-Microsoft.Extensions.Logging.Abstractions.so
 		i64 u0xe6757a5fac324e53, ; uint64_t real_name_hash
@@ -5016,7 +5072,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.18_name, ; name: libaot-Microsoft.Extensions.Logging.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 580
+	}, ; 587
 	%struct.DSOCacheEntry {
 		i64 u0xba519395d26d13c0, ; from name: Microsoft.Maui.Controls.Xaml.so
 		i64 u0x5fc3bca990f46fb4, ; uint64_t real_name_hash
@@ -5024,7 +5080,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.22_name, ; name: libaot-Microsoft.Maui.Controls.Xaml.dll.so
 		ptr null; void* handle
-	}, ; 581
+	}, ; 588
 	%struct.DSOCacheEntry {
 		i64 u0xba8901b864d5546e, ; from name: Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		i64 u0x757898ba637db46e, ; uint64_t real_name_hash
@@ -5032,7 +5088,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.56_name, ; name: libaot-Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 582
+	}, ; 589
 	%struct.DSOCacheEntry {
 		i64 u0xba9767ca98b44381, ; from name: aot-System.Linq.Expressions
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -5040,7 +5096,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 583
+	}, ; 590
 	%struct.DSOCacheEntry {
 		i64 u0xbaccb97c853d4c42, ; from name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -5048,7 +5104,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 584
+	}, ; 591
 	%struct.DSOCacheEntry {
 		i64 u0xbaf7f6c215e37989, ; from name: aot-Microsoft.Extensions.Configuration.dll.so
 		i64 u0x07a45374fab68acc, ; uint64_t real_name_hash
@@ -5056,7 +5112,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.10_name, ; name: libaot-Microsoft.Extensions.Configuration.dll.so
 		ptr null; void* handle
-	}, ; 585
+	}, ; 592
 	%struct.DSOCacheEntry {
 		i64 u0xbb1af0a7aa8398a5, ; from name: System.ComponentModel.Primitives.so
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -5064,7 +5120,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 586
+	}, ; 593
 	%struct.DSOCacheEntry {
 		i64 u0xbb295bd4e1b78198, ; from name: aot-System.ObjectModel.dll.so
 		i64 u0x914167d87d2ee1b1, ; uint64_t real_name_hash
@@ -5072,7 +5128,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.80_name, ; name: libaot-System.ObjectModel.dll.so
 		ptr null; void* handle
-	}, ; 587
+	}, ; 594
 	%struct.DSOCacheEntry {
 		i64 u0xbbc0e6e747d7877a, ; from name: libaot-System.Runtime.dll.so
 		i64 u0xbbc0e6e747d7877a, ; uint64_t real_name_hash
@@ -5080,7 +5136,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.86_name, ; name: libaot-System.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 588
+	}, ; 595
 	%struct.DSOCacheEntry {
 		i64 u0xbd437a2cdb333d0d, ; from name: Xamarin.AndroidX.ViewPager2
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -5088,7 +5144,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 589
+	}, ; 596
 	%struct.DSOCacheEntry {
 		i64 u0xbd4a002bce5adfca, ; from name: Xamarin.AndroidX.ViewPager2.dll.so
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -5096,15 +5152,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 590
+	}, ; 597
 	%struct.DSOCacheEntry {
 		i64 u0xbd6f490f32036ae3, ; from name: aot-System
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 591
+	}, ; 598
 	%struct.DSOCacheEntry {
 		i64 u0xbe5ea3f3d8c611a9, ; from name: libaot-System.IO.Compression
 		i64 u0x07869dd1c492a791, ; uint64_t real_name_hash
@@ -5112,7 +5168,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.71_name, ; name: libaot-System.IO.Compression.dll.so
 		ptr null; void* handle
-	}, ; 592
+	}, ; 599
 	%struct.DSOCacheEntry {
 		i64 u0xbe623527fb86a8ad, ; from name: Xamarin.AndroidX.CustomView.dll.so
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -5120,7 +5176,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 593
+	}, ; 600
 	%struct.DSOCacheEntry {
 		i64 u0xbe84f8732e7e09b2, ; from name: libaot-System.Collections.NonGeneric
 		i64 u0x6fd15fb6a42c9afc, ; uint64_t real_name_hash
@@ -5128,7 +5184,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.58_name, ; name: libaot-System.Collections.NonGeneric.dll.so
 		ptr null; void* handle
-	}, ; 594
+	}, ; 601
 	%struct.DSOCacheEntry {
 		i64 u0xbee38d4a88835966, ; from name: Xamarin.AndroidX.AppCompat.AppCompatResources
 		i64 u0x456e37cd491657b0, ; uint64_t real_name_hash
@@ -5136,7 +5192,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.30_name, ; name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		ptr null; void* handle
-	}, ; 595
+	}, ; 602
 	%struct.DSOCacheEntry {
 		i64 u0xbeef23a25818ef92, ; from name: aot-System.Collections.Concurrent.so
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -5144,7 +5200,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 596
+	}, ; 603
 	%struct.DSOCacheEntry {
 		i64 u0xbf17812f092168a8, ; from name: Xamarin.AndroidX.Navigation.Fragment.so
 		i64 u0xaa2eca1145f3a7cc, ; uint64_t real_name_hash
@@ -5152,7 +5208,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.45_name, ; name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 597
+	}, ; 604
 	%struct.DSOCacheEntry {
 		i64 u0xbf9968d40b8d7b41, ; from name: libaot-System.Text.Encodings.Web
 		i64 u0x209bcec5b3b022b8, ; uint64_t real_name_hash
@@ -5160,7 +5216,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.88_name, ; name: libaot-System.Text.Encodings.Web.dll.so
 		ptr null; void* handle
-	}, ; 598
+	}, ; 605
 	%struct.DSOCacheEntry {
 		i64 u0xbfdaf94160fa93e3, ; from name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android
 		i64 u0x47b6721df9ec201e, ; uint64_t real_name_hash
@@ -5168,7 +5224,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.49_name, ; name: libaot-Xamarin.AndroidX.SavedState.SavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 599
+	}, ; 606
 	%struct.DSOCacheEntry {
 		i64 u0xbfe7e2e1145810d3, ; from name: libaot-Xamarin.AndroidX.Collection.Jvm
 		i64 u0x1adc5c3038254713, ; uint64_t real_name_hash
@@ -5176,7 +5232,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.32_name, ; name: libaot-Xamarin.AndroidX.Collection.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 600
+	}, ; 607
 	%struct.DSOCacheEntry {
 		i64 u0xc04083f5f9aaaaaa, ; from name: Xamarin.AndroidX.AppCompat.so
 		i64 u0x42c7eb0880ff24a4, ; uint64_t real_name_hash
@@ -5184,7 +5240,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.29_name, ; name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		ptr null; void* handle
-	}, ; 601
+	}, ; 608
 	%struct.DSOCacheEntry {
 		i64 u0xc04626b9fe870798, ; from name: libaot-Xamarin.AndroidX.ViewPager2
 		i64 u0x4595d9c27242b287, ; uint64_t real_name_hash
@@ -5192,7 +5248,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.52_name, ; name: libaot-Xamarin.AndroidX.ViewPager2.dll.so
 		ptr null; void* handle
-	}, ; 602
+	}, ; 609
 	%struct.DSOCacheEntry {
 		i64 u0xc06034423c0d320f, ; from name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -5200,7 +5256,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 603
+	}, ; 610
 	%struct.DSOCacheEntry {
 		i64 u0xc0aeedd720e912f7, ; from name: System.Net.Requests.dll.so
 		i64 u0x2a8da1e7722aaaff, ; uint64_t real_name_hash
@@ -5208,7 +5264,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.78_name, ; name: libaot-System.Net.Requests.dll.so
 		ptr null; void* handle
-	}, ; 604
+	}, ; 611
 	%struct.DSOCacheEntry {
 		i64 u0xc0c274b1d0a94d01, ; from name: Plugin.BLE
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -5216,7 +5272,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 605
+	}, ; 612
 	%struct.DSOCacheEntry {
 		i64 u0xc1025af4a29781ab, ; from name: aot-Xamarin.AndroidX.Lifecycle.ViewModel.Android
 		i64 u0xc06034423c0d320f, ; uint64_t real_name_hash
@@ -5224,7 +5280,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.41_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
 		ptr null; void* handle
-	}, ; 606
+	}, ; 613
 	%struct.DSOCacheEntry {
 		i64 u0xc1303655f6b2546b, ; from name: libaot-Microsoft.Extensions.Primitives.so
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -5232,7 +5288,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 607
+	}, ; 614
 	%struct.DSOCacheEntry {
 		i64 u0xc138988e54fdd76c, ; from name: aot-System.Text.Json
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -5240,7 +5296,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 608
+	}, ; 615
 	%struct.DSOCacheEntry {
 		i64 u0xc13a9ce63397d87e, ; from name: libaot-Plugin.BLE.dll.so
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -5248,7 +5304,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 609
+	}, ; 616
 	%struct.DSOCacheEntry {
 		i64 u0xc15c72f1c3c8ad87, ; from name: Xamarin.AndroidX.CardView.dll.so
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -5256,15 +5312,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 610
+	}, ; 617
 	%struct.DSOCacheEntry {
 		i64 u0xc2b46ace5ffdf725, ; from name: aot-Java.Interop.so
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 611
+	}, ; 618
 	%struct.DSOCacheEntry {
 		i64 u0xc2da5dca6ccd8b0a, ; from name: libaot-System.Console.dll.so
 		i64 u0xc2da5dca6ccd8b0a, ; uint64_t real_name_hash
@@ -5272,7 +5328,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.64_name, ; name: libaot-System.Console.dll.so
 		ptr null; void* handle
-	}, ; 612
+	}, ; 619
 	%struct.DSOCacheEntry {
 		i64 u0xc312ad31e76f5ad4, ; from name: libaot-Xamarin.AndroidX.ViewPager.so
 		i64 u0xb5351dcbaf438cb6, ; uint64_t real_name_hash
@@ -5280,7 +5336,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.51_name, ; name: libaot-Xamarin.AndroidX.ViewPager.dll.so
 		ptr null; void* handle
-	}, ; 613
+	}, ; 620
 	%struct.DSOCacheEntry {
 		i64 u0xc331f3da3c16c6e8, ; from name: Xamarin.AndroidX.Navigation.UI.so
 		i64 u0x21b741f2635aa744, ; uint64_t real_name_hash
@@ -5288,7 +5344,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.47_name, ; name: libaot-Xamarin.AndroidX.Navigation.UI.dll.so
 		ptr null; void* handle
-	}, ; 614
+	}, ; 621
 	%struct.DSOCacheEntry {
 		i64 u0xc33d984c84dd2123, ; from name: Xamarin.KotlinX.Coroutines.Core.Jvm.so
 		i64 u0x811e0efc0e57d069, ; uint64_t real_name_hash
@@ -5296,7 +5352,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.55_name, ; name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 615
+	}, ; 622
 	%struct.DSOCacheEntry {
 		i64 u0xc355689a757de932, ; from name: Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -5304,7 +5360,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 616
+	}, ; 623
 	%struct.DSOCacheEntry {
 		i64 u0xc3b501bdf4608508, ; from name: aot-System.ComponentModel.so
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -5312,7 +5368,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 617
+	}, ; 624
 	%struct.DSOCacheEntry {
 		i64 u0xc423b88904a6141e, ; from name: System.Private.Uri.so
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -5320,7 +5376,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 618
+	}, ; 625
 	%struct.DSOCacheEntry {
 		i64 u0xc4846655abe50016, ; from name: System.ComponentModel.Primitives.dll.so
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -5328,7 +5384,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 619
+	}, ; 626
 	%struct.DSOCacheEntry {
 		i64 u0xc4faef92f365cca8, ; from name: System.Text.Encodings.Web.dll.so
 		i64 u0x209bcec5b3b022b8, ; uint64_t real_name_hash
@@ -5336,7 +5392,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.88_name, ; name: libaot-System.Text.Encodings.Web.dll.so
 		ptr null; void* handle
-	}, ; 620
+	}, ; 627
 	%struct.DSOCacheEntry {
 		i64 u0xc5293b19e4dc230e, ; from name: Xamarin.AndroidX.Navigation.Fragment
 		i64 u0xaa2eca1145f3a7cc, ; uint64_t real_name_hash
@@ -5344,7 +5400,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.45_name, ; name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 621
+	}, ; 628
 	%struct.DSOCacheEntry {
 		i64 u0xc555328858f6cc44, ; from name: aot-Xamarin.AndroidX.DrawerLayout.dll.so
 		i64 u0x4bea014989424a56, ; uint64_t real_name_hash
@@ -5352,7 +5408,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.37_name, ; name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		ptr null; void* handle
-	}, ; 622
+	}, ; 629
 	%struct.DSOCacheEntry {
 		i64 u0xc59e754fda9f680f, ; from name: aot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		i64 u0x348910547422a64d, ; uint64_t real_name_hash
@@ -5360,7 +5416,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.44_name, ; name: libaot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		ptr null; void* handle
-	}, ; 623
+	}, ; 630
 	%struct.DSOCacheEntry {
 		i64 u0xc62658c348b6fcc9, ; from name: Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -5368,7 +5424,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 624
+	}, ; 631
 	%struct.DSOCacheEntry {
 		i64 u0xc67499861cb31679, ; from name: Microsoft.Extensions.Primitives.so
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -5376,7 +5432,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 625
+	}, ; 632
 	%struct.DSOCacheEntry {
 		i64 u0xc6bce209cfbb5ecb, ; from name: aot-Microsoft.Extensions.Hosting.Abstractions.so
 		i64 u0x0bdc487294fc9a85, ; uint64_t real_name_hash
@@ -5384,7 +5440,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.16_name, ; name: libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 626
+	}, ; 633
 	%struct.DSOCacheEntry {
 		i64 u0xc6e945a52e0bb21a, ; from name: aot-Xamarin.AndroidX.Collection.Jvm.dll.so
 		i64 u0x1adc5c3038254713, ; uint64_t real_name_hash
@@ -5392,7 +5448,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.32_name, ; name: libaot-Xamarin.AndroidX.Collection.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 627
+	}, ; 634
 	%struct.DSOCacheEntry {
 		i64 u0xc71cbf09d1338f8c, ; from name: Xamarin.Kotlin.StdLib.so
 		i64 u0x0c644d6a2b020c43, ; uint64_t real_name_hash
@@ -5400,7 +5456,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.54_name, ; name: libaot-Xamarin.Kotlin.StdLib.dll.so
 		ptr null; void* handle
-	}, ; 628
+	}, ; 635
 	%struct.DSOCacheEntry {
 		i64 u0xc74d70d4aa96cef3, ; from name: Xamarin.AndroidX.Navigation.Runtime.Android
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -5408,7 +5464,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 629
+	}, ; 636
 	%struct.DSOCacheEntry {
 		i64 u0xc8267ba5ccc8128c, ; from name: libaot-System.Text.Json.so
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -5416,7 +5472,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 630
+	}, ; 637
 	%struct.DSOCacheEntry {
 		i64 u0xc8914d714ccff201, ; from name: aot-System.Private.Uri
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -5424,7 +5480,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 631
+	}, ; 638
 	%struct.DSOCacheEntry {
 		i64 u0xc949921e23b9fa61, ; from name: Microsoft.Extensions.Primitives.dll.so
 		i64 u0x9df2f15d2ed44e61, ; uint64_t real_name_hash
@@ -5432,7 +5488,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.20_name, ; name: libaot-Microsoft.Extensions.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 632
+	}, ; 639
 	%struct.DSOCacheEntry {
 		i64 u0xc94a5bba3d99dc4e, ; from name: libaot-Xamarin.AndroidX.Activity.so
 		i64 u0x8a05820e9e77c0c3, ; uint64_t real_name_hash
@@ -5440,7 +5496,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.28_name, ; name: libaot-Xamarin.AndroidX.Activity.dll.so
 		ptr null; void* handle
-	}, ; 633
+	}, ; 640
 	%struct.DSOCacheEntry {
 		i64 u0xc9af4b4c9aeeef27, ; from name: Xamarin.AndroidX.CoordinatorLayout.dll.so
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -5448,7 +5504,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 634
+	}, ; 641
 	%struct.DSOCacheEntry {
 		i64 u0xca54e64259b1bf9e, ; from name: aot-Xamarin.AndroidX.Navigation.UI.so
 		i64 u0x21b741f2635aa744, ; uint64_t real_name_hash
@@ -5456,7 +5512,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.47_name, ; name: libaot-Xamarin.AndroidX.Navigation.UI.dll.so
 		ptr null; void* handle
-	}, ; 635
+	}, ; 642
 	%struct.DSOCacheEntry {
 		i64 u0xcab94f8009dca58e, ; from name: aot-System.Numerics.Vectors.dll.so
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
@@ -5464,7 +5520,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 636
+	}, ; 643
 	%struct.DSOCacheEntry {
 		i64 u0xcb0c13d562c0b850, ; from name: libaot-_Microsoft.Android.Resource.Designer
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -5472,7 +5528,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 637
+	}, ; 644
 	%struct.DSOCacheEntry {
 		i64 u0xcb1d668df8380af6, ; from name: libaot-Microsoft.Extensions.Hosting.Abstractions
 		i64 u0x0bdc487294fc9a85, ; uint64_t real_name_hash
@@ -5480,7 +5536,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.16_name, ; name: libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 638
+	}, ; 645
 	%struct.DSOCacheEntry {
 		i64 u0xcb35920e94d958ec, ; from name: libaot-Microsoft.Maui.Essentials.so
 		i64 u0xdc3ba4771239be2d, ; uint64_t real_name_hash
@@ -5488,7 +5544,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.24_name, ; name: libaot-Microsoft.Maui.Essentials.dll.so
 		ptr null; void* handle
-	}, ; 639
+	}, ; 646
 	%struct.DSOCacheEntry {
 		i64 u0xcb5e8c0ac13058b9, ; from name: libaot-Microsoft.Extensions.Diagnostics.Abstractions
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -5496,7 +5552,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 640
+	}, ; 647
 	%struct.DSOCacheEntry {
 		i64 u0xcb7e41356728fd07, ; from name: libaot-System.ComponentModel.TypeConverter.dll.so
 		i64 u0xcb7e41356728fd07, ; uint64_t real_name_hash
@@ -5504,7 +5560,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.62_name, ; name: libaot-System.ComponentModel.TypeConverter.dll.so
 		ptr null; void* handle
-	}, ; 641
+	}, ; 648
 	%struct.DSOCacheEntry {
 		i64 u0xcca4402beeb8c8a3, ; from name: aot-System.Text.RegularExpressions.dll.so
 		i64 u0x7c2c39dae387b52d, ; uint64_t real_name_hash
@@ -5512,7 +5568,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.90_name, ; name: libaot-System.Text.RegularExpressions.dll.so
 		ptr null; void* handle
-	}, ; 642
+	}, ; 649
 	%struct.DSOCacheEntry {
 		i64 u0xcca5b1eb1cdf4b7d, ; from name: aot-System.Threading.Thread.so
 		i64 u0x675935a1e3b604dc, ; uint64_t real_name_hash
@@ -5520,7 +5576,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.91_name, ; name: libaot-System.Threading.Thread.dll.so
 		ptr null; void* handle
-	}, ; 643
+	}, ; 650
 	%struct.DSOCacheEntry {
 		i64 u0xccde8a4563eee10b, ; from name: libaot-System.ComponentModel.Primitives.dll.so
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -5528,7 +5584,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 644
+	}, ; 651
 	%struct.DSOCacheEntry {
 		i64 u0xcd10a42808629144, ; from name: System.Net.Requests
 		i64 u0x2a8da1e7722aaaff, ; uint64_t real_name_hash
@@ -5536,7 +5592,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.78_name, ; name: libaot-System.Net.Requests.dll.so
 		ptr null; void* handle
-	}, ; 645
+	}, ; 652
 	%struct.DSOCacheEntry {
 		i64 u0xcd31619f6833f0b7, ; from name: aot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		i64 u0x5a157918545794b7, ; uint64_t real_name_hash
@@ -5544,7 +5600,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.42_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 646
+	}, ; 653
 	%struct.DSOCacheEntry {
 		i64 u0xcdd0c48b6937b21c, ; from name: Xamarin.AndroidX.SwipeRefreshLayout
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -5552,7 +5608,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 647
+	}, ; 654
 	%struct.DSOCacheEntry {
 		i64 u0xcdff3275738f5439, ; from name: CommunityToolkit.Mvvm.so
 		i64 u0x324cedd7271c2c92, ; uint64_t real_name_hash
@@ -5560,7 +5616,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.9_name, ; name: libaot-CommunityToolkit.Mvvm.dll.so
 		ptr null; void* handle
-	}, ; 648
+	}, ; 655
 	%struct.DSOCacheEntry {
 		i64 u0xce1faa8870b8190a, ; from name: aot-System.Net.Requests
 		i64 u0x2a8da1e7722aaaff, ; uint64_t real_name_hash
@@ -5568,7 +5624,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.78_name, ; name: libaot-System.Net.Requests.dll.so
 		ptr null; void* handle
-	}, ; 649
+	}, ; 656
 	%struct.DSOCacheEntry {
 		i64 u0xce32c0b2a26b8950, ; from name: aot-Microsoft.Extensions.Options
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -5576,7 +5632,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 650
+	}, ; 657
 	%struct.DSOCacheEntry {
 		i64 u0xce68c2daa5248b75, ; from name: libaot-Plugin.BLE
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -5584,7 +5640,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 651
+	}, ; 658
 	%struct.DSOCacheEntry {
 		i64 u0xcf07d50965be005c, ; from name: aot-System.Collections.NonGeneric.dll.so
 		i64 u0x6fd15fb6a42c9afc, ; uint64_t real_name_hash
@@ -5592,7 +5648,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.58_name, ; name: libaot-System.Collections.NonGeneric.dll.so
 		ptr null; void* handle
-	}, ; 652
+	}, ; 659
 	%struct.DSOCacheEntry {
 		i64 u0xcf6894d4f4314765, ; from name: aot-Xamarin.AndroidX.CustomView
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -5600,7 +5656,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 653
+	}, ; 660
 	%struct.DSOCacheEntry {
 		i64 u0xcf9831f228353535, ; from name: libaot-Xamarin.AndroidX.ViewPager
 		i64 u0xb5351dcbaf438cb6, ; uint64_t real_name_hash
@@ -5608,7 +5664,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.51_name, ; name: libaot-Xamarin.AndroidX.ViewPager.dll.so
 		ptr null; void* handle
-	}, ; 654
+	}, ; 661
 	%struct.DSOCacheEntry {
 		i64 u0xd00ab911f3bb07ec, ; from name: Xamarin.Kotlin.StdLib.dll.so
 		i64 u0x0c644d6a2b020c43, ; uint64_t real_name_hash
@@ -5616,7 +5672,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.54_name, ; name: libaot-Xamarin.Kotlin.StdLib.dll.so
 		ptr null; void* handle
-	}, ; 655
+	}, ; 662
 	%struct.DSOCacheEntry {
 		i64 u0xd03744c4cfadcfb4, ; from name: Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		i64 u0x4643d8f925d8e6b7, ; uint64_t real_name_hash
@@ -5624,7 +5680,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.13_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 656
+	}, ; 663
 	%struct.DSOCacheEntry {
 		i64 u0xd042075e5c1f43f1, ; from name: libaot-System.Linq.Expressions
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -5632,7 +5688,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 657
+	}, ; 664
 	%struct.DSOCacheEntry {
 		i64 u0xd084fea73ca314de, ; from name: libaot-Xamarin.AndroidX.Navigation.Common.Android.so
 		i64 u0x348910547422a64d, ; uint64_t real_name_hash
@@ -5640,7 +5696,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.44_name, ; name: libaot-Xamarin.AndroidX.Navigation.Common.Android.dll.so
 		ptr null; void* handle
-	}, ; 658
+	}, ; 665
 	%struct.DSOCacheEntry {
 		i64 u0xd0ab1ba27ca6ab69, ; from name: aot-System.Text.Json.dll.so
 		i64 u0x9bb35aa4bcef7b80, ; uint64_t real_name_hash
@@ -5648,7 +5704,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.89_name, ; name: libaot-System.Text.Json.dll.so
 		ptr null; void* handle
-	}, ; 659
+	}, ; 666
 	%struct.DSOCacheEntry {
 		i64 u0xd0e82017367ac826, ; from name: libaot-System.Security.Cryptography.dll.so
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -5656,7 +5712,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 660
+	}, ; 667
 	%struct.DSOCacheEntry {
 		i64 u0xd0fc7ac60a41b4c9, ; from name: System.Memory.dll.so
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -5664,7 +5720,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 661
+	}, ; 668
 	%struct.DSOCacheEntry {
 		i64 u0xd10bb63f997c45a2, ; from name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -5672,7 +5728,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 662
+	}, ; 669
 	%struct.DSOCacheEntry {
 		i64 u0xd11cfc57ceff8be8, ; from name: Xamarin.AndroidX.SwipeRefreshLayout.so
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -5680,7 +5736,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 663
+	}, ; 670
 	%struct.DSOCacheEntry {
 		i64 u0xd16fd7fb9bbcd43e, ; from name: Microsoft.Extensions.Diagnostics.Abstractions
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -5688,7 +5744,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 664
+	}, ; 671
 	%struct.DSOCacheEntry {
 		i64 u0xd1868c1d514955d6, ; from name: aot-Xamarin.AndroidX.Lifecycle.Common.Jvm
 		i64 u0x2ec8d2dcf2c4a71b, ; uint64_t real_name_hash
@@ -5696,7 +5752,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.39_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 665
+	}, ; 672
 	%struct.DSOCacheEntry {
 		i64 u0xd1d253eb41908cb5, ; from name: aot-Xamarin.AndroidX.Fragment
 		i64 u0x8ab6d3431da5497e, ; uint64_t real_name_hash
@@ -5704,7 +5760,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.38_name, ; name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 666
+	}, ; 673
 	%struct.DSOCacheEntry {
 		i64 u0xd1dd937e219b0e6a, ; from name: Microsoft.Extensions.Configuration.Abstractions.so
 		i64 u0xd6a1ce9f7ccd35cb, ; uint64_t real_name_hash
@@ -5712,7 +5768,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.11_name, ; name: libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 667
+	}, ; 674
 	%struct.DSOCacheEntry {
 		i64 u0xd21400fda411ca3f, ; from name: aot-System.Drawing.so
 		i64 u0x366c3ed8a6266ffb, ; uint64_t real_name_hash
@@ -5720,7 +5776,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.68_name, ; name: libaot-System.Drawing.dll.so
 		ptr null; void* handle
-	}, ; 668
+	}, ; 675
 	%struct.DSOCacheEntry {
 		i64 u0xd24573ad15205bc1, ; from name: Xamarin.AndroidX.Core.so
 		i64 u0x28a319e875b39488, ; uint64_t real_name_hash
@@ -5728,15 +5784,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.34_name, ; name: libaot-Xamarin.AndroidX.Core.dll.so
 		ptr null; void* handle
-	}, ; 669
+	}, ; 676
 	%struct.DSOCacheEntry {
 		i64 u0xd2475965a9e31837, ; from name: aot-System.Threading.so
 		i64 u0x5f435aa7f5fde870, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.dll.so
+		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Threading.dll.so
 		ptr null; void* handle
-	}, ; 670
+	}, ; 677
 	%struct.DSOCacheEntry {
 		i64 u0xd27f01bbc5b3579a, ; from name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android
 		i64 u0x5a157918545794b7, ; uint64_t real_name_hash
@@ -5744,7 +5800,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.42_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 671
+	}, ; 678
 	%struct.DSOCacheEntry {
 		i64 u0xd2fdff8f4deb4b53, ; from name: aot-System.Net.Http.so
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -5752,7 +5808,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 672
+	}, ; 679
 	%struct.DSOCacheEntry {
 		i64 u0xd333d0af9e423810, ; from name: System.Runtime.InteropServices
 		i64 u0x5ae6db1ddadc230b, ; uint64_t real_name_hash
@@ -5760,7 +5816,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.83_name, ; name: libaot-System.Runtime.InteropServices.dll.so
 		ptr null; void* handle
-	}, ; 673
+	}, ; 680
 	%struct.DSOCacheEntry {
 		i64 u0xd3b374a020395487, ; from name: libaot-Xamarin.AndroidX.Core
 		i64 u0x28a319e875b39488, ; uint64_t real_name_hash
@@ -5768,7 +5824,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.34_name, ; name: libaot-Xamarin.AndroidX.Core.dll.so
 		ptr null; void* handle
-	}, ; 674
+	}, ; 681
 	%struct.DSOCacheEntry {
 		i64 u0xd491cf6b917c2312, ; from name: aot-System.Drawing.dll.so
 		i64 u0x366c3ed8a6266ffb, ; uint64_t real_name_hash
@@ -5776,15 +5832,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.68_name, ; name: libaot-System.Drawing.dll.so
 		ptr null; void* handle
-	}, ; 675
+	}, ; 682
 	%struct.DSOCacheEntry {
 		i64 u0xd499c9a0b985ce58, ; from name: libaot-System.Xml.ReaderWriter.so
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
-	}, ; 676
+	}, ; 683
 	%struct.DSOCacheEntry {
 		i64 u0xd4bb298a95f7827b, ; from name: aot-Xamarin.AndroidX.DrawerLayout.so
 		i64 u0x4bea014989424a56, ; uint64_t real_name_hash
@@ -5792,7 +5848,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.37_name, ; name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		ptr null; void* handle
-	}, ; 677
+	}, ; 684
 	%struct.DSOCacheEntry {
 		i64 u0xd4ca367710a2ffa1, ; from name: System.Collections.NonGeneric.dll.so
 		i64 u0x6fd15fb6a42c9afc, ; uint64_t real_name_hash
@@ -5800,7 +5856,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.58_name, ; name: libaot-System.Collections.NonGeneric.dll.so
 		ptr null; void* handle
-	}, ; 678
+	}, ; 685
 	%struct.DSOCacheEntry {
 		i64 u0xd4d27f08b1450804, ; from name: System.Runtime.so
 		i64 u0xbbc0e6e747d7877a, ; uint64_t real_name_hash
@@ -5808,7 +5864,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.86_name, ; name: libaot-System.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 679
+	}, ; 686
 	%struct.DSOCacheEntry {
 		i64 u0xd4f83afd39b27ac3, ; from name: Xamarin.AndroidX.Collection.Jvm.so
 		i64 u0x1adc5c3038254713, ; uint64_t real_name_hash
@@ -5816,7 +5872,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.32_name, ; name: libaot-Xamarin.AndroidX.Collection.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 680
+	}, ; 687
 	%struct.DSOCacheEntry {
 		i64 u0xd4ff4c88bc659a62, ; from name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.so
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -5824,7 +5880,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 681
+	}, ; 688
 	%struct.DSOCacheEntry {
 		i64 u0xd52767571e1f65af, ; from name: aot-System.Runtime.dll.so
 		i64 u0xbbc0e6e747d7877a, ; uint64_t real_name_hash
@@ -5832,7 +5888,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.86_name, ; name: libaot-System.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 682
+	}, ; 689
 	%struct.DSOCacheEntry {
 		i64 u0xd571447114c5aacb, ; from name: aot-System.Linq.Expressions.dll.so
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -5840,7 +5896,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 683
+	}, ; 690
 	%struct.DSOCacheEntry {
 		i64 u0xd5b70d100fbba437, ; from name: aot-Microsoft.Extensions.Configuration.so
 		i64 u0x07a45374fab68acc, ; uint64_t real_name_hash
@@ -5848,7 +5904,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.10_name, ; name: libaot-Microsoft.Extensions.Configuration.dll.so
 		ptr null; void* handle
-	}, ; 684
+	}, ; 691
 	%struct.DSOCacheEntry {
 		i64 u0xd5c7ef9eda8c3f92, ; from name: System.Runtime.Loader.so
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -5856,15 +5912,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 685
+	}, ; 692
 	%struct.DSOCacheEntry {
 		i64 u0xd5e140227aa0bc45, ; from name: aot-System.Xml.ReaderWriter.so
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
-	}, ; 686
+	}, ; 693
 	%struct.DSOCacheEntry {
 		i64 u0xd61d04ec1e3f44d3, ; from name: Xamarin.Google.Android.Material.dll.so
 		i64 u0x937abea3fe5296af, ; uint64_t real_name_hash
@@ -5872,7 +5928,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.53_name, ; name: libaot-Xamarin.Google.Android.Material.dll.so
 		ptr null; void* handle
-	}, ; 687
+	}, ; 694
 	%struct.DSOCacheEntry {
 		i64 u0xd6a1ce9f7ccd35cb, ; from name: libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		i64 u0xd6a1ce9f7ccd35cb, ; uint64_t real_name_hash
@@ -5880,15 +5936,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.11_name, ; name: libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 688
+	}, ; 695
 	%struct.DSOCacheEntry {
 		i64 u0xd6a7a25e912a138e, ; from name: libaot-System
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 689
+	}, ; 696
 	%struct.DSOCacheEntry {
 		i64 u0xd7209536fbc31446, ; from name: System.Numerics.Vectors.so
 		i64 u0x37fbdff3aa18872d, ; uint64_t real_name_hash
@@ -5896,7 +5952,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.79_name, ; name: libaot-System.Numerics.Vectors.dll.so
 		ptr null; void* handle
-	}, ; 690
+	}, ; 697
 	%struct.DSOCacheEntry {
 		i64 u0xd73d5f2325f4e10a, ; from name: libaot-System.ComponentModel.Primitives.so
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -5904,7 +5960,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 691
+	}, ; 698
 	%struct.DSOCacheEntry {
 		i64 u0xd7845c8bf07d04e9, ; from name: aot-System.Console.dll.so
 		i64 u0xc2da5dca6ccd8b0a, ; uint64_t real_name_hash
@@ -5912,15 +5968,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.64_name, ; name: libaot-System.Console.dll.so
 		ptr null; void* handle
-	}, ; 692
+	}, ; 699
 	%struct.DSOCacheEntry {
 		i64 u0xd788c113da082c63, ; from name: libaot-Mono.Android
 		i64 u0x359895a3c1bd5685, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.dll.so
+		ptr @.DSOCacheEntry.98_name, ; name: libaot-Mono.Android.dll.so
 		ptr null; void* handle
-	}, ; 693
+	}, ; 700
 	%struct.DSOCacheEntry {
 		i64 u0xd820f7778b6dda67, ; from name: libaot-Xamarin.AndroidX.Fragment.so
 		i64 u0x8ab6d3431da5497e, ; uint64_t real_name_hash
@@ -5928,7 +5984,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.38_name, ; name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 694
+	}, ; 701
 	%struct.DSOCacheEntry {
 		i64 u0xd86251721c84b1ee, ; from name: aot-System.Diagnostics.DiagnosticSource.dll.so
 		i64 u0x77156c94b5eff927, ; uint64_t real_name_hash
@@ -5936,7 +5992,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.65_name, ; name: libaot-System.Diagnostics.DiagnosticSource.dll.so
 		ptr null; void* handle
-	}, ; 695
+	}, ; 702
 	%struct.DSOCacheEntry {
 		i64 u0xd86d28f8c7e102bc, ; from name: libaot-Microsoft.Maui.Controls.Xaml
 		i64 u0x5fc3bca990f46fb4, ; uint64_t real_name_hash
@@ -5944,7 +6000,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.22_name, ; name: libaot-Microsoft.Maui.Controls.Xaml.dll.so
 		ptr null; void* handle
-	}, ; 696
+	}, ; 703
 	%struct.DSOCacheEntry {
 		i64 u0xd8a5fce77ac8880f, ; from name: libaot-Microsoft.Maui.Controls
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -5952,7 +6008,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 697
+	}, ; 704
 	%struct.DSOCacheEntry {
 		i64 u0xd8b23283eb26ad3e, ; from name: aot-System.Linq.so
 		i64 u0x2fb7a3952b307fae, ; uint64_t real_name_hash
@@ -5960,7 +6016,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.74_name, ; name: libaot-System.Linq.dll.so
 		ptr null; void* handle
-	}, ; 698
+	}, ; 705
 	%struct.DSOCacheEntry {
 		i64 u0xd925f85604802447, ; from name: libaot-System.Net.Http.dll.so
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -5968,7 +6024,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 699
+	}, ; 706
 	%struct.DSOCacheEntry {
 		i64 u0xd954ebce4b94a300, ; from name: Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		i64 u0x5a157918545794b7, ; uint64_t real_name_hash
@@ -5976,7 +6032,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.42_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 700
+	}, ; 707
 	%struct.DSOCacheEntry {
 		i64 u0xd9f772c73b7aa267, ; from name: aot-Xamarin.AndroidX.DrawerLayout
 		i64 u0x4bea014989424a56, ; uint64_t real_name_hash
@@ -5984,7 +6040,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.37_name, ; name: libaot-Xamarin.AndroidX.DrawerLayout.dll.so
 		ptr null; void* handle
-	}, ; 701
+	}, ; 708
 	%struct.DSOCacheEntry {
 		i64 u0xda0d95c14abe3cf5, ; from name: Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		i64 u0x456e37cd491657b0, ; uint64_t real_name_hash
@@ -5992,7 +6048,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.30_name, ; name: libaot-Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
 		ptr null; void* handle
-	}, ; 702
+	}, ; 709
 	%struct.DSOCacheEntry {
 		i64 u0xda1d7acd827eb320, ; from name: libaot-System.Linq.Expressions.dll.so
 		i64 u0xda1d7acd827eb320, ; uint64_t real_name_hash
@@ -6000,7 +6056,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.73_name, ; name: libaot-System.Linq.Expressions.dll.so
 		ptr null; void* handle
-	}, ; 703
+	}, ; 710
 	%struct.DSOCacheEntry {
 		i64 u0xda1dfa4c534a9251, ; from name: Microsoft.Extensions.DependencyInjection
 		i64 u0xe8726752705c8ce9, ; uint64_t real_name_hash
@@ -6008,15 +6064,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.12_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.dll.so
 		ptr null; void* handle
-	}, ; 704
+	}, ; 711
 	%struct.DSOCacheEntry {
 		i64 u0xda3e671b21710f18, ; from name: aot-Java.Interop
 		i64 u0x6ce045494a545eab, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.95_name, ; name: libaot-Java.Interop.dll.so
+		ptr @.DSOCacheEntry.96_name, ; name: libaot-Java.Interop.dll.so
 		ptr null; void* handle
-	}, ; 705
+	}, ; 712
 	%struct.DSOCacheEntry {
 		i64 u0xda7a08baa1b4483f, ; from name: aot-Xamarin.AndroidX.CoordinatorLayout
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -6024,7 +6080,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 706
+	}, ; 713
 	%struct.DSOCacheEntry {
 		i64 u0xda8a2534b06f63e2, ; from name: libaot-System.Runtime.Loader
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -6032,7 +6088,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 707
+	}, ; 714
 	%struct.DSOCacheEntry {
 		i64 u0xdbb9e1e0ecaa9f17, ; from name: System.IO.Compression.dll.so
 		i64 u0x07869dd1c492a791, ; uint64_t real_name_hash
@@ -6040,7 +6096,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.71_name, ; name: libaot-System.IO.Compression.dll.so
 		ptr null; void* handle
-	}, ; 708
+	}, ; 715
 	%struct.DSOCacheEntry {
 		i64 u0xdbe0faf6eb033056, ; from name: aot-Microsoft.Maui.Controls
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -6048,7 +6104,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 709
+	}, ; 716
 	%struct.DSOCacheEntry {
 		i64 u0xdbf9607a441b4505, ; from name: System.Linq
 		i64 u0x2fb7a3952b307fae, ; uint64_t real_name_hash
@@ -6056,7 +6112,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.74_name, ; name: libaot-System.Linq.dll.so
 		ptr null; void* handle
-	}, ; 710
+	}, ; 717
 	%struct.DSOCacheEntry {
 		i64 u0xdc0230ef3b6efdb3, ; from name: aot-Xamarin.AndroidX.Loader.dll.so
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -6064,7 +6120,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 711
+	}, ; 718
 	%struct.DSOCacheEntry {
 		i64 u0xdc3ba4771239be2d, ; from name: libaot-Microsoft.Maui.Essentials.dll.so
 		i64 u0xdc3ba4771239be2d, ; uint64_t real_name_hash
@@ -6072,7 +6128,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.24_name, ; name: libaot-Microsoft.Maui.Essentials.dll.so
 		ptr null; void* handle
-	}, ; 712
+	}, ; 719
 	%struct.DSOCacheEntry {
 		i64 u0xdc4eb3decb8cc572, ; from name: System.Runtime.Loader.dll.so
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -6080,7 +6136,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 713
+	}, ; 720
 	%struct.DSOCacheEntry {
 		i64 u0xdce2c53525640bf3, ; from name: Microsoft.Extensions.Logging
 		i64 u0x9b6f0babce2a1934, ; uint64_t real_name_hash
@@ -6088,7 +6144,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.17_name, ; name: libaot-Microsoft.Extensions.Logging.dll.so
 		ptr null; void* handle
-	}, ; 714
+	}, ; 721
 	%struct.DSOCacheEntry {
 		i64 u0xdd5311b58beccf63, ; from name: aot-Microsoft.Extensions.FileProviders.Abstractions
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -6096,7 +6152,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 715
+	}, ; 722
 	%struct.DSOCacheEntry {
 		i64 u0xde5702cd751b5645, ; from name: System.Security.Cryptography.so
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -6104,7 +6160,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 716
+	}, ; 723
+	%struct.DSOCacheEntry {
+		i64 u0xde5d170254f0df18, ; from name: System.Threading.ThreadPool.so
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 724
 	%struct.DSOCacheEntry {
 		i64 u0xdee23b28d10c8286, ; from name: System.Drawing.Primitives.so
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -6112,7 +6176,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 717
+	}, ; 725
 	%struct.DSOCacheEntry {
 		i64 u0xdf3c491694996c7e, ; from name: libaot-Xamarin.AndroidX.CursorAdapter.dll.so
 		i64 u0xdf3c491694996c7e, ; uint64_t real_name_hash
@@ -6120,7 +6184,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.35_name, ; name: libaot-Xamarin.AndroidX.CursorAdapter.dll.so
 		ptr null; void* handle
-	}, ; 718
+	}, ; 726
 	%struct.DSOCacheEntry {
 		i64 u0xdf40a0b735ed4041, ; from name: Microsoft.Extensions.FileProviders.Abstractions.so
 		i64 u0x82b65efc7b0bc50f, ; uint64_t real_name_hash
@@ -6128,7 +6192,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.15_name, ; name: libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 719
+	}, ; 727
 	%struct.DSOCacheEntry {
 		i64 u0xdf4908a7c69b51d1, ; from name: aot-Xamarin.AndroidX.ViewPager
 		i64 u0xb5351dcbaf438cb6, ; uint64_t real_name_hash
@@ -6136,15 +6200,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.51_name, ; name: libaot-Xamarin.AndroidX.ViewPager.dll.so
 		ptr null; void* handle
-	}, ; 720
+	}, ; 728
 	%struct.DSOCacheEntry {
 		i64 u0xdfabadcf47a52f12, ; from name: libaot-System.Xml.ReaderWriter.dll.so
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
-	}, ; 721
+	}, ; 729
 	%struct.DSOCacheEntry {
 		i64 u0xe00250491fd061db, ; from name: aot-Microsoft.Extensions.Configuration
 		i64 u0x07a45374fab68acc, ; uint64_t real_name_hash
@@ -6152,7 +6216,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.10_name, ; name: libaot-Microsoft.Extensions.Configuration.dll.so
 		ptr null; void* handle
-	}, ; 722
+	}, ; 730
 	%struct.DSOCacheEntry {
 		i64 u0xe047cec24633c1a6, ; from name: aot-System.ComponentModel.dll.so
 		i64 u0x38a82198a4cd2a73, ; uint64_t real_name_hash
@@ -6160,7 +6224,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.63_name, ; name: libaot-System.ComponentModel.dll.so
 		ptr null; void* handle
-	}, ; 723
+	}, ; 731
 	%struct.DSOCacheEntry {
 		i64 u0xe08585cfb038b415, ; from name: System.Net.Requests.so
 		i64 u0x2a8da1e7722aaaff, ; uint64_t real_name_hash
@@ -6168,7 +6232,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.78_name, ; name: libaot-System.Net.Requests.dll.so
 		ptr null; void* handle
-	}, ; 724
+	}, ; 732
 	%struct.DSOCacheEntry {
 		i64 u0xe0cd163e7f1530e6, ; from name: Xamarin.AndroidX.Navigation.UI.dll.so
 		i64 u0x21b741f2635aa744, ; uint64_t real_name_hash
@@ -6176,7 +6240,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.47_name, ; name: libaot-Xamarin.AndroidX.Navigation.UI.dll.so
 		ptr null; void* handle
-	}, ; 725
+	}, ; 733
 	%struct.DSOCacheEntry {
 		i64 u0xe106423bc739c2b2, ; from name: aot-_Microsoft.Android.Resource.Designer.so
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -6184,7 +6248,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 726
+	}, ; 734
 	%struct.DSOCacheEntry {
 		i64 u0xe125cb42da1b888c, ; from name: aot-System.Security.Cryptography.so
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -6192,7 +6256,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 727
+	}, ; 735
 	%struct.DSOCacheEntry {
 		i64 u0xe1a08bd3fa539e0d, ; from name: System.Runtime.Loader
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -6200,15 +6264,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 728
+	}, ; 736
 	%struct.DSOCacheEntry {
 		i64 u0xe1af59ffe15719e2, ; from name: libaot-System.Private.CoreLib.dll.so
 		i64 u0xe1af59ffe15719e2, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.98_name, ; name: libaot-System.Private.CoreLib.dll.so
+		ptr @.DSOCacheEntry.99_name, ; name: libaot-System.Private.CoreLib.dll.so
 		ptr null; void* handle
-	}, ; 729
+	}, ; 737
 	%struct.DSOCacheEntry {
 		i64 u0xe2378db9a424392f, ; from name: Xamarin.AndroidX.CardView.so
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -6216,7 +6280,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 730
+	}, ; 738
 	%struct.DSOCacheEntry {
 		i64 u0xe29b7559d8668b8d, ; from name: aot-Xamarin.AndroidX.Fragment.dll.so
 		i64 u0x8ab6d3431da5497e, ; uint64_t real_name_hash
@@ -6224,7 +6288,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.38_name, ; name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 731
+	}, ; 739
 	%struct.DSOCacheEntry {
 		i64 u0xe2cd76bdc12a5237, ; from name: libaot-System.Drawing.so
 		i64 u0x366c3ed8a6266ffb, ; uint64_t real_name_hash
@@ -6232,7 +6296,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.68_name, ; name: libaot-System.Drawing.dll.so
 		ptr null; void* handle
-	}, ; 732
+	}, ; 740
 	%struct.DSOCacheEntry {
 		i64 u0xe2cf8c52e543554c, ; from name: aot-Xamarin.Kotlin.StdLib.so
 		i64 u0x0c644d6a2b020c43, ; uint64_t real_name_hash
@@ -6240,7 +6304,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.54_name, ; name: libaot-Xamarin.Kotlin.StdLib.dll.so
 		ptr null; void* handle
-	}, ; 733
+	}, ; 741
 	%struct.DSOCacheEntry {
 		i64 u0xe358cebbe517a454, ; from name: aot-Microsoft.Maui.Controls.so
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -6248,7 +6312,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 734
+	}, ; 742
 	%struct.DSOCacheEntry {
 		i64 u0xe42764432fcebad4, ; from name: aot-Microsoft.Maui.Graphics
 		i64 u0x285d22da351d937a, ; uint64_t real_name_hash
@@ -6256,7 +6320,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.25_name, ; name: libaot-Microsoft.Maui.Graphics.dll.so
 		ptr null; void* handle
-	}, ; 735
+	}, ; 743
 	%struct.DSOCacheEntry {
 		i64 u0xe456dd9cd8a3e128, ; from name: System.Security.Cryptography.dll.so
 		i64 u0xd0e82017367ac826, ; uint64_t real_name_hash
@@ -6264,7 +6328,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.87_name, ; name: libaot-System.Security.Cryptography.dll.so
 		ptr null; void* handle
-	}, ; 736
+	}, ; 744
 	%struct.DSOCacheEntry {
 		i64 u0xe46e6cae617ce2ae, ; from name: Xamarin.AndroidX.CustomView.so
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -6272,7 +6336,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 737
+	}, ; 745
 	%struct.DSOCacheEntry {
 		i64 u0xe48211ce8fca7828, ; from name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.so
 		i64 u0x5a157918545794b7, ; uint64_t real_name_hash
@@ -6280,7 +6344,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.42_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 738
+	}, ; 746
 	%struct.DSOCacheEntry {
 		i64 u0xe489f8a9fa342aab, ; from name: libaot-System.Text.Encodings.Web.so
 		i64 u0x209bcec5b3b022b8, ; uint64_t real_name_hash
@@ -6288,7 +6352,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.88_name, ; name: libaot-System.Text.Encodings.Web.dll.so
 		ptr null; void* handle
-	}, ; 739
+	}, ; 747
 	%struct.DSOCacheEntry {
 		i64 u0xe507a39cbb7478a4, ; from name: aot-Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		i64 u0x757898ba637db46e, ; uint64_t real_name_hash
@@ -6296,7 +6360,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.56_name, ; name: libaot-Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 740
+	}, ; 748
 	%struct.DSOCacheEntry {
 		i64 u0xe57af9ab00f5c61d, ; from name: libaot-System.Private.Uri.dll.so
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -6304,7 +6368,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 741
+	}, ; 749
 	%struct.DSOCacheEntry {
 		i64 u0xe5f29bede3f5fdf4, ; from name: libaot-Microsoft.Maui.Controls.so
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -6312,7 +6376,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 742
+	}, ; 750
 	%struct.DSOCacheEntry {
 		i64 u0xe652d57e69cbabe5, ; from name: Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.so
 		i64 u0x5a157918545794b7, ; uint64_t real_name_hash
@@ -6320,7 +6384,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.42_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android.dll.so
 		ptr null; void* handle
-	}, ; 743
+	}, ; 751
 	%struct.DSOCacheEntry {
 		i64 u0xe6757a5fac324e53, ; from name: libaot-Microsoft.Extensions.Logging.Abstractions.dll.so
 		i64 u0xe6757a5fac324e53, ; uint64_t real_name_hash
@@ -6328,7 +6392,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.18_name, ; name: libaot-Microsoft.Extensions.Logging.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 744
+	}, ; 752
 	%struct.DSOCacheEntry {
 		i64 u0xe6818c8a68e2e4a4, ; from name: libaot-System.Drawing.Primitives
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -6336,7 +6400,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 745
+	}, ; 753
 	%struct.DSOCacheEntry {
 		i64 u0xe6ff6995c50a770e, ; from name: Xamarin.KotlinX.Serialization.Core.Jvm.so
 		i64 u0x757898ba637db46e, ; uint64_t real_name_hash
@@ -6344,7 +6408,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.56_name, ; name: libaot-Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 746
+	}, ; 754
 	%struct.DSOCacheEntry {
 		i64 u0xe7b2e898b68d9670, ; from name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -6352,7 +6416,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 747
+	}, ; 755
 	%struct.DSOCacheEntry {
 		i64 u0xe7fb811d00b98871, ; from name: aot-System.Runtime
 		i64 u0xbbc0e6e747d7877a, ; uint64_t real_name_hash
@@ -6360,7 +6424,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.86_name, ; name: libaot-System.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 748
+	}, ; 756
 	%struct.DSOCacheEntry {
 		i64 u0xe81c9c9e8683ad33, ; from name: aot-Xamarin.AndroidX.CoordinatorLayout.so
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -6368,7 +6432,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 749
+	}, ; 757
 	%struct.DSOCacheEntry {
 		i64 u0xe8726752705c8ce9, ; from name: libaot-Microsoft.Extensions.DependencyInjection.dll.so
 		i64 u0xe8726752705c8ce9, ; uint64_t real_name_hash
@@ -6376,7 +6440,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.12_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.dll.so
 		ptr null; void* handle
-	}, ; 750
+	}, ; 758
 	%struct.DSOCacheEntry {
 		i64 u0xe89e46346500aa20, ; from name: aot-Microsoft.Extensions.DependencyInjection.Abstractions.so
 		i64 u0x4643d8f925d8e6b7, ; uint64_t real_name_hash
@@ -6384,7 +6448,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.13_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 751
+	}, ; 759
 	%struct.DSOCacheEntry {
 		i64 u0xe937380fb4202c99, ; from name: aot-System.Diagnostics.TraceSource
 		i64 u0x2119cc81025daa05, ; uint64_t real_name_hash
@@ -6392,7 +6456,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.66_name, ; name: libaot-System.Diagnostics.TraceSource.dll.so
 		ptr null; void* handle
-	}, ; 752
+	}, ; 760
 	%struct.DSOCacheEntry {
 		i64 u0xe9e6021e6533eb43, ; from name: libaot-Xamarin.AndroidX.CardView.dll.so
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -6400,7 +6464,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 753
+	}, ; 761
 	%struct.DSOCacheEntry {
 		i64 u0xe9f5223a75f1726d, ; from name: System.Net.Http.so
 		i64 u0xd925f85604802447, ; uint64_t real_name_hash
@@ -6408,7 +6472,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.76_name, ; name: libaot-System.Net.Http.dll.so
 		ptr null; void* handle
-	}, ; 754
+	}, ; 762
 	%struct.DSOCacheEntry {
 		i64 u0xea0ab7fb8be2840c, ; from name: libaot-System.Memory.so
 		i64 u0xad582851e7d05243, ; uint64_t real_name_hash
@@ -6416,7 +6480,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.75_name, ; name: libaot-System.Memory.dll.so
 		ptr null; void* handle
-	}, ; 755
+	}, ; 763
 	%struct.DSOCacheEntry {
 		i64 u0xea16cb1cc73e225d, ; from name: Microsoft.Extensions.Options.so
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -6424,7 +6488,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 756
+	}, ; 764
 	%struct.DSOCacheEntry {
 		i64 u0xea8ae788340cbe4a, ; from name: CommunityToolkit.Mvvm.dll.so
 		i64 u0x324cedd7271c2c92, ; uint64_t real_name_hash
@@ -6432,7 +6496,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.9_name, ; name: libaot-CommunityToolkit.Mvvm.dll.so
 		ptr null; void* handle
-	}, ; 757
+	}, ; 765
 	%struct.DSOCacheEntry {
 		i64 u0xead1035adf19e392, ; from name: libaot-TreadmillApp
 		i64 u0x880896da5db2c5f7, ; uint64_t real_name_hash
@@ -6440,7 +6504,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.8_name, ; name: libaot-TreadmillApp.dll.so
 		ptr null; void* handle
-	}, ; 758
+	}, ; 766
 	%struct.DSOCacheEntry {
 		i64 u0xead570ded3a79231, ; from name: Xamarin.AndroidX.CursorAdapter.so
 		i64 u0xdf3c491694996c7e, ; uint64_t real_name_hash
@@ -6448,7 +6512,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.35_name, ; name: libaot-Xamarin.AndroidX.CursorAdapter.dll.so
 		ptr null; void* handle
-	}, ; 759
+	}, ; 767
 	%struct.DSOCacheEntry {
 		i64 u0xeb2eb87760c7a2f5, ; from name: libaot-System.Collections
 		i64 u0xb3f9fc836ae7ebb5, ; uint64_t real_name_hash
@@ -6456,7 +6520,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.60_name, ; name: libaot-System.Collections.dll.so
 		ptr null; void* handle
-	}, ; 760
+	}, ; 768
 	%struct.DSOCacheEntry {
 		i64 u0xeb850bc056ae4318, ; from name: aot-System.Formats.Asn1.so
 		i64 u0x4a9bda0e8528b414, ; uint64_t real_name_hash
@@ -6464,7 +6528,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.69_name, ; name: libaot-System.Formats.Asn1.dll.so
 		ptr null; void* handle
-	}, ; 761
+	}, ; 769
 	%struct.DSOCacheEntry {
 		i64 u0xebb4a75d319d7e89, ; from name: aot-Microsoft.Maui.Controls.dll.so
 		i64 u0x7f174db5a2c913e7, ; uint64_t real_name_hash
@@ -6472,7 +6536,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.21_name, ; name: libaot-Microsoft.Maui.Controls.dll.so
 		ptr null; void* handle
-	}, ; 762
+	}, ; 770
 	%struct.DSOCacheEntry {
 		i64 u0xec8d0cdc2bedf4f6, ; from name: libaot-System.Collections.Specialized
 		i64 u0x355b66670e6bf2e4, ; uint64_t real_name_hash
@@ -6480,7 +6544,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.59_name, ; name: libaot-System.Collections.Specialized.dll.so
 		ptr null; void* handle
-	}, ; 763
+	}, ; 771
 	%struct.DSOCacheEntry {
 		i64 u0xecb4a1fb8909ca81, ; from name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.so
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -6488,7 +6552,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 764
+	}, ; 772
 	%struct.DSOCacheEntry {
 		i64 u0xecd78ed4818f3e83, ; from name: System.Threading.Thread.so
 		i64 u0x675935a1e3b604dc, ; uint64_t real_name_hash
@@ -6496,7 +6560,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.91_name, ; name: libaot-System.Threading.Thread.dll.so
 		ptr null; void* handle
-	}, ; 765
+	}, ; 773
 	%struct.DSOCacheEntry {
 		i64 u0xed1db8af46101fe3, ; from name: libaot-Microsoft.Extensions.Configuration
 		i64 u0x07a45374fab68acc, ; uint64_t real_name_hash
@@ -6504,15 +6568,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.10_name, ; name: libaot-Microsoft.Extensions.Configuration.dll.so
 		ptr null; void* handle
-	}, ; 766
+	}, ; 774
 	%struct.DSOCacheEntry {
 		i64 u0xed4191e57023378a, ; from name: aot-Mono.Android.Runtime.dll.so
 		i64 u0x156ae2b2e8a39884, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.96_name, ; name: libaot-Mono.Android.Runtime.dll.so
+		ptr @.DSOCacheEntry.97_name, ; name: libaot-Mono.Android.Runtime.dll.so
 		ptr null; void* handle
-	}, ; 767
+	}, ; 775
 	%struct.DSOCacheEntry {
 		i64 u0xed46da2e8bc1b60c, ; from name: libaot-System.Runtime.InteropServices
 		i64 u0x5ae6db1ddadc230b, ; uint64_t real_name_hash
@@ -6520,7 +6584,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.83_name, ; name: libaot-System.Runtime.InteropServices.dll.so
 		ptr null; void* handle
-	}, ; 768
+	}, ; 776
 	%struct.DSOCacheEntry {
 		i64 u0xee16be917646703b, ; from name: aot-CommunityToolkit.Mvvm
 		i64 u0x324cedd7271c2c92, ; uint64_t real_name_hash
@@ -6528,7 +6592,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.9_name, ; name: libaot-CommunityToolkit.Mvvm.dll.so
 		ptr null; void* handle
-	}, ; 769
+	}, ; 777
+	%struct.DSOCacheEntry {
+		i64 u0xee81f5b3f1c4f83b, ; from name: System.Threading.ThreadPool
+		i64 u0x7d7a84dcff7fdb59, ; uint64_t real_name_hash
+		i1 false, ; bool ignore
+		i1 false, ; bool is_jni_library
+		ptr @.DSOCacheEntry.92_name, ; name: libaot-System.Threading.ThreadPool.dll.so
+		ptr null; void* handle
+	}, ; 778
 	%struct.DSOCacheEntry {
 		i64 u0xeecf660a30866900, ; from name: libaot-Microsoft.Maui.Controls.Xaml.so
 		i64 u0x5fc3bca990f46fb4, ; uint64_t real_name_hash
@@ -6536,7 +6608,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.22_name, ; name: libaot-Microsoft.Maui.Controls.Xaml.dll.so
 		ptr null; void* handle
-	}, ; 770
+	}, ; 779
 	%struct.DSOCacheEntry {
 		i64 u0xeeebcc3e64ef8b19, ; from name: aot-Xamarin.AndroidX.Loader.so
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -6544,7 +6616,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 771
+	}, ; 780
 	%struct.DSOCacheEntry {
 		i64 u0xeef607f38ca22ffc, ; from name: libaot-Microsoft.Extensions.Options.dll.so
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -6552,7 +6624,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 772
+	}, ; 781
 	%struct.DSOCacheEntry {
 		i64 u0xef90223c90a530d8, ; from name: Microsoft.Extensions.Logging.dll.so
 		i64 u0x9b6f0babce2a1934, ; uint64_t real_name_hash
@@ -6560,7 +6632,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.17_name, ; name: libaot-Microsoft.Extensions.Logging.dll.so
 		ptr null; void* handle
-	}, ; 773
+	}, ; 782
 	%struct.DSOCacheEntry {
 		i64 u0xefc42f09d02ec824, ; from name: aot-System.IO.Pipelines.dll.so
 		i64 u0x027079cd6cbb2479, ; uint64_t real_name_hash
@@ -6568,7 +6640,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.72_name, ; name: libaot-System.IO.Pipelines.dll.so
 		ptr null; void* handle
-	}, ; 774
+	}, ; 783
 	%struct.DSOCacheEntry {
 		i64 u0xefdc45d9474bd3e8, ; from name: libaot-Xamarin.AndroidX.Core.so
 		i64 u0x28a319e875b39488, ; uint64_t real_name_hash
@@ -6576,7 +6648,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.34_name, ; name: libaot-Xamarin.AndroidX.Core.dll.so
 		ptr null; void* handle
-	}, ; 775
+	}, ; 784
 	%struct.DSOCacheEntry {
 		i64 u0xefec0b7fdc57ec42, ; from name: Xamarin.AndroidX.Activity
 		i64 u0x8a05820e9e77c0c3, ; uint64_t real_name_hash
@@ -6584,7 +6656,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.28_name, ; name: libaot-Xamarin.AndroidX.Activity.dll.so
 		ptr null; void* handle
-	}, ; 776
+	}, ; 785
 	%struct.DSOCacheEntry {
 		i64 u0xefedcbe674d5eacb, ; from name: aot-System.IO.Compression.dll.so
 		i64 u0x07869dd1c492a791, ; uint64_t real_name_hash
@@ -6592,7 +6664,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.71_name, ; name: libaot-System.IO.Compression.dll.so
 		ptr null; void* handle
-	}, ; 777
+	}, ; 786
 	%struct.DSOCacheEntry {
 		i64 u0xf0ec9bb1b696d67c, ; from name: aot-System.Private.Uri.dll.so
 		i64 u0xe57af9ab00f5c61d, ; uint64_t real_name_hash
@@ -6600,7 +6672,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.81_name, ; name: libaot-System.Private.Uri.dll.so
 		ptr null; void* handle
-	}, ; 778
+	}, ; 787
 	%struct.DSOCacheEntry {
 		i64 u0xf1136a512f613f6b, ; from name: aot-Xamarin.AndroidX.Lifecycle.LiveData.Core
 		i64 u0x38e4553d8764fa45, ; uint64_t real_name_hash
@@ -6608,7 +6680,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.40_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
 		ptr null; void* handle
-	}, ; 779
+	}, ; 788
 	%struct.DSOCacheEntry {
 		i64 u0xf1d732e81fca3e40, ; from name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm
 		i64 u0x811e0efc0e57d069, ; uint64_t real_name_hash
@@ -6616,7 +6688,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.55_name, ; name: libaot-Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 780
+	}, ; 789
 	%struct.DSOCacheEntry {
 		i64 u0xf200b204a81ea5e3, ; from name: System.Runtime.Numerics.so
 		i64 u0x6619888793b3b2dd, ; uint64_t real_name_hash
@@ -6624,7 +6696,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.85_name, ; name: libaot-System.Runtime.Numerics.dll.so
 		ptr null; void* handle
-	}, ; 781
+	}, ; 790
 	%struct.DSOCacheEntry {
 		i64 u0xf21ecfbd8f9ac5ae, ; from name: libaot-System.Runtime.Numerics.so
 		i64 u0x6619888793b3b2dd, ; uint64_t real_name_hash
@@ -6632,7 +6704,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.85_name, ; name: libaot-System.Runtime.Numerics.dll.so
 		ptr null; void* handle
-	}, ; 782
+	}, ; 791
 	%struct.DSOCacheEntry {
 		i64 u0xf2adcbbeba5f2118, ; from name: aot-Xamarin.AndroidX.CursorAdapter.dll.so
 		i64 u0xdf3c491694996c7e, ; uint64_t real_name_hash
@@ -6640,7 +6712,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.35_name, ; name: libaot-Xamarin.AndroidX.CursorAdapter.dll.so
 		ptr null; void* handle
-	}, ; 783
+	}, ; 792
 	%struct.DSOCacheEntry {
 		i64 u0xf3b2f2d1fe4d753b, ; from name: aot-Microsoft.Extensions.Configuration.Abstractions.so
 		i64 u0xd6a1ce9f7ccd35cb, ; uint64_t real_name_hash
@@ -6648,15 +6720,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.11_name, ; name: libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 784
+	}, ; 793
 	%struct.DSOCacheEntry {
 		i64 u0xf3ddfe05336abf29, ; from name: System
 		i64 u0x7b91ac8ddc528deb, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.dll.so
+		ptr @.DSOCacheEntry.95_name, ; name: libaot-System.dll.so
 		ptr null; void* handle
-	}, ; 785
+	}, ; 794
 	%struct.DSOCacheEntry {
 		i64 u0xf3f9a9021a345fb2, ; from name: System.Diagnostics.TraceSource.dll.so
 		i64 u0x2119cc81025daa05, ; uint64_t real_name_hash
@@ -6664,7 +6736,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.66_name, ; name: libaot-System.Diagnostics.TraceSource.dll.so
 		ptr null; void* handle
-	}, ; 786
+	}, ; 795
 	%struct.DSOCacheEntry {
 		i64 u0xf4c1dd70a5496a17, ; from name: System.IO.Compression
 		i64 u0x07869dd1c492a791, ; uint64_t real_name_hash
@@ -6672,7 +6744,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.71_name, ; name: libaot-System.IO.Compression.dll.so
 		ptr null; void* handle
-	}, ; 787
+	}, ; 796
 	%struct.DSOCacheEntry {
 		i64 u0xf4e25dd99517abfc, ; from name: aot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		i64 u0x0bdc487294fc9a85, ; uint64_t real_name_hash
@@ -6680,7 +6752,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.16_name, ; name: libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 788
+	}, ; 797
 	%struct.DSOCacheEntry {
 		i64 u0xf4f773473398d696, ; from name: aot-System.Net.Requests.so
 		i64 u0x2a8da1e7722aaaff, ; uint64_t real_name_hash
@@ -6688,7 +6760,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.78_name, ; name: libaot-System.Net.Requests.dll.so
 		ptr null; void* handle
-	}, ; 789
+	}, ; 798
 	%struct.DSOCacheEntry {
 		i64 u0xf4fa59b00364ce58, ; from name: aot-_Microsoft.Android.Resource.Designer
 		i64 u0x9cbca1c74026e295, ; uint64_t real_name_hash
@@ -6696,7 +6768,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.7_name, ; name: libaot-_Microsoft.Android.Resource.Designer.dll.so
 		ptr null; void* handle
-	}, ; 790
+	}, ; 799
 	%struct.DSOCacheEntry {
 		i64 u0xf513c17b11103f36, ; from name: aot-System.Runtime.Loader.dll.so
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -6704,7 +6776,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 791
+	}, ; 800
 	%struct.DSOCacheEntry {
 		i64 u0xf56fba8789171dc1, ; from name: System.Collections.Concurrent.so
 		i64 u0x65cd21401fecc3dc, ; uint64_t real_name_hash
@@ -6712,7 +6784,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.57_name, ; name: libaot-System.Collections.Concurrent.dll.so
 		ptr null; void* handle
-	}, ; 792
+	}, ; 801
 	%struct.DSOCacheEntry {
 		i64 u0xf579706cb81f7ce7, ; from name: libaot-Xamarin.AndroidX.CustomView
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -6720,7 +6792,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 793
+	}, ; 802
 	%struct.DSOCacheEntry {
 		i64 u0xf5e5ace884bd7ee0, ; from name: System.Console.so
 		i64 u0xc2da5dca6ccd8b0a, ; uint64_t real_name_hash
@@ -6728,7 +6800,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.64_name, ; name: libaot-System.Console.dll.so
 		ptr null; void* handle
-	}, ; 794
+	}, ; 803
 	%struct.DSOCacheEntry {
 		i64 u0xf6077741019d7428, ; from name: Xamarin.AndroidX.CoordinatorLayout
 		i64 u0x5cc157f14ad19fc0, ; uint64_t real_name_hash
@@ -6736,7 +6808,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.33_name, ; name: libaot-Xamarin.AndroidX.CoordinatorLayout.dll.so
 		ptr null; void* handle
-	}, ; 795
+	}, ; 804
 	%struct.DSOCacheEntry {
 		i64 u0xf676602fe451a58e, ; from name: aot-Xamarin.AndroidX.ViewPager.dll.so
 		i64 u0xb5351dcbaf438cb6, ; uint64_t real_name_hash
@@ -6744,7 +6816,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.51_name, ; name: libaot-Xamarin.AndroidX.ViewPager.dll.so
 		ptr null; void* handle
-	}, ; 796
+	}, ; 805
 	%struct.DSOCacheEntry {
 		i64 u0xf6d927cee645b8e6, ; from name: libaot-System.Runtime.Loader.so
 		i64 u0x55c25b4d27ae6f23, ; uint64_t real_name_hash
@@ -6752,7 +6824,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.84_name, ; name: libaot-System.Runtime.Loader.dll.so
 		ptr null; void* handle
-	}, ; 797
+	}, ; 806
 	%struct.DSOCacheEntry {
 		i64 u0xf6fe7610381ffd77, ; from name: Microsoft.Extensions.Configuration.dll.so
 		i64 u0x07a45374fab68acc, ; uint64_t real_name_hash
@@ -6760,7 +6832,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.10_name, ; name: libaot-Microsoft.Extensions.Configuration.dll.so
 		ptr null; void* handle
-	}, ; 798
+	}, ; 807
 	%struct.DSOCacheEntry {
 		i64 u0xf92f42ca289ae65b, ; from name: libaot-Xamarin.AndroidX.CustomView.so
 		i64 u0xe7b2e898b68d9670, ; uint64_t real_name_hash
@@ -6768,7 +6840,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.36_name, ; name: libaot-Xamarin.AndroidX.CustomView.dll.so
 		ptr null; void* handle
-	}, ; 799
+	}, ; 808
 	%struct.DSOCacheEntry {
 		i64 u0xf93b1aed9c81cdbf, ; from name: libaot-Xamarin.AndroidX.CardView.so
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -6776,15 +6848,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 800
+	}, ; 809
 	%struct.DSOCacheEntry {
 		i64 u0xf97257b8dee8cb79, ; from name: libaot-System.Xml.ReaderWriter
 		i64 u0xdfabadcf47a52f12, ; uint64_t real_name_hash
 		i1 false, ; bool ignore
 		i1 false, ; bool is_jni_library
-		ptr @.DSOCacheEntry.93_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
+		ptr @.DSOCacheEntry.94_name, ; name: libaot-System.Xml.ReaderWriter.dll.so
 		ptr null; void* handle
-	}, ; 801
+	}, ; 810
 	%struct.DSOCacheEntry {
 		i64 u0xf9874c1f3cfbc157, ; from name: aot-Plugin.BLE.dll.so
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -6792,7 +6864,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 802
+	}, ; 811
 	%struct.DSOCacheEntry {
 		i64 u0xf99afe71df4113fd, ; from name: Plugin.BLE.so
 		i64 u0xc13a9ce63397d87e, ; uint64_t real_name_hash
@@ -6800,7 +6872,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.26_name, ; name: libaot-Plugin.BLE.dll.so
 		ptr null; void* handle
-	}, ; 803
+	}, ; 812
 	%struct.DSOCacheEntry {
 		i64 u0xf9b1baae19c98b64, ; from name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		i64 u0xf9b1baae19c98b64, ; uint64_t real_name_hash
@@ -6808,7 +6880,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.46_name, ; name: libaot-Xamarin.AndroidX.Navigation.Runtime.Android.dll.so
 		ptr null; void* handle
-	}, ; 804
+	}, ; 813
 	%struct.DSOCacheEntry {
 		i64 u0xf9bf03574ec0c456, ; from name: aot-Xamarin.AndroidX.SwipeRefreshLayout
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -6816,7 +6888,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 805
+	}, ; 814
 	%struct.DSOCacheEntry {
 		i64 u0xf9c1a523cc802b26, ; from name: aot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		i64 u0x2ec8d2dcf2c4a71b, ; uint64_t real_name_hash
@@ -6824,7 +6896,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.39_name, ; name: libaot-Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 806
+	}, ; 815
 	%struct.DSOCacheEntry {
 		i64 u0xf9cf3eb6b014d601, ; from name: System.Private.Xml.so
 		i64 u0x52bbd048717682d4, ; uint64_t real_name_hash
@@ -6832,7 +6904,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.82_name, ; name: libaot-System.Private.Xml.dll.so
 		ptr null; void* handle
-	}, ; 807
+	}, ; 816
 	%struct.DSOCacheEntry {
 		i64 u0xf9eec5bb3a6aedc6, ; from name: Microsoft.Extensions.Options
 		i64 u0xeef607f38ca22ffc, ; uint64_t real_name_hash
@@ -6840,7 +6912,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.19_name, ; name: libaot-Microsoft.Extensions.Options.dll.so
 		ptr null; void* handle
-	}, ; 808
+	}, ; 817
 	%struct.DSOCacheEntry {
 		i64 u0xf9f2b80dd027f4bc, ; from name: aot-System.Threading.Thread.dll.so
 		i64 u0x675935a1e3b604dc, ; uint64_t real_name_hash
@@ -6848,7 +6920,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.91_name, ; name: libaot-System.Threading.Thread.dll.so
 		ptr null; void* handle
-	}, ; 809
+	}, ; 818
 	%struct.DSOCacheEntry {
 		i64 u0xfa2e658a43fa453c, ; from name: libaot-System.Formats.Asn1.so
 		i64 u0x4a9bda0e8528b414, ; uint64_t real_name_hash
@@ -6856,7 +6928,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.69_name, ; name: libaot-System.Formats.Asn1.dll.so
 		ptr null; void* handle
-	}, ; 810
+	}, ; 819
 	%struct.DSOCacheEntry {
 		i64 u0xfa3e9689d43a7593, ; from name: aot-Microsoft.Extensions.Logging.so
 		i64 u0x9b6f0babce2a1934, ; uint64_t real_name_hash
@@ -6864,7 +6936,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.17_name, ; name: libaot-Microsoft.Extensions.Logging.dll.so
 		ptr null; void* handle
-	}, ; 811
+	}, ; 820
 	%struct.DSOCacheEntry {
 		i64 u0xfa630b8b0c4e56af, ; from name: Microsoft.Extensions.Diagnostics.Abstractions.so
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -6872,7 +6944,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 812
+	}, ; 821
 	%struct.DSOCacheEntry {
 		i64 u0xfa645d91e9fc4cba, ; from name: System.Threading.Thread
 		i64 u0x675935a1e3b604dc, ; uint64_t real_name_hash
@@ -6880,7 +6952,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.91_name, ; name: libaot-System.Threading.Thread.dll.so
 		ptr null; void* handle
-	}, ; 813
+	}, ; 822
 	%struct.DSOCacheEntry {
 		i64 u0xfa78950e7697d68f, ; from name: System.Formats.Asn1.so
 		i64 u0x4a9bda0e8528b414, ; uint64_t real_name_hash
@@ -6888,7 +6960,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.69_name, ; name: libaot-System.Formats.Asn1.dll.so
 		ptr null; void* handle
-	}, ; 814
+	}, ; 823
 	%struct.DSOCacheEntry {
 		i64 u0xfb641158a5aae610, ; from name: System.Threading.Thread.dll.so
 		i64 u0x675935a1e3b604dc, ; uint64_t real_name_hash
@@ -6896,7 +6968,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.91_name, ; name: libaot-System.Threading.Thread.dll.so
 		ptr null; void* handle
-	}, ; 815
+	}, ; 824
 	%struct.DSOCacheEntry {
 		i64 u0xfb9774e5346637f9, ; from name: aot-Xamarin.AndroidX.CardView.so
 		i64 u0xe9e6021e6533eb43, ; uint64_t real_name_hash
@@ -6904,7 +6976,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.31_name, ; name: libaot-Xamarin.AndroidX.CardView.dll.so
 		ptr null; void* handle
-	}, ; 816
+	}, ; 825
 	%struct.DSOCacheEntry {
 		i64 u0xfbbca9bc0e6a2a2f, ; from name: aot-System.Drawing.Primitives.so
 		i64 u0x934cbfda9b40e895, ; uint64_t real_name_hash
@@ -6912,7 +6984,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.67_name, ; name: libaot-System.Drawing.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 817
+	}, ; 826
 	%struct.DSOCacheEntry {
 		i64 u0xfc73bf198508f0f1, ; from name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.so
 		i64 u0xd10bb63f997c45a2, ; uint64_t real_name_hash
@@ -6920,7 +6992,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.14_name, ; name: libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 818
+	}, ; 827
 	%struct.DSOCacheEntry {
 		i64 u0xfcc17343369674ce, ; from name: aot-Xamarin.AndroidX.SwipeRefreshLayout.so
 		i64 u0x6c4e830c0d79912d, ; uint64_t real_name_hash
@@ -6928,7 +7000,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.50_name, ; name: libaot-Xamarin.AndroidX.SwipeRefreshLayout.dll.so
 		ptr null; void* handle
-	}, ; 819
+	}, ; 828
 	%struct.DSOCacheEntry {
 		i64 u0xfcd6cd6402cdab41, ; from name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.so
 		i64 u0x4643d8f925d8e6b7, ; uint64_t real_name_hash
@@ -6936,7 +7008,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.13_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 820
+	}, ; 829
 	%struct.DSOCacheEntry {
 		i64 u0xfd583f7657b6a1cb, ; from name: Xamarin.AndroidX.Fragment
 		i64 u0x8ab6d3431da5497e, ; uint64_t real_name_hash
@@ -6944,7 +7016,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.38_name, ; name: libaot-Xamarin.AndroidX.Fragment.dll.so
 		ptr null; void* handle
-	}, ; 821
+	}, ; 830
 	%struct.DSOCacheEntry {
 		i64 u0xfdb9df46aedd5238, ; from name: libaot-Xamarin.AndroidX.AppCompat.so
 		i64 u0x42c7eb0880ff24a4, ; uint64_t real_name_hash
@@ -6952,7 +7024,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.29_name, ; name: libaot-Xamarin.AndroidX.AppCompat.dll.so
 		ptr null; void* handle
-	}, ; 822
+	}, ; 831
 	%struct.DSOCacheEntry {
 		i64 u0xfe7484c7056f3117, ; from name: libaot-Xamarin.AndroidX.Loader.so
 		i64 u0x74b0aefe8f467d50, ; uint64_t real_name_hash
@@ -6960,7 +7032,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.43_name, ; name: libaot-Xamarin.AndroidX.Loader.dll.so
 		ptr null; void* handle
-	}, ; 823
+	}, ; 832
 	%struct.DSOCacheEntry {
 		i64 u0xfe7538e4cca3352f, ; from name: aot-System.ComponentModel.Primitives.so
 		i64 u0xccde8a4563eee10b, ; uint64_t real_name_hash
@@ -6968,7 +7040,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.61_name, ; name: libaot-System.ComponentModel.Primitives.dll.so
 		ptr null; void* handle
-	}, ; 824
+	}, ; 833
 	%struct.DSOCacheEntry {
 		i64 u0xfee05718917cdb11, ; from name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions
 		i64 u0x4643d8f925d8e6b7, ; uint64_t real_name_hash
@@ -6976,7 +7048,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.13_name, ; name: libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
 		ptr null; void* handle
-	}, ; 825
+	}, ; 834
 	%struct.DSOCacheEntry {
 		i64 u0xfee35b8d2be7dc6b, ; from name: libaot-Xamarin.KotlinX.Serialization.Core.Jvm.so
 		i64 u0x757898ba637db46e, ; uint64_t real_name_hash
@@ -6984,7 +7056,7 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.56_name, ; name: libaot-Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
 		ptr null; void* handle
-	}, ; 826
+	}, ; 835
 	%struct.DSOCacheEntry {
 		i64 u0xffb1eaf13769e291, ; from name: aot-Xamarin.AndroidX.Navigation.Fragment
 		i64 u0xaa2eca1145f3a7cc, ; uint64_t real_name_hash
@@ -6992,15 +7064,15 @@ target triple = "x86_64-unknown-linux-android21"
 		i1 false, ; bool is_jni_library
 		ptr @.DSOCacheEntry.45_name, ; name: libaot-Xamarin.AndroidX.Navigation.Fragment.dll.so
 		ptr null; void* handle
-	} ; 827
+	} ; 836
 ], align 16
 
-@dso_apk_entries = dso_local local_unnamed_addr global [99 x %struct.DSOApkEntry] zeroinitializer, align 16
+@dso_apk_entries = dso_local local_unnamed_addr global [100 x %struct.DSOApkEntry] zeroinitializer, align 16
 
 ; Bundled assembly name buffers, all empty (unused when assembly stores are enabled)
 @bundled_assemblies = dso_local local_unnamed_addr global [0 x %struct.XamarinAndroidBundledAssembly] zeroinitializer, align 8
 
-@assembly_store_bundled_assemblies = dso_local local_unnamed_addr global [128 x %struct.AssemblyStoreSingleAssemblyRuntimeData] zeroinitializer, align 8
+@assembly_store_bundled_assemblies = dso_local local_unnamed_addr global [129 x %struct.AssemblyStoreSingleAssemblyRuntimeData] zeroinitializer, align 8
 
 @assembly_store = dso_local local_unnamed_addr global %struct.AssemblyStoreRuntimeData {
 	ptr null, ; uint8_t* data_start
@@ -7114,13 +7186,14 @@ target triple = "x86_64-unknown-linux-android21"
 @.DSOCacheEntry.89_name = private unnamed_addr constant [31 x i8] c"libaot-System.Text.Json.dll.so\00", align 16
 @.DSOCacheEntry.90_name = private unnamed_addr constant [45 x i8] c"libaot-System.Text.RegularExpressions.dll.so\00", align 16
 @.DSOCacheEntry.91_name = private unnamed_addr constant [38 x i8] c"libaot-System.Threading.Thread.dll.so\00", align 16
-@.DSOCacheEntry.92_name = private unnamed_addr constant [31 x i8] c"libaot-System.Threading.dll.so\00", align 16
-@.DSOCacheEntry.93_name = private unnamed_addr constant [38 x i8] c"libaot-System.Xml.ReaderWriter.dll.so\00", align 16
-@.DSOCacheEntry.94_name = private unnamed_addr constant [21 x i8] c"libaot-System.dll.so\00", align 16
-@.DSOCacheEntry.95_name = private unnamed_addr constant [27 x i8] c"libaot-Java.Interop.dll.so\00", align 16
-@.DSOCacheEntry.96_name = private unnamed_addr constant [35 x i8] c"libaot-Mono.Android.Runtime.dll.so\00", align 16
-@.DSOCacheEntry.97_name = private unnamed_addr constant [27 x i8] c"libaot-Mono.Android.dll.so\00", align 16
-@.DSOCacheEntry.98_name = private unnamed_addr constant [37 x i8] c"libaot-System.Private.CoreLib.dll.so\00", align 16
+@.DSOCacheEntry.92_name = private unnamed_addr constant [42 x i8] c"libaot-System.Threading.ThreadPool.dll.so\00", align 16
+@.DSOCacheEntry.93_name = private unnamed_addr constant [31 x i8] c"libaot-System.Threading.dll.so\00", align 16
+@.DSOCacheEntry.94_name = private unnamed_addr constant [38 x i8] c"libaot-System.Xml.ReaderWriter.dll.so\00", align 16
+@.DSOCacheEntry.95_name = private unnamed_addr constant [21 x i8] c"libaot-System.dll.so\00", align 16
+@.DSOCacheEntry.96_name = private unnamed_addr constant [27 x i8] c"libaot-Java.Interop.dll.so\00", align 16
+@.DSOCacheEntry.97_name = private unnamed_addr constant [35 x i8] c"libaot-Mono.Android.Runtime.dll.so\00", align 16
+@.DSOCacheEntry.98_name = private unnamed_addr constant [27 x i8] c"libaot-Mono.Android.dll.so\00", align 16
+@.DSOCacheEntry.99_name = private unnamed_addr constant [37 x i8] c"libaot-System.Private.CoreLib.dll.so\00", align 16
 
 ; Metadata
 !llvm.module.flags = !{!0, !1}

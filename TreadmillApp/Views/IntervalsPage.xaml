@@ -3,12 +3,13 @@
              xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
              xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
              xmlns:models="clr-namespace:TreadmillApp.Models"
-             x:Class="TreadmillApp.Views.IntervalsPage"
-             >
+             x:DataType="viewmodels:IntervalsViewModel"
+             x:Class="TreadmillApp.Views.IntervalsPage">
 
     <ContentPage.BindingContext>
         <viewmodels:IntervalsViewModel />
     </ContentPage.BindingContext>
+
 
     <ScrollView>
         <VerticalStackLayout Spacing="10" Padding="20">
@@ -58,10 +59,10 @@
 
             <HorizontalStackLayout Spacing="10">
                 <Label Text="{x:Static resources:AppResources.Lbl_Duration_Min}" Style="{StaticResource SectionLabel}" VerticalOptions="Center"/>
-                <Entry Text="{Binding DurationMinutes, Mode=TwoWay}" Style="{StaticResource BaseEntry}" HorizontalTextAlignment="Center"/>
+                <Entry Text="{Binding DurationMinutes, Mode=TwoWay}" Style="{StaticResource BaseEntry}" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
 
                 <Label Text="{x:Static resources:AppResources.Lbl_Duration}" Style="{StaticResource SectionLabel}" VerticalTextAlignment="Center"/>
-                <Entry Text="{Binding DurationSeconds, Mode=TwoWay}" Style="{StaticResource BaseEntry}" HorizontalTextAlignment="Center" IsEnabled="False"/>
+                <Entry Text="{Binding DurationSeconds, Mode=TwoWay}" Style="{StaticResource BaseEntry}" HorizontalTextAlignment="Center" Keyboard="Numeric" IsEnabled="False"/>
             </HorizontalStackLayout>
 
             <!-- Ajouter à l'entraînement -->
@@ -82,32 +83,43 @@
             <!-- Liste des intervalles -->
             <Label Text="{x:Static resources:AppResources.Lbl_Interval_List}" Style="{StaticResource SectionLabel}"/>
 
-            <CollectionView ItemsSource="{Binding Intervals}" MinimumHeightRequest="10" MaximumHeightRequest="500" >
+            <CollectionView ItemsSource="{Binding Intervals}" HeightRequest="300" HorizontalOptions="Fill">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:WorkoutInterval">
-                        <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Never">
-                            <HorizontalStackLayout Spacing="15" Padding="5" VerticalOptions="Center" HorizontalOptions="Start">
-                                <Label Text="{Binding Name}" Style="{StaticResource IntervalNameLabel}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding TargetSpeed, StringFormat='{}S: {0} km/h'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding PaceFormattedString, StringFormat='{}P: {0}'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding TargetIncline, StringFormat='{}I: {0}%'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding DurationMinutes, StringFormat='{}D: {0}m'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center"/>
+                        <Border Padding="10" Margin="0,4" BackgroundColor="{StaticResource SurfaceColor}">
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="4">
 
-                                <!-- Bouton de suppression lié via Command et CommandParameter -->
-                                <!--<Button Text="❌" 
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:IntervalsViewModel}}, Path=DeleteIntervalCommand}" 
-                                        CommandParameter="{Binding .}" 
-                                        BackgroundColor="Transparent" TextColor="Red" WidthRequest="40"/>
-                                -->
-                                <Button Text="✏️"
-                                        Clicked="OnEditIntervalClicked"
-                                        Style="{StaticResource IconButton}" WidthRequest="40"/>
-                                <Button Text="❌"
-                                        Clicked="OnDeleteIntervalClicked"
-                                        Style="{StaticResource DangerIconButton}" 
-                                        WidthRequest="40"/>
-                            </HorizontalStackLayout>
-                        </ScrollView>
+                                <!-- Ligne 1 : Nom de l'intervalle et Boutons d'action à droite -->
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                    Text="{Binding Name}" 
+                                    TextColor="{StaticResource TextPrimary}"
+                                    FontAttributes="Bold" 
+                                    FontSize="15" 
+                                    VerticalTextAlignment="Center"/>
+
+                                <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5">
+                                    <Button Text="✏️"
+                                Clicked="OnEditIntervalClicked"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource AccentColor}"
+                                WidthRequest="36" HeightRequest="36"/>
+                                    <Button Text="❌"
+                                Clicked="OnDeleteIntervalClicked"
+                               BackgroundColor="Transparent"
+                                TextColor="{StaticResource DangerColor}"
+                                WidthRequest="36" HeightRequest="36"/>
+                                </HorizontalStackLayout>
+
+                                <!-- Ligne 2 : Détails (Vitesse, Allure, Pente, Durée) répartis proprement -->
+                                <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="12">
+                                    <Label Text="{Binding TargetSpeed, StringFormat='S: {0} km/h'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    <Label Text="{Binding PaceFormattedString, StringFormat='P: {0}'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    <Label Text="{Binding TargetIncline, StringFormat='I: {0}%'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    <Label Text="{Binding DurationMinutes, StringFormat='D: {0}m'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                </HorizontalStackLayout>
+
+                            </Grid>
+                        </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
