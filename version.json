@@ -1,9 +1,9 @@
 {
   "version": "1.1.0",
   "notes": {
-    "en": "New theme, BLE fixes.",
-    "fr": "Nouveau thème, corrections BLE.",
-    "nl": "Nieuw thema, BLE-fixes."
+    "en": "Support for Cross trainer",
+    "fr": "Support pour l'elliptique",
+    "nl": "Support voor elliptique"
   },
   "android": { "url": "https://github.com/SebastienPret/TreadmillApp/releases/download/v1.1.0/TreadmillApp.apk", "sha256": "c469d5b62d84fc7a90e38ba647f2d5bc164f1ce6d73eff6938b5624167536e70" },
   "windows": { "url": "https://github.com/SebastienPret/TreadmillApp/releases/download/v1.1.0/TreadmillApp-Setup.exe", "sha256": "c469d5b62d84fc7a90e38ba647f2d5bc164f1ce6d73eff6938b5624167536e70" }
