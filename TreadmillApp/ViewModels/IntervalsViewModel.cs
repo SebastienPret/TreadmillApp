@@ -14,7 +14,7 @@ namespace TreadmillApp.ViewModels
         //public static WorkoutPlan CurrentPlan => IntervalsPage.CurrentPlan;
         [ObservableProperty]
         public partial WorkoutPlan CurrentPlan { get; set; } = new();
-        
+
         //[ObservableProperty]
         //public partial string PlanTitle { get; set; } = CurrentPlan.Title ?? AppResources.DefaultWorkoutTitle;
         [ObservableProperty]
@@ -32,6 +32,13 @@ namespace TreadmillApp.ViewModels
 
         [ObservableProperty]
         public partial double Incline { get; set; } = 0;
+
+        [ObservableProperty]
+        public partial double Resistance { get; set; } = 0;
+
+        // Selon le type d'appareil, le formulaire affiche vitesse/pente (tapis) ou résistance (elliptique)
+        public bool IsTreadmill => DashboardPage.Treadmill.MachineType == MachineType.Treadmill;
+        public bool IsCrossTrainer => DashboardPage.Treadmill.MachineType == MachineType.CrossTrainer;
 
         [ObservableProperty]
         public partial double DurationMinutes { get; set; } = 0;
@@ -68,7 +75,7 @@ namespace TreadmillApp.ViewModels
             // Convertit la List<WorkoutInterval> en ObservableCollection<WorkoutInterval>
             //Intervals = new ObservableCollection<WorkoutInterval>(AppStateService.Instance.CurrentPlan?.Intervals);
             //Intervals = AppStateService.Instance.CurrentPlan?.Intervals ?? [];
-            
+
             // Sécurité : si aucun plan n'a été initialisé, on en crée un par défaut
             /*if (AppStateService.Instance.CurrentPlan == null)
             {
@@ -95,7 +102,7 @@ namespace TreadmillApp.ViewModels
                 };
                 AppStateService.Instance.CurrentPlan = plan;
             }
-           
+
 
             PlanTitle = plan.Title ?? AppResources.DefaultWorkoutTitle;
 
@@ -104,10 +111,12 @@ namespace TreadmillApp.ViewModels
 
             CurrentPlan = plan;                 // garde le VM synchronisé avec le plan réel
             PlanTitle = plan.Title ?? AppResources.DefaultWorkoutTitle;
+            OnPropertyChanged(nameof(IsTreadmill));      // le type d'appareil a pu changer depuis la dernière visite
+            OnPropertyChanged(nameof(IsCrossTrainer));
             Intervals = plan.Intervals;         // même référence : plus de copie, plus de désynchronisation
 
         }
-        
+
 
         partial void OnSpeedChanged(double value)
         {
@@ -133,7 +142,7 @@ namespace TreadmillApp.ViewModels
             }
         }
 
-        
+
 
         partial void OnDurationSecondsChanged(double value)
         {
@@ -185,6 +194,7 @@ namespace TreadmillApp.ViewModels
                 TargetSpeed = Speed,
                 PaceFormattedString = PaceFormatted,
                 TargetIncline = Incline,
+                TargetResistance = Resistance,
                 DurationSeconds = DurationSeconds
             };
 
@@ -211,6 +221,7 @@ namespace TreadmillApp.ViewModels
             IntervalName = interval.Name;
             Speed = interval.TargetSpeed;
             Incline = interval.TargetIncline;
+            Resistance = interval.TargetResistance;
             DurationSeconds = interval.DurationSeconds;
         }
 

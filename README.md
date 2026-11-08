@@ -1,6 +1,6 @@
 # 🏃‍♂️ TreadmillApp – .NET MAUI Treadmill Controller
 
-A mobile and desktop app built with **.NET MAUI** to control connected treadmills that support the standard Bluetooth **FTMS (Fitness Machine Service)** protocol, and to create and manage custom interval training programs.
+A mobile and desktop app built with **.NET MAUI** to control connected treadmills or cross trainer that support the standard Bluetooth **FTMS (Fitness Machine Service)** protocol, and to create and manage custom interval training programs.
 
 **Platforms:** Android · Windows · iOS (planned)
 **Languages:** English · Français (Belgium) · Nederlands (Belgium)
@@ -124,6 +124,7 @@ The in-app updater also needs a `FileProvider` (see [Updates](#-updates)).
 TreadmillApp/
 │
 ├── Models/
+│   ├── MachineType.cs             # Machine type models
 │   └── WorkoutInterval.cs         # Interval and workout plan models
 │
 ├── ViewModels/
@@ -324,3 +325,4 @@ Upload the resulting `.ipa` with **Transporter** (TestFlight / App Store).
 - [ ] Sign the Windows installer (code-signing certificate)
 - [ ] iOS release (TestFlight / App Store)
 - [ ] Keep the workout timer running with the screen locked (Android foreground service)
+- [ ] Support for cross trainer (Testing needed)

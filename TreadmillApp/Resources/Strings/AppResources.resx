@@ -459,4 +459,40 @@
   <data name="Txt_Later" xml:space="preserve">
     <value>Later</value>
   </data>
+  <data name="Lbl_Machine_Type" xml:space="preserve">
+    <value>Machine Type</value>
+  </data>
+  <data name="Lbl_Cadence" xml:space="preserve">
+    <value>Cadence</value>
+  </data>
+  <data name="Lbl_Spm" xml:space="preserve">
+    <value>strides/min</value>
+  </data>
+  <data name="Lbl_Resistance" xml:space="preserve">
+    <value>Resistance</value>
+  </data>
+  <data name="Lbl_Power" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="Lbl_Watts" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="Lbl_Resistance_Down" xml:space="preserve">
+    <value>Resistance -</value>
+  </data>
+  <data name="Lbl_Resistance_Up" xml:space="preserve">
+    <value>Resistance +</value>
+  </data>
+  <data name="Lbl_Resistance_Level" xml:space="preserve">
+    <value>Resistance (level)</value>
+  </data>
+  <data name="Machine_Treadmill" xml:space="preserve">
+    <value>Treadmill</value>
+  </data>
+  <data name="Machine_CrossTrainer" xml:space="preserve">
+    <value>Cross trainer</value>
+  </data>
+  <data name="IntervalStatus_Waiting_Movement" xml:space="preserve">
+    <value>Start pedaling</value>
+  </data>
 </root>

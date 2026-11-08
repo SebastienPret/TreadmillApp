@@ -25,6 +25,26 @@ namespace TreadmillApp.ViewModels
         [ObservableProperty]
         public partial string StatusRun { get; set; } = AppResources.Lbl_Status_Run;
 
+        // Indicateurs spécifiques à l'elliptique
+        [ObservableProperty]
+        public partial string CurrentResistance { get; set; } = "0";
+        [ObservableProperty]
+        public partial string CurrentCadence { get; set; } = "0";
+        [ObservableProperty]
+        public partial string CurrentPower { get; set; } = "0";
+
+        // Type d'appareil : 0 = tapis, 1 = elliptique (index du Picker)
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsTreadmill))]
+        [NotifyPropertyChangedFor(nameof(IsCrossTrainer))]
+        public partial int MachineTypeIndex { get; set; } = (int)Treadmill.MachineType;
+
+        public bool IsTreadmill => MachineTypeIndex == (int)MachineType.Treadmill;
+        public bool IsCrossTrainer => MachineTypeIndex == (int)MachineType.CrossTrainer;
+
+        public List<string> MachineTypeNames { get; } =
+            [AppResources.Machine_Treadmill, AppResources.Machine_CrossTrainer];
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsNotConnected))] // Met à jour IsNotConnected automatiquement si IsConnected change
         public partial bool IsConnected { get; set; }
@@ -50,6 +70,11 @@ namespace TreadmillApp.ViewModels
                 {
                     CurrentSpeed = Treadmill.CurrentSpeed.ToString("0.0");
                     CurrentIncline = Treadmill.CurrentIncline.ToString("0");
+
+                    CurrentResistance = Treadmill.CurrentResistance.ToString("0.#");
+                    CurrentCadence = Treadmill.CurrentCadence.ToString("0");
+                    CurrentPower = Treadmill.CurrentPower.ToString("0");
+                    MachineTypeIndex = (int)Treadmill.MachineType;   // suit la détection automatique
                 });
             };
 
@@ -69,6 +94,12 @@ namespace TreadmillApp.ViewModels
                     //ConnectButtonBackgroundColor = IsConnected ? Colors.Green : Colors.Red;
                 });
             };
+        }
+
+        // Changement manuel du type d'appareil (Picker)
+        partial void OnMachineTypeIndexChanged(int value)
+        {
+            Treadmill.MachineType = (MachineType)value;
         }
 
         // Action déclenchée lorsque CurrentSpeed change (généré automatiquement par le Toolkit)
@@ -91,6 +122,12 @@ namespace TreadmillApp.ViewModels
 
         [RelayCommand]
         private static async Task IncreaseIncline() => await Treadmill.SetInclineAsync(Treadmill.CurrentIncline + 1);
+
+        [RelayCommand]
+        private static async Task DecreaseResistance() => await Treadmill.SetResistanceAsync(Treadmill.CurrentResistance - 1);
+
+        [RelayCommand]
+        private static async Task IncreaseResistance() => await Treadmill.SetResistanceAsync(Treadmill.CurrentResistance + 1);
 
         [RelayCommand]
         private static async Task Start() => await Treadmill.StartAsync();

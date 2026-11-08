@@ -27,8 +27,15 @@
             </Button>
             <Label Text="{Binding DeviceStatus}" Style="{StaticResource HintLabel}" HorizontalOptions="Center"/>
 
+            <!-- Type d'appareil (modifiable tant qu'on n'est pas connecté) -->
+            <Picker Title="{x:Static resources:AppResources.Lbl_Machine_Type}"
+                    ItemsSource="{Binding MachineTypeNames}"
+                    SelectedIndex="{Binding MachineTypeIndex}"
+                    IsEnabled="{Binding IsNotConnected}"
+                    WidthRequest="300" HorizontalTextAlignment="Center"/>
+
             <!-- Indicateurs Live -->
-            <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
+            <HorizontalStackLayout Spacing="40" HorizontalOptions="Center" IsVisible="{Binding IsTreadmill}">
                 <VerticalStackLayout>
                     <Label Text="{x:Static resources:AppResources.Lbl_Speed}" Style="{StaticResource SectionLabel}" HorizontalOptions="Center" TextTransform="Uppercase"/>
                     <Label Text="{Binding CurrentSpeed}" FontSize="48" Style="{StaticResource ValueLabel}" HorizontalOptions="Center"/>
@@ -46,18 +53,42 @@
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
+            <!-- Indicateurs Live : elliptique -->
+            <HorizontalStackLayout Spacing="40" HorizontalOptions="Center" IsVisible="{Binding IsCrossTrainer}">
+                <VerticalStackLayout>
+                    <Label Text="{x:Static resources:AppResources.Lbl_Cadence}" Style="{StaticResource SectionLabel}" HorizontalOptions="Center" TextTransform="Uppercase"/>
+                    <Label Text="{Binding CurrentCadence}" FontSize="48" Style="{StaticResource ValueLabel}" HorizontalOptions="Center"/>
+                    <Label Text="{x:Static resources:AppResources.Lbl_Spm}" Style="{StaticResource HintLabel}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="{x:Static resources:AppResources.Lbl_Resistance}" Style="{StaticResource SectionLabel}" HorizontalOptions="Center" TextTransform="Uppercase"/>
+                    <Label Text="{Binding CurrentResistance}" FontSize="48" Style="{StaticResource ValueLabel}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="{x:Static resources:AppResources.Lbl_Power}" Style="{StaticResource SectionLabel}" HorizontalOptions="Center" TextTransform="Uppercase"/>
+                    <Label Text="{Binding CurrentPower}" FontSize="48" Style="{StaticResource ValueLabel}" HorizontalOptions="Center"/>
+                    <Label Text="{x:Static resources:AppResources.Lbl_Watts}" Style="{StaticResource HintLabel}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
             <Label Text="{Binding StatusRun}" Style="{StaticResource StatusLabel}" FontSize="35"/>
 
             <!-- Contrôles Manuels (activés/désactivés via IsConnected) -->
             <VerticalStackLayout Spacing="20" IsEnabled="{Binding IsConnected}">
-                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center" IsVisible="{Binding IsTreadmill}">
                     <Button Text="{x:Static resources:AppResources.Lbl_Speed_Up}" Command="{Binding DecreaseSpeedCommand}" MinimumWidthRequest="100" Style="{StaticResource SecondaryButton}"/>
                     <Button Text="{x:Static resources:AppResources.Lbl_Speed_Down}" Command="{Binding IncreaseSpeedCommand}" MinimumWidthRequest="100" Style="{StaticResource SecondaryButton}"/>
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center" IsVisible="{Binding IsTreadmill}">
                     <Button Text="{x:Static resources:AppResources.Lbl_Incline_Down}" Command="{Binding DecreaseInclineCommand}" MinimumWidthRequest="100" Style="{StaticResource SecondaryButton}"/>
                     <Button Text="{x:Static resources:AppResources.Lbl_Incline_Up}" Command="{Binding IncreaseInclineCommand}" MinimumWidthRequest="100" Style="{StaticResource SecondaryButton}"/>
+                </HorizontalStackLayout>
+
+                <!-- Résistance (elliptique) -->
+                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center" IsVisible="{Binding IsCrossTrainer}">
+                    <Button Text="{x:Static resources:AppResources.Lbl_Resistance_Down}" Command="{Binding DecreaseResistanceCommand}" MinimumWidthRequest="100" Style="{StaticResource SecondaryButton}"/>
+                    <Button Text="{x:Static resources:AppResources.Lbl_Resistance_Up}" Command="{Binding IncreaseResistanceCommand}" MinimumWidthRequest="100" Style="{StaticResource SecondaryButton}"/>
                 </HorizontalStackLayout>
 
                 <!-- Start / Stop -->

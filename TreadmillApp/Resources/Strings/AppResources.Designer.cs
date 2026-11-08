@@ -358,6 +358,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Start pedaling.
+        /// </summary>
+        public static string IntervalStatus_Waiting_Movement {
+            get {
+                return ResourceManager.GetString("IntervalStatus_Waiting_Movement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à ℹ️ About.
         /// </summary>
         public static string Lbl_About {
@@ -372,6 +381,15 @@ namespace TreadmillApp.Resources.Strings {
         public static string Lbl_Audio_Alerts {
             get {
                 return ResourceManager.GetString("Lbl_Audio_Alerts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cadence.
+        /// </summary>
+        public static string Lbl_Cadence {
+            get {
+                return ResourceManager.GetString("Lbl_Cadence", resourceCulture);
             }
         }
         
@@ -556,6 +574,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Machine Type.
+        /// </summary>
+        public static string Lbl_Machine_Type {
+            get {
+                return ResourceManager.GetString("Lbl_Machine_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à min/km.
         /// </summary>
         public static string Lbl_Min_Km {
@@ -570,6 +597,51 @@ namespace TreadmillApp.Resources.Strings {
         public static string Lbl_Pace {
             get {
                 return ResourceManager.GetString("Lbl_Pace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Power.
+        /// </summary>
+        public static string Lbl_Power {
+            get {
+                return ResourceManager.GetString("Lbl_Power", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Resistance.
+        /// </summary>
+        public static string Lbl_Resistance {
+            get {
+                return ResourceManager.GetString("Lbl_Resistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Resistance -.
+        /// </summary>
+        public static string Lbl_Resistance_Down {
+            get {
+                return ResourceManager.GetString("Lbl_Resistance_Down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Resistance (level).
+        /// </summary>
+        public static string Lbl_Resistance_Level {
+            get {
+                return ResourceManager.GetString("Lbl_Resistance_Level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Resistance +.
+        /// </summary>
+        public static string Lbl_Resistance_Up {
+            get {
+                return ResourceManager.GetString("Lbl_Resistance_Up", resourceCulture);
             }
         }
         
@@ -619,6 +691,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à strides/min.
+        /// </summary>
+        public static string Lbl_Spm {
+            get {
+                return ResourceManager.GetString("Lbl_Spm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ready.
         /// </summary>
         public static string Lbl_Status_Run {
@@ -664,11 +745,38 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à W.
+        /// </summary>
+        public static string Lbl_Watts {
+            get {
+                return ResourceManager.GetString("Lbl_Watts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à ⚙️ Training options.
         /// </summary>
         public static string Lbl_Workout_Options {
             get {
                 return ResourceManager.GetString("Lbl_Workout_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cross trainer.
+        /// </summary>
+        public static string Machine_CrossTrainer {
+            get {
+                return ResourceManager.GetString("Machine_CrossTrainer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Treadmill.
+        /// </summary>
+        public static string Machine_Treadmill {
+            get {
+                return ResourceManager.GetString("Machine_Treadmill", resourceCulture);
             }
         }
         

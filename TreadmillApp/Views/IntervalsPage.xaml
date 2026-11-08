@@ -27,7 +27,7 @@
                    Text="{Binding IntervalName}" 
                    Style="{StaticResource BaseEntry}"/>
 
-            <Grid ColumnDefinitions="Auto,Auto,Auto"
+            <Grid IsVisible="{Binding IsTreadmill}" ColumnDefinitions="Auto,Auto,Auto"
                   RowDefinitions="Auto,Auto"
                   ColumnSpacing="10" RowSpacing="2">
 
@@ -51,10 +51,17 @@
                        HorizontalTextAlignment="Center"/>
             </Grid>
 
-            <HorizontalStackLayout Spacing="10">
+            <HorizontalStackLayout Spacing="10" IsVisible="{Binding IsTreadmill}">
                 <Label Text="{x:Static resources:AppResources.Lbl_Incline_per}" Style="{StaticResource SectionLabel}" VerticalTextAlignment="Center"/>
                 <Stepper Minimum="0" Maximum="15" Increment="1" Value="{Binding Incline}"/>
                 <Label Text="{Binding Incline, StringFormat='{}{0:0}'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center" FontSize="18"/>
+            </HorizontalStackLayout>
+
+            <!-- Résistance (elliptique) -->
+            <HorizontalStackLayout Spacing="10" IsVisible="{Binding IsCrossTrainer}">
+                <Label Text="{x:Static resources:AppResources.Lbl_Resistance_Level}" Style="{StaticResource SectionLabel}" VerticalTextAlignment="Center"/>
+                <Stepper Minimum="0" Maximum="32" Increment="1" Value="{Binding Resistance}"/>
+                <Label Text="{Binding Resistance, StringFormat='{}{0:0}'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center" FontSize="18"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10">
@@ -112,9 +119,20 @@
 
                                 <!-- Ligne 2 : Détails (Vitesse, Allure, Pente, Durée) répartis proprement -->
                                 <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="12">
-                                    <Label Text="{Binding TargetSpeed, StringFormat='S: {0} km/h'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
-                                    <Label Text="{Binding PaceFormattedString, StringFormat='P: {0}'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
-                                    <Label Text="{Binding TargetIncline, StringFormat='I: {0}%'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    <!-- Tapis : vitesse, allure, pente -->
+                                    <HorizontalStackLayout Spacing="12"
+                                                           x:DataType="viewmodels:IntervalsViewModel"
+                                                           IsVisible="{Binding IsTreadmill, Source={RelativeSource AncestorType={x:Type viewmodels:IntervalsViewModel}}}">
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding TargetSpeed, StringFormat='S: {0} km/h'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding PaceFormattedString, StringFormat='P: {0}'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding TargetIncline, StringFormat='I: {0}%'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    </HorizontalStackLayout>
+                                    <!-- Elliptique : résistance -->
+                                    <HorizontalStackLayout Spacing="12"
+                                                           x:DataType="viewmodels:IntervalsViewModel"
+                                                           IsVisible="{Binding IsCrossTrainer, Source={RelativeSource AncestorType={x:Type viewmodels:IntervalsViewModel}}}">
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding TargetResistance, StringFormat='R: {0}'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    </HorizontalStackLayout>
                                     <Label Text="{Binding DurationMinutes, StringFormat='D: {0}m'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
                                 </HorizontalStackLayout>
 

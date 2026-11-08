@@ -22,6 +22,9 @@ public partial class WorkoutInterval : ObservableObject
     public partial double TargetIncline { get; set; } = 1.0;
 
     [ObservableProperty]
+    public partial double TargetResistance { get; set; } = 50.0;
+
+    [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(DurationMinutes))]
     public partial double DurationSeconds { get; set; } = 60.0;
 

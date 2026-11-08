@@ -1,0 +1,156 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:TreadmillApp.Resources.Strings"
+             xmlns:viewmodels="clr-namespace:TreadmillApp.ViewModels"
+             xmlns:models="clr-namespace:TreadmillApp.Models"
+             x:DataType="viewmodels:IntervalsViewModel"
+             x:Class="TreadmillApp.Views.IntervalsPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:IntervalsViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+            <!-- Nommer votre série d'intervalle -->
+            <Label Text="{x:Static resources:AppResources.Lbl_Interval_Name}" Style="{StaticResource TitleLabel}"/>
+
+            <Entry Placeholder="{x:Static resources:AppResources.Placeholder_Workout_Title}" 
+                   Text="{Binding PlanTitle}" 
+                   Style="{StaticResource BaseEntry}"/>
+
+            <!-- Configurer un nouvel intervalle -->
+            <Label Text="{x:Static resources:AppResources.Lbl_Configure_Interval}" Style="{StaticResource TitleLabel}"/>
+
+            <Entry Placeholder="{x:Static resources:AppResources.Placeholder_Interval_Name}" 
+                   Text="{Binding IntervalName}" 
+                   Style="{StaticResource BaseEntry}"/>
+
+            <Grid IsVisible="{Binding IsTreadmill}" ColumnDefinitions="Auto,Auto,Auto"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="10" RowSpacing="2">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="{x:Static resources:AppResources.Lbl_Speed_Km_H}"
+                       Style="{StaticResource SectionLabel}" VerticalTextAlignment="Center"/>
+
+                <Stepper Grid.Row="0" Grid.Column="1"
+                         Minimum="0" Maximum="20" Increment="0.5"
+                         Value="{Binding Speed}"/>
+
+                <Entry Grid.Row="0" Grid.Column="2"
+                       Text="{Binding Speed, StringFormat='{}{0:0.0}'}"
+                       Keyboard="Numeric" Style="{StaticResource ValueEntry}"
+                       HorizontalTextAlignment="Center"/>
+
+                <!-- Pace sous le champ vitesse -->
+                <Label Grid.Row="1" Grid.Column="2"
+                       Text="{Binding PaceFormatted}"
+                       Style="{StaticResource ValueLabel}"
+                       HorizontalTextAlignment="Center"/>
+            </Grid>
+
+            <HorizontalStackLayout Spacing="10" IsVisible="{Binding IsTreadmill}">
+                <Label Text="{x:Static resources:AppResources.Lbl_Incline_per}" Style="{StaticResource SectionLabel}" VerticalTextAlignment="Center"/>
+                <Stepper Minimum="0" Maximum="15" Increment="1" Value="{Binding Incline}"/>
+                <Label Text="{Binding Incline, StringFormat='{}{0:0}'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center" FontSize="18"/>
+            </HorizontalStackLayout>
+
+            <!-- Résistance (elliptique) -->
+            <HorizontalStackLayout Spacing="10" IsVisible="{Binding IsCrossTrainer}">
+                <Label Text="{x:Static resources:AppResources.Lbl_Resistance_Level}" Style="{StaticResource SectionLabel}" VerticalTextAlignment="Center"/>
+                <Stepper Minimum="0" Maximum="32" Increment="1" Value="{Binding Resistance}"/>
+                <Label Text="{Binding Resistance, StringFormat='{}{0:0}'}" Style="{StaticResource ValueLabel}" VerticalTextAlignment="Center" FontSize="18"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="{x:Static resources:AppResources.Lbl_Duration_Min}" Style="{StaticResource SectionLabel}" VerticalOptions="Center"/>
+                <Entry Text="{Binding DurationMinutes, Mode=TwoWay}" Style="{StaticResource BaseEntry}" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
+
+                <Label Text="{x:Static resources:AppResources.Lbl_Duration}" Style="{StaticResource SectionLabel}" VerticalTextAlignment="Center"/>
+                <Entry Text="{Binding DurationSeconds, Mode=TwoWay}" Style="{StaticResource BaseEntry}" HorizontalTextAlignment="Center" Keyboard="Numeric" IsEnabled="False"/>
+            </HorizontalStackLayout>
+
+            <!-- Ajouter à l'entraînement -->
+            <!--<Button Text="{x:Static resources:AppResources.Btn_Add_Interval}" 
+                    Command="{Binding AddIntervalCommand}" 
+                    BackgroundColor="#FF5722" TextColor="White"/>
+-->
+            <Button Text="{Binding AddButtonText}"
+                    Command="{Binding AddIntervalCommand}"
+                    Style="{StaticResource PrimaryButton}"/>
+
+            <Button Text="{x:Static resources:AppResources.Txt_Cancel}"
+                    Command="{Binding CancelEditCommand}"
+                    IsVisible="{Binding IsEditing}"
+                    Style="{StaticResource SecondaryButton}"/>
+            <BoxView HeightRequest="1" Style="{StaticResource Divider}" Margin="0,10"/>
+
+            <!-- Liste des intervalles -->
+            <Label Text="{x:Static resources:AppResources.Lbl_Interval_List}" Style="{StaticResource SectionLabel}"/>
+
+            <CollectionView ItemsSource="{Binding Intervals}" HeightRequest="300" HorizontalOptions="Fill">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:WorkoutInterval">
+                        <Border Padding="10" Margin="0,4" BackgroundColor="{StaticResource SurfaceColor}">
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="4">
+
+                                <!-- Ligne 1 : Nom de l'intervalle et Boutons d'action à droite -->
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                    Text="{Binding Name}" 
+                                    TextColor="{StaticResource TextPrimary}"
+                                    FontAttributes="Bold" 
+                                    FontSize="15" 
+                                    VerticalTextAlignment="Center"/>
+
+                                <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5">
+                                    <Button Text="✏️"
+                                Clicked="OnEditIntervalClicked"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource AccentColor}"
+                                WidthRequest="36" HeightRequest="36"/>
+                                    <Button Text="❌"
+                                Clicked="OnDeleteIntervalClicked"
+                               BackgroundColor="Transparent"
+                                TextColor="{StaticResource DangerColor}"
+                                WidthRequest="36" HeightRequest="36"/>
+                                </HorizontalStackLayout>
+
+                                <!-- Ligne 2 : Détails (Vitesse, Allure, Pente, Durée) répartis proprement -->
+                                <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="12">
+                                    <!-- Tapis : vitesse, allure, pente -->
+                                    <HorizontalStackLayout Spacing="12"
+                                                           x:DataType="viewmodels:IntervalsViewModel"
+                                                           IsVisible="{Binding IsTreadmill, Source={RelativeSource AncestorType={x:Type viewmodels:IntervalsViewModel}}}">
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding TargetSpeed, StringFormat='S: {0} km/h'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding PaceFormattedString, StringFormat='P: {0}'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding TargetIncline, StringFormat='I: {0}%'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    </HorizontalStackLayout>
+                                    <!-- Elliptique : résistance -->
+                                    <HorizontalStackLayout Spacing="12"
+                                                           x:DataType="viewmodels:IntervalsViewModel"
+                                                           IsVisible="{Binding IsCrossTrainer, Source={RelativeSource AncestorType={x:Type viewmodels:IntervalsViewModel}}}">
+                                        <Label x:DataType="models:WorkoutInterval" Text="{Binding TargetResistance, StringFormat='R: {0}'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                    </HorizontalStackLayout>
+                                    <Label Text="{Binding DurationMinutes, StringFormat='D: {0}m'}" FontSize="12" TextColor="{StaticResource TextSecondary}"/>
+                                </HorizontalStackLayout>
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Lancer cet entraînement -->
+            <Button Text="{x:Static resources:AppResources.Btn_Start_Workout}" 
+                    Command="{Binding StartWorkoutCommand}" 
+                    Style="{StaticResource SuccessButton}" FontAttributes="Bold"/>
+
+            <!-- Sauvegarder cet entraînement -->
+            <Button Text="{x:Static resources:AppResources.Btn_Save_Workout}" 
+                    Command="{Binding SaveWorkoutCommand}" 
+                    Style="{StaticResource PrimaryButton}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

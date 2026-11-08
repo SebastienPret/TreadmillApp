@@ -1,5 +1,5 @@
-<api type="release" assembly-name="TreadmillApp" mvid="c400065c38ae42129186ee06bb2bd667">
-  <module assembly-name="TreadmillApp" mvid="c400065c38ae42129186ee06bb2bd667" mvid-bytes="XAYAxK44EkKRhu4GuyvWZw==">
+<api type="release" assembly-name="TreadmillApp" mvid="816edbaf277d4a9aa8f52df67e3e0567">
+  <module assembly-name="TreadmillApp" mvid="816edbaf277d4a9aa8f52df67e3e0567" mvid-bytes="r9tugX0nmkqo9S32fj4FZw==">
     <types-scratch>
       <entry key="crc649ef5ca3ed60188a2/MainActivity" java-name="crc649ef5ca3ed60188a2/MainActivity" managed-type-name="TreadmillApp.MainActivity" token="33554442" />
       <entry key="crc649ef5ca3ed60188a2/MainApplication" java-name="crc649ef5ca3ed60188a2/MainApplication" managed-type-name="TreadmillApp.MainApplication" token="33554443" />
