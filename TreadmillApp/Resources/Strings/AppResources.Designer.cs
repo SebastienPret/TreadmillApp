@@ -61,15 +61,6 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à .
-        /// </summary>
-        public static string _Empty_1_ {
-            get {
-                return ResourceManager.GetString("_Empty[1]", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à No intervals configured. Select or create a new plan..
         /// </summary>
         public static string Alert_NoIntervalsMessage {
@@ -102,6 +93,15 @@ namespace TreadmillApp.Resources.Strings {
         public static string Btn_Add_Interval {
             get {
                 return ResourceManager.GetString("Btn_Add_Interval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Update.
+        /// </summary>
+        public static string Btn_Check_For_Updates {
+            get {
+                return ResourceManager.GetString("Btn_Check_For_Updates", resourceCulture);
             }
         }
         
@@ -183,6 +183,15 @@ namespace TreadmillApp.Resources.Strings {
         public static string Btn_Stop {
             get {
                 return ResourceManager.GetString("Btn_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Update now.
+        /// </summary>
+        public static string Btn_Update {
+            get {
+                return ResourceManager.GetString("Btn_Update", resourceCulture);
             }
         }
         
@@ -363,6 +372,15 @@ namespace TreadmillApp.Resources.Strings {
         public static string Lbl_Audio_Alerts {
             get {
                 return ResourceManager.GetString("Lbl_Audio_Alerts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Check for Update:.
+        /// </summary>
+        public static string Lbl_Check_For_Updates {
+            get {
+                return ResourceManager.GetString("Lbl_Check_For_Updates", resourceCulture);
             }
         }
         
@@ -907,6 +925,15 @@ namespace TreadmillApp.Resources.Strings {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Later.
+        /// </summary>
+        public static string Txt_Later {
+            get {
+                return ResourceManager.GetString("Txt_Later", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à No.
         /// </summary>
         public static string Txt_No {
@@ -1002,6 +1029,33 @@ namespace TreadmillApp.Resources.Strings {
         public static string Txt_Success {
             get {
                 return ResourceManager.GetString("Txt_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Up To Date.
+        /// </summary>
+        public static string Txt_Up_To_Date {
+            get {
+                return ResourceManager.GetString("Txt_Up_To_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Update .....
+        /// </summary>
+        public static string Txt_Update {
+            get {
+                return ResourceManager.GetString("Txt_Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Update Available.
+        /// </summary>
+        public static string Txt_Update_Available {
+            get {
+                return ResourceManager.GetString("Txt_Update_Available", resourceCulture);
             }
         }
         

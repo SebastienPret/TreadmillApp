@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Yrrvj8/sZxY=",
+  "dgSpecHash": "xh2Zik1v/zo=",
   "success": true,
   "projectFilePath": "E:\\Code\\TreadmillApp\\TreadmillApp\\TreadmillApp.csproj",
   "expectedPackageFiles": [
@@ -138,11 +138,7 @@
     "C:\\nuget\\xamarin.kotlinx.coroutines.core.jvm\\1.10.2.1\\xamarin.kotlinx.coroutines.core.jvm.1.10.2.1.nupkg.sha512",
     "C:\\nuget\\xamarin.kotlinx.serialization.core\\1.9.0.1\\xamarin.kotlinx.serialization.core.1.9.0.1.nupkg.sha512",
     "C:\\nuget\\xamarin.kotlinx.serialization.core.jvm\\1.9.0.1\\xamarin.kotlinx.serialization.core.jvm.1.9.0.1.nupkg.sha512",
-    "C:\\nuget\\microsoft.netcore.app.crossgen2.win-x64\\10.0.14\\microsoft.netcore.app.crossgen2.win-x64.10.0.14.nupkg.sha512",
-    "C:\\nuget\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512",
-    "C:\\nuget\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.14\\microsoft.aspnetcore.app.runtime.win-x64.10.0.14.nupkg.sha512",
-    "C:\\nuget\\microsoft.windowsdesktop.app.runtime.win-x64\\10.0.14\\microsoft.windowsdesktop.app.runtime.win-x64.10.0.14.nupkg.sha512",
-    "C:\\nuget\\microsoft.netcore.app.runtime.win-x64\\10.0.14\\microsoft.netcore.app.runtime.win-x64.10.0.14.nupkg.sha512"
+    "C:\\nuget\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []
 }

@@ -16,8 +16,17 @@ namespace TreadmillApp.ViewModels
         [ObservableProperty]
         public partial bool EnableAudioAlerts { get; set; } = false;
 
+        [ObservableProperty]
+        public partial double DownloadProgress { get; set; }
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsNotUpdating))]
+        public partial bool IsUpdating { get; set; }
+
+        public bool IsNotUpdating => !IsUpdating;
+
         //[ObservableProperty]
-        public string VersionText => $"{AppInfo.Current.VersionString} (FTMS BLE)";
+        public static string VersionText => $"{AppInfo.Current.VersionString} (FTMS BLE)";
 
         public SettingsViewModel()
         {
@@ -98,6 +107,68 @@ namespace TreadmillApp.ViewModels
                     AppResources.Txt_Success,
                     AppResources.Txt_DataReset,
                     AppResources.Txt_OK);
+            }
+        }
+
+
+        // Update check and download logic
+        [RelayCommand]
+        private async Task CheckUpdate()
+        {
+            if (IsUpdating) return;
+
+            try
+            {
+                IsUpdating = true;
+                var update = await UpdateService.CheckAsync();
+
+                if (update == null)
+                {
+                    await Shell.Current.DisplayAlertAsync(AppResources.Txt_Update, AppResources.Txt_Up_To_Date, AppResources.Txt_OK);
+                    return;
+                }
+
+                bool accept = await Shell.Current.DisplayAlertAsync(
+                    $"{AppResources.Txt_Update_Available} {update.Version}",
+                    UpdateService.GetNotes(update),
+                    AppResources.Btn_Update,
+                    AppResources.Txt_Later);
+
+                if (accept)
+                {
+                    var progress = new Progress<double>(p => DownloadProgress = p);
+                    await UpdateService.DownloadAndInstallAsync(update, progress);
+                }
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlertAsync(AppResources.Error, ex.Message, AppResources.Txt_OK);
+            }
+            finally
+            {
+                IsUpdating = false;
+                DownloadProgress = 0;
+            }
+        }
+
+        public async Task InstallUpdateAsync(UpdateManifest update)
+        {
+            if (IsUpdating) return;
+
+            try
+            {
+                IsUpdating = true;
+                var progress = new Progress<double>(p => DownloadProgress = p);
+                await UpdateService.DownloadAndInstallAsync(update, progress);
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlertAsync(AppResources.Error, ex.Message, AppResources.Txt_OK);
+            }
+            finally
+            {
+                IsUpdating = false;
+                DownloadProgress = 0;
             }
         }
     }

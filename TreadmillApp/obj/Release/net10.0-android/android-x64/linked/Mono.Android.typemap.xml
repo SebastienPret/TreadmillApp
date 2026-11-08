@@ -1,5 +1,5 @@
-<api type="release" assembly-name="Mono.Android" mvid="e6541bc660854384b42dc3e8913d8aa7">
-  <module assembly-name="Mono.Android" mvid="e6541bc660854384b42dc3e8913d8aa7" mvid-bytes="xhtU5oVghEO0LcPokT2Kpw==">
+<api type="release" assembly-name="Mono.Android" mvid="bc1849e2196849d0afa3ecb99ab132fa">
+  <module assembly-name="Mono.Android" mvid="bc1849e2196849d0afa3ecb99ab132fa" mvid-bytes="4kkYvGgZ0Emvo+y5mrEy+g==">
     <duplicates>
       <entry java-name="org/xmlpull/v1/XmlPullParser" managed-type-name="Org.XmlPull.V1.IXmlPullParserInvoker" token="33554619" />
       <entry java-name="org/xml/sax/Attributes" managed-type-name="Org.Xml.Sax.IAttributesInvoker" token="33554623" />

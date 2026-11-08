@@ -5,7 +5,7 @@
     Les changements apportés à ce fichier peuvent provoquer un comportement incorrect et seront perdus si
     le contenu est regénéré.
 -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.lievretrack.treadmillapp" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.lievretrack.treadmillapp" android:versionCode="1" android:versionName="1.0.0">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="36" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
@@ -14,9 +14,15 @@
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
   <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
   <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+  <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+  <!-- Update permissions -->
+  <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
   <permission android:name="com.lievretrack.treadmillapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
   <uses-permission android:name="com.lievretrack.treadmillapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
   <application android:name="crc649ef5ca3ed60188a2.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="TreadmillApp" android:supportsRtl="true">
+    <provider android:name="androidx.core.content.FileProvider" android:authorities="com.lievretrack.treadmillapp.fileprovider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+    </provider>
     <activity android:name="crc6468b6408a11370c2f.WebAuthenticatorIntermediateActivity" android:configChanges="orientation|screenSize" android:exported="false" />
     <provider android:name="microsoft.maui.essentials.fileProvider" android:authorities="com.lievretrack.treadmillapp.fileProvider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/microsoft_maui_essentials_fileprovider_file_paths" />

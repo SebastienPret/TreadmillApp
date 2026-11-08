@@ -37,10 +37,17 @@ namespace TreadmillApp.Views
             }
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             _viewModel?.LoadSettings();
+
+            // Mise à jour acceptée depuis la vérification automatique
+            if (UpdateService.Pending is { } pending && _viewModel != null)
+            {
+                UpdateService.Pending = null;
+                await _viewModel.InstallUpdateAsync(pending);
+            }
         }
     }
 }
